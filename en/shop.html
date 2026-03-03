@@ -178,26 +178,17 @@
 
                     <!-- Checkout form -->
                     <form class="shop-checkout" id="checkoutForm">
-                        <h3 class="shop-checkout__title">Buyer details</h3>
                         <div class="shop-checkout__field">
-                            <label for="checkoutName">Full Name</label>
-                            <input type="text" id="checkoutName" required placeholder="John Smith">
-                        </div>
-                        <div class="shop-checkout__field">
-                            <label for="checkoutEmail">Email</label>
-                            <input type="email" id="checkoutEmail" required placeholder="john@example.com">
-                        </div>
-                        <div class="shop-checkout__field">
-                            <label for="checkoutPhone">Phone <span>(optional)</span></label>
-                            <input type="tel" id="checkoutPhone" placeholder="+39 333 1234567">
+                            <label for="checkoutEmail">Email <span>(optional)</span></label>
+                            <input type="email" id="checkoutEmail" placeholder="john@example.com">
                         </div>
                         <div class="shop-checkout__note">
-                            <p>Tickets will be sent to the email address provided in digital format (PDF). Show them at the venue entrance.</p>
+                            <p>You will be redirected to Stripe to complete your payment securely. Tickets will be sent via email in digital format (PDF).</p>
                         </div>
                         <button type="submit" class="shop-checkout__submit" id="checkoutSubmit" disabled>Proceed to payment</button>
                         <p class="shop-checkout__secure">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                            Secure payment with credit card, PayPal or Satispay
+                            Secure payment powered by Stripe
                         </p>
                     </form>
                 </aside>
@@ -289,6 +280,7 @@
         </div>
     </div>
     <script src="../js/main.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="../js/shop.js"></script>
 </body>
 </html>

@@ -1,8 +1,30 @@
 /* ============================================
-   B.A. Film Festival — Shop / Cart
+   B.A. Film Festival — Shop / Cart + Stripe Checkout
    ============================================ */
 (function () {
     'use strict';
+
+    /* ── CONFIGURAZIONE STRIPE ─────────────────────────────
+       1. Vai su https://dashboard.stripe.com/apikeys
+          e copia la Publishable Key (pk_live_... o pk_test_...)
+       2. Vai su https://dashboard.stripe.com/products
+          crea i 5 prodotti con i prezzi indicati
+          e copia ogni Price ID (price_...) qui sotto
+       ────────────────────────────────────────────────────── */
+    var STRIPE_PUBLISHABLE_KEY = 'pk_test_XXXXXXXXXXXXXXXXXXXXXXXX';
+
+    var STRIPE_PRICES = {
+        'single':           'price_XXXXXXXXXXXXXXXX',   // Singolo Ingresso        – €8
+        'single-reduced':   'price_XXXXXXXXXXXXXXXX',   // Singolo Ridotto         – €5
+        'daily':            'price_XXXXXXXXXXXXXXXX',   // Abb. Giornaliero        – €20
+        'festival':         'price_XXXXXXXXXXXXXXXX',   // Abb. Festival           – €80
+        'festival-reduced': 'price_XXXXXXXXXXXXXXXX'    // Abb. Festival Ridotto   – €60
+    };
+
+    // Endpoint serverless function (Netlify Functions)
+    var CHECKOUT_API = '/.netlify/functions/create-checkout-session';
+
+    /* ────────────────────────────────────────────────────── */
 
     var items = document.querySelectorAll('.shop-item');
     var cartItemsEl = document.getElementById('cartItems');
@@ -12,22 +34,22 @@
 
     if (!items.length || !cartItemsEl) return;
 
-    // Detect locale from <html lang>
     var lang = document.documentElement.lang || 'it';
     var isIT = lang === 'it';
     var emptyText = isIT ? 'Nessun biglietto selezionato' : 'No tickets selected';
-    var confirmTitle = isIT ? 'Ordine confermato!' : 'Order confirmed!';
-    var confirmText = isIT
-        ? 'Grazie per il tuo acquisto. Riceverai i biglietti all\u2019indirizzo email indicato entro pochi minuti.'
-        : 'Thank you for your purchase. You will receive your tickets at the email address provided within a few minutes.';
-    var confirmBtn = isIT ? 'Torna alla home' : 'Back to home';
-    var pcsLabel = isIT ? 'pz' : 'pcs';
+    var loadingText = isIT ? 'Reindirizzamento a Stripe\u2026' : 'Redirecting to Stripe\u2026';
+    var errorText = isIT
+        ? 'Si \u00e8 verificato un errore. Riprova tra qualche istante.'
+        : 'Something went wrong. Please try again in a moment.';
+    var defaultBtnText = isIT ? 'Procedi al pagamento' : 'Proceed to payment';
 
     function formatPrice(cents) {
         var euros = (cents / 100).toFixed(2);
         if (isIT) euros = euros.replace('.', ',');
         return '\u20AC' + euros;
     }
+
+    /* ── Carrello ───────────────────────────────────────── */
 
     function updateCart() {
         var lines = [];
@@ -65,7 +87,8 @@
         }
     }
 
-    // Quantity buttons
+    /* ── Pulsanti quantità ──────────────────────────────── */
+
     items.forEach(function (item) {
         var qtyEl = item.querySelector('[data-qty]');
         var btns = item.querySelectorAll('.shop-item__qty-btn');
@@ -83,45 +106,64 @@
         });
     });
 
-    // Form submit
+    /* ── Checkout → Stripe ──────────────────────────────── */
+
+    function getLineItems() {
+        var lineItems = [];
+        items.forEach(function (item) {
+            var qty = parseInt(item.querySelector('[data-qty]').textContent, 10) || 0;
+            if (qty > 0) {
+                var productId = item.dataset.product;
+                lineItems.push({
+                    price: STRIPE_PRICES[productId],
+                    quantity: qty
+                });
+            }
+        });
+        return lineItems;
+    }
+
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Check that at least one item is selected
-            var hasItems = false;
-            items.forEach(function (item) {
-                var qty = parseInt(item.querySelector('[data-qty]').textContent, 10) || 0;
-                if (qty > 0) hasItems = true;
+            var lineItems = getLineItems();
+            if (lineItems.length === 0) return;
+
+            // Loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = loadingText;
+
+            var emailEl = document.getElementById('checkoutEmail');
+            var email = emailEl ? emailEl.value.trim() : '';
+
+            var origin = window.location.origin;
+            var successUrl = origin + (isIT ? '/shop-success.html' : '/en/shop-success.html');
+            var cancelUrl = window.location.href;
+
+            fetch(CHECKOUT_API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    line_items: lineItems,
+                    customer_email: email || undefined,
+                    success_url: successUrl + '?session_id={CHECKOUT_SESSION_ID}',
+                    cancel_url: cancelUrl,
+                    locale: lang
+                })
+            })
+            .then(function (res) {
+                if (!res.ok) throw new Error('API ' + res.status);
+                return res.json();
+            })
+            .then(function (data) {
+                window.location.href = data.url;
+            })
+            .catch(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = defaultBtnText;
+                alert(errorText);
             });
-            if (!hasItems) return;
-
-            showConfirmation();
-        });
-    }
-
-    function showConfirmation() {
-        var overlay = document.createElement('div');
-        overlay.className = 'shop-confirmation visible';
-        overlay.innerHTML = '<div class="shop-confirmation__box">'
-            + '<div class="shop-confirmation__icon">'
-            + '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'
-            + '<circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>'
-            + '</div>'
-            + '<h3 class="shop-confirmation__title">' + confirmTitle + '</h3>'
-            + '<p class="shop-confirmation__text">' + confirmText + '</p>'
-            + '<button class="shop-confirmation__btn" id="confirmClose">' + confirmBtn + '</button>'
-            + '</div>';
-        document.body.appendChild(overlay);
-
-        document.getElementById('confirmClose').addEventListener('click', function () {
-            window.location.href = isIT ? 'index.html' : 'index.html';
-        });
-
-        overlay.addEventListener('click', function (e) {
-            if (e.target === overlay) {
-                overlay.remove();
-            }
         });
     }
 
