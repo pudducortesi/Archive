@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+  <defs>
+    <clipPath id="hfLeft">
+      <rect x="0" y="0" width="116" height="60"/>
+    </clipPath>
+    <clipPath id="hfRight">
+      <rect x="116" y="0" width="104" height="60"/>
+    </clipPath>
+  </defs>
+  <!-- "BA" -->
+  <text x="2" y="28" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="-0.5">BA</text>
+  <!-- "Film" italic -->
+  <text x="3" y="50" font-family="'Playfair Display', Georgia, serif" font-weight="400" font-style="italic" font-size="16" fill="#ffffff" letter-spacing="0.5">Film</text>
+  <!-- Large "F" white left half -->
+  <text x="68" y="56" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="46" fill="#ffffff" clip-path="url(#hfLeft)">F</text>
+  <!-- Large "F" red right half -->
+  <text x="68" y="56" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="46" fill="#c0392b" clip-path="url(#hfRight)">F</text>
+  <!-- Red block for "ESTIVAL" -->
+  <rect x="114" y="30" width="102" height="26" rx="1" fill="#c0392b"/>
+  <!-- "ESTIVAL" -->
+  <text x="119" y="50" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="17" fill="#ffffff" letter-spacing="1.5">ESTIVAL</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" width="340" height="150">
+  <defs>
+    <clipPath id="dfLeft">
+      <rect x="0" y="0" width="180" height="150"/>
+    </clipPath>
+    <clipPath id="dfRight">
+      <rect x="180" y="0" width="160" height="150"/>
+    </clipPath>
+  </defs>
+  <!-- "B" -->
+  <text x="5" y="72" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="82" fill="#1a1a1a" letter-spacing="-1">B</text>
+  <!-- "A" -->
+  <text x="58" y="72" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="82" fill="#1a1a1a" letter-spacing="-1">A</text>
+  <!-- "Film" italic -->
+  <text x="8" y="110" font-family="'Playfair Display', Georgia, serif" font-weight="400" font-style="italic" font-size="35" fill="#1a1a1a" letter-spacing="1">Film</text>
+  <!-- Large "F" dark left half -->
+  <text x="110" y="140" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="95" fill="#1a1a1a" clip-path="url(#dfLeft)">F</text>
+  <!-- Large "F" red right half -->
+  <text x="110" y="140" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="95" fill="#c0392b" clip-path="url(#dfRight)">F</text>
+  <!-- Red block -->
+  <rect x="178" y="90" width="155" height="48" rx="2" fill="#c0392b"/>
+  <!-- "ESTIVAL" -->
+  <text x="186" y="123" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="33" fill="#ffffff" letter-spacing="2">ESTIVAL</text>
+</svg>

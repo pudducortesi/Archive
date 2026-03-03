@@ -197,8 +197,12 @@ button {
 
 .header__logo {
     display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
+    align-items: center;
+}
+
+.header__logo-img {
+    height: 44px;
+    width: auto;
 }
 
 .header__logo-text {
@@ -1087,6 +1091,13 @@ button {
     margin-bottom: 0.75rem;
 }
 
+.footer__logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
 .footer__tagline {
     font-size: 0.85rem;
     color: var(--color-text-muted);
@@ -1192,6 +1203,10 @@ button {
 
     .header__logo-sub {
         display: none;
+    }
+
+    .header__logo-img {
+        height: 36px;
     }
 
     .hero__title {
