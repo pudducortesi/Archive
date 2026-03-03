@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets — B.A. Film Festival</title>
+    <meta name="description" content="Buy tickets online for the XXIV edition of the B.A. Film Festival. Single admission, daily pass and festival pass.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar__container">
+            <div class="top-bar__left">
+                <a href="contatti.html#accreditations" class="top-bar__link">Accreditations</a>
+                <a href="contatti.html" class="top-bar__link">Press</a>
+                <a href="contatti.html" class="top-bar__link">Contacts</a>
+            </div>
+            <div class="top-bar__right">
+                <a href="../shop.html" class="top-bar__lang">IT</a>
+                <a href="#" class="top-bar__lang active">EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="../images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img">
+            </a>
+            <nav class="header__nav" id="mainNav">
+                <a href="festival.html" class="header__nav-link">The Festival</a>
+                <a href="programma.html" class="header__nav-link">Programme</a>
+                <a href="selezione.html" class="header__nav-link">Official Selection</a>
+                <a href="ospiti.html" class="header__nav-link">Guests</a>
+                <a href="giuria.html" class="header__nav-link">Jury</a>
+                <a href="news.html" class="header__nav-link">News</a>
+                <a href="biglietteria.html" class="header__nav-link">Box Office</a>
+            </nav>
+            <button class="header__burger" id="burgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__content">
+            <a href="festival.html" class="mobile-menu__link">The Festival</a>
+            <a href="programma.html" class="mobile-menu__link">Programme</a>
+            <a href="selezione.html" class="mobile-menu__link">Official Selection</a>
+            <a href="ospiti.html" class="mobile-menu__link">Guests</a>
+            <a href="giuria.html" class="mobile-menu__link">Jury</a>
+            <a href="news.html" class="mobile-menu__link">News</a>
+            <a href="biglietteria.html" class="mobile-menu__link">Box Office</a>
+            <div class="mobile-menu__separator"></div>
+            <a href="contatti.html#accreditations" class="mobile-menu__link mobile-menu__link--small">Accreditations</a>
+            <a href="contatti.html" class="mobile-menu__link mobile-menu__link--small">Press</a>
+            <a href="contatti.html" class="mobile-menu__link mobile-menu__link--small">Contacts</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero__overlay"></div>
+        <div class="page-hero__content">
+            <h1 class="page-hero__title">Buy Tickets</h1>
+            <p class="page-hero__subtitle">Online Shop &mdash; XXIV Edition</p>
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__separator">/</span>
+                <a href="biglietteria.html">Box Office</a>
+                <span class="breadcrumb__separator">/</span>
+                <span>Buy</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="page-section">
+        <div class="page-section__container">
+            <div class="shop-layout">
+
+                <!-- Product list -->
+                <div class="shop-products">
+                    <h2 class="shop-products__title">Choose your tickets</h2>
+
+                    <div class="shop-item" data-product="single" data-price="8">
+                        <div class="shop-item__info">
+                            <h3 class="shop-item__name">Single Admission</h3>
+                            <p class="shop-item__desc">One screening of your choice &middot; Unnumbered seating</p>
+                            <div class="shop-item__price">&euro;8.00</div>
+                        </div>
+                        <div class="shop-item__qty">
+                            <button class="shop-item__qty-btn" data-action="decrease" aria-label="Decrease quantity">&#8722;</button>
+                            <span class="shop-item__qty-value" data-qty>0</span>
+                            <button class="shop-item__qty-btn" data-action="increase" aria-label="Increase quantity">&#43;</button>
+                        </div>
+                    </div>
+
+                    <div class="shop-item" data-product="single-reduced" data-price="5">
+                        <div class="shop-item__info">
+                            <h3 class="shop-item__name">Single Admission <span class="shop-item__tag">Reduced</span></h3>
+                            <p class="shop-item__desc">Under 18 / Over 65 / Students &middot; Unnumbered seating</p>
+                            <div class="shop-item__price">&euro;5.00</div>
+                        </div>
+                        <div class="shop-item__qty">
+                            <button class="shop-item__qty-btn" data-action="decrease" aria-label="Decrease quantity">&#8722;</button>
+                            <span class="shop-item__qty-value" data-qty>0</span>
+                            <button class="shop-item__qty-btn" data-action="increase" aria-label="Increase quantity">&#43;</button>
+                        </div>
+                    </div>
+
+                    <div class="shop-item shop-item--featured" data-product="daily" data-price="20">
+                        <span class="shop-item__badge">Recommended</span>
+                        <div class="shop-item__info">
+                            <h3 class="shop-item__name">Daily Pass</h3>
+                            <p class="shop-item__desc">All screenings for one day &middot; Priority access &middot; Special events</p>
+                            <div class="shop-item__price">&euro;20.00</div>
+                        </div>
+                        <div class="shop-item__qty">
+                            <button class="shop-item__qty-btn" data-action="decrease" aria-label="Decrease quantity">&#8722;</button>
+                            <span class="shop-item__qty-value" data-qty>0</span>
+                            <button class="shop-item__qty-btn" data-action="increase" aria-label="Increase quantity">&#43;</button>
+                        </div>
+                    </div>
+
+                    <div class="shop-item" data-product="festival" data-price="80">
+                        <div class="shop-item__info">
+                            <h3 class="shop-item__name">Festival Pass</h3>
+                            <p class="shop-item__desc">All screenings and events &middot; Masterclasses &middot; Complimentary official bag</p>
+                            <div class="shop-item__price">&euro;80.00</div>
+                        </div>
+                        <div class="shop-item__qty">
+                            <button class="shop-item__qty-btn" data-action="decrease" aria-label="Decrease quantity">&#8722;</button>
+                            <span class="shop-item__qty-value" data-qty>0</span>
+                            <button class="shop-item__qty-btn" data-action="increase" aria-label="Increase quantity">&#43;</button>
+                        </div>
+                    </div>
+
+                    <div class="shop-item" data-product="festival-reduced" data-price="60">
+                        <div class="shop-item__info">
+                            <h3 class="shop-item__name">Festival Pass <span class="shop-item__tag">Reduced</span></h3>
+                            <p class="shop-item__desc">Under 18 / Over 65 / Students &middot; All events &middot; Complimentary bag</p>
+                            <div class="shop-item__price">&euro;60.00</div>
+                        </div>
+                        <div class="shop-item__qty">
+                            <button class="shop-item__qty-btn" data-action="decrease" aria-label="Decrease quantity">&#8722;</button>
+                            <span class="shop-item__qty-value" data-qty>0</span>
+                            <button class="shop-item__qty-btn" data-action="increase" aria-label="Increase quantity">&#43;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart / Summary -->
+                <aside class="shop-cart" id="shopCart">
+                    <h2 class="shop-cart__title">Order summary</h2>
+                    <div class="shop-cart__items" id="cartItems">
+                        <p class="shop-cart__empty">No tickets selected</p>
+                    </div>
+                    <div class="shop-cart__divider"></div>
+                    <div class="shop-cart__total">
+                        <span>Total</span>
+                        <span class="shop-cart__total-value" id="cartTotal">&euro;0.00</span>
+                    </div>
+
+                    <!-- Checkout form -->
+                    <form class="shop-checkout" id="checkoutForm">
+                        <h3 class="shop-checkout__title">Buyer details</h3>
+                        <div class="shop-checkout__field">
+                            <label for="checkoutName">Full Name</label>
+                            <input type="text" id="checkoutName" required placeholder="John Smith">
+                        </div>
+                        <div class="shop-checkout__field">
+                            <label for="checkoutEmail">Email</label>
+                            <input type="email" id="checkoutEmail" required placeholder="john@example.com">
+                        </div>
+                        <div class="shop-checkout__field">
+                            <label for="checkoutPhone">Phone <span>(optional)</span></label>
+                            <input type="tel" id="checkoutPhone" placeholder="+39 333 1234567">
+                        </div>
+                        <div class="shop-checkout__note">
+                            <p>Tickets will be sent to the email address provided in digital format (PDF). Show them at the venue entrance.</p>
+                        </div>
+                        <button type="submit" class="shop-checkout__submit" id="checkoutSubmit" disabled>Proceed to payment</button>
+                        <p class="shop-checkout__secure">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                            Secure payment with credit card, PayPal or Satispay
+                        </p>
+                    </form>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Info -->
+    <section class="page-section page-section--alt">
+        <div class="page-section__container">
+            <div class="info-grid">
+                <div class="info-block">
+                    <h3 class="info-block__title">Digital delivery</h3>
+                    <p class="info-block__text">After payment you will receive your tickets by email in PDF format. You can print them or show them on your phone at the venue entrance.</p>
+                </div>
+                <div class="info-block">
+                    <h3 class="info-block__title">Refunds</h3>
+                    <p class="info-block__text">Full refund up to 48 hours before the screening (single admission) or 7 days before the festival (passes). Write to <a href="mailto:info@bafilmfestival.it">info@bafilmfestival.it</a>.</p>
+                </div>
+                <div class="info-block">
+                    <h3 class="info-block__title">Support</h3>
+                    <p class="info-block__text">For any issues with your online purchase, contact us at <a href="mailto:info@bafilmfestival.it">info@bafilmfestival.it</a> or call our dedicated number during the festival period.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../images/logo-baff.png" alt="BA Film Festival" class="footer__logo-img">
+                    <p class="footer__tagline">Cinema in Busto Arsizio</p>
+                </div>
+                <div class="footer__columns">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">The Festival</h4>
+                        <a href="festival.html" class="footer__link">About us</a>
+                        <a href="festival.html" class="footer__link">History</a>
+                        <a href="festival.html" class="footer__link">Regulations</a>
+                        <a href="giuria.html" class="footer__link">Jury</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Programme</h4>
+                        <a href="programma.html" class="footer__link">Italian Competition</a>
+                        <a href="programma.html" class="footer__link">International Competition</a>
+                        <a href="programma.html" class="footer__link">Special Events</a>
+                        <a href="programma.html" class="footer__link">Masterclass</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Information</h4>
+                        <a href="biglietteria.html" class="footer__link">Box Office</a>
+                        <a href="shop.html" class="footer__link">Buy tickets</a>
+                        <a href="sponsor.html" class="footer__link">Friends</a>
+                        <a href="contatti.html" class="footer__link">Contacts</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Follow us</h4>
+                        <a href="https://www.facebook.com/BAFilmFestival" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+                        <a href="https://www.instagram.com/bafilmfestival/" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+                        <a href="https://www.youtube.com/@bafilmfestival" target="_blank" rel="noopener" class="footer__link">YouTube</a>
+                        <a href="https://www.baff.it/" target="_blank" rel="noopener" class="footer__link">Official BAFF website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 B.A. Film Festival &mdash; Busto Arsizio. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                    <a href="legal.html">Legal Notice</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">This website uses technical cookies and, with your consent, profiling cookies to improve your browsing experience. Learn more in our <a href="privacy.html">Privacy Policy</a> and <a href="cookie.html">Cookie Policy</a>.</p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accept</button>
+                <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieReject">Reject</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="../js/shop.js"></script>
+</body>
+</html>
