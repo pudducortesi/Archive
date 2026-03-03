@@ -8,13 +8,13 @@
     </clipPath>
   </defs>
   <!-- "B" -->
-  <text x="5" y="72" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="82" fill="#ffffff" letter-spacing="-1">B</text>
+  <text x="5" y="72" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="82" fill="#1a1a1a" letter-spacing="-1">B</text>
   <!-- "A" -->
-  <text x="58" y="72" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="82" fill="#ffffff" letter-spacing="-1">A</text>
+  <text x="58" y="72" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="82" fill="#1a1a1a" letter-spacing="-1">A</text>
   <!-- "Film" italic -->
-  <text x="8" y="110" font-family="'Playfair Display', Georgia, serif" font-weight="400" font-style="italic" font-size="35" fill="#ffffff" letter-spacing="1">Film</text>
-  <!-- Large "F" black/white left half -->
-  <text x="110" y="140" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="95" fill="#ffffff" clip-path="url(#fLeft)">F</text>
+  <text x="8" y="110" font-family="'Playfair Display', Georgia, serif" font-weight="400" font-style="italic" font-size="35" fill="#1a1a1a" letter-spacing="1">Film</text>
+  <!-- Large "F" dark left half -->
+  <text x="110" y="140" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="95" fill="#1a1a1a" clip-path="url(#fLeft)">F</text>
   <!-- Large "F" red right half -->
   <text x="110" y="140" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="95" fill="#c0392b" clip-path="url(#fRight)">F</text>
   <!-- Red block -->
