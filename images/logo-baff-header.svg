@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" width="260" height="56">
   <defs>
-    <clipPath id="hfLeft">
-      <rect x="0" y="0" width="116" height="60"/>
+    <clipPath id="hfl">
+      <rect x="0" y="0" width="130" height="56"/>
     </clipPath>
-    <clipPath id="hfRight">
-      <rect x="116" y="0" width="104" height="60"/>
+    <clipPath id="hfr">
+      <rect x="130" y="0" width="130" height="56"/>
     </clipPath>
   </defs>
-  <!-- "BA" -->
-  <text x="2" y="28" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="32" fill="#1a1a1a" letter-spacing="-0.5">BA</text>
-  <!-- "Film" italic -->
-  <text x="3" y="50" font-family="'Playfair Display', Georgia, serif" font-weight="400" font-style="italic" font-size="16" fill="#1a1a1a" letter-spacing="0.5">Film</text>
-  <!-- Large "F" dark left half -->
-  <text x="68" y="56" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="46" fill="#1a1a1a" clip-path="url(#hfLeft)">F</text>
-  <!-- Large "F" red right half -->
-  <text x="68" y="56" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="46" fill="#c0392b" clip-path="url(#hfRight)">F</text>
-  <!-- Red block for "ESTIVAL" -->
-  <rect x="114" y="30" width="102" height="26" rx="1" fill="#c0392b"/>
-  <!-- "ESTIVAL" -->
-  <text x="119" y="50" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="17" fill="#ffffff" letter-spacing="1.5">ESTIVAL</text>
+  <!-- Row 1: "BA" large bold -->
+  <text x="0" y="24" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="28" fill="#1a1a1a" letter-spacing="2">BA</text>
+  <!-- Row 2 left: "Film" italic -->
+  <text x="0" y="46" font-family="'Playfair Display', Georgia, serif" font-weight="400" font-style="italic" font-size="20" fill="#1a1a1a">Film</text>
+  <!-- Row 2: Large "F" - black left portion -->
+  <text x="56" y="52" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="52" fill="#1a1a1a" clip-path="url(#hfl)">F</text>
+  <!-- Row 2: Large "F" - red right portion -->
+  <text x="56" y="52" font-family="'Playfair Display', Georgia, serif" font-weight="900" font-size="52" fill="#c0392b" clip-path="url(#hfr)">F</text>
+  <!-- Red rectangle for "estival" -->
+  <rect x="99" y="27" width="94" height="28" fill="#c0392b"/>
+  <!-- "estival" white on red -->
+  <text x="103" y="47" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="18" fill="#ffffff" letter-spacing="1.5">estival</text>
 </svg>
