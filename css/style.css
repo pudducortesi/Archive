@@ -18,9 +18,9 @@
     --color-text: #1a1a1a;
     --color-text-secondary: #3a3a3a;
     --color-text-muted: #5a5a5a;
-    --color-accent: #b8922e;
-    --color-accent-hover: #a07e22;
-    --color-accent-dark: #7d6318;
+    --color-accent: #cc0000;
+    --color-accent-hover: #a80000;
+    --color-accent-dark: #8a0000;
     --color-white: #ffffff;
     --color-on-accent: #ffffff;
     --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.06);
