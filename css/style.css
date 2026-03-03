@@ -422,18 +422,21 @@ button {
 .hero__cta {
     display: inline-block;
     padding: 0.9rem 2.5rem;
+    background: var(--color-accent);
     border: 1px solid var(--color-accent);
-    color: var(--color-accent);
+    color: var(--color-on-accent);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 600;
-    transition: background var(--transition), color var(--transition);
+    border-radius: 4px;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .hero__cta:hover {
-    background: var(--color-accent);
-    color: var(--color-on-accent);
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
 }
 
 .hero__scroll-indicator {
@@ -1373,6 +1376,14 @@ button {
 
 .page-section--alt {
     background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.page-section--grey {
+    background: var(--color-bg-grey);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .page-section__container {
@@ -2281,7 +2292,9 @@ button {
 
 .ticket-card--featured {
     border-color: var(--color-accent);
+    border-width: 2px;
     background: var(--color-bg-card);
+    box-shadow: 0 4px 16px rgba(184, 146, 46, 0.12);
 }
 
 .ticket-card__badge {
@@ -2351,22 +2364,24 @@ button {
 }
 
 .ticket-card__cta {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
+    display: block;
+    padding: 0.85rem 1.5rem;
+    background: var(--color-accent);
     border: 1px solid var(--color-accent);
-    color: var(--color-accent);
+    color: var(--color-on-accent);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     border-radius: 4px;
-    transition: background var(--transition), color var(--transition);
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .ticket-card__cta:hover {
-    background: var(--color-accent);
-    color: var(--color-on-accent);
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
 }
 
 /* ============================================
@@ -2443,16 +2458,29 @@ button {
 .cta-section__btn {
     display: inline-block;
     padding: 0.9rem 2.5rem;
+    background: var(--color-accent);
     border: 1px solid var(--color-accent);
-    color: var(--color-accent);
+    color: var(--color-on-accent);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 600;
-    transition: background var(--transition), color var(--transition);
+    border-radius: 4px;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .cta-section__btn:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
+}
+
+.cta-section__btn--secondary {
+    background: transparent;
+    color: var(--color-accent);
+}
+
+.cta-section__btn--secondary:hover {
     background: var(--color-accent);
     color: var(--color-on-accent);
 }
@@ -2939,22 +2967,24 @@ button {
 
 .accreditation-card__cta {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.5rem;
+    background: var(--color-accent);
     border: 1px solid var(--color-accent);
-    color: var(--color-accent);
+    color: var(--color-on-accent);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     border-radius: 4px;
-    transition: background var(--transition), color var(--transition);
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
     align-self: flex-start;
 }
 
 .accreditation-card__cta:hover {
-    background: var(--color-accent);
-    color: var(--color-on-accent);
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
 }
 
 /* ============================================
@@ -3003,6 +3033,132 @@ button {
 
     .map-placeholder {
         height: 250px;
+    }
+}
+
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.75rem;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-accent);
+}
+
+.breadcrumb__separator {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
+}
+
+.breadcrumb__current,
+.breadcrumb span:last-child {
+    color: var(--color-on-accent);
+}
+
+/* ============================================
+   COOKIE BANNER
+   ============================================ */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-text);
+    color: var(--color-white);
+    padding: 1.25rem 2rem;
+    z-index: 10000;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cookie-banner.visible {
+    transform: translateY(0);
+}
+
+.cookie-banner__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cookie-banner__text {
+    flex: 1;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    min-width: 240px;
+}
+
+.cookie-banner__text a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.cookie-banner__text a:hover {
+    color: var(--color-accent-hover);
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.cookie-banner__btn--accept {
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.cookie-banner__btn--accept:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+.cookie-banner__btn--reject {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-banner__btn--reject:hover {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 600px) {
+    .cookie-banner__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-banner__actions {
+        width: 100%;
+        justify-content: center;
     }
 }
 
