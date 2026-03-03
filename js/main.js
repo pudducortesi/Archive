@@ -40,11 +40,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Countdown timer ---
-    const festivalDate = new Date('2026-03-15T09:00:00').getTime();
+    const festivalDate = new Date('2026-03-21T09:00:00').getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = festivalDate - now;
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
 
         if (distance > 0) {
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -52,20 +57,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            const daysEl = document.getElementById('days');
-            const hoursEl = document.getElementById('hours');
-            const minutesEl = document.getElementById('minutes');
-            const secondsEl = document.getElementById('seconds');
-
             if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
             if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
             if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
             if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+        } else {
+            if (daysEl) daysEl.textContent = '00';
+            if (hoursEl) hoursEl.textContent = '00';
+            if (minutesEl) minutesEl.textContent = '00';
+            if (secondsEl) secondsEl.textContent = '00';
         }
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    if (document.getElementById('days')) {
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
 
     // --- Editions Slider ---
     const track = document.getElementById('editionsTrack');
@@ -93,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const gap = 24; // 1.5rem
             const offset = currentSlide * (slideWidth + gap);
             track.style.transform = `translateX(-${offset}px)`;
+
+            prevBtn.style.opacity = currentSlide === 0 ? '0.3' : '1';
+            nextBtn.style.opacity = currentSlide >= maxSlide ? '0.3' : '1';
         }
 
         prevBtn.addEventListener('click', () => {
@@ -114,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Touch/drag support for slider
         let isDragging = false;
         let startX = 0;
-        let scrollLeft = 0;
 
         track.addEventListener('mousedown', (e) => {
             isDragging = true;
@@ -172,10 +181,105 @@ document.addEventListener('DOMContentLoaded', () => {
         track.addEventListener('touchend', () => { isDragging = false; });
 
         window.addEventListener('resize', updateSlider);
+        updateSlider();
+    }
+
+    // --- FAQ Accordion ---
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-item__question');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                faqItems.forEach(other => {
+                    if (other !== item) {
+                        other.classList.remove('active');
+                        const otherBtn = other.querySelector('.faq-item__question');
+                        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+                question.setAttribute('aria-expanded', !isActive);
+            });
+        }
+    });
+
+    // --- Program Schedule Tabs ---
+    const tabButtons = document.querySelectorAll('.schedule__tab');
+    const tabPanels = document.querySelectorAll('.schedule__day');
+
+    if (tabButtons.length > 0 && tabPanels.length > 0) {
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const dayId = btn.getAttribute('data-day');
+
+                tabButtons.forEach(b => b.classList.remove('schedule__tab--active'));
+                btn.classList.add('schedule__tab--active');
+
+                tabPanels.forEach(panel => {
+                    panel.classList.remove('schedule__day--active');
+                });
+
+                const targetDay = document.getElementById(dayId);
+                if (targetDay) targetDay.classList.add('schedule__day--active');
+            });
+        });
+    }
+
+    // --- Newsletter Form ---
+    const newsletterForms = document.querySelectorAll('.newsletter__form');
+
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const input = form.querySelector('.newsletter__input');
+            const btn = form.querySelector('.newsletter__btn');
+
+            if (input && input.value && input.validity.valid) {
+                const originalText = btn.textContent;
+                btn.textContent = 'Iscritto!';
+                btn.style.background = '#2d6a4f';
+                input.value = '';
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                }, 3000);
+            }
+        });
+    });
+
+    // --- Contact Form ---
+    const contactForm = document.querySelector('.contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.contact-form__submit');
+
+            if (contactForm.checkValidity()) {
+                const originalText = btn.textContent;
+                btn.textContent = 'Messaggio inviato!';
+                btn.style.background = '#2d6a4f';
+                contactForm.reset();
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                }, 3000);
+            } else {
+                contactForm.reportValidity();
+            }
+        });
     }
 
     // --- Scroll animations (Intersection Observer) ---
-    const fadeElements = document.querySelectorAll('.featured__main, .featured__card, .program__card, .info__card, .countdown__container, .newsletter__container');
+    const fadeElements = document.querySelectorAll('.featured__main, .featured__card, .program__card, .info__card, .countdown__container, .newsletter__container, .stats__item, .timeline__item, .guest-card, .ticket-card');
 
     fadeElements.forEach(el => el.classList.add('fade-in'));
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programma — B.A. Film Festival</title>
-    <meta name="description" content="Il programma completo della XXIII edizione del B.A. Film Festival. Concorso Italiano, Concorso Internazionale, retrospettive ed eventi speciali. 15-22 Marzo 2026.">
+    <meta name="description" content="Il programma completo della XXIV edizione del B.A. Film Festival. Concorso Italiano, Concorso Internazionale, retrospettive ed eventi speciali. 21-28 Marzo 2026.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -77,7 +77,7 @@
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
             <h1 class="page-hero__title">Programma</h1>
-            <p class="page-hero__subtitle">XXIII Edizione &mdash; 15-22 Marzo 2026</p>
+            <p class="page-hero__subtitle">XXIV Edizione &mdash; 21-28 Marzo 2026</p>
         </div>
     </section>
 
@@ -85,7 +85,7 @@
     <section class="page-section">
         <div class="page-section__container">
             <h2 class="page-section__title">Le sezioni del festival</h2>
-            <p class="page-section__subtitle">Scopri le quattro anime della XXIII edizione del B.A. Film Festival.</p>
+            <p class="page-section__subtitle">Scopri le quattro anime della XXIV edizione del B.A. Film Festival.</p>
             <div class="program-categories">
 
                 <div class="program-category">
@@ -136,14 +136,14 @@
 
             <div class="schedule">
                 <div class="schedule__tabs">
-                    <button class="schedule__tab schedule__tab--active" data-day="day-1">Dom 15</button>
-                    <button class="schedule__tab" data-day="day-2">Lun 16</button>
-                    <button class="schedule__tab" data-day="day-3">Mar 17</button>
-                    <button class="schedule__tab" data-day="day-4">Mer 18</button>
-                    <button class="schedule__tab" data-day="day-5">Gio 19</button>
-                    <button class="schedule__tab" data-day="day-6">Ven 20</button>
-                    <button class="schedule__tab" data-day="day-7">Sab 21</button>
-                    <button class="schedule__tab" data-day="day-8">Dom 22</button>
+                    <button class="schedule__tab schedule__tab--active" data-day="day-1">Sab 21</button>
+                    <button class="schedule__tab" data-day="day-2">Dom 22</button>
+                    <button class="schedule__tab" data-day="day-3">Lun 23</button>
+                    <button class="schedule__tab" data-day="day-4">Mar 24</button>
+                    <button class="schedule__tab" data-day="day-5">Mer 25</button>
+                    <button class="schedule__tab" data-day="day-6">Gio 26</button>
+                    <button class="schedule__tab" data-day="day-7">Ven 27</button>
+                    <button class="schedule__tab" data-day="day-8">Sab 28</button>
                 </div>
 
                 <!-- Domenica 15 Marzo -->
@@ -442,7 +442,7 @@
     <section class="page-section">
         <div class="page-section__container">
             <h2 class="page-section__title">Location</h2>
-            <p class="page-section__subtitle">Le sedi della XXIII edizione del B.A. Film Festival a Busto Arsizio.</p>
+            <p class="page-section__subtitle">Le sedi della XXIV edizione del B.A. Film Festival a Busto Arsizio.</p>
             <div class="locations__grid">
                 <div class="locations__card">
                     <div class="locations__card-icon">
@@ -501,10 +501,10 @@
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Seguici</h4>
-                        <a href="#" class="footer__link">Facebook</a>
-                        <a href="#" class="footer__link">Instagram</a>
-                        <a href="#" class="footer__link">YouTube</a>
-                        <a href="#" class="footer__link">X (Twitter)</a>
+                        <a href="https://www.facebook.com/BAFilmFestival" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+                        <a href="https://www.instagram.com/bafilmfestival/" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+                        <a href="https://www.youtube.com/@bafilmfestival" target="_blank" rel="noopener" class="footer__link">YouTube</a>
+                        <a href="https://www.baff.it/" target="_blank" rel="noopener" class="footer__link">Sito ufficiale BAFF</a>
                     </div>
                 </div>
             </div>
@@ -520,28 +520,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-    // Schedule tabs functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.schedule__tab');
-        const days = document.querySelectorAll('.schedule__day');
-
-        tabs.forEach(function(tab) {
-            tab.addEventListener('click', function() {
-                // Remove active from all tabs and days
-                tabs.forEach(function(t) { t.classList.remove('schedule__tab--active'); });
-                days.forEach(function(d) { d.classList.remove('schedule__day--active'); });
-
-                // Activate clicked tab and corresponding day
-                tab.classList.add('schedule__tab--active');
-                var dayId = tab.getAttribute('data-day');
-                var targetDay = document.getElementById(dayId);
-                if (targetDay) {
-                    targetDay.classList.add('schedule__day--active');
-                }
-            });
-        });
-    });
-    </script>
 </body>
 </html>
