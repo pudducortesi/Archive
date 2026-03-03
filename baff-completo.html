@@ -12,13 +12,13 @@
 /* --- Reset & Base --- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-    --color-bg: #fafafa; --color-bg-alt: #f0f0f0; --color-bg-card: #ffffff;
-    --color-surface: #e8e8e8; --color-border: #d5d5d5; --color-text: #1a1a1a;
-    --color-text-secondary: #4a4a4a; --color-text-muted: #777777;
+    --color-bg: #ffffff; --color-bg-alt: #f4f3f1; --color-bg-card: #ffffff;
+    --color-surface: #eae8e4; --color-border: #d0cdc8; --color-text: #1a1a1a;
+    --color-text-secondary: #3a3a3a; --color-text-muted: #5a5a5a;
     --color-accent: #b8922e; --color-accent-hover: #a07e22; --color-accent-dark: #7d6318;
     --color-white: #ffffff; --color-on-accent: #ffffff;
-    --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-card-hover: 0 10px 30px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.05);
+    --shadow-card: 0 2px 6px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-card-hover: 0 12px 36px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.08);
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --max-width: 1280px; --header-height: 72px; --top-bar-height: 36px;
@@ -76,9 +76,9 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
 .mobile-menu__separator { width: 60px; height: 1px; background: var(--color-border); margin: 0.5rem auto; }
 
 /* HERO */
-.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #ffffff 0%, #f8f5f0 40%, #f5f3f8 70%, #ffffff 100%); overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 20% 80%, rgba(184,146,46,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(184,146,46,0.06) 0%, transparent 50%); pointer-events: none; }
-.hero__overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(250,250,250,0.15); z-index: 1; }
+.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(160deg, #f4f3f1 0%, #ffffff 35%, #f9f6f0 60%, #f4f2f5 85%, #f4f3f1 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 15% 85%, rgba(184,146,46,0.12) 0%, transparent 50%), radial-gradient(ellipse at 85% 15%, rgba(192,57,43,0.06) 0%, transparent 40%); pointer-events: none; }
+.hero__overlay { display: none; }
 .hero__content { position: relative; z-index: 2; padding: 0 2rem; }
 .hero__edition { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--color-accent); font-weight: 600; margin-bottom: 1.5rem; }
 .hero__title { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; line-height: 1; margin-bottom: 1rem; letter-spacing: -0.02em; }
@@ -139,7 +139,7 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
 .program__card:hover .program__card-arrow { transform: translateX(6px); }
 
 /* COUNTDOWN */
-.countdown { padding: 5rem 0; background: linear-gradient(135deg, #f8f5f0 0%, #ffffff 50%, #f5f3f8 100%); text-align: center; position: relative; overflow: hidden; }
+.countdown { padding: 5rem 0; background: linear-gradient(160deg, #f4f3f1 0%, #faf8f4 40%, #f4f2f5 100%); text-align: center; position: relative; overflow: hidden; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 .countdown::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(184,146,46,0.06) 0%, transparent 70%); pointer-events: none; }
 .countdown__container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
 .countdown__label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--color-accent); font-weight: 600; margin-bottom: 2.5rem; }
@@ -277,7 +277,7 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
     <header class="header" id="header">
         <div class="header__container">
             <a href="/" class="header__logo">
-                <img src="images/logo-baff-header.svg" alt="BA Film Festival" class="header__logo-img">
+                <img src="images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img">
             </a>
             <nav class="header__nav" id="mainNav">
                 <a href="#" class="header__nav-link">Il Festival</a>
@@ -567,7 +567,7 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
         <div class="footer__container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="images/logo-baff.svg" alt="BA Film Festival" class="footer__logo-img">
+                    <img src="images/logo-baff.png" alt="BA Film Festival" class="footer__logo-img">
                     <p class="footer__tagline">Il cinema a Busto Arsizio</p>
                 </div>
                 <div class="footer__columns">
