@@ -1884,7 +1884,7 @@ button {
    ============================================ */
 .schedule {
     padding: 2rem 0 5rem;
-    background: var(--color-bg);
+    background: transparent;
 }
 
 .schedule__container {
@@ -3065,6 +3065,544 @@ button {
 .breadcrumb__current,
 .breadcrumb span:last-child {
     color: var(--color-on-accent);
+}
+
+/* ============================================
+   SECTION INTRO (Selezione Ufficiale page)
+   ============================================ */
+.section-intro {
+    padding: 4rem 0;
+    background: var(--color-bg);
+}
+
+.section-intro__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-intro__body {
+    max-width: 800px;
+}
+
+.section-intro__lead {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    line-height: 1.8;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+
+.section-intro__text {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.section-intro__text:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   FILM SECTION (Selezione Ufficiale page)
+   ============================================ */
+.film-section {
+    padding: 5rem 0;
+    background: var(--color-bg);
+}
+
+.film-section--alt {
+    background: var(--color-bg-alt);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.film-section__container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.film-section__header {
+    margin-bottom: 2.5rem;
+}
+
+.film-section__subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    max-width: 600px;
+}
+
+.film-card__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-alt);
+    border-bottom: 1px dashed var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+}
+
+.film-card__placeholder--classic {
+    background: var(--color-bg-grey);
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.film-card__placeholder--classic span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.film-card__section {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--color-accent-dark);
+    border-radius: 2px;
+}
+
+.film-card__section--classic {
+    color: var(--color-text-muted);
+    border-color: var(--color-border);
+}
+
+.film-grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .film-grid--4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .film-grid--4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cta-section__content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-section__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/* ============================================
+   GUEST COMPONENTS (Ospiti page)
+   ============================================ */
+.guest-main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.guest-main__image {
+    aspect-ratio: 3/4;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.guest-main__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-alt);
+    border: 1px dashed var(--color-border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.guest-main__placeholder span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.guest-main__role {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--color-accent-dark);
+    border-radius: 2px;
+}
+
+.guest-main__name {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.guest-main__bio {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.guest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.guest-card {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.guest-card:hover {
+    border-color: var(--color-accent-dark);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.guest-card__image {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.guest-card__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-alt);
+    border: 1px dashed var(--color-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+}
+
+.guest-card__body {
+    min-width: 0;
+}
+
+.guest-card__name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+}
+
+.guest-card__role {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.guest-card__desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .guest-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .guest-main__image {
+        max-width: 250px;
+    }
+
+    .guest-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   MASTERCLASS LIST (Ospiti page)
+   ============================================ */
+.masterclass-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.masterclass-list__item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    align-items: start;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.masterclass-list__item:hover {
+    border-color: var(--color-accent-dark);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.masterclass-list__date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.75rem;
+}
+
+.masterclass-list__day {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.masterclass-list__month {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: 0.25rem;
+}
+
+.masterclass-list__body {
+    min-width: 0;
+}
+
+.masterclass-list__title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.masterclass-list__topic {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.masterclass-list__info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.masterclass-list__info svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+    .masterclass-list__item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .masterclass-list__date {
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .masterclass-list__month {
+        margin-top: 0;
+    }
+}
+
+/* ============================================
+   JURY PRESIDENT (Giuria page)
+   ============================================ */
+.jury-president {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.jury-president__photo {
+    aspect-ratio: 3/4;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.jury-president__info {
+    min-width: 0;
+}
+
+.jury-president__name {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.jury-president__role {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--color-accent-dark);
+    border-radius: 2px;
+}
+
+.jury-president__bio {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .jury-president {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .jury-president__photo {
+        max-width: 200px;
+    }
+}
+
+/* Jury card photo & placeholder */
+.jury-card__photo {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.jury-card__placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+}
+
+.jury-card__placeholder--large {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg-alt);
+    border: 1px dashed var(--color-border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+}
+
+/* ============================================
+   PRIZE GRID (Giuria page)
+   ============================================ */
+.prizes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.prize-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-card);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.prize-card:hover {
+    border-color: var(--color-accent-dark);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.prize-card__icon {
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.prize-card__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.prize-card__desc {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .prizes-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ============================================
