@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -67,13 +68,15 @@
         </div>
     </div>
 
+    <main id="main-content">
+
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
             <h1 class="page-hero__title">Box Office</h1>
             <p class="page-hero__subtitle">Buy your tickets for the XXIV Edition</p>
-            <nav class="page-hero__breadcrumb">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html">Home</a>
                 <span>/</span>
                 <span>Box Office</span>
@@ -99,9 +102,9 @@
                         <li>Unnumbered seating</li>
                         <li>Available online and on-site</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Buy ticket</a>
+                    <a href="#" class="ticket-card__cta">Buy now</a>
                 </div>
-                <div class="ticket-card ticket-card--featured" data-badge="Recommended">
+                <div class="ticket-card ticket-card--featured">
                     <div class="ticket-card__header">
                         <h3 class="ticket-card__type">Daily Pass</h3>
                         <div class="ticket-card__price">&euro;20</div>
@@ -113,7 +116,7 @@
                         <li>Entry to special events of the day</li>
                         <li>Available online and on-site</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Buy pass</a>
+                    <a href="#" class="ticket-card__cta">Buy now</a>
                 </div>
                 <div class="ticket-card">
                     <div class="ticket-card__header">
@@ -127,7 +130,7 @@
                         <li>Entry to masterclasses and meetings</li>
                         <li>Complimentary official festival bag</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Buy pass</a>
+                    <a href="#" class="ticket-card__cta">Buy now</a>
                 </div>
             </div>
         </div>
@@ -258,6 +261,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
@@ -300,13 +305,14 @@
             <div class="footer__bottom">
                 <p>&copy; 2026 B.A. Film Festival &mdash; Busto Arsizio. All rights reserved.</p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
-                    <a href="#">Legal Notice</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                    <a href="legal.html">Legal Notice</a>
                 </div>
             </div>
         </div>
     </footer>
+
 
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
@@ -318,7 +324,6 @@
             </div>
         </div>
     </div>
-
     <script src="../js/main.js"></script>
 </body>
 </html>

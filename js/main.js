@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Countdown timer ---
     const festivalDate = new Date('2026-03-21T09:00:00').getTime();
+    let countdownInterval = null;
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -66,12 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (hoursEl) hoursEl.textContent = '00';
             if (minutesEl) minutesEl.textContent = '00';
             if (secondsEl) secondsEl.textContent = '00';
+            if (countdownInterval) clearInterval(countdownInterval);
         }
     }
 
     if (document.getElementById('days')) {
         updateCountdown();
-        setInterval(updateCountdown, 1000);
+        countdownInterval = setInterval(updateCountdown, 1000);
     }
 
     // --- Editions Slider ---
@@ -231,6 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- i18n helper ---
+    const isEnglish = document.documentElement.lang === 'en';
+
     // --- Newsletter Form ---
     const newsletterForms = document.querySelectorAll('.newsletter__form');
 
@@ -242,13 +247,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (input && input.value && input.validity.valid) {
                 const originalText = btn.textContent;
-                btn.textContent = 'Iscritto!';
+                btn.textContent = isEnglish ? 'Subscribed!' : 'Iscritto!';
                 btn.style.background = '#2d6a4f';
+                btn.disabled = true;
                 input.value = '';
 
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.background = '';
+                    btn.disabled = false;
                 }, 3000);
             }
         });
@@ -264,13 +271,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (contactForm.checkValidity()) {
                 const originalText = btn.textContent;
-                btn.textContent = 'Messaggio inviato!';
+                btn.textContent = isEnglish ? 'Message sent!' : 'Messaggio inviato!';
                 btn.style.background = '#2d6a4f';
+                btn.disabled = true;
                 contactForm.reset();
 
                 setTimeout(() => {
                     btn.textContent = originalText;
                     btn.style.background = '';
+                    btn.disabled = false;
                 }, 3000);
             } else {
                 contactForm.reportValidity();

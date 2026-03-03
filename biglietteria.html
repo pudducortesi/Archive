@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -67,13 +68,15 @@
         </div>
     </div>
 
+    <main id="main-content">
+
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
             <h1 class="page-hero__title">Biglietteria</h1>
             <p class="page-hero__subtitle">Acquista i tuoi biglietti per la XXIV Edizione</p>
-            <nav class="page-hero__breadcrumb">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html">Home</a>
                 <span>/</span>
                 <span>Biglietteria</span>
@@ -99,9 +102,9 @@
                         <li>Posto non numerato</li>
                         <li>Acquistabile online e in loco</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Acquista biglietto</a>
+                    <a href="#" class="ticket-card__cta">Acquista</a>
                 </div>
-                <div class="ticket-card ticket-card--featured" data-badge="Consigliato">
+                <div class="ticket-card ticket-card--featured">
                     <div class="ticket-card__header">
                         <h3 class="ticket-card__type">Abbonamento Giornaliero</h3>
                         <div class="ticket-card__price">&euro;20</div>
@@ -113,7 +116,7 @@
                         <li>Ingresso agli eventi speciali del giorno</li>
                         <li>Acquistabile online e in loco</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Acquista abbonamento</a>
+                    <a href="#" class="ticket-card__cta">Acquista</a>
                 </div>
                 <div class="ticket-card">
                     <div class="ticket-card__header">
@@ -127,7 +130,7 @@
                         <li>Ingresso alle masterclass e incontri</li>
                         <li>Bag ufficiale del festival in omaggio</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Acquista abbonamento</a>
+                    <a href="#" class="ticket-card__cta">Acquista</a>
                 </div>
             </div>
         </div>
@@ -258,6 +261,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
@@ -308,6 +313,7 @@
         </div>
     </footer>
 
+
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-banner__container">
@@ -318,7 +324,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/main.js"></script>
 </body>
 </html>

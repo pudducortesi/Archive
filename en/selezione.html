@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -67,13 +68,15 @@
         </div>
     </div>
 
+    <main id="main-content">
+
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
-            <nav class="page-hero__breadcrumb" aria-label="Breadcrumb">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html">Home</a>
-                <span class="page-hero__breadcrumb-sep">&rsaquo;</span>
+                <span class="page-hero__breadcrumb-sep">/</span>
                 <span>Official Selection</span>
             </nav>
             <h1 class="page-hero__title">Official Selection</h1>
@@ -374,6 +377,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
@@ -416,13 +421,14 @@
             <div class="footer__bottom">
                 <p>&copy; 2026 B.A. Film Festival &mdash; Busto Arsizio. All rights reserved.</p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
-                    <a href="#">Legal Notice</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                    <a href="legal.html">Legal Notice</a>
                 </div>
             </div>
         </div>
     </footer>
+
 
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
@@ -434,7 +440,6 @@
             </div>
         </div>
     </div>
-
     <script src="../js/main.js"></script>
 </body>
 </html>

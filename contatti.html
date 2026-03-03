@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
 
     <!-- Top Bar -->
     <div class="top-bar">
@@ -67,13 +68,15 @@
         </div>
     </div>
 
+    <main id="main-content">
+
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
             <h1 class="page-hero__title">Contatti</h1>
             <p class="page-hero__subtitle">Siamo qui per aiutarti</p>
-            <nav class="page-hero__breadcrumb">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html">Home</a>
                 <span>/</span>
                 <span>Contatti</span>
@@ -216,6 +219,8 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__container">
@@ -266,6 +271,7 @@
         </div>
     </footer>
 
+
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-banner__container">
@@ -276,7 +282,6 @@
             </div>
         </div>
     </div>
-
     <script src="js/main.js"></script>
 </body>
 </html>
