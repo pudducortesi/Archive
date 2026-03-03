@@ -99,9 +99,9 @@
                         <li>Posto non numerato</li>
                         <li>Acquistabile online e in loco</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Acquista</a>
+                    <a href="#" class="ticket-card__cta">Acquista biglietto</a>
                 </div>
-                <div class="ticket-card ticket-card--featured">
+                <div class="ticket-card ticket-card--featured" data-badge="Consigliato">
                     <div class="ticket-card__header">
                         <h3 class="ticket-card__type">Abbonamento Giornaliero</h3>
                         <div class="ticket-card__price">&euro;20</div>
@@ -113,7 +113,7 @@
                         <li>Ingresso agli eventi speciali del giorno</li>
                         <li>Acquistabile online e in loco</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Acquista</a>
+                    <a href="#" class="ticket-card__cta">Acquista abbonamento</a>
                 </div>
                 <div class="ticket-card">
                     <div class="ticket-card__header">
@@ -127,7 +127,7 @@
                         <li>Ingresso alle masterclass e incontri</li>
                         <li>Bag ufficiale del festival in omaggio</li>
                     </ul>
-                    <a href="#" class="ticket-card__cta">Acquista</a>
+                    <a href="#" class="ticket-card__cta">Acquista abbonamento</a>
                 </div>
             </div>
         </div>
@@ -300,13 +300,24 @@
             <div class="footer__bottom">
                 <p>&copy; 2026 B.A. Film Festival &mdash; Busto Arsizio. Tutti i diritti riservati.</p>
                 <div class="footer__legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Cookie Policy</a>
-                    <a href="#">Note legali</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                    <a href="note-legali.html">Note legali</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Questo sito utilizza cookie tecnici e, previo tuo consenso, cookie di profilazione per migliorare la tua esperienza di navigazione. Per saperne di pi&ugrave; consulta la nostra <a href="privacy.html">Privacy Policy</a> e la <a href="cookie.html">Cookie Policy</a>.</p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accetta</button>
+                <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieReject">Rifiuta</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

@@ -278,6 +278,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Cookie Banner ---
+    const cookieBanner = document.getElementById('cookieBanner');
+    if (cookieBanner && !localStorage.getItem('baff_cookie_consent')) {
+        setTimeout(() => {
+            cookieBanner.classList.add('visible');
+        }, 1500);
+
+        const acceptBtn = document.getElementById('cookieAccept');
+        const rejectBtn = document.getElementById('cookieReject');
+
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('baff_cookie_consent', 'accepted');
+                cookieBanner.classList.remove('visible');
+            });
+        }
+
+        if (rejectBtn) {
+            rejectBtn.addEventListener('click', () => {
+                localStorage.setItem('baff_cookie_consent', 'rejected');
+                cookieBanner.classList.remove('visible');
+            });
+        }
+    }
+
     // --- Scroll animations (Intersection Observer) ---
     const fadeElements = document.querySelectorAll('.featured__main, .featured__card, .program__card, .info__card, .countdown__container, .newsletter__container, .stats__item, .timeline__item, .guest-card, .ticket-card');
 
