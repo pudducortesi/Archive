@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate beautiful placeholder images for the BAFF website."""
+"""Generate beautiful, vibrant placeholder images for the BAFF website."""
 
 import os
 import math
@@ -9,516 +9,490 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 OUT = os.path.join(os.path.dirname(__file__), "images")
 os.makedirs(OUT, exist_ok=True)
 
-# Brand colors
 RED = (204, 0, 0)
-DARK_RED = (140, 0, 0)
-BLACK = (26, 26, 26)
-NEAR_BLACK = (15, 15, 18)
-DARK_GREY = (35, 35, 40)
-WHITE = (255, 255, 255)
-WARM_GREY = (180, 175, 165)
 
 
-def lerp_color(c1, c2, t):
+def lerp(c1, c2, t):
     return tuple(int(c1[i] + (c2[i] - c1[i]) * t) for i in range(3))
 
 
-def draw_gradient(draw, w, h, c1, c2, direction="vertical"):
-    for i in range(h if direction == "vertical" else w):
-        t = i / (h if direction == "vertical" else w)
-        c = lerp_color(c1, c2, t)
-        if direction == "vertical":
-            draw.line([(0, i), (w, i)], fill=c)
-        else:
-            draw.line([(i, 0), (i, h)], fill=c)
+def get_font(size):
+    for p in [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    ]:
+        try:
+            return ImageFont.truetype(p, size)
+        except:
+            pass
+    return ImageFont.load_default()
 
 
-def draw_radial_gradient(img, cx, cy, radius, c_inner, c_outer):
-    pixels = img.load()
+def get_font_light(size):
+    for p in [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-ExtraLight.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+    ]:
+        try:
+            return ImageFont.truetype(p, size)
+        except:
+            pass
+    return ImageFont.load_default()
+
+
+def add_grain(img, amount=12, seed=42):
+    """Add film grain texture."""
+    rng = random.Random(seed)
+    px = img.load()
     w, h = img.size
     for y in range(h):
         for x in range(w):
-            dist = math.sqrt((x - cx) ** 2 + (y - cy) ** 2)
-            t = min(dist / radius, 1.0)
-            t = t * t  # ease
-            c = lerp_color(c_inner, c_outer, t)
-            # blend with existing
-            old = pixels[x, y][:3]
-            alpha = 0.6
-            blended = tuple(int(old[i] * (1 - alpha) + c[i] * alpha) for i in range(3))
-            pixels[x, y] = blended
-
-
-def add_noise(img, amount=8):
-    pixels = img.load()
-    w, h = img.size
-    rng = random.Random(42)
-    for y in range(0, h, 2):
-        for x in range(0, w, 2):
             n = rng.randint(-amount, amount)
-            r, g, b = pixels[x, y][:3]
-            pixels[x, y] = (max(0, min(255, r + n)), max(0, min(255, g + n)), max(0, min(255, b + n)))
+            r, g, b = px[x, y][:3]
+            px[x, y] = (
+                max(0, min(255, r + n)),
+                max(0, min(255, g + n)),
+                max(0, min(255, b + n)),
+            )
 
 
-def draw_film_strip(draw, x, y, h, alpha_color):
-    """Draw a subtle film strip element."""
-    strip_w = 40
-    hole_size = 8
-    spacing = 16
-    # Main strip
-    draw.rectangle([x, y, x + strip_w, y + h], fill=alpha_color)
-    # Sprocket holes
-    for i in range(y + 8, y + h - 8, spacing):
-        draw.rectangle([x + 4, i, x + 4 + hole_size, i + hole_size], fill=(0, 0, 0))
-        draw.rectangle([x + strip_w - 4 - hole_size, i, x + strip_w - 4, i + hole_size], fill=(0, 0, 0))
-
-
-def get_font(size):
-    try:
-        return ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", size)
-    except:
-        try:
-            return ImageFont.truetype("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf", size)
-        except:
-            return ImageFont.load_default()
-
-
-def get_font_regular(size):
-    try:
-        return ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", size)
-    except:
-        try:
-            return ImageFont.truetype("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf", size)
-        except:
-            return ImageFont.load_default()
-
-
-# ============================================================
-# 1. HERO BACKGROUNDS
-# ============================================================
-
-def generate_hero_main():
-    """Main homepage hero - dark cinematic with red accent light."""
-    w, h = 1920, 1080
-    img = Image.new("RGB", (w, h), NEAR_BLACK)
-    draw = ImageDraw.Draw(img)
-
-    # Dark gradient base
-    draw_gradient(draw, w, h, (20, 18, 25), (8, 8, 12))
-
-    # Subtle red glow from bottom-left
+def vignette(img, strength=0.5):
+    """Apply vignette darkening at edges."""
+    px = img.load()
+    w, h = img.size
+    cx, cy = w / 2, h / 2
+    max_dist = math.sqrt(cx * cx + cy * cy)
     for y in range(h):
-        for x in range(0, w, 3):
-            dist = math.sqrt((x - w * 0.2) ** 2 + (y - h * 0.8) ** 2)
-            if dist < 800:
-                t = 1 - dist / 800
-                t = t * t * 0.15
-                r, g, b = img.getpixel((x, y))
-                img.putpixel((x, y), (min(255, int(r + 180 * t)), g, b))
+        for x in range(w):
+            d = math.sqrt((x - cx) ** 2 + (y - cy) ** 2) / max_dist
+            factor = 1.0 - d * d * strength
+            factor = max(0.15, factor)
+            r, g, b = px[x, y][:3]
+            px[x, y] = (int(r * factor), int(g * factor), int(b * factor))
 
-    # Film strip decoration on right
-    strip_color = (30, 28, 35)
-    draw_film_strip(draw, w - 120, 0, h, strip_color)
-    draw_film_strip(draw, w - 60, 0, h, (25, 23, 30))
 
-    # Subtle horizontal lines (cinema feel)
-    for y in range(0, h, 4):
-        if random.Random(y).random() < 0.03:
-            alpha = random.Random(y + 1).randint(5, 15)
-            draw.line([(0, y), (w, y)], fill=(255, 255, 255, alpha))
+def draw_smooth_gradient(img, c1, c2, angle_deg=0):
+    """Draw a smooth gradient at any angle."""
+    w, h = img.size
+    px = img.load()
+    angle = math.radians(angle_deg)
+    cos_a, sin_a = math.cos(angle), math.sin(angle)
+    # project corners to find range
+    corners = [(0, 0), (w, 0), (0, h), (w, h)]
+    projs = [x * cos_a + y * sin_a for x, y in corners]
+    p_min, p_max = min(projs), max(projs)
+    for y in range(h):
+        for x in range(w):
+            p = x * cos_a + y * sin_a
+            t = (p - p_min) / (p_max - p_min)
+            px[x, y] = lerp(c1, c2, t)
 
-    add_noise(img, 5)
-    img.save(os.path.join(OUT, "hero-main.jpg"), quality=85)
+
+def draw_bokeh(img, count=15, seed=0):
+    """Draw soft bokeh circles (bright, blurred, overlapping)."""
+    rng = random.Random(seed)
+    w, h = img.size
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    for _ in range(count):
+        cx = rng.randint(-50, w + 50)
+        cy = rng.randint(-50, h + 50)
+        r = rng.randint(20, 120)
+        alpha = rng.randint(15, 50)
+        color = (
+            rng.randint(200, 255),
+            rng.randint(180, 255),
+            rng.randint(150, 255),
+            alpha,
+        )
+        draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color)
+    overlay = overlay.filter(ImageFilter.GaussianBlur(radius=25))
+    img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"))
+
+
+def draw_light_rays(img, source_x, source_y, count=8, seed=0):
+    """Draw radiating light rays from a point."""
+    rng = random.Random(seed)
+    w, h = img.size
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    for i in range(count):
+        angle = rng.uniform(0, 2 * math.pi)
+        length = rng.randint(200, max(w, h))
+        spread = rng.uniform(0.03, 0.12)
+        ex1 = source_x + length * math.cos(angle - spread)
+        ey1 = source_y + length * math.sin(angle - spread)
+        ex2 = source_x + length * math.cos(angle + spread)
+        ey2 = source_y + length * math.sin(angle + spread)
+        alpha = rng.randint(8, 25)
+        draw.polygon(
+            [(source_x, source_y), (ex1, ey1), (ex2, ey2)],
+            fill=(255, 240, 200, alpha),
+        )
+    overlay = overlay.filter(ImageFilter.GaussianBlur(radius=15))
+    img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"))
+
+
+def draw_abstract_shapes(img, seed=0, count=6):
+    """Draw abstract geometric shapes."""
+    rng = random.Random(seed)
+    w, h = img.size
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    for _ in range(count):
+        shape = rng.choice(["circle", "ring", "line", "triangle"])
+        alpha = rng.randint(20, 60)
+        color = (
+            rng.randint(180, 255),
+            rng.randint(160, 255),
+            rng.randint(140, 255),
+            alpha,
+        )
+        if shape == "circle":
+            cx, cy = rng.randint(0, w), rng.randint(0, h)
+            r = rng.randint(20, 100)
+            draw.ellipse([cx - r, cy - r, cx + r, cy + r], fill=color)
+        elif shape == "ring":
+            cx, cy = rng.randint(0, w), rng.randint(0, h)
+            r = rng.randint(40, 150)
+            draw.ellipse(
+                [cx - r, cy - r, cx + r, cy + r],
+                outline=color,
+                width=rng.randint(2, 5),
+            )
+        elif shape == "line":
+            x1, y1 = rng.randint(0, w), rng.randint(0, h)
+            x2, y2 = rng.randint(0, w), rng.randint(0, h)
+            draw.line([(x1, y1), (x2, y2)], fill=color, width=rng.randint(1, 4))
+        elif shape == "triangle":
+            pts = [(rng.randint(0, w), rng.randint(0, h)) for _ in range(3)]
+            draw.polygon(pts, outline=color, fill=None)
+    overlay = overlay.filter(ImageFilter.GaussianBlur(radius=3))
+    img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"))
+
+
+# ============================================================
+# HERO BACKGROUNDS
+# ============================================================
+
+
+def gen_hero_main():
+    w, h = 1920, 1080
+    img = Image.new("RGB", (w, h))
+    draw_smooth_gradient(img, (15, 8, 30), (40, 5, 5), angle_deg=135)
+    # warm glow
+    draw_light_rays(img, w // 3, h, count=12, seed=1)
+    draw_bokeh(img, count=20, seed=2)
+    # film strip on right edge
+    draw = ImageDraw.Draw(img)
+    for i in range(0, h, 16):
+        draw.rectangle([w - 80, i, w - 42, i + 10], fill=(20, 15, 25))
+        draw.rectangle([w - 38, i, w, i + 10], fill=(20, 15, 25))
+    vignette(img, 0.7)
+    add_grain(img, 8, 1)
+    img.save(os.path.join(OUT, "hero-main.jpg"), quality=88)
     print("  hero-main.jpg")
 
 
-def generate_hero_page():
-    """Inner pages hero - dark cinematic."""
+def gen_hero_page():
     w, h = 1920, 600
-    img = Image.new("RGB", (w, h), NEAR_BLACK)
-    draw = ImageDraw.Draw(img)
-
-    # Gradient from dark to slightly lighter
-    draw_gradient(draw, w, h, (25, 22, 30), (12, 12, 16))
-
-    # Red accent line at bottom
-    for x in range(w):
-        t = abs(x - w / 2) / (w / 2)
-        intensity = int((1 - t) * 40)
-        for y_off in range(3):
-            r, g, b = img.getpixel((x, h - 4 + y_off))
-            img.putpixel((x, h - 4 + y_off), (min(255, r + intensity), g, b))
-
-    add_noise(img, 4)
-    img.save(os.path.join(OUT, "hero-page.jpg"), quality=85)
+    img = Image.new("RGB", (w, h))
+    draw_smooth_gradient(img, (20, 10, 35), (50, 8, 12), angle_deg=160)
+    draw_bokeh(img, count=12, seed=3)
+    draw_light_rays(img, w // 2, 0, count=6, seed=4)
+    vignette(img, 0.6)
+    add_grain(img, 6, 2)
+    img.save(os.path.join(OUT, "hero-page.jpg"), quality=88)
     print("  hero-page.jpg")
 
 
 # ============================================================
-# 2. NEWS / FEATURED IMAGES
+# NEWS IMAGES — vibrant, each with unique color
 # ============================================================
 
-NEWS_THEMES = [
-    ("Selezione Ufficiale", (180, 20, 20), (40, 10, 10)),
-    ("Masterclass", (20, 40, 80), (10, 15, 35)),
-    ("Biglietteria", (120, 80, 20), (40, 25, 8)),
-    ("Frontiere", (60, 20, 80), (20, 8, 35)),
-    ("Record iscrizioni", (20, 80, 60), (8, 30, 22)),
-    ("Primi Passi", (80, 60, 20), (30, 22, 8)),
-    ("Partnership", (40, 40, 80), (15, 15, 30)),
+NEWS_PALETTES = [
+    ((180, 30, 30), (60, 10, 40), 120),   # Warm red
+    ((30, 60, 120), (10, 20, 50), 45),     # Deep blue
+    ((140, 90, 20), (50, 25, 8), 170),     # Golden amber
+    ((80, 20, 100), (25, 8, 40), 100),     # Purple
+    ((20, 100, 80), (8, 35, 30), 60),      # Teal
+    ((100, 60, 20), (35, 20, 8), 140),     # Bronze
+    ((50, 50, 100), (18, 15, 40), 30),     # Indigo
 ]
 
 
-def generate_news_image(filename, theme_idx, w=800, h=500):
-    """Generate a cinema-themed news image."""
-    _, accent, dark = NEWS_THEMES[theme_idx % len(NEWS_THEMES)]
-
-    img = Image.new("RGB", (w, h), dark)
-    draw = ImageDraw.Draw(img)
-
-    # Base gradient
-    draw_gradient(draw, w, h, lerp_color(dark, (0, 0, 0), 0.3), dark)
-
-    # Geometric cinema elements
-    rng = random.Random(theme_idx * 17 + 3)
-
-    # Abstract circles (like film reels)
-    for _ in range(3):
-        cx = rng.randint(w // 4, w * 3 // 4)
-        cy = rng.randint(h // 4, h * 3 // 4)
-        radius = rng.randint(60, 180)
-        ring_color = lerp_color(accent, dark, 0.5)
-        for r in range(radius, radius - 4, -1):
-            draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=ring_color)
-
-    # Light beam effect
-    beam_x = rng.randint(w // 3, w * 2 // 3)
-    for y in range(h):
-        spread = y * 0.4
-        for x in range(max(0, int(beam_x - spread)), min(w, int(beam_x + spread))):
-            dist = abs(x - beam_x)
-            t = 1 - dist / max(spread, 1)
-            t = max(0, t) * 0.08
-            r, g, b = img.getpixel((x, y))
-            img.putpixel((x, y), (min(255, int(r + accent[0] * t)),
-                                   min(255, int(g + accent[1] * t)),
-                                   min(255, int(b + accent[2] * t))))
-
-    add_noise(img, 6)
-    img = img.filter(ImageFilter.GaussianBlur(radius=1))
-    img.save(os.path.join(OUT, filename), quality=82)
-    print(f"  {filename}")
-
-
-# ============================================================
-# 3. FILM POSTERS (portrait orientation)
-# ============================================================
-
-FILM_COLORS = [
-    # Italian competition (warm, earthy, passionate)
-    ((160, 40, 30), (30, 15, 12)),   # Deep red
-    ((40, 50, 90), (12, 15, 30)),    # Dark blue
-    ((100, 70, 30), (30, 20, 10)),   # Amber
-    ((50, 70, 50), (15, 22, 15)),    # Forest
-    ((80, 40, 70), (25, 12, 22)),    # Purple
-    ((30, 60, 80), (10, 20, 28)),    # Teal
-    # International competition (diverse, global)
-    ((70, 30, 30), (22, 10, 10)),    # Burgundy
-    ((30, 50, 70), (10, 18, 25)),    # Steel blue
-    ((60, 60, 30), (20, 20, 10)),    # Olive
-    ((70, 40, 60), (22, 13, 20)),    # Mauve
-    ((40, 70, 40), (13, 23, 13)),    # Green
-    ((80, 50, 20), (28, 18, 8)),     # Bronze
-    # Classics (warm sepia, vintage)
-    ((90, 70, 50), (30, 22, 16)),    # Sepia warm
-    ((70, 60, 50), (22, 20, 16)),    # Sepia cool
-    ((80, 65, 45), (26, 21, 14)),    # Vintage
-    ((75, 55, 40), (24, 18, 13)),    # Old film
-]
-
-
-def generate_film_poster(filename, idx, title="", w=400, h=600):
-    """Generate an artistic film poster placeholder."""
-    accent, dark = FILM_COLORS[idx % len(FILM_COLORS)]
-
-    img = Image.new("RGB", (w, h), dark)
-    draw = ImageDraw.Draw(img)
-
-    rng = random.Random(idx * 31 + 7)
-
-    # Diagonal gradient
-    for y in range(h):
-        for x in range(0, w, 2):
-            t = (x / w * 0.4 + y / h * 0.6)
-            c = lerp_color(dark, accent, t * 0.7)
-            img.putpixel((x, y), c)
-            if x + 1 < w:
-                img.putpixel((x + 1, y), c)
-
-    # Abstract geometric shapes
-    for _ in range(rng.randint(2, 5)):
-        shape_type = rng.choice(["line", "circle", "rect"])
-        shape_color = lerp_color(accent, (200, 200, 200), rng.uniform(0.2, 0.5))
-        shape_color = tuple(max(0, min(255, c)) for c in shape_color)
-
-        if shape_type == "line":
-            x1, y1 = rng.randint(0, w), rng.randint(0, h)
-            x2, y2 = rng.randint(0, w), rng.randint(0, h)
-            draw.line([(x1, y1), (x2, y2)], fill=shape_color, width=rng.randint(1, 3))
-        elif shape_type == "circle":
-            cx, cy = rng.randint(0, w), rng.randint(0, h)
-            r = rng.randint(30, 120)
-            draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=shape_color, width=2)
-        else:
-            x1, y1 = rng.randint(0, w), rng.randint(0, h)
-            x2, y2 = x1 + rng.randint(40, 200), y1 + rng.randint(40, 200)
-            draw.rectangle([x1, y1, x2, y2], outline=shape_color, width=1)
-
-    # Spotlight / vignette
-    for y in range(h):
-        for x in range(0, w, 2):
-            # Vignette effect
-            dx = (x - w / 2) / (w / 2)
-            dy = (y - h / 2) / (h / 2)
-            vignette = 1 - (dx * dx + dy * dy) * 0.3
-            vignette = max(0.4, min(1.0, vignette))
-            r, g, b = img.getpixel((x, y))
-            img.putpixel((x, y), (int(r * vignette), int(g * vignette), int(b * vignette)))
-            if x + 1 < w:
-                r2, g2, b2 = img.getpixel((x + 1, y))
-                img.putpixel((x + 1, y), (int(r2 * vignette), int(g2 * vignette), int(b2 * vignette)))
-
-    # Film title text at bottom
-    if title:
-        font = get_font(20)
-        font_sm = get_font_regular(13)
-        # Dark overlay at bottom
-        for y_bar in range(h - 100, h):
-            t = (y_bar - (h - 100)) / 100
-            for x_bar in range(w):
-                r, g, b = img.getpixel((x_bar, y_bar))
-                darken = 0.3 + 0.7 * (1 - t * 0.5)
-                img.putpixel((x_bar, y_bar), (int(r * (1 - t * 0.6)), int(g * (1 - t * 0.6)), int(b * (1 - t * 0.6))))
-
-        draw = ImageDraw.Draw(img)  # refresh draw
-        bbox = draw.textbbox((0, 0), title, font=font)
-        tw = bbox[2] - bbox[0]
-        draw.text(((w - tw) // 2, h - 55), title, fill=(240, 240, 240), font=font)
-
-    add_noise(img, 5)
+def gen_news(filename, idx, w=800, h=500):
+    c1, c2, angle = NEWS_PALETTES[idx % len(NEWS_PALETTES)]
+    img = Image.new("RGB", (w, h))
+    draw_smooth_gradient(img, c1, c2, angle_deg=angle)
+    draw_bokeh(img, count=10 + idx * 2, seed=idx * 7)
+    draw_light_rays(img, w // 2, h // 3, count=5, seed=idx * 11)
+    draw_abstract_shapes(img, seed=idx * 13, count=4)
+    vignette(img, 0.5)
+    add_grain(img, 10, idx)
     img = img.filter(ImageFilter.GaussianBlur(radius=0.5))
-    img.save(os.path.join(OUT, filename), quality=82)
+    img.save(os.path.join(OUT, filename), quality=84)
     print(f"  {filename}")
 
 
 # ============================================================
-# 4. PORTRAIT IMAGES
+# FILM POSTERS — artistic, portrait, unique per film
+# ============================================================
+
+FILM_PALETTES = [
+    # Italian
+    ((200, 50, 30), (40, 12, 15), 130),
+    ((40, 70, 140), (12, 20, 45), 50),
+    ((160, 100, 30), (45, 28, 10), 165),
+    ((60, 90, 60), (18, 28, 18), 90),
+    ((120, 50, 90), (35, 15, 28), 110),
+    ((40, 100, 130), (12, 30, 40), 70),
+    # International
+    ((130, 40, 50), (38, 12, 15), 140),
+    ((50, 70, 110), (15, 22, 35), 55),
+    ((90, 90, 40), (28, 28, 12), 95),
+    ((110, 50, 80), (32, 15, 24), 120),
+    ((50, 100, 60), (15, 32, 18), 80),
+    ((130, 70, 30), (40, 22, 10), 150),
+    # Classics — warm sepia tones
+    ((160, 130, 90), (50, 38, 25), 135),
+    ((140, 110, 80), (42, 32, 22), 45),
+    ((150, 120, 85), (46, 35, 24), 120),
+    ((135, 105, 75), (40, 30, 20), 60),
+]
+
+
+def gen_film_poster(filename, idx, title, w=400, h=600):
+    c1, c2, angle = FILM_PALETTES[idx % len(FILM_PALETTES)]
+    img = Image.new("RGB", (w, h))
+    draw_smooth_gradient(img, c1, c2, angle_deg=angle)
+    draw_bokeh(img, count=8, seed=idx * 17 + 3)
+    draw_abstract_shapes(img, seed=idx * 23 + 5, count=5)
+    draw_light_rays(img, w // 2, h // 4, count=4, seed=idx * 19)
+    vignette(img, 0.55)
+
+    # Title at bottom with dark band
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(overlay)
+    for yy in range(h - 90, h):
+        a = int(180 * ((yy - (h - 90)) / 90))
+        d.line([(0, yy), (w, yy)], fill=(0, 0, 0, a))
+    img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+    draw = ImageDraw.Draw(img)
+    font = get_font(22)
+    bbox = draw.textbbox((0, 0), title, font=font)
+    tw = bbox[2] - bbox[0]
+    draw.text(
+        ((w - tw) // 2, h - 45),
+        title,
+        fill=(255, 255, 255),
+        font=font,
+    )
+
+    # Small "BAFF 2026" badge
+    font_sm = get_font_light(11)
+    draw.text((15, 15), "BAFF 2026", fill=(255, 255, 255, 180), font=font_sm)
+
+    add_grain(img, 8, idx + 100)
+    img.save(os.path.join(OUT, filename), quality=84)
+    print(f"  {filename}")
+
+
+# ============================================================
+# PORTRAITS — vibrant backgrounds with large initials
 # ============================================================
 
 PORTRAIT_PALETTES = [
-    ((100, 30, 25), (30, 12, 10)),   # Warm dark
-    ((30, 50, 80), (10, 18, 28)),    # Cool blue
-    ((60, 50, 40), (20, 18, 14)),    # Neutral warm
-    ((50, 30, 60), (18, 10, 22)),    # Purple
-    ((40, 60, 50), (14, 22, 18)),    # Sage
-    ((70, 50, 30), (24, 18, 10)),    # Amber warm
-    ((35, 45, 65), (12, 16, 24)),    # Steel
-    ((55, 35, 45), (20, 12, 16)),    # Mauve
-    ((45, 55, 45), (16, 20, 16)),    # Green
-    ((65, 45, 35), (22, 16, 12)),    # Copper
-    ((40, 40, 60), (14, 14, 22)),    # Indigo
-    ((50, 40, 30), (18, 14, 10)),    # Brown
-    ((60, 30, 40), (22, 10, 14)),    # Rose
-    ((35, 55, 55), (12, 20, 20)),    # Teal
-    ((55, 45, 50), (20, 16, 18)),    # Dusty
-    ((45, 35, 55), (16, 12, 20)),    # Violet
-    ((60, 55, 35), (22, 20, 12)),    # Gold
-    ((40, 50, 40), (14, 18, 14)),    # Forest
-    ((50, 35, 35), (18, 12, 12)),    # Brick
-    ((35, 40, 55), (12, 14, 20)),    # Navy
+    ((180, 60, 40), (55, 15, 12), 135),    # Terracotta
+    ((45, 80, 140), (12, 25, 45), 50),      # Ocean blue
+    ((120, 90, 50), (38, 28, 15), 110),     # Warm earth
+    ((90, 45, 110), (28, 14, 35), 70),      # Amethyst
+    ((55, 110, 80), (16, 34, 24), 130),     # Emerald
+    ((140, 80, 35), (42, 24, 10), 160),     # Copper
+    ((50, 65, 120), (15, 20, 38), 40),      # Slate blue
+    ((110, 55, 75), (34, 16, 22), 100),     # Dusty rose
+    ((65, 100, 65), (20, 32, 20), 85),      # Sage green
+    ((130, 70, 45), (40, 20, 13), 145),     # Sienna
+    ((60, 60, 110), (18, 18, 35), 55),      # Twilight
+    ((100, 50, 50), (30, 15, 15), 120),     # Brick
+    ((75, 45, 95), (22, 13, 28), 75),       # Plum
+    ((50, 90, 100), (15, 28, 30), 65),      # Teal
+    ((95, 75, 55), (28, 22, 16), 95),       # Hazelnut
+    ((70, 55, 100), (20, 16, 30), 50),      # Iris
+    ((120, 95, 45), (36, 28, 13), 140),     # Goldenrod
+    ((55, 85, 60), (16, 26, 18), 80),       # Forest
+    ((100, 55, 55), (30, 16, 16), 110),     # Clay
+    ((50, 70, 95), (15, 20, 28), 60),       # Steel
 ]
 
 
-def generate_portrait(filename, initials, idx, w=400, h=500):
-    """Generate a professional portrait placeholder with initials."""
-    accent, dark = PORTRAIT_PALETTES[idx % len(PORTRAIT_PALETTES)]
+def gen_portrait(filename, initials, idx, w=400, h=500):
+    c1, c2, angle = PORTRAIT_PALETTES[idx % len(PORTRAIT_PALETTES)]
+    img = Image.new("RGB", (w, h))
+    draw_smooth_gradient(img, c1, c2, angle_deg=angle)
 
-    img = Image.new("RGB", (w, h), dark)
+    # Rich light effect in center-upper area
+    draw_light_rays(img, w // 2, h // 3, count=6, seed=idx * 31)
+    draw_bokeh(img, count=8, seed=idx * 37)
+
+    # Bright circular glow where "face" would be
+    overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    d = ImageDraw.Draw(overlay)
+    cx, cy = w // 2, h * 2 // 5
+    for r in range(180, 0, -1):
+        a = int(35 * (1 - r / 180))
+        bright = lerp(c1, (255, 240, 220), 0.4)
+        d.ellipse(
+            [cx - r, cy - r, cx + r, cy + r],
+            fill=(bright[0], bright[1], bright[2], a),
+        )
+    overlay = overlay.filter(ImageFilter.GaussianBlur(radius=30))
+    img = Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB")
+
+    vignette(img, 0.5)
+
+    # Large initials with shadow
     draw = ImageDraw.Draw(img)
+    font = get_font(90)
+    bbox = draw.textbbox((0, 0), initials, font=font)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    tx, ty = (w - tw) // 2, (h - th) // 2 - 15
+    # shadow
+    draw.text((tx + 3, ty + 3), initials, fill=(0, 0, 0, 80), font=font)
+    # main
+    draw.text((tx, ty), initials, fill=(255, 255, 255), font=font)
 
-    # Gradient background
-    for y in range(h):
-        t = y / h
-        c = lerp_color(lerp_color(dark, accent, 0.3), dark, t * 0.8)
-        draw.line([(0, y), (w, y)], fill=c)
-
-    # Subtle circular highlight (where face would be)
-    cx, cy = w // 2, h // 2 - 30
-    for y in range(h):
-        for x in range(0, w, 2):
-            dist = math.sqrt((x - cx) ** 2 + (y - cy) ** 2)
-            if dist < 180:
-                t = 1 - dist / 180
-                t = t * t * 0.25
-                r, g, b = img.getpixel((x, y))
-                img.putpixel((x, y), (min(255, int(r + accent[0] * t * 2)),
-                                       min(255, int(g + accent[1] * t * 2)),
-                                       min(255, int(b + accent[2] * t * 2))))
-                if x + 1 < w:
-                    r2, g2, b2 = img.getpixel((x + 1, y))
-                    img.putpixel((x + 1, y), (min(255, int(r2 + accent[0] * t * 2)),
-                                               min(255, int(g2 + accent[1] * t * 2)),
-                                               min(255, int(b2 + accent[2] * t * 2))))
-
-    # Large initials in center
-    font_large = get_font(72)
-    bbox = draw.textbbox((0, 0), initials, font=font_large)
-    tw = bbox[2] - bbox[0]
-    th = bbox[3] - bbox[1]
-    text_color = lerp_color(accent, (220, 220, 220), 0.6)
-    draw.text(((w - tw) // 2, (h - th) // 2 - 20), initials, fill=text_color, font=font_large)
-
-    # Subtle border
-    draw.rectangle([0, 0, w - 1, h - 1], outline=lerp_color(accent, dark, 0.7), width=1)
-
-    add_noise(img, 4)
-    img.save(os.path.join(OUT, filename), quality=82)
+    add_grain(img, 8, idx + 200)
+    img.save(os.path.join(OUT, filename), quality=84)
     print(f"  {filename}")
 
 
 # ============================================================
-# 5. PAST EDITION IMAGES
+# EDITIONS — atmospheric with bold year
 # ============================================================
 
-def generate_edition_image(filename, year, idx, w=600, h=400):
-    """Generate a past edition atmospheric image."""
+
+def gen_edition(filename, year, idx, w=600, h=400):
     rng = random.Random(year)
+    h_shift = (year - 2014) * 45
+    r = int(80 + 60 * math.sin(math.radians(h_shift)))
+    g = int(50 + 40 * math.sin(math.radians(h_shift + 120)))
+    b = int(70 + 50 * math.sin(math.radians(h_shift + 240)))
+    c1 = (r, g, b)
+    c2 = (r // 3, g // 3, b // 3)
 
-    # Each year gets a unique color
-    hue_shift = (year - 2015) * 30
-    r = int(50 + 30 * math.sin(math.radians(hue_shift)))
-    g = int(30 + 20 * math.sin(math.radians(hue_shift + 120)))
-    b = int(40 + 25 * math.sin(math.radians(hue_shift + 240)))
-    accent = (r, g, b)
-    dark = (r // 3, g // 3, b // 3)
+    img = Image.new("RGB", (w, h))
+    draw_smooth_gradient(img, c1, c2, angle_deg=rng.randint(30, 160))
+    draw_bokeh(img, count=10, seed=year)
+    draw_light_rays(img, w // 2, h // 2, count=5, seed=year + 1)
+    vignette(img, 0.45)
 
-    img = Image.new("RGB", (w, h), dark)
+    # Bold year
     draw = ImageDraw.Draw(img)
+    font_big = get_font(140)
+    txt = str(year)
+    bbox = draw.textbbox((0, 0), txt, font=font_big)
+    tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
+    tx, ty = (w - tw) // 2, (h - th) // 2 - 10
+    draw.text((tx + 3, ty + 3), txt, fill=(0, 0, 0, 50), font=font_big)
+    draw.text((tx, ty), txt, fill=(255, 255, 255), font=font_big)
 
-    # Gradient
-    draw_gradient(draw, w, h, accent, dark)
+    # "BAFF" subtitle
+    font_sm = get_font_light(16)
+    bbox2 = draw.textbbox((0, 0), "B.A. FILM FESTIVAL", font=font_sm)
+    tw2 = bbox2[2] - bbox2[0]
+    draw.text(
+        ((w - tw2) // 2, ty + th + 8),
+        "B.A. FILM FESTIVAL",
+        fill=(255, 255, 255, 200),
+        font=font_sm,
+    )
 
-    # Year text large and faded
-    font_year = get_font(120)
-    bbox = draw.textbbox((0, 0), str(year), font=font_year)
-    tw = bbox[2] - bbox[0]
-    th = bbox[3] - bbox[1]
-    year_color = lerp_color(accent, (180, 180, 180), 0.4)
-    draw.text(((w - tw) // 2, (h - th) // 2 - 10), str(year), fill=year_color, font=font_year)
-
-    # Film strip decoration
-    strip_color = lerp_color(dark, (50, 50, 55), 0.5)
-    draw_film_strip(draw, 15, 0, h, strip_color)
-
-    # Vignette
-    for y in range(h):
-        for x in range(0, w, 3):
-            dx = (x - w / 2) / (w / 2)
-            dy = (y - h / 2) / (h / 2)
-            v = 1 - (dx * dx + dy * dy) * 0.35
-            v = max(0.3, min(1.0, v))
-            r, g, b = img.getpixel((x, y))
-            c = (int(r * v), int(g * v), int(b * v))
-            img.putpixel((x, y), c)
-            if x + 1 < w:
-                img.putpixel((x + 1, y), c)
-            if x + 2 < w:
-                img.putpixel((x + 2, y), c)
-
-    add_noise(img, 5)
-    img = img.filter(ImageFilter.GaussianBlur(radius=0.8))
-    img.save(os.path.join(OUT, filename), quality=82)
+    add_grain(img, 8, year + 300)
+    img.save(os.path.join(OUT, filename), quality=84)
     print(f"  {filename}")
 
 
 # ============================================================
-# MAIN — Generate everything
+# MAIN
 # ============================================================
 
 if __name__ == "__main__":
-    print("Generating BAFF website images...")
-    print()
+    print("Generating BAFF website images (v2 — vibrant)...\n")
 
-    # 1. Hero backgrounds
     print("[1/5] Hero backgrounds...")
-    generate_hero_main()
-    generate_hero_page()
+    gen_hero_main()
+    gen_hero_page()
 
-    # 2. News images
     print("\n[2/5] News images...")
-    generate_news_image("news-featured.jpg", 0, 800, 500)
+    gen_news("news-featured.jpg", 0, 800, 500)
     for i in range(6):
-        generate_news_image(f"news-{i+1}.jpg", i + 1, 600, 400)
+        gen_news(f"news-{i+1}.jpg", i + 1, 600, 400)
 
-    # 3. Film posters
     print("\n[3/5] Film posters...")
     films_it = [
-        "La luce che resta", "Cenere e vento", "Nessuno lo sapra",
-        "I giorni del silenzio", "Dove comincia il mare", "L'ultimo treno"
+        "La luce che resta",
+        "Cenere e vento",
+        "Nessuno lo saprà",
+        "I giorni del silenzio",
+        "Dove comincia il mare",
+        "L'ultimo treno",
     ]
     films_int = [
-        "Les heures perdues", "La orilla del rio", "Baram-ui sigan",
-        "Die stille Mauer", "El ultimo verano", "Hikari no kawa"
+        "Les heures perdues",
+        "La orilla del río",
+        "Baram-ui sigan",
+        "Die stille Mauer",
+        "El último verano",
+        "Hikari no kawa",
     ]
-    films_classic = ["Accattone", "I pugni in tasca", "Prima della rivoluzione", "Ossessione"]
+    films_classic = [
+        "Accattone",
+        "I pugni in tasca",
+        "Prima della rivoluzione",
+        "Ossessione",
+    ]
+    for i, t in enumerate(films_it):
+        gen_film_poster(f"film-it-{i+1}.jpg", i, t)
+    for i, t in enumerate(films_int):
+        gen_film_poster(f"film-int-{i+1}.jpg", i + 6, t)
+    for i, t in enumerate(films_classic):
+        gen_film_poster(f"film-classic-{i+1}.jpg", i + 12, t)
 
-    for i, title in enumerate(films_it):
-        generate_film_poster(f"film-it-{i+1}.jpg", i, title)
-    for i, title in enumerate(films_int):
-        generate_film_poster(f"film-int-{i+1}.jpg", i + 6, title)
-    for i, title in enumerate(films_classic):
-        generate_film_poster(f"film-classic-{i+1}.jpg", i + 12, title)
-
-    # 4. Portraits
     print("\n[4/5] Portraits...")
-
-    # Guests
     guests = [
-        ("guest-main.jpg", "MF", 0),   # Marco Ferretti
-        ("guest-1.jpg", "CB", 1),       # Chiara Beltrame
-        ("guest-2.jpg", "LS", 2),       # Luca Santoro
-        ("guest-3.jpg", "IM", 3),       # Isabelle Moreau
-        ("guest-4.jpg", "RM", 4),       # Roberto Mancuso
-        ("guest-5.jpg", "EV", 5),       # Elena Vicari
-        ("guest-6.jpg", "TL", 6),       # Thomas Lindqvist
-        ("guest-7.jpg", "GF", 7),       # Giulia Ferrara
-        ("guest-8.jpg", "DO", 8),       # David Okonkwo
+        ("guest-main.jpg", "MF", 0),
+        ("guest-1.jpg", "CB", 1),
+        ("guest-2.jpg", "LS", 2),
+        ("guest-3.jpg", "IM", 3),
+        ("guest-4.jpg", "RM", 4),
+        ("guest-5.jpg", "EV", 5),
+        ("guest-6.jpg", "TL", 6),
+        ("guest-7.jpg", "GF", 7),
+        ("guest-8.jpg", "DO", 8),
     ]
-    for fname, initials, idx in guests:
-        generate_portrait(fname, initials, idx)
-
-    # Jury
     jury = [
-        ("jury-president.jpg", "LM", 9),   # Lucia Mancini
-        ("jury-it-1.jpg", "MR", 10),       # Marco Rinaldi
-        ("jury-it-2.jpg", "SB", 11),       # Sofia Bellini
-        ("jury-it-3.jpg", "GF", 12),       # Giulia Ferretti
-        ("jury-it-4.jpg", "AB", 13),       # Alessandro Bianchi
-        ("jury-it-5.jpg", "CV", 14),       # Chiara Valentini
-        ("jury-int-1.jpg", "HD", 15),      # Helene Duval
-        ("jury-int-2.jpg", "CR", 16),      # Carlos Ruiz
-        ("jury-int-3.jpg", "AK", 17),      # Anna Kowalski
-        ("jury-int-4.jpg", "JN", 18),      # James Nwosu
-        ("jury-int-5.jpg", "YT", 19),      # Yuki Tanaka
+        ("jury-president.jpg", "LM", 9),
+        ("jury-it-1.jpg", "MR", 10),
+        ("jury-it-2.jpg", "SB", 11),
+        ("jury-it-3.jpg", "GF", 12),
+        ("jury-it-4.jpg", "AB", 13),
+        ("jury-it-5.jpg", "CV", 14),
+        ("jury-int-1.jpg", "HD", 15),
+        ("jury-int-2.jpg", "CR", 16),
+        ("jury-int-3.jpg", "AK", 17),
+        ("jury-int-4.jpg", "JN", 18),
+        ("jury-int-5.jpg", "YT", 19),
     ]
-    for fname, initials, idx in jury:
-        generate_portrait(fname, initials, idx)
+    for f, ini, i in guests:
+        gen_portrait(f, ini, i)
+    for f, ini, i in jury:
+        gen_portrait(f, ini, i)
 
-    # 5. Past editions
     print("\n[5/5] Past editions...")
-    editions = [(2025, 0), (2024, 1), (2022, 2), (2017, 3), (2016, 4)]
-    for year, idx in editions:
-        generate_edition_image(f"edition-{year}.jpg", year, idx)
+    for year, idx in [(2025, 0), (2024, 1), (2022, 2), (2017, 3), (2016, 4)]:
+        gen_edition(f"edition-{year}.jpg", year, idx)
 
-    print(f"\nDone! Generated images in {OUT}/")
-    print(f"Total files: {len(os.listdir(OUT))}")
+    print(f"\nDone! {len([f for f in os.listdir(OUT) if f.endswith('.jpg')])} images in {OUT}/")
