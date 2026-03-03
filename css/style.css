@@ -288,6 +288,8 @@ button {
     width: 28px;
     height: 28px;
     cursor: pointer;
+    position: relative;
+    z-index: 1002;
 }
 
 .header__burger span {
@@ -320,11 +322,8 @@ button {
     right: 0;
     bottom: 0;
     background: var(--color-bg);
-    z-index: 999;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    overflow-y: auto;
+    z-index: 1001;
+    overflow-y: scroll;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
     opacity: 0;
@@ -341,10 +340,13 @@ button {
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 1.5rem;
-    padding: 6rem 1.5rem 3rem;
-    margin: auto;
-    width: 100%;
+    padding: calc(var(--header-height) + 2rem) 1.5rem 3rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+    box-sizing: border-box;
 }
 
 .mobile-menu__link {
