@@ -361,7 +361,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #ffffff;
+    background: #0f0f12 url('../images/hero-main.jpg') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -372,9 +372,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at 15% 85%, rgba(184, 146, 46, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 15%, rgba(192, 57, 43, 0.03) 0%, transparent 40%);
+    background: rgba(0, 0, 0, 0.35);
     pointer-events: none;
 }
 
@@ -402,19 +400,23 @@ button {
     letter-spacing: -0.02em;
 }
 
+.hero__title {
+    color: #ffffff;
+}
+
 .hero__subtitle {
     font-family: var(--font-display);
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 400;
     font-style: italic;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0.75rem;
 }
 
 .hero__dates {
     font-size: 1rem;
     letter-spacing: 0.2em;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 400;
     margin-bottom: 2.5rem;
 }
@@ -436,7 +438,7 @@ button {
 .hero__cta:hover {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
-    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
+    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
 }
 
 .hero__scroll-indicator {
@@ -455,7 +457,7 @@ button {
     font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .hero__scroll-line {
@@ -772,7 +774,7 @@ button {
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(184, 146, 46, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(204, 0, 0, 0.05) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -1324,7 +1326,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #ffffff;
+    background: #0f0f12 url('../images/hero-page.jpg') center/cover no-repeat;
     margin-top: calc(var(--top-bar-height) + var(--header-height));
     overflow: hidden;
 }
@@ -1336,9 +1338,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background:
-        radial-gradient(ellipse at 15% 85%, rgba(184, 146, 46, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 15%, rgba(192, 57, 43, 0.03) 0%, transparent 40%);
+    background: rgba(0, 0, 0, 0.4);
     pointer-events: none;
 }
 
@@ -1355,13 +1355,13 @@ button {
     line-height: 1;
     margin-bottom: 0.75rem;
     letter-spacing: -0.02em;
-    color: var(--color-text);
+    color: #ffffff;
 }
 
 .page-hero__subtitle {
     font-size: 1rem;
     letter-spacing: 0.15em;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 400;
     text-transform: uppercase;
 }
@@ -1730,22 +1730,22 @@ button {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.55);
     margin-top: 1.25rem;
 }
 
 .page-hero__breadcrumb a {
-    color: var(--color-accent);
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 500;
     transition: color var(--transition);
 }
 
 .page-hero__breadcrumb a:hover {
-    color: var(--color-accent-hover);
+    color: #ffffff;
 }
 
 .page-hero__breadcrumb-separator {
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /* ============================================
@@ -2294,7 +2294,7 @@ button {
     border-color: var(--color-accent);
     border-width: 2px;
     background: var(--color-bg-card);
-    box-shadow: 0 4px 16px rgba(184, 146, 46, 0.12);
+    box-shadow: 0 4px 16px rgba(204, 0, 0, 0.12);
 }
 
 .ticket-card__badge {
@@ -2381,7 +2381,7 @@ button {
 .ticket-card__cta:hover {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
-    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
+    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -2472,7 +2472,7 @@ button {
 .cta-section__btn:hover {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
-    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
+    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
 }
 
 .cta-section__btn--secondary {
@@ -2984,7 +2984,7 @@ button {
 .accreditation-card__cta:hover {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
-    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
+    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
 }
 
 /* ============================================
@@ -4097,7 +4097,7 @@ button {
 
 .shop-checkout__submit:hover:not(:disabled) {
     background: var(--color-accent-hover);
-    box-shadow: 0 4px 12px rgba(184, 146, 46, 0.3);
+    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
 }
 
 .shop-checkout__submit:disabled {
@@ -4346,14 +4346,14 @@ textarea:focus-visible {
 /* Form focus states */
 .newsletter__input:focus {
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(184, 146, 46, 0.2);
+    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.2);
 }
 
 .contact-form__input:focus,
 .contact-form__select:focus,
 .contact-form__textarea:focus {
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(184, 146, 46, 0.2);
+    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.2);
 }
 
 /* Smooth page hero on subpages */
