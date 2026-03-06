@@ -2753,6 +2753,29 @@ button {
     border-color: var(--color-accent-hover);
 }
 
+.contact-form__checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.contact-form__checkbox-label input[type="checkbox"] {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-accent);
+}
+
+.contact-form__checkbox-label a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
 /* ============================================
    DIRECTIONS
    ============================================ */
