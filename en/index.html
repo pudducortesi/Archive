@@ -316,10 +316,16 @@
         <div class="newsletter__container">
             <h2 class="newsletter__title">Stay updated</h2>
             <p class="newsletter__text">Subscribe to our newsletter to receive all the latest news about the B.A. Film Festival.</p>
-            <form class="newsletter__form">
-                <input type="email" class="newsletter__input" placeholder="Your email" aria-label="Email">
+            <form class="newsletter__form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+                <input type="hidden" name="subject" value="Iscrizione Newsletter BAFF 2026">
+                <input type="hidden" name="from_name" value="BAFF Newsletter">
+                <input type="hidden" name="to" value="info@bafilmfestival.it">
+                <input type="checkbox" name="botcheck" style="display:none">
+                <input type="email" name="email" class="newsletter__input" placeholder="Your email" aria-label="Email" required>
                 <button type="submit" class="newsletter__btn">Subscribe</button>
             </form>
+            <p class="newsletter__success" style="display:none;">Subscribed! Thank you.</p>
         </div>
     </section>
 

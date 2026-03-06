@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- i18n helper ---
     const isEnglish = document.documentElement.lang === 'en';
 
-    // --- Newsletter Form ---
+    // --- Newsletter Form (Web3Forms) ---
     const newsletterForms = document.querySelectorAll('.newsletter__form');
 
     newsletterForms.forEach(form => {
@@ -244,20 +244,30 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const input = form.querySelector('.newsletter__input');
             const btn = form.querySelector('.newsletter__btn');
+            const successMsg = form.parentElement.querySelector('.newsletter__success');
 
-            if (input && input.value && input.validity.valid) {
-                const originalText = btn.textContent;
-                btn.textContent = isEnglish ? 'Subscribed!' : 'Iscritto!';
-                btn.style.background = '#2d6a4f';
-                btn.disabled = true;
-                input.value = '';
+            if (!input || !input.value || !input.validity.valid) return;
 
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
+            btn.disabled = true;
+            var data = new FormData(form);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+            }).then(function(res) {
+                return res.json();
+            }).then(function(json) {
+                if (json.success) {
+                    form.style.display = 'none';
+                    if (successMsg) successMsg.style.display = 'block';
+                } else {
                     btn.disabled = false;
-                }, 3000);
-            }
+                    alert(isEnglish ? 'Error. Please try again later.' : 'Errore. Riprova più tardi.');
+                }
+            }).catch(function() {
+                btn.disabled = false;
+                alert(isEnglish ? 'Network error. Please try again later.' : 'Errore di rete. Riprova più tardi.');
+            });
         });
     });
 

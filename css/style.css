@@ -1098,6 +1098,13 @@ button {
     border-color: var(--color-accent-hover);
 }
 
+.newsletter__success {
+    margin-top: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
 /* ============================================
    FOOTER
    ============================================ */
