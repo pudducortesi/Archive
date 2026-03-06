@@ -7,7 +7,7 @@
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         :root {
-            --sidebar-bg: #1a1a2e;
+            --sidebar-bg: #ffffff;
             --sidebar-w: 260px;
             --accent: #C41E3A;
             --accent-hover: #a3162e;
@@ -136,7 +136,7 @@
         .sidebar {
             width: var(--sidebar-w);
             background: var(--sidebar-bg);
-            color: #fff;
+            color: #1a1a1a;
             display: flex;
             flex-direction: column;
             position: fixed;
@@ -145,23 +145,17 @@
             bottom: 0;
             z-index: 200;
             transition: transform var(--transition);
+            border-right: 1px solid #e5e5e5;
         }
         .sidebar-brand {
-            padding: 1.5rem 1.25rem;
-            border-bottom: 1px solid rgba(255,255,255,.08);
+            padding: 1.25rem 1.25rem;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
         }
-        .sidebar-brand h2 {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: #fff;
-        }
-        .sidebar-brand span {
+        .sidebar-brand img {
+            height: 40px;
             display: block;
-            font-size: .75rem;
-            color: rgba(255,255,255,.45);
-            margin-top: .15rem;
-            font-weight: 500;
         }
         .sidebar-nav {
             flex: 1;
@@ -172,7 +166,7 @@
             font-size: .65rem;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            color: rgba(255,255,255,.3);
+            color: #999999;
             padding: 1rem 1.25rem .5rem;
             font-weight: 700;
         }
@@ -181,7 +175,7 @@
             align-items: center;
             gap: .75rem;
             padding: .7rem 1.25rem;
-            color: rgba(255,255,255,.6);
+            color: #1a1a1a;
             font-size: .9rem;
             font-weight: 500;
             cursor: pointer;
@@ -194,34 +188,32 @@
             position: relative;
         }
         .nav-item:hover {
-            color: #fff;
-            background: rgba(255,255,255,.06);
+            background: #f5f5f5;
         }
         .nav-item.active {
-            color: #fff;
-            background: rgba(196,30,58,.25);
+            color: var(--accent);
+            background: #fff0f0;
         }
         .nav-item.active::before {
             content: '';
             position: absolute;
             left: 0;
-            top: .35rem;
-            bottom: .35rem;
+            top: 0;
+            bottom: 0;
             width: 3px;
             background: var(--accent);
-            border-radius: 0 3px 3px 0;
         }
         .nav-item svg {
             width: 20px;
             height: 20px;
             flex-shrink: 0;
-            opacity: .7;
+            color: #666666;
         }
-        .nav-item.active svg { opacity: 1; }
+        .nav-item.active svg { color: var(--accent); }
         .nav-item .nav-badge {
             margin-left: auto;
-            background: rgba(255,255,255,.12);
-            color: rgba(255,255,255,.7);
+            background: #f0f0f0;
+            color: #666666;
             font-size: .7rem;
             font-weight: 700;
             padding: .1rem .45rem;
@@ -229,18 +221,6 @@
             min-width: 20px;
             text-align: center;
         }
-        .sidebar-footer {
-            padding: 1rem 1.25rem;
-            border-top: 1px solid rgba(255,255,255,.08);
-            font-size: .75rem;
-            color: rgba(255,255,255,.3);
-        }
-        .sidebar-footer a {
-            color: rgba(255,255,255,.45);
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-        .sidebar-footer a:hover { color: #fff; }
 
         /* ======================== MAIN AREA ======================== */
         .main {
@@ -831,8 +811,7 @@
     <!-- SIDEBAR -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-brand">
-            <h2>BAFF Admin</h2>
-            <span>XXIV Edizione</span>
+            <img src="../images/logo-baff-header.png" alt="BAFF Admin" style="height:40px;">
         </div>
         <nav class="sidebar-nav">
             <div class="sidebar-nav-label">Principale</div>
@@ -862,10 +841,6 @@
                 <span class="nav-badge" id="badge-sponsor">—</span>
             </button>
         </nav>
-        <div class="sidebar-footer">
-            <div>v2.0 — BAFF Admin</div>
-            <a href="../index.html" target="_blank">Vai al sito pubblico &rarr;</a>
-        </div>
     </aside>
 
     <!-- MAIN -->
