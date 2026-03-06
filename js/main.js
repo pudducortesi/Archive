@@ -271,8 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Contact Form ---
-    const contactForm = document.querySelector('.contact-form');
+    // --- Contact Form (legacy fallback for forms without Web3Forms) ---
+    const contactForm = document.querySelector('.contact-form:not([action])');
 
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {

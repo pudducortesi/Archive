@@ -86,8 +86,32 @@
         </div>
     </section>
 
-    <!-- Contact Info Cards -->
+    <!-- Quick Links -->
     <section class="page-section">
+        <div class="page-section__container">
+            <div class="contact-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <a href="accreditamenti.html" class="contact-card" style="text-decoration:none; cursor:pointer;">
+                    <div class="contact-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+                    </div>
+                    <h3 class="contact-card__title">Richiesta Accreditamento</h3>
+                    <p class="contact-card__text">Accrediti stampa, industria e studenti cinema per il BAFF 2026.</p>
+                    <p class="contact-card__note" style="color:var(--color-accent); font-weight:600;">Vai alla pagina &rarr;</p>
+                </a>
+                <a href="stampa.html" class="contact-card" style="text-decoration:none; cursor:pointer;">
+                    <div class="contact-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <h3 class="contact-card__title">Richiesta Stampa</h3>
+                    <p class="contact-card__text">Interviste, materiali press kit e richieste media per il festival.</p>
+                    <p class="contact-card__note" style="color:var(--color-accent); font-weight:600;">Vai alla pagina &rarr;</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="page-section page-section--alt">
         <div class="page-section__container">
             <div class="contact-grid">
                 <div class="contact-card">
@@ -118,35 +142,53 @@
     </section>
 
     <!-- Contact Form -->
-    <section class="page-section page-section--alt">
+    <section class="page-section">
         <div class="page-section__container">
             <h2 class="page-section__title">Scrivici</h2>
             <p class="page-section__intro">Compila il modulo sottostante e ti risponderemo il prima possibile.</p>
-            <form class="contact-form">
+
+            <div id="contact-success" style="display:none; text-align:center; padding:3rem 1rem;">
+                <div style="font-size:3rem; margin-bottom:1rem;">&#10003;</div>
+                <h3 style="margin-bottom:0.5rem;">Messaggio inviato</h3>
+                <p>Ti risponderemo presto.</p>
+            </div>
+
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+                <input type="hidden" name="subject" value="Contatto BAFF 2026">
+                <input type="hidden" name="from_name" value="BAFF Contatti">
+                <input type="hidden" name="to" value="info@bafilmfestival.it">
+                <input type="checkbox" name="botcheck" style="display:none">
+
+                <div class="contact-form__group">
+                    <label for="contact-tipo" class="contact-form__label">Tipo richiesta *</label>
+                    <select id="contact-tipo" name="tipo_richiesta" class="contact-form__select" required>
+                        <option value="" disabled selected>Seleziona il tipo di richiesta</option>
+                        <option value="Informazioni biglietteria">Informazioni biglietteria</option>
+                        <option value="Collaborazione/Sponsorship">Collaborazione / Sponsorship</option>
+                        <option value="Segnalazione tecnica">Segnalazione tecnica</option>
+                        <option value="Altro">Altro</option>
+                    </select>
+                </div>
                 <div class="contact-form__row">
                     <div class="contact-form__group">
-                        <label for="contact-name" class="contact-form__label">Nome e Cognome</label>
+                        <label for="contact-name" class="contact-form__label">Nome e Cognome *</label>
                         <input type="text" id="contact-name" name="nome" class="contact-form__input" placeholder="Il tuo nome completo" required>
                     </div>
                     <div class="contact-form__group">
-                        <label for="contact-email" class="contact-form__label">Email</label>
+                        <label for="contact-email" class="contact-form__label">Email *</label>
                         <input type="email" id="contact-email" name="email" class="contact-form__input" placeholder="La tua email" required>
                     </div>
                 </div>
                 <div class="contact-form__group">
-                    <label for="contact-subject" class="contact-form__label">Oggetto</label>
-                    <select id="contact-subject" name="oggetto" class="contact-form__select" required>
-                        <option value="" disabled selected>Seleziona un argomento</option>
-                        <option value="informazioni-generali">Informazioni generali</option>
-                        <option value="biglietteria">Biglietteria</option>
-                        <option value="accreditamenti">Accreditamenti</option>
-                        <option value="stampa">Stampa</option>
-                        <option value="altro">Altro</option>
-                    </select>
+                    <label for="contact-message" class="contact-form__label">Messaggio *</label>
+                    <textarea id="contact-message" name="messaggio" class="contact-form__textarea" rows="6" placeholder="Scrivi il tuo messaggio..." required></textarea>
                 </div>
                 <div class="contact-form__group">
-                    <label for="contact-message" class="contact-form__label">Messaggio</label>
-                    <textarea id="contact-message" name="messaggio" class="contact-form__textarea" rows="6" placeholder="Scrivi il tuo messaggio..." required></textarea>
+                    <label class="contact-form__checkbox-label">
+                        <input type="checkbox" name="privacy" required>
+                        <span>Ho letto e accetto la <a href="privacy.html" target="_blank">Privacy Policy</a>. Autorizzo il trattamento dei miei dati personali ai sensi del GDPR. *</span>
+                    </label>
                 </div>
                 <button type="submit" class="contact-form__submit">Invia messaggio</button>
             </form>
@@ -275,5 +317,37 @@
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script>
+    (function() {
+        var form = document.getElementById('contactForm');
+        var successMsg = document.getElementById('contact-success');
+        if (!form) return;
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var tipo = form.querySelector('[name="tipo_richiesta"]').value;
+            form.querySelector('[name="subject"]').value = 'Contatto BAFF 2026 - ' + tipo;
+
+            var data = new FormData(form);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+            }).then(function(res) {
+                return res.json();
+            }).then(function(json) {
+                if (json.success) {
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                } else {
+                    alert('Errore nell\'invio. Riprova pi\u00f9 tardi.');
+                }
+            }).catch(function() {
+                alert('Errore di rete. Riprova pi\u00f9 tardi.');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
