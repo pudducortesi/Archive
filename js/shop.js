@@ -5,8 +5,8 @@
     'use strict';
 
     /* ── Endpoints ────────────────────────────────────────── */
-    var CONFIG_API   = '/.netlify/functions/get-stripe-config';
-    var CHECKOUT_API = '/.netlify/functions/create-checkout-session';
+    var CONFIG_API   = '/api/get-stripe-config';
+    var CHECKOUT_API = '/api/create-checkout-session';
 
     /* ── DOM refs ─────────────────────────────────────────── */
     var items      = document.querySelectorAll('.shop-item');

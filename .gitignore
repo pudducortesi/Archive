@@ -5,11 +5,10 @@
 
 # Dependencies
 node_modules/
-netlify/functions/node_modules/
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# Netlify
-.netlify/
+# Vercel
+.vercel/

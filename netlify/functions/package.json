@@ -1,7 +1,0 @@
-{
-  "name": "baff-checkout",
-  "private": true,
-  "dependencies": {
-    "stripe": "^17.0.0"
-  }
-}

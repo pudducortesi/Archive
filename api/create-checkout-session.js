@@ -1,6 +1,6 @@
-// Netlify Serverless Function — Crea una Stripe Checkout Session
+// Vercel Serverless Function — Crea una Stripe Checkout Session
 //
-// Variabili d'ambiente necessarie (da impostare su Netlify):
+// Variabili d'ambiente necessarie (da impostare su Vercel):
 //   STRIPE_SECRET_KEY            = sk_live_... (o sk_test_... per test)
 //   STRIPE_PRICE_SINGLE          = price_...
 //   STRIPE_PRICE_SINGLE_REDUCED  = price_...
@@ -19,38 +19,36 @@ const ALLOWED_PRICES = new Set([
     process.env.STRIPE_PRICE_FESTIVAL_REDUCED,
 ].filter(Boolean));
 
-const CORS_HEADERS = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-};
+module.exports = async (req, res) => {
+    // CORS headers
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-exports.handler = async (event) => {
-    // CORS preflight
-    if (event.httpMethod === 'OPTIONS') {
-        return { statusCode: 204, headers: CORS_HEADERS, body: '' };
+    // Preflight
+    if (req.method === 'OPTIONS') {
+        return res.status(204).end();
     }
 
-    if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Method not allowed' }) };
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
     }
 
     try {
-        const { line_items, customer_email, success_url, cancel_url, locale } = JSON.parse(event.body);
+        const { line_items, customer_email, success_url, cancel_url, locale } = req.body;
 
         // Validate line items exist
         if (!line_items || !line_items.length) {
-            return { statusCode: 400, headers: CORS_HEADERS, body: JSON.stringify({ error: 'No line items' }) };
+            return res.status(400).json({ error: 'No line items' });
         }
 
         // Validate all price IDs are in our whitelist
         for (const item of line_items) {
             if (!item.price || !ALLOWED_PRICES.has(item.price)) {
-                return { statusCode: 400, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Invalid price ID' }) };
+                return res.status(400).json({ error: 'Invalid price ID' });
             }
             if (!Number.isInteger(item.quantity) || item.quantity < 1 || item.quantity > 20) {
-                return { statusCode: 400, headers: CORS_HEADERS, body: JSON.stringify({ error: 'Invalid quantity' }) };
+                return res.status(400).json({ error: 'Invalid quantity' });
             }
         }
 
@@ -64,17 +62,9 @@ exports.handler = async (event) => {
             locale: locale === 'it' ? 'it' : 'en',
         });
 
-        return {
-            statusCode: 200,
-            headers: CORS_HEADERS,
-            body: JSON.stringify({ url: session.url }),
-        };
+        return res.status(200).json({ url: session.url });
     } catch (err) {
         console.error('Stripe error:', err.message);
-        return {
-            statusCode: 500,
-            headers: CORS_HEADERS,
-            body: JSON.stringify({ error: err.message }),
-        };
+        return res.status(500).json({ error: err.message });
     }
 };
