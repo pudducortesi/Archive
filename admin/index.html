@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — BAFF</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --accent: #cc0000;
+            --accent-hover: #a30000;
+            --bg: #f5f5f5;
+            --card: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #666;
+            --border: #e0e0e0;
+            --success: #2e7d32;
+            --danger: #c62828;
+            --radius: 8px;
+        }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+        }
+        /* Login */
+        .login-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .login-box {
+            background: var(--card);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
+            width: 100%;
+            max-width: 380px;
+        }
+        .login-box h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .login-box input {
+            width: 100%;
+            padding: .75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .login-box .error { color: var(--danger); font-size: .875rem; margin-bottom: .5rem; display: none; }
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .6rem 1.2rem;
+            border: none;
+            border-radius: var(--radius);
+            font-size: .875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        .btn--primary { background: var(--accent); color: #fff; }
+        .btn--primary:hover { background: var(--accent-hover); }
+        .btn--secondary { background: #e8e8e8; color: var(--text); }
+        .btn--secondary:hover { background: #d5d5d5; }
+        .btn--danger { background: var(--danger); color: #fff; }
+        .btn--danger:hover { background: #b71c1c; }
+        .btn--sm { padding: .4rem .8rem; font-size: .8rem; }
+        .btn--block { width: 100%; justify-content: center; }
+        /* Layout */
+        .admin { display: none; }
+        .admin.active { display: block; }
+        .topbar {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: .75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .topbar h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--accent);
+        }
+        .tabs {
+            display: flex;
+            gap: .5rem;
+            padding: 1rem 1.5rem;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            overflow-x: auto;
+        }
+        .tab {
+            padding: .5rem 1rem;
+            border: none;
+            background: none;
+            font-size: .9rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: var(--radius);
+            white-space: nowrap;
+            color: var(--text-muted);
+        }
+        .tab.active { background: var(--accent); color: #fff; }
+        .content { padding: 1.5rem; max-width: 1100px; margin: 0 auto; }
+        .panel { display: none; }
+        .panel.active { display: block; }
+        /* Table */
+        .data-table {
+            width: 100%;
+            background: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,.06);
+            margin-bottom: 1.5rem;
+        }
+        .data-table table { width: 100%; border-collapse: collapse; }
+        .data-table th, .data-table td {
+            text-align: left;
+            padding: .75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            font-size: .875rem;
+        }
+        .data-table th { background: #fafafa; font-weight: 600; }
+        .data-table td img { height: 40px; border-radius: 4px; }
+        .badge {
+            display: inline-block;
+            padding: .15rem .5rem;
+            border-radius: 20px;
+            font-size: .75rem;
+            font-weight: 600;
+        }
+        .badge--yes { background: #e8f5e9; color: var(--success); }
+        .badge--no { background: #fbe9e7; color: var(--danger); }
+        .actions { display: flex; gap: .3rem; }
+        /* Form / Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.4);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-overlay.open { display: flex; }
+        .modal {
+            background: var(--card);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+        .modal h2 { font-size: 1.2rem; margin-bottom: 1.25rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label {
+            display: block;
+            font-size: .8rem;
+            font-weight: 600;
+            margin-bottom: .3rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: .6rem .8rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-size: .9rem;
+            font-family: inherit;
+        }
+        .form-group textarea { min-height: 100px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-actions { display: flex; gap: .5rem; justify-content: flex-end; margin-top: 1.5rem; }
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+            background: var(--card);
+            border-radius: var(--radius);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            .data-table { overflow-x: auto; }
+            .data-table table { min-width: 600px; }
+            .content { padding: 1rem; }
+        }
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            padding: .75rem 1.5rem;
+            border-radius: var(--radius);
+            color: #fff;
+            font-weight: 600;
+            font-size: .875rem;
+            z-index: 300;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all .3s ease;
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+        .toast--success { background: var(--success); }
+        .toast--error { background: var(--danger); }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="login-wrap" id="loginScreen">
+    <div class="login-box">
+        <h1>BAFF Admin</h1>
+        <p class="error" id="loginError">Password errata</p>
+        <input type="password" id="loginPassword" placeholder="Password" autofocus>
+        <button class="btn btn--primary btn--block" id="loginBtn">Accedi</button>
+    </div>
+</div>
+
+<!-- ============ ADMIN DASHBOARD ============ -->
+<div class="admin" id="adminDashboard">
+    <div class="topbar">
+        <h1>BAFF Admin</h1>
+        <button class="btn btn--secondary btn--sm" id="logoutBtn">Esci</button>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" data-panel="news">News</button>
+        <button class="tab" data-panel="programma">Programma</button>
+        <button class="tab" data-panel="ospiti">Ospiti</button>
+        <button class="tab" data-panel="sponsor">Sponsor</button>
+    </div>
+
+    <div class="content">
+        <!-- NEWS PANEL -->
+        <div class="panel active" id="panel-news">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+                <h2>News</h2>
+                <button class="btn btn--primary" onclick="openForm('news')">+ Aggiungi</button>
+            </div>
+            <div class="data-table"><table>
+                <thead><tr><th>Immagine</th><th>Titolo</th><th>Categoria</th><th>Data</th><th>Stato</th><th></th></tr></thead>
+                <tbody id="table-news"></tbody>
+            </table></div>
+        </div>
+
+        <!-- PROGRAMMA PANEL -->
+        <div class="panel" id="panel-programma">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+                <h2>Programma</h2>
+                <button class="btn btn--primary" onclick="openForm('programma')">+ Aggiungi</button>
+            </div>
+            <div class="data-table"><table>
+                <thead><tr><th>Poster</th><th>Titolo</th><th>Regista</th><th>Sala</th><th>Data</th><th>Ora</th><th>Stato</th><th></th></tr></thead>
+                <tbody id="table-programma"></tbody>
+            </table></div>
+        </div>
+
+        <!-- OSPITI PANEL -->
+        <div class="panel" id="panel-ospiti">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+                <h2>Ospiti</h2>
+                <button class="btn btn--primary" onclick="openForm('ospiti')">+ Aggiungi</button>
+            </div>
+            <div class="data-table"><table>
+                <thead><tr><th>Foto</th><th>Nome</th><th>Ruolo</th><th>Stato</th><th></th></tr></thead>
+                <tbody id="table-ospiti"></tbody>
+            </table></div>
+        </div>
+
+        <!-- SPONSOR PANEL -->
+        <div class="panel" id="panel-sponsor">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+                <h2>Sponsor</h2>
+                <button class="btn btn--primary" onclick="openForm('sponsor')">+ Aggiungi</button>
+            </div>
+            <div class="data-table"><table>
+                <thead><tr><th>Logo</th><th>Nome</th><th>Categoria</th><th>Ordine</th><th>Stato</th><th></th></tr></thead>
+                <tbody id="table-sponsor"></tbody>
+            </table></div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <h2 id="modalTitle">Aggiungi</h2>
+        <form id="entityForm">
+            <input type="hidden" id="form-id">
+            <input type="hidden" id="form-type">
+            <div id="formFields"></div>
+            <div class="form-actions">
+                <button type="button" class="btn btn--secondary" onclick="closeModal()">Annulla</button>
+                <button type="submit" class="btn btn--primary">Salva</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// =============================================
+// CONFIG — Replace with your Supabase credentials
+// =============================================
+const SUPABASE_URL = 'https://vvdfrvgloyodqihaiktr.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ2ZGZydmdsb3lvZHFpaGFpa3RyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI4MzA1NzMsImV4cCI6MjA4ODQwNjU3M30.EdsU_r1anFWaOLAyWW_AauR2riC7pHo-YkRqJEmMMT0';
+const ADMIN_PASSWORD = 'baff2026admin';
+
+// =============================================
+// SUPABASE REST HELPER
+// =============================================
+const sb = {
+    headers() {
+        return {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=representation'
+        };
+    },
+    async select(table, order) {
+        const url = SUPABASE_URL + '/rest/v1/' + table + '?order=' + (order || 'created_at.desc');
+        const res = await fetch(url, { headers: this.headers() });
+        return res.json();
+    },
+    async insert(table, data) {
+        const url = SUPABASE_URL + '/rest/v1/' + table;
+        const res = await fetch(url, { method: 'POST', headers: this.headers(), body: JSON.stringify(data) });
+        return res.json();
+    },
+    async update(table, id, data) {
+        const url = SUPABASE_URL + '/rest/v1/' + table + '?id=eq.' + id;
+        const res = await fetch(url, { method: 'PATCH', headers: this.headers(), body: JSON.stringify(data) });
+        return res.json();
+    },
+    async remove(table, id) {
+        const url = SUPABASE_URL + '/rest/v1/' + table + '?id=eq.' + id;
+        return fetch(url, { method: 'DELETE', headers: this.headers() });
+    },
+    async upload(file) {
+        const ext = file.name.split('.').pop();
+        const name = Date.now() + '-' + Math.random().toString(36).slice(2, 8) + '.' + ext;
+        const url = SUPABASE_URL + '/storage/v1/object/media/' + name;
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'apikey': SUPABASE_KEY,
+                'Authorization': 'Bearer ' + SUPABASE_KEY,
+                'Content-Type': file.type
+            },
+            body: file
+        });
+        if (!res.ok) throw new Error('Upload failed');
+        return SUPABASE_URL + '/storage/v1/object/public/media/' + name;
+    }
+};
+
+// =============================================
+// LOGIN
+// =============================================
+document.getElementById('loginBtn').addEventListener('click', doLogin);
+document.getElementById('loginPassword').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+function doLogin() {
+    const pw = document.getElementById('loginPassword').value;
+    if (pw === ADMIN_PASSWORD) {
+        sessionStorage.setItem('baff_admin', '1');
+        showDashboard();
+    } else {
+        document.getElementById('loginError').style.display = 'block';
+    }
+}
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+    sessionStorage.removeItem('baff_admin');
+    location.reload();
+});
+
+function showDashboard() {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('adminDashboard').classList.add('active');
+    loadAll();
+}
+
+if (sessionStorage.getItem('baff_admin')) showDashboard();
+
+// =============================================
+// TABS
+// =============================================
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+    });
+});
+
+// =============================================
+// LOAD DATA
+// =============================================
+async function loadAll() {
+    if (!SUPABASE_URL || !SUPABASE_KEY) {
+        document.querySelectorAll('tbody').forEach(t => {
+            t.innerHTML = '<tr><td colspan="8" style="text-align:center;padding:2rem;color:#999">Configura SUPABASE_URL e SUPABASE_KEY nel file admin/index.html</td></tr>';
+        });
+        return;
+    }
+    loadNews();
+    loadProgramma();
+    loadOspiti();
+    loadSponsor();
+}
+
+async function loadNews() {
+    const data = await sb.select('news', 'data_pubblicazione.desc');
+    const tbody = document.getElementById('table-news');
+    if (!data.length) { tbody.innerHTML = '<tr><td colspan="6" class="empty-state">Nessuna news</td></tr>'; return; }
+    tbody.innerHTML = data.map(n => `<tr>
+        <td>${n.immagine_url ? '<img src="'+n.immagine_url+'">' : '—'}</td>
+        <td><strong>${esc(n.titolo)}</strong></td>
+        <td>${esc(n.categoria)}</td>
+        <td>${n.data_pubblicazione || '—'}</td>
+        <td><span class="badge badge--${n.pubblicato?'yes':'no'}">${n.pubblicato?'Pubblicato':'Bozza'}</span></td>
+        <td class="actions">
+            <button class="btn btn--secondary btn--sm" onclick='editItem("news","${n.id}")'>Modifica</button>
+            <button class="btn btn--danger btn--sm" onclick='deleteItem("news","${n.id}")'>Elimina</button>
+        </td>
+    </tr>`).join('');
+}
+
+async function loadProgramma() {
+    const data = await sb.select('programma', 'data_proiezione.asc,ora.asc');
+    const tbody = document.getElementById('table-programma');
+    if (!data.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">Nessun evento</td></tr>'; return; }
+    tbody.innerHTML = data.map(p => `<tr>
+        <td>${p.poster_url ? '<img src="'+p.poster_url+'">' : '—'}</td>
+        <td><strong>${esc(p.titolo)}</strong></td>
+        <td>${esc(p.regista||'')}</td>
+        <td>${esc(p.sala||'')}</td>
+        <td>${p.data_proiezione||'—'}</td>
+        <td>${p.ora ? p.ora.slice(0,5) : '—'}</td>
+        <td><span class="badge badge--${p.pubblicato?'yes':'no'}">${p.pubblicato?'Pubblicato':'Bozza'}</span></td>
+        <td class="actions">
+            <button class="btn btn--secondary btn--sm" onclick='editItem("programma","${p.id}")'>Modifica</button>
+            <button class="btn btn--danger btn--sm" onclick='deleteItem("programma","${p.id}")'>Elimina</button>
+        </td>
+    </tr>`).join('');
+}
+
+async function loadOspiti() {
+    const data = await sb.select('ospiti', 'nome.asc');
+    const tbody = document.getElementById('table-ospiti');
+    if (!data.length) { tbody.innerHTML = '<tr><td colspan="5" class="empty-state">Nessun ospite</td></tr>'; return; }
+    tbody.innerHTML = data.map(o => `<tr>
+        <td>${o.foto_url ? '<img src="'+o.foto_url+'">' : '—'}</td>
+        <td><strong>${esc(o.nome)}</strong></td>
+        <td>${esc(o.ruolo||'')}</td>
+        <td><span class="badge badge--${o.pubblicato?'yes':'no'}">${o.pubblicato?'Pubblicato':'Bozza'}</span></td>
+        <td class="actions">
+            <button class="btn btn--secondary btn--sm" onclick='editItem("ospiti","${o.id}")'>Modifica</button>
+            <button class="btn btn--danger btn--sm" onclick='deleteItem("ospiti","${o.id}")'>Elimina</button>
+        </td>
+    </tr>`).join('');
+}
+
+async function loadSponsor() {
+    const data = await sb.select('sponsor', 'ordine.asc,nome.asc');
+    const tbody = document.getElementById('table-sponsor');
+    if (!data.length) { tbody.innerHTML = '<tr><td colspan="6" class="empty-state">Nessuno sponsor</td></tr>'; return; }
+    tbody.innerHTML = data.map(s => `<tr>
+        <td>${s.logo_url ? '<img src="'+s.logo_url+'">' : '—'}</td>
+        <td><strong>${esc(s.nome)}</strong></td>
+        <td>${esc(s.categoria)}</td>
+        <td>${s.ordine}</td>
+        <td><span class="badge badge--${s.pubblicato?'yes':'no'}">${s.pubblicato?'Pubblicato':'Bozza'}</span></td>
+        <td class="actions">
+            <button class="btn btn--secondary btn--sm" onclick='editItem("sponsor","${s.id}")'>Modifica</button>
+            <button class="btn btn--danger btn--sm" onclick='deleteItem("sponsor","${s.id}")'>Elimina</button>
+        </td>
+    </tr>`).join('');
+}
+
+// =============================================
+// FORM DEFINITIONS
+// =============================================
+const FORMS = {
+    news: [
+        { name: 'titolo', label: 'Titolo', type: 'text', required: true },
+        { name: 'slug', label: 'Slug', type: 'text', required: true },
+        { name: 'categoria', label: 'Categoria', type: 'select', options: ['festival','selezione-ufficiale','evento','biglietteria'] },
+        { name: 'testo', label: 'Testo', type: 'textarea' },
+        { name: 'immagine_url', label: 'Immagine', type: 'file' },
+        { name: 'data_pubblicazione', label: 'Data pubblicazione', type: 'date' },
+        { name: 'pubblicato', label: 'Pubblicato', type: 'checkbox' }
+    ],
+    programma: [
+        { name: 'titolo', label: 'Titolo', type: 'text', required: true },
+        { name: 'regista', label: 'Regista', type: 'text' },
+        { name: 'anno', label: 'Anno', type: 'number' },
+        { name: 'durata', label: 'Durata', type: 'text' },
+        { name: 'sala', label: 'Sala', type: 'text' },
+        { name: 'data_proiezione', label: 'Data proiezione', type: 'date' },
+        { name: 'ora', label: 'Ora', type: 'time' },
+        { name: 'sezione', label: 'Sezione', type: 'select', options: ['concorso-italiano','concorso-internazionale','primi-passi','eventi-speciali','fuori-concorso'] },
+        { name: 'poster_url', label: 'Poster', type: 'file' },
+        { name: 'pubblicato', label: 'Pubblicato', type: 'checkbox' }
+    ],
+    ospiti: [
+        { name: 'nome', label: 'Nome', type: 'text', required: true },
+        { name: 'ruolo', label: 'Ruolo', type: 'text' },
+        { name: 'biografia', label: 'Biografia', type: 'textarea' },
+        { name: 'foto_url', label: 'Foto', type: 'file' },
+        { name: 'pubblicato', label: 'Pubblicato', type: 'checkbox' }
+    ],
+    sponsor: [
+        { name: 'nome', label: 'Nome', type: 'text', required: true },
+        { name: 'categoria', label: 'Categoria', type: 'select', options: ['official-partner','sponsor','technical-partner','institutional-partner','strategic-partner','media-partner','partner-culturali','patrocinio'] },
+        { name: 'ordine', label: 'Ordine', type: 'number' },
+        { name: 'link', label: 'Link', type: 'text' },
+        { name: 'logo_url', label: 'Logo', type: 'file' },
+        { name: 'pubblicato', label: 'Pubblicato', type: 'checkbox' }
+    ]
+};
+
+// Store loaded data for editing
+let dataCache = {};
+
+// =============================================
+// OPEN FORM (CREATE / EDIT)
+// =============================================
+function openForm(type, data) {
+    document.getElementById('form-type').value = type;
+    document.getElementById('form-id').value = data ? data.id : '';
+    document.getElementById('modalTitle').textContent = data ? 'Modifica' : 'Aggiungi';
+
+    const fields = FORMS[type];
+    const container = document.getElementById('formFields');
+    container.innerHTML = fields.map(f => {
+        const val = data ? (data[f.name] || '') : '';
+        if (f.type === 'textarea') {
+            return `<div class="form-group"><label>${f.label}</label><textarea name="${f.name}">${esc(val)}</textarea></div>`;
+        }
+        if (f.type === 'select') {
+            return `<div class="form-group"><label>${f.label}</label><select name="${f.name}">${f.options.map(o =>
+                `<option value="${o}" ${val===o?'selected':''}>${o}</option>`
+            ).join('')}</select></div>`;
+        }
+        if (f.type === 'checkbox') {
+            return `<div class="form-group"><label><input type="checkbox" name="${f.name}" ${val?'checked':''}> ${f.label}</label></div>`;
+        }
+        if (f.type === 'file') {
+            return `<div class="form-group"><label>${f.label}</label>
+                <input type="file" name="${f.name}" accept="image/*">
+                ${val ? '<p style="font-size:.8rem;color:#666;margin-top:.3rem">Attuale: <a href="'+val+'" target="_blank">vedi</a></p>' : ''}
+            </div>`;
+        }
+        return `<div class="form-group"><label>${f.label}</label><input type="${f.type}" name="${f.name}" value="${esc(val)}" ${f.required?'required':''}></div>`;
+    }).join('');
+
+    document.getElementById('modalOverlay').classList.add('open');
+}
+
+async function editItem(type, id) {
+    const data = await sb.select(type);
+    const item = data.find(d => d.id === id);
+    if (item) openForm(type, item);
+}
+
+function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+}
+
+// Close modal on overlay click
+document.getElementById('modalOverlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+});
+
+// =============================================
+// FORM SUBMIT
+// =============================================
+document.getElementById('entityForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const type = document.getElementById('form-type').value;
+    const id = document.getElementById('form-id').value;
+    const fields = FORMS[type];
+    const payload = {};
+
+    for (const f of fields) {
+        const el = e.target.querySelector('[name="' + f.name + '"]');
+        if (!el) continue;
+
+        if (f.type === 'file') {
+            if (el.files && el.files[0]) {
+                try {
+                    toast('Caricamento immagine...', 'success');
+                    payload[f.name] = await sb.upload(el.files[0]);
+                } catch (err) {
+                    toast('Errore upload: ' + err.message, 'error');
+                    return;
+                }
+            }
+        } else if (f.type === 'checkbox') {
+            payload[f.name] = el.checked;
+        } else if (f.type === 'number') {
+            payload[f.name] = el.value ? Number(el.value) : null;
+        } else {
+            payload[f.name] = el.value || null;
+        }
+    }
+
+    try {
+        if (id) {
+            await sb.update(type, id, payload);
+            toast('Aggiornato!', 'success');
+        } else {
+            await sb.insert(type, payload);
+            toast('Creato!', 'success');
+        }
+        closeModal();
+        loadAll();
+    } catch (err) {
+        toast('Errore: ' + err.message, 'error');
+    }
+});
+
+// =============================================
+// DELETE
+// =============================================
+async function deleteItem(type, id) {
+    if (!confirm('Eliminare questo elemento?')) return;
+    try {
+        await sb.remove(type, id);
+        toast('Eliminato!', 'success');
+        loadAll();
+    } catch (err) {
+        toast('Errore: ' + err.message, 'error');
+    }
+}
+
+// =============================================
+// UTILS
+// =============================================
+function esc(str) {
+    if (!str) return '';
+    const d = document.createElement('div');
+    d.textContent = String(str);
+    return d.innerHTML;
+}
+
+function toast(msg, type) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast toast--' + type + ' show';
+    clearTimeout(t._timer);
+    t._timer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
