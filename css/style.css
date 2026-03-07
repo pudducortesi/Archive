@@ -1135,6 +1135,7 @@ button {
     aspect-ratio: 16/10;
     margin-bottom: 1rem;
     transition: transform var(--transition);
+    background-color: #2a2a2a;
 }
 
 .editions__slide:hover .editions__slide-image {
