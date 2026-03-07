@@ -1684,6 +1684,87 @@ button {
 }
 
 /* ============================================
+   PRESS PAGE — Rassegna Stampa
+   ============================================ */
+.press-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.press-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.press-article {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 1rem 0 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: border-color 0.2s ease, padding-left 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.press-article:hover {
+    border-left-color: var(--color-accent);
+    padding-left: 1rem;
+}
+
+.press-article__date {
+    flex: 0 0 100px;
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.press-article__source {
+    flex: 0 0 180px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.press-article__title {
+    flex: 1;
+    font-size: 0.92rem;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+}
+
+.press-article--hidden {
+    display: none;
+}
+
+.press-materials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.press-materials__btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.press-materials__btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
@@ -1866,6 +1947,19 @@ button {
     .gallery-filters__btn {
         padding: 0.4rem 0.75rem;
         font-size: 0.72rem;
+    }
+
+    .press-article {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .press-article__date {
+        flex: none;
+    }
+
+    .press-article__source {
+        flex: none;
     }
 }
 

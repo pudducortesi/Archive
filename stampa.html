@@ -76,48 +76,199 @@
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
-            <h1 class="page-hero__title">Area Stampa</h1>
-            <p class="page-hero__subtitle">Informazioni e richieste per i media</p>
-            <nav class="breadcrumb" aria-label="Breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Stampa</span>
-            </nav>
+            <h1 class="page-hero__title">Rassegna Stampa</h1>
+            <p class="page-hero__subtitle">La copertura mediatica del festival</p>
         </div>
     </section>
 
-    <!-- Press Info -->
+    <!-- Rassegna Stampa -->
     <section class="page-section">
         <div class="page-section__container">
-            <h2 class="page-section__title">Ufficio Stampa</h2>
-            <div class="page-section__content">
-                <p>L'ufficio stampa del B.A. Film Festival &egrave; a disposizione di giornalisti, fotografi, operatori televisivi e blogger per fornire informazioni, organizzare interviste con gli ospiti del festival e mettere a disposizione materiali stampa e press kit.</p>
+            <h2 class="page-section__title">Articoli e servizi</h2>
+
+            <!-- Filtri anno -->
+            <div class="press-filters" id="pressFilters">
+                <button class="gallery-filters__btn active" data-year="all">Tutti</button>
+                <button class="gallery-filters__btn" data-year="2024">2024</button>
+                <button class="gallery-filters__btn" data-year="2023">2023</button>
+                <button class="gallery-filters__btn" data-year="2022">2022</button>
+                <button class="gallery-filters__btn" data-year="2021">2021</button>
+                <button class="gallery-filters__btn" data-year="2020">2020</button>
+                <button class="gallery-filters__btn" data-year="2019">2019</button>
+                <button class="gallery-filters__btn" data-year="2018">2018</button>
+                <button class="gallery-filters__btn" data-year="2017">2017</button>
+                <button class="gallery-filters__btn" data-year="2016">2016</button>
+                <button class="gallery-filters__btn" data-year="2015">2015</button>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <h3 class="contact-card__title">Email Ufficio Stampa</h3>
-                    <p class="contact-card__text"><a href="mailto:info@bafilmfestival.it">info@bafilmfestival.it</a></p>
-                    <p class="contact-card__note">Rispondiamo entro 48 ore lavorative</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <h3 class="contact-card__title">Telefono</h3>
-                    <p class="contact-card__text"><a href="tel:+390331070847">0331 070847</a></p>
-                    <p class="contact-card__note">Lun&ndash;Ven 10:00&ndash;18:00</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    </div>
-                    <h3 class="contact-card__title">Accreditamenti</h3>
-                    <p class="contact-card__text">Per accrediti stampa e industria</p>
-                    <p class="contact-card__note"><a href="accreditamenti.html">Vai alla pagina accreditamenti &rarr;</a></p>
-                </div>
+
+            <!-- Lista articoli -->
+            <div class="press-list" id="pressList">
+                <!-- 2024 -->
+                <article class="press-article" data-year="2024">
+                    <span class="press-article__date">3/10/2024</span>
+                    <span class="press-article__source">Il Manifesto</span>
+                    <span class="press-article__title">Astrid's Saints, tormentoni horror di una favola nera</span>
+                </article>
+                <article class="press-article" data-year="2024">
+                    <span class="press-article__date">3/10/2024</span>
+                    <span class="press-article__source">Ciak</span>
+                    <span class="press-article__title">Bertrand Bonello premiato al Baff</span>
+                </article>
+                <article class="press-article" data-year="2024">
+                    <span class="press-article__date">1/10/2024</span>
+                    <span class="press-article__source">Stampa nazionale</span>
+                    <span class="press-article__title">Michelle Pfeiffer al BAFF 2024</span>
+                </article>
+
+                <!-- 2023 -->
+                <article class="press-article" data-year="2023">
+                    <span class="press-article__date">21/04/2023</span>
+                    <span class="press-article__source">TGR Buongiorno Regione</span>
+                    <span class="press-article__title">Servizio BAFF 2023</span>
+                </article>
+                <article class="press-article" data-year="2023">
+                    <span class="press-article__date">21/04/2023</span>
+                    <span class="press-article__source">IRIS Note di Cinema</span>
+                    <span class="press-article__title">Servizio BAFF 2023</span>
+                </article>
+                <article class="press-article" data-year="2023">
+                    <span class="press-article__date">2023</span>
+                    <span class="press-article__source">Rassegna cartacea</span>
+                    <span class="press-article__title">Rassegna stampa cartacea BAFF 2023 &mdash; Parte 1 e Parte 2</span>
+                </article>
+
+                <!-- 2022 -->
+                <article class="press-article" data-year="2022">
+                    <span class="press-article__date">2022</span>
+                    <span class="press-article__source">L'informazione online</span>
+                    <span class="press-article__title">Il Baff ritrova la primavera e lancia il concorso cortometraggi</span>
+                </article>
+                <article class="press-article" data-year="2022">
+                    <span class="press-article__date">2022</span>
+                    <span class="press-article__source">Malpensa24</span>
+                    <span class="press-article__title">La primavera del cinema a Busto: il BAFF del ventennale</span>
+                </article>
+
+                <!-- 2021 -->
+                <article class="press-article" data-year="2021">
+                    <span class="press-article__date">2021</span>
+                    <span class="press-article__source">Malpensa24</span>
+                    <span class="press-article__title">A Busto torna il Baff e il Festival del cinema rende omaggio a Rossellini</span>
+                </article>
+                <article class="press-article" data-year="2021">
+                    <span class="press-article__date">2021</span>
+                    <span class="press-article__source">Informazioneonline.it</span>
+                    <span class="press-article__title">Busto: ritorna il Baff. Per il primo tempo (16-18 settembre) di due</span>
+                </article>
+
+                <!-- 2020 -->
+                <article class="press-article" data-year="2020">
+                    <span class="press-article__date">13/02/2020</span>
+                    <span class="press-article__source">L'informazione online</span>
+                    <span class="press-article__title">Francesco Fei, un docente dell'Icma tra i registi del Baff</span>
+                </article>
+                <article class="press-article" data-year="2020">
+                    <span class="press-article__date">12/02/2020</span>
+                    <span class="press-article__source">Sempione News</span>
+                    <span class="press-article__title">Mi chiedo quando ti mancher&ograve; al B.A. Film Festival</span>
+                </article>
+
+                <!-- 2019 -->
+                <article class="press-article" data-year="2019">
+                    <span class="press-article__date">8/04/2019</span>
+                    <span class="press-article__source">La Prealpina</span>
+                    <span class="press-article__title">BAFF, nuove strategie per attirare pubblico</span>
+                </article>
+                <article class="press-article" data-year="2019">
+                    <span class="press-article__date">8/04/2019</span>
+                    <span class="press-article__source">Varese Press</span>
+                    <span class="press-article__title">Busto Arsizio citt&agrave; del cinema si chiude il BAFF 2019</span>
+                </article>
+                <article class="press-article" data-year="2019">
+                    <span class="press-article__date">7/04/2019</span>
+                    <span class="press-article__source">Cronaca Milano</span>
+                    <span class="press-article__title">Debutto per il BAFF 2019 a Busto Arsizio</span>
+                </article>
+
+                <!-- 2018 -->
+                <article class="press-article" data-year="2018">
+                    <span class="press-article__date">14/05/2018</span>
+                    <span class="press-article__source">Cinematografo</span>
+                    <span class="press-article__title">Il Baff si chiude</span>
+                </article>
+                <article class="press-article" data-year="2018">
+                    <span class="press-article__date">14/05/2018</span>
+                    <span class="press-article__source">Cinetvlandia</span>
+                    <span class="press-article__title">Baff 2018 tutti i vincitori della 16a edizione</span>
+                </article>
+                <article class="press-article" data-year="2018">
+                    <span class="press-article__date">14/05/2018</span>
+                    <span class="press-article__source">Cronaca Milano</span>
+                    <span class="press-article__title">Premi BA Film Festival 2018</span>
+                </article>
+
+                <!-- 2017 -->
+                <article class="press-article" data-year="2017">
+                    <span class="press-article__date">29/03/2017</span>
+                    <span class="press-article__source">Cinecitt&agrave; News</span>
+                    <span class="press-article__title">Indivisibili miglior film del BAFF</span>
+                </article>
+                <article class="press-article" data-year="2017">
+                    <span class="press-article__date">29/03/2017</span>
+                    <span class="press-article__source">Fogli d'Arte</span>
+                    <span class="press-article__title">BAFF 2017: il festival del cinema a Busto Arsizio</span>
+                </article>
+                <article class="press-article" data-year="2017">
+                    <span class="press-article__date">28/03/2017</span>
+                    <span class="press-article__source">Il Giorno</span>
+                    <span class="press-article__title">BAFF 2017: il cinema torna protagonista a Busto</span>
+                </article>
+
+                <!-- 2016 -->
+                <article class="press-article" data-year="2016">
+                    <span class="press-article__date">5/11/2016</span>
+                    <span class="press-article__source">Storia dei Film</span>
+                    <span class="press-article__title">Junior Baff Lab, i ragazzi scrivono il cinema</span>
+                </article>
+                <article class="press-article" data-year="2016">
+                    <span class="press-article__date">4/11/2016</span>
+                    <span class="press-article__source">Il Giorno</span>
+                    <span class="press-article__title">Scrittura per i film: lezioni di cinema per le elementari</span>
+                </article>
+                <article class="press-article" data-year="2016">
+                    <span class="press-article__date">4/11/2016</span>
+                    <span class="press-article__source">La Prealpina</span>
+                    <span class="press-article__title">Il BAFF 2016 porta il cinema nelle scuole</span>
+                </article>
+
+                <!-- 2015 -->
+                <article class="press-article" data-year="2015">
+                    <span class="press-article__date">21/10/2015</span>
+                    <span class="press-article__source">Paese Roma.it</span>
+                    <span class="press-article__title">Il Baff 2016 approda al Roma Film Festival</span>
+                </article>
+                <article class="press-article" data-year="2015">
+                    <span class="press-article__date">21/10/2015</span>
+                    <span class="press-article__source">La Provincia di Varese</span>
+                    <span class="press-article__title">Il Baff parla romano</span>
+                </article>
+                <article class="press-article" data-year="2015">
+                    <span class="press-article__date">20/10/2015</span>
+                    <span class="press-article__source">La Provincia di Varese</span>
+                    <span class="press-article__title">Il BAFF 2015: cinema e territorio</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materiali per la stampa -->
+    <section class="page-section page-section--alt">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Materiali per la stampa</h2>
+            <div class="press-materials">
+                <a href="#" class="press-materials__btn">Kit stampa</a>
+                <a href="#" class="press-materials__btn">Cartella stampa 2026</a>
+                <a href="immagini.html" class="press-materials__btn">Foto ufficiali</a>
             </div>
         </div>
     </section>
@@ -256,34 +407,52 @@
     <script src="js/main.js"></script>
     <script>
     (function() {
+        // Press form
         var form = document.getElementById('pressForm');
         var successMsg = document.getElementById('press-success');
-        if (!form) return;
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            var testata = form.querySelector('[name="testata"]').value;
-            form.querySelector('[name="subject"]').value = 'Richiesta Stampa BAFF 2026 - ' + testata;
-
-            var data = new FormData(form);
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: data
-            }).then(function(res) {
-                return res.json();
-            }).then(function(json) {
-                if (json.success) {
-                    form.style.display = 'none';
-                    successMsg.style.display = 'block';
-                } else {
-                    alert('Errore nell\'invio. Riprova pi\u00f9 tardi.');
-                }
-            }).catch(function() {
-                alert('Errore di rete. Riprova pi\u00f9 tardi.');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var testata = form.querySelector('[name="testata"]').value;
+                form.querySelector('[name="subject"]').value = 'Richiesta Stampa BAFF 2026 - ' + testata;
+                var data = new FormData(form);
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: data
+                }).then(function(res) {
+                    return res.json();
+                }).then(function(json) {
+                    if (json.success) {
+                        form.style.display = 'none';
+                        successMsg.style.display = 'block';
+                    } else {
+                        alert('Errore nell\'invio. Riprova pi\u00f9 tardi.');
+                    }
+                }).catch(function() {
+                    alert('Errore di rete. Riprova pi\u00f9 tardi.');
+                });
             });
-        });
+        }
+
+        // Press filters
+        var filterBtns = document.querySelectorAll('#pressFilters .gallery-filters__btn');
+        var articles = document.querySelectorAll('.press-article');
+        if (filterBtns.length && articles.length) {
+            filterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(function(b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    var year = btn.getAttribute('data-year');
+                    articles.forEach(function(a) {
+                        if (year === 'all' || a.getAttribute('data-year') === year) {
+                            a.classList.remove('press-article--hidden');
+                        } else {
+                            a.classList.add('press-article--hidden');
+                        }
+                    });
+                });
+            });
+        }
     })();
     </script>
 </body>
