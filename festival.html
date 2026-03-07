@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="festival.html" class="header__dropdown-link">Il Festival</a>
                         <a href="festival.html#storia" class="header__dropdown-link">Storia</a>
                         <a href="immagini.html" class="header__dropdown-link">Immagini</a>
-                        <a href="luoghi.html" class="header__dropdown-link">Luoghi</a>
-                        <a href="trasparenza.html" class="header__dropdown-link">Trasparenza</a>
-                        <a href="libreria.html" class="header__dropdown-link">BAFF in Libreria</a>
-                        <a href="scuole.html" class="header__dropdown-link">Made in Italy Scuole</a>
+                        <a href="festival.html#sedi" class="header__dropdown-link">Luoghi</a>
+                        <a href="festival.html#trasparenza" class="header__dropdown-link">Trasparenza</a>
+                        <a href="festival.html#libreria" class="header__dropdown-link">BAFF in Libreria</a>
+                        <a href="festival.html#scuole" class="header__dropdown-link">Made in Italy Scuole</a>
                     </div>
                 </div>
                 <a href="programma.html" class="header__nav-link">Programma</a>
@@ -80,10 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href="festival.html" class="mobile-menu__link">Il Festival</a>
             <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--small">Storia</a>
             <a href="immagini.html" class="mobile-menu__link mobile-menu__link--small">Immagini</a>
-            <a href="luoghi.html" class="mobile-menu__link mobile-menu__link--small">Luoghi</a>
-            <a href="trasparenza.html" class="mobile-menu__link mobile-menu__link--small">Trasparenza</a>
-            <a href="libreria.html" class="mobile-menu__link mobile-menu__link--small">BAFF in Libreria</a>
-            <a href="scuole.html" class="mobile-menu__link mobile-menu__link--small">Made in Italy Scuole</a>
+            <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--small">Luoghi</a>
+            <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--small">Trasparenza</a>
+            <a href="festival.html#libreria" class="mobile-menu__link mobile-menu__link--small">BAFF in Libreria</a>
+            <a href="festival.html#scuole" class="mobile-menu__link mobile-menu__link--small">Made in Italy Scuole</a>
             <a href="programma.html" class="mobile-menu__link">Programma</a>
             <a href="selezione.html" class="mobile-menu__link">Selezione Ufficiale</a>
             <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
@@ -114,8 +114,20 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <!-- Sticky Sub-navigation -->
+    <nav class="festival-subnav" id="festivalSubnav">
+      <div class="festival-subnav__container">
+        <a href="#chi-siamo" class="festival-subnav__link">Chi siamo</a>
+        <a href="#staff" class="festival-subnav__link">Staff</a>
+        <a href="#factory" class="festival-subnav__link">Film Factory</a>
+        <a href="#sedi" class="festival-subnav__link">Sedi</a>
+        <a href="#storia" class="festival-subnav__link">Storia</a>
+        <a href="#trasparenza" class="festival-subnav__link">Trasparenza</a>
+      </div>
+    </nav>
+
     <!-- SEZIONE 1 — Il Festival -->
-    <section class="page-section">
+    <section class="page-section" id="chi-siamo">
         <div class="page-section__container">
             <h2 class="page-section__title">Il cinema a Busto Arsizio</h2>
             <div class="page-section__content">
@@ -139,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- SEZIONE 2 — Lo Staff -->
-    <section class="page-section page-section--dark">
+    <section class="page-section page-section--dark" id="staff">
         <div class="page-section__container">
             <h2 class="page-section__title">Lo Staff</h2>
 
@@ -252,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- SEZIONE 3 — B.A. Film Factory -->
-    <section class="page-section page-section--factory">
+    <section class="page-section page-section--factory" id="factory">
         <div class="page-section__container">
             <h2 class="page-section__title">B.A. Film Factory</h2>
             <div class="page-section__content">
@@ -265,102 +277,591 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- SEZIONE 4 — Le Sale -->
-    <section class="page-section">
+    <!-- SEZIONE 4 — Le Sedi -->
+    <section class="page-section" id="sedi">
         <div class="page-section__container">
             <h2 class="page-section__title">Le sedi del festival</h2>
+            <h3 class="venues-city-label">Busto Arsizio</h3>
             <div class="venues-grid">
-                <div class="venues-col">
-                    <h3 class="venues-col__city">Busto Arsizio</h3>
-                    <ul class="venues-list">
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Cinema Teatro Fratello Sole</strong><br>
-                                <span class="venues-list__address">Via M. D'Azeglio, 1</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Cinema Lux</strong><br>
-                                <span class="venues-list__address">P.zza S. Donato, 5</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Cinema Teatro Manzoni</strong><br>
-                                <span class="venues-list__address">Via Calatafimi, 5</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Teatro Sociale Delia Cajelli</strong><br>
-                                <span class="venues-list__address">P.zza Plebiscito, 1</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Cinema S. Giovanni Bosco</strong><br>
-                                <span class="venues-list__address">Via Bergamo, 12</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Cinelandia</strong><br>
-                                <span class="venues-list__address">Corso Sempione, 194</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Villa Calcaterra</strong> <span class="venues-list__note">(Sede Istituto Antonioni)</span><br>
-                                <span class="venues-list__address">Via Magenta, 70</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Spazio Festival</strong><br>
-                                <span class="venues-list__address">P.zza San Giovanni</span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Cinema Teatro Fratello Sole</h3>
+                    <p class="venue-card__address">Via M. D'Azeglio, 1 — Busto Arsizio</p>
                 </div>
-                <div class="venues-col">
-                    <h3 class="venues-col__city">Legnano &amp; Castellanza</h3>
-                    <ul class="venues-list">
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Sala Ratti</strong><br>
-                                <span class="venues-list__address">Corso Magenta, 9 — Legnano</span>
-                            </div>
-                        </li>
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Cinema Teatro Dante</strong><br>
-                                <span class="venues-list__address">Via Dante Alighieri, 5 — Castellanza</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <h3 class="venues-col__city venues-col__city--mt">Varese</h3>
-                    <ul class="venues-list">
-                        <li class="venues-list__item">
-                            <span class="venues-list__icon">&#9679;</span>
-                            <div>
-                                <strong>Camera di Commercio, Sala Campiotti</strong><br>
-                                <span class="venues-list__address">Piazza Monte Grappa, 5</span>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Cinema Lux</h3>
+                    <p class="venue-card__address">P.zza S. Donato, 5 — Busto Arsizio</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Cinema Teatro Manzoni</h3>
+                    <p class="venue-card__address">Via Calatafimi, 5 — Busto Arsizio</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Teatro Sociale Delia Cajelli</h3>
+                    <p class="venue-card__address">P.zza Plebiscito, 1 — Busto Arsizio</p>
+                    <p class="venue-card__note">Sala principale eventi e premiazioni</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Cinema S. Giovanni Bosco</h3>
+                    <p class="venue-card__address">Via Bergamo, 12 — Busto Arsizio</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Cinelandia</h3>
+                    <p class="venue-card__address">Corso Sempione, 194 — Busto Arsizio</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Villa Calcaterra — Istituto Antonioni</h3>
+                    <p class="venue-card__address">Via Magenta, 70 — Busto Arsizio</p>
+                    <p class="venue-card__note">Sede principale del festival</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Spazio Festival</h3>
+                    <p class="venue-card__address">P.zza San Giovanni — Busto Arsizio</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Busto Arsizio</p>
+                    <h3 class="venue-card__name">Biblioteca Comunale G.B. Roggia — Sala Monaco</h3>
+                    <p class="venue-card__address">Via Marliani, 7 — Busto Arsizio</p>
                 </div>
             </div>
+
+            <h3 class="venues-city-label">Legnano &amp; Castellanza</h3>
+            <div class="venues-grid">
+                <div class="venue-card">
+                    <p class="venue-card__city">Legnano</p>
+                    <h3 class="venue-card__name">Sala Ratti</h3>
+                    <p class="venue-card__address">Corso Magenta, 9 — Legnano</p>
+                </div>
+                <div class="venue-card">
+                    <p class="venue-card__city">Castellanza</p>
+                    <h3 class="venue-card__name">Cinema Teatro Dante</h3>
+                    <p class="venue-card__address">Via Dante Alighieri, 5 — Castellanza</p>
+                </div>
+            </div>
+
+            <h3 class="venues-city-label">Varese</h3>
+            <div class="venues-grid">
+                <div class="venue-card">
+                    <p class="venue-card__city">Varese</p>
+                    <h3 class="venue-card__name">Camera di Commercio — Sala Campiotti</h3>
+                    <p class="venue-card__address">Piazza Monte Grappa, 5 — Varese</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE 5 — Storia -->
+    <section class="page-section page-section--alt" id="storia">
+        <div class="page-section__container">
+            <h2 class="page-section__title">La Storia del Festival</h2>
+            <div class="page-section__content">
+                <p>Il B.A. Film Festival nasce nel 2003 dalla passione di un gruppo di appassionati di cinema. In oltre vent'anni ha ospitato centinaia di film, masterclass, omaggi a grandi maestri del cinema italiano e internazionale, diventando un punto di riferimento per il cinema d'autore nel nord Italia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section page-section--alt">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Le edizioni</h2>
+
+            <!-- Mobile: dropdown -->
+            <div class="storia-select-wrap">
+                <select class="storia-select" id="storiaSelect" aria-label="Seleziona anno">
+                    <option value="2024">2024 — XXII edizione</option>
+                    <option value="2023">2023 — XXI edizione</option>
+                    <option value="2022">2022 — XX edizione</option>
+                    <option value="2021">2021 — XIX edizione</option>
+                    <option value="2020">2020 — XVIII edizione</option>
+                    <option value="2019">2019 — XVII edizione</option>
+                    <option value="2018">2018 — XVI edizione</option>
+                    <option value="2017">2017 — XV edizione</option>
+                    <option value="2016">2016 — XIV edizione</option>
+                    <option value="2015">2015 — XIII edizione</option>
+                    <option value="2014">2014 — XII edizione</option>
+                    <option value="2013">2013 — XI edizione</option>
+                    <option value="2012">2012 — X edizione</option>
+                    <option value="2011">2011 — IX edizione</option>
+                    <option value="2010">2010 — VIII edizione</option>
+                    <option value="2009">2009 — VII edizione</option>
+                    <option value="2008">2008 — VI edizione</option>
+                    <option value="2007">2007 — V edizione</option>
+                    <option value="2006">2006 — IV edizione</option>
+                    <option value="2005">2005 — III edizione</option>
+                    <option value="2004">2004 — II edizione</option>
+                    <option value="2003">2003 — I edizione</option>
+                </select>
+            </div>
+
+            <div class="storia-layout">
+                <!-- Lista anni desktop -->
+                <nav class="storia-years" aria-label="Seleziona edizione">
+                    <button class="storia-years__btn" data-year="2024">2024</button>
+                    <button class="storia-years__btn" data-year="2023">2023</button>
+                    <button class="storia-years__btn" data-year="2022">2022</button>
+                    <button class="storia-years__btn" data-year="2021">2021</button>
+                    <button class="storia-years__btn" data-year="2020">2020</button>
+                    <button class="storia-years__btn" data-year="2019">2019</button>
+                    <button class="storia-years__btn" data-year="2018">2018</button>
+                    <button class="storia-years__btn" data-year="2017">2017</button>
+                    <button class="storia-years__btn" data-year="2016">2016</button>
+                    <button class="storia-years__btn" data-year="2015">2015</button>
+                    <button class="storia-years__btn" data-year="2014">2014</button>
+                    <button class="storia-years__btn" data-year="2013">2013</button>
+                    <button class="storia-years__btn" data-year="2012">2012</button>
+                    <button class="storia-years__btn" data-year="2011">2011</button>
+                    <button class="storia-years__btn" data-year="2010">2010</button>
+                    <button class="storia-years__btn" data-year="2009">2009</button>
+                    <button class="storia-years__btn" data-year="2008">2008</button>
+                    <button class="storia-years__btn" data-year="2007">2007</button>
+                    <button class="storia-years__btn" data-year="2006">2006</button>
+                    <button class="storia-years__btn" data-year="2005">2005</button>
+                    <button class="storia-years__btn" data-year="2004">2004</button>
+                    <button class="storia-years__btn" data-year="2003">2003</button>
+                </nav>
+
+                <!-- Contenuto edizioni -->
+                <div class="storia-content">
+
+                    <article class="storia-entry" data-year="2024">
+                        <h3 class="storia-entry__year">2024 <span class="storia-entry__edition">XXII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio regista dell'anno a <strong>Bertrand Bonello</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Miglior Opera Prima: <strong>"Gli oceani sono i veri continenti"</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospite: <strong>Maurizio Nichetti</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Direzione artistica: <strong>Giulio Sangiorgio</strong></div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-1.jpg" data-storia-alt="Locandina 2024">
+                                <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-1.jpg" alt="Locandina 2024" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2024</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2023">
+                        <h3 class="storia-entry__year">2023 <span class="storia-entry__edition">XXI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Dino Ceccuzzi a <strong>Marco Bellocchio</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospite internazionale: <strong>Jerzy Skolimowski</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Nuovo direttore artistico: <strong>Giulio Sangiorgio</strong></div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2024/06/storia2023.jpg" data-storia-alt="Locandina 2023">
+                                <img src="https://www.baff.it/wp-content/uploads/2024/06/storia2023.jpg" alt="Locandina 2023" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2023</span>
+                            </div>
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2024/06/storia2023retro.jpg" data-storia-alt="Locandina 2023 — retro">
+                                <img src="https://www.baff.it/wp-content/uploads/2024/06/storia2023retro.jpg" alt="Locandina 2023 — retro" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2023 — retro</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2022">
+                        <h3 class="storia-entry__year">2022 <span class="storia-entry__edition">XX edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127881;</span> <strong>Ventennale del festival</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospite internazionale: <strong>Bille August</strong> (premio Oscar)</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 5 film Made in Italy in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 5 sale cinematografiche</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2024/01/storia2022.jpg" data-storia-alt="Locandina 2022">
+                                <img src="https://www.baff.it/wp-content/uploads/2024/01/storia2022.jpg" alt="Locandina 2022" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2022</span>
+                            </div>
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2024/01/storia2022august.jpg" data-storia-alt="Locandina 2022 — retro">
+                                <img src="https://www.baff.it/wp-content/uploads/2024/01/storia2022august.jpg" alt="Locandina 2022 — retro" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2022 — retro</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2021">
+                        <h3 class="storia-entry__year">2021 <span class="storia-entry__edition">XIX edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Omaggio a <strong>Roberto Rossellini</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Massimo Ghini</strong>, <strong>Nada</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 2 Masterclass. 4 sale</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2023/01/retro2021.jpg" data-storia-alt="Locandina 2021">
+                                <img src="https://www.baff.it/wp-content/uploads/2023/01/retro2021.jpg" alt="Locandina 2021" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2021</span>
+                            </div>
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2023/01/ghini2021-1.jpg" data-storia-alt="Locandina 2021 — retro">
+                                <img src="https://www.baff.it/wp-content/uploads/2023/01/ghini2021-1.jpg" alt="Locandina 2021 — retro" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2021 — retro</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2020">
+                        <h3 class="storia-entry__year">2020 <span class="storia-entry__edition">XVIII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#9888;</span> Edizione ridotta per <strong>Covid-19</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 3 serate evento. 2 sale cinematografiche</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2021/09/storia2020.jpg" data-storia-alt="Locandina 2020">
+                                <img src="https://www.baff.it/wp-content/uploads/2021/09/storia2020.jpg" alt="Locandina 2020" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2020</span>
+                            </div>
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2021/09/storia2020retro.jpg" data-storia-alt="Locandina 2020 — retro">
+                                <img src="https://www.baff.it/wp-content/uploads/2021/09/storia2020retro.jpg" alt="Locandina 2020 — retro" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2020 — retro</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2019">
+                        <h3 class="storia-entry__year">2019 <span class="storia-entry__edition">XVII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Il Primo Re"</strong> di Matteo Rovere</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Stracult a <strong>Luc Merenda</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 6 pellicole Made in Italy</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2021/09/fronte2019.jpg" data-storia-alt="Locandina 2019">
+                                <img src="https://www.baff.it/wp-content/uploads/2021/09/fronte2019.jpg" alt="Locandina 2019" loading="lazy">
+                                <span class="storia-locandina__label">Locandina 2019</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2018">
+                        <h3 class="storia-entry__year">2018 <span class="storia-entry__edition">XVI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Platinum a <strong>Luciano Ligabue</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Come un gatto in tangenziale"</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole Made in Italy</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/ligabuestoria.jpg" data-storia-alt="Locandina 2018">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/ligabuestoria.jpg" alt="Locandina 2018" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2018</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2017">
+                        <h3 class="storia-entry__year">2017 <span class="storia-entry__edition">XV edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Indivisibili"</strong> di Edoardo De Angelis</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Lello Bersani a <strong>Valerio Caprara</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole Made in Italy</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2017.jpg" data-storia-alt="Locandina 2017">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2017.jpg" alt="Locandina 2017" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2017</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2016">
+                        <h3 class="storia-entry__year">2016 <span class="storia-entry__edition">XIV edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Platinum a <strong>Laura Morante</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Veloce come il vento"</strong> di Stefano Mordini</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole Made in Italy</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2017/02/2016.jpg" data-storia-alt="Locandina 2016">
+                                <img src="https://www.baff.it/wp-content/uploads/2017/02/2016.jpg" alt="Locandina 2016" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2016</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2015">
+                        <h3 class="storia-entry__year">2015 <span class="storia-entry__edition">XIII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Il nome del figlio"</strong> di Francesca Archibugi</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Platinum Dino Ceccuzzi</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 7 pellicole Made in Italy</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2015.jpg" data-storia-alt="Locandina 2015">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2015.jpg" alt="Locandina 2015" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2015</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2014">
+                        <h3 class="storia-entry__year">2014 <span class="storia-entry__edition">XII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Nuovo direttore artistico: <strong>Steve della Casa</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Vittoria Puccini</strong>, <strong>Geppi Cucciari</strong>, <strong>Ferzan Ozpetek</strong>, <strong>Francesco De Gregori</strong>, <strong>Claudio Amendola</strong>, <strong>Marco Giallini</strong>, <strong>Francesca Neri</strong>, <strong>Sydney Sibilia</strong></div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/03/2014.jpg" data-storia-alt="Locandina 2014">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/03/2014.jpg" alt="Locandina 2014" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2014</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2013">
+                        <h3 class="storia-entry__year">2013 <span class="storia-entry__edition">XI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Omaggio a <strong>Federico Fellini</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 7 pellicole in concorso</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/03/2013.jpg" data-storia-alt="Locandina 2013">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/03/2013.jpg" alt="Locandina 2013" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2013</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2012">
+                        <h3 class="storia-entry__year">2012 <span class="storia-entry__edition">X edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Omaggio: <strong>Erica Blanc</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole in concorso</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/03/2012.jpg" data-storia-alt="Locandina 2012">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/03/2012.jpg" alt="Locandina 2012" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2012</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2011">
+                        <h3 class="storia-entry__year">2011 <span class="storia-entry__edition">IX edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Dino De Laurentiis</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/03/2011.jpg" data-storia-alt="Locandina 2011">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/03/2011.jpg" alt="Locandina 2011" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2011</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2010">
+                        <h3 class="storia-entry__year">2010 <span class="storia-entry__edition">VIII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Luciano Vincenzoni</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2010.jpg" data-storia-alt="Locandina 2010">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2010.jpg" alt="Locandina 2010" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2010</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2009">
+                        <h3 class="storia-entry__year">2009 <span class="storia-entry__edition">VII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Florestano Vancini</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole in concorso</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2009.jpg" data-storia-alt="Locandina 2009">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2009.jpg" alt="Locandina 2009" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2009</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2008">
+                        <h3 class="storia-entry__year">2008 <span class="storia-entry__edition">VI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Omaggio a <strong>Michelangelo Antonioni</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2008.jpg" data-storia-alt="Locandina 2008">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2008.jpg" alt="Locandina 2008" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2008</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2007">
+                        <h3 class="storia-entry__year">2007 <span class="storia-entry__edition">V edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Bruno Bozzetto</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 11 pellicole per le scuole</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2007.jpg" data-storia-alt="Locandina 2007">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2007.jpg" alt="Locandina 2007" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2007</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2006">
+                        <h3 class="storia-entry__year">2006 <span class="storia-entry__edition">IV edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 8 pellicole in anteprima in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 7 pellicole per le scuole</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2006.jpg" data-storia-alt="Locandina 2006">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2006.jpg" alt="Locandina 2006" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2006</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2005">
+                        <h3 class="storia-entry__year">2005 <span class="storia-entry__edition">III edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Omaggio a <strong>Francis Ford Coppola</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 8 pellicole in anteprima</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2005.jpg" data-storia-alt="Locandina 2005">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2005.jpg" alt="Locandina 2005" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2005</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2004">
+                        <h3 class="storia-entry__year">2004 <span class="storia-entry__edition">II edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Pupi Avati</strong>, <strong>Maurizio Costanzo</strong>, <strong>Ennio Morricone</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> 17 premi assegnati</div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2004.jpg" data-storia-alt="Locandina 2004">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2004.jpg" alt="Locandina 2004" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2004</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2003">
+                        <h3 class="storia-entry__year">2003 <span class="storia-entry__edition">I edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127881;</span> <strong>Prima edizione</strong> del B.A. Film Festival</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Direttore artistico: <strong>Vittorio Giacci</strong></div>
+                        </div>
+                        <div class="storia-locandine">
+                            <div class="storia-locandina" data-storia-src="https://www.baff.it/wp-content/uploads/2015/02/2003.jpg" data-storia-alt="Locandina 2003">
+                                <img src="https://www.baff.it/wp-content/uploads/2015/02/2003.jpg" alt="Locandina 2003" loading="lazy" style="object-fit:cover;">
+                                <span class="storia-locandina__label">Locandina 2003</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox locandine -->
+    <div class="lightbox" id="storiaLightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore locandina">
+        <button class="lightbox__close" id="storiaLbClose" aria-label="Chiudi">&times;</button>
+        <button class="lightbox__prev" id="storiaLbPrev" aria-label="Precedente">&#10094;</button>
+        <button class="lightbox__next" id="storiaLbNext" aria-label="Successiva">&#10095;</button>
+        <div class="lightbox__content">
+            <img class="lightbox__img" id="storiaLbImg" src="" alt="">
+            <p class="lightbox__caption" id="storiaLbCaption"></p>
+        </div>
+    </div>
+
+    <!-- SEZIONE 6 — Trasparenza -->
+    <section class="page-section" id="trasparenza">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Trasparenza</h2>
+            <div class="page-section__content">
+                <p>In ottemperanza alla normativa sulla trasparenza degli enti che ricevono contributi pubblici, la B.A. Film Factory pubblica annualmente i finanziamenti ricevuti da enti pubblici e istituzioni.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section page-section--alt">
+        <div class="page-section__container">
+            <h2 class="trasparenza-year">2023</h2>
+            <div class="trasparenza-table-wrap">
+                <table class="trasparenza-table">
+                    <thead>
+                        <tr>
+                            <th>Ente</th>
+                            <th>Data</th>
+                            <th>Importo</th>
+                            <th>Causale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Regione Lombardia</td>
+                            <td>01/01/2023</td>
+                            <td class="trasparenza-table__amount">&euro; 5.040,00</td>
+                            <td>Bando a sostegno di progetti di promozione educativa culturale</td>
+                        </tr>
+                        <tr>
+                            <td>Regione Lombardia</td>
+                            <td>03/02/2023</td>
+                            <td class="trasparenza-table__amount">&euro; 10.000,00</td>
+                            <td>DG Cinema - Saldo 2022 (30%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="page-section__container">
+            <h2 class="trasparenza-year">2022</h2>
+            <div class="trasparenza-table-wrap">
+                <table class="trasparenza-table">
+                    <thead>
+                        <tr>
+                            <th>Ente</th>
+                            <th>Data</th>
+                            <th>Importo</th>
+                            <th>Causale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MiC &mdash; Ministero della Cultura</td>
+                            <td>26/09/2022</td>
+                            <td class="trasparenza-table__amount">&euro; 23.520,00</td>
+                            <td>DG Cinema acconto 2022 (70%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section page-section--alt">
+        <div class="page-section__container">
+            <h2 class="trasparenza-year">Anni precedenti</h2>
+            <div class="page-section__content">
+                <p style="color: #999; font-style: italic;">I dati degli anni precedenti sono in fase di caricamento.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="page-section__container">
+            <p class="trasparenza-legal">Dati pubblicati ai sensi dell'art. 1 comma 125 e seguenti della L. 124/2017 e successive modifiche. B.A. Film Factory &mdash; Via Magenta 70, 21052 Busto Arsizio (VA)</p>
         </div>
     </section>
 
@@ -399,7 +900,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="festival.html#storia" class="footer__link">Storia</a>
                         <a href="immagini.html" class="footer__link">Immagini</a>
                         <a href="giuria.html" class="footer__link">Giuria</a>
-                        <a href="trasparenza.html" class="footer__link">Trasparenza</a>
+                        <a href="festival.html#trasparenza" class="footer__link">Trasparenza</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Programma</h4>
@@ -412,7 +913,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4 class="footer__col-title">Informazioni</h4>
                         <a href="biglietteria.html" class="footer__link">Biglietteria</a>
                         <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditamenti</a>
-                        <a href="luoghi.html" class="footer__link">Luoghi</a>
+                        <a href="festival.html#sedi" class="footer__link">Luoghi</a>
                         <a href="contatti.html" class="footer__link">Contatti</a>
                         <a href="comunicati.html" class="footer__link">Comunicati stampa</a>
                     </div>
@@ -454,5 +955,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/storia.js"></script>
 </body>
 </html>

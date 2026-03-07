@@ -361,3 +361,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+/* Festival subnav — highlight active link on scroll */
+const festivalLinks = document.querySelectorAll('.festival-subnav__link');
+if (festivalLinks.length) {
+  const sections = Array.from(festivalLinks).map(l => document.querySelector(l.getAttribute('href')));
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (s && window.scrollY >= s.offsetTop - 200) current = '#' + s.id; });
+    festivalLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === current));
+  });
+}
