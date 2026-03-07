@@ -388,7 +388,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #0f0f12 url('http://www.baff.it/wp-content/uploads/2024/03/slide-Baff-2024ok.jpg') center/cover no-repeat;
+    background: #0f0f12 url('../images/denise-jans-OaVJQZ-nFD0-unsplash.jpg') center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -2504,7 +2504,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #0f0f12 url('http://www.baff.it/wp-content/uploads/2024/04/slide-Baff-2024ok2.jpg') center/cover no-repeat;
+    background: #0f0f12 url('../images/hero-page.jpg') center/cover no-repeat;
     margin-top: calc(var(--top-bar-height) + var(--header-height));
     overflow: hidden;
 }
