@@ -2001,6 +2001,212 @@ button {
 }
 
 /* ============================================
+   STAMPA — Kit stampa cards
+   ============================================ */
+.stampa-kit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stampa-kit-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stampa-kit-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.stampa-kit-card__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stampa-kit-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #666);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.stampa-kit-card__btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    color: #1a1a1a;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.stampa-kit-card__btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ============================================
+   COMUNICATI PAGE
+   ============================================ */
+.comunicati-contacts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.comunicati-contact-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-accent);
+    border-radius: 0 0 8px 8px;
+    padding: 1.5rem;
+}
+
+.comunicati-contact-card__role {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.comunicati-contact-card__name {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.comunicati-contact-card__name a {
+    color: var(--color-accent);
+}
+
+.comunicati-year-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+}
+
+.comunicato-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.comunicato-card--placeholder {
+    border: 2px dashed var(--color-accent);
+    background: transparent;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+}
+
+.comunicato-card__date {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.comunicato-card__title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.comunicato-card__abstract {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #666);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+.comunicato-card__btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    color: var(--color-accent);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.comunicato-card__btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.comunicati-accordion__item {
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.comunicati-accordion__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #fff;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.comunicati-accordion__header:hover {
+    background: #f9f9f9;
+}
+
+.comunicati-accordion__icon {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    font-weight: 400;
+}
+
+.comunicati-accordion__body {
+    display: none;
+    padding: 0 1.5rem 1rem;
+}
+
+.comunicati-accordion__item--open .comunicati-accordion__body {
+    display: block;
+}
+
+.comunicati-accordion__placeholder {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
@@ -2183,6 +2389,14 @@ button {
     .venues-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .stampa-kit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comunicati-contacts {
+        grid-template-columns: 1fr;
     }
 
     .gallery-grid {
