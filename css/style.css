@@ -11,9 +11,9 @@
 
 :root {
     --color-bg: #ffffff;
-    --color-bg-alt: #f9f8f6;
+    --color-bg-alt: #ffffff;
     --color-bg-card: #ffffff;
-    --color-bg-grey: #f3f2ef;
+    --color-bg-grey: #ffffff;
     --color-border: #e8e8e8;
     --color-text: #1a1a1a;
     --color-text-secondary: #3a3a3a;
@@ -605,7 +605,7 @@ button {
    ============================================ */
 .tickets {
     padding: 60px 0;
-    background: #f5f4f1;
+    background: #ffffff;
 }
 
 .tickets__container {
@@ -1491,7 +1491,7 @@ button {
    FESTIVAL PAGE — B.A. Film Factory
    ============================================ */
 .page-section--factory {
-    background: #f5f5f5;
+    background: #ffffff;
 }
 
 .factory-lab {
@@ -1757,7 +1757,7 @@ button {
 
 .storia-locandina__empty {
     padding: 2rem 1.5rem;
-    background: #f0efed;
+    background: #ffffff;
     border: 1px dashed #d0cdc8;
     border-radius: 4px;
     text-align: center;
@@ -1808,11 +1808,11 @@ button {
 }
 
 .trasparenza-table tbody tr:nth-child(even) {
-    background: #f9f9f9;
+    background: #ffffff;
 }
 
 .trasparenza-table tbody tr:hover {
-    background: #f0efed;
+    background: #ffffff;
 }
 
 .trasparenza-table__amount {
@@ -2349,7 +2349,7 @@ button {
 }
 
 .comunicati-accordion__header:hover {
-    background: #f9f9f9;
+    background: #ffffff;
 }
 
 .comunicati-accordion__icon {
@@ -2697,8 +2697,8 @@ button {
 
 .page-section--alt {
     background: var(--color-bg-alt);
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
 }
 
 .page-section--grey {
