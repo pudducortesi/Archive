@@ -1510,6 +1510,64 @@ button {
     margin-top: 0.1rem;
 }
 
+.storia-locandine {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.storia-locandina {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.storia-locandina:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+    transform: translateY(-2px);
+}
+
+.storia-locandina img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px 4px 0 0;
+}
+
+.storia-locandina__label {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    color: var(--color-text-muted, #666);
+    background: #fff;
+    text-align: center;
+}
+
+.storia-locandina--placeholder {
+    cursor: default;
+    box-shadow: none;
+    grid-column: 1 / -1;
+}
+
+.storia-locandina--placeholder:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.storia-locandina__empty {
+    padding: 2rem 1.5rem;
+    background: #f0efed;
+    border: 1px dashed #d0cdc8;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    font-style: italic;
+}
+
 /* ============================================
    GALLERY PAGE — Filters, Grid, Lightbox
    ============================================ */
@@ -2045,6 +2103,10 @@ button {
 
     .storia-entry__year {
         font-size: 1.5rem;
+    }
+
+    .storia-locandine {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .venues-grid {
