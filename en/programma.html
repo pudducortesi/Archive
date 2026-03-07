@@ -46,7 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 <img src="../images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img" loading="lazy">
             </a>
             <nav class="header__nav" id="mainNav">
-                <a href="festival.html" class="header__nav-link">The Festival</a>
+                <div class="header__nav-dropdown">
+                    <a href="festival.html" class="header__nav-link">The Festival</a>
+                    <div class="header__dropdown-menu">
+                        <a href="festival.html" class="header__dropdown-link">The Festival</a>
+                        <a href="festival.html#storia" class="header__dropdown-link">History</a>
+                        <a href="immagini.html" class="header__dropdown-link">Gallery</a>
+                        <a href="luoghi.html" class="header__dropdown-link">Venues</a>
+                        <a href="trasparenza.html" class="header__dropdown-link">Transparency</a>
+                        <a href="libreria.html" class="header__dropdown-link">BAFF in Libreria</a>
+                        <a href="scuole.html" class="header__dropdown-link">Made in Italy Scuole</a>
+                    </div>
+                </div>
                 <a href="programma.html" class="header__nav-link header__nav-link--active">Programme</a>
                 <a href="selezione.html" class="header__nav-link">Official Selection</a>
                 <a href="ospiti.html" class="header__nav-link">Guests</a>
@@ -67,6 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu__content">
             <a href="festival.html" class="mobile-menu__link">The Festival</a>
+            <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--small">History</a>
+            <a href="immagini.html" class="mobile-menu__link mobile-menu__link--small">Gallery</a>
+            <a href="luoghi.html" class="mobile-menu__link mobile-menu__link--small">Venues</a>
+            <a href="trasparenza.html" class="mobile-menu__link mobile-menu__link--small">Transparency</a>
+            <a href="libreria.html" class="mobile-menu__link mobile-menu__link--small">BAFF in Libreria</a>
+            <a href="scuole.html" class="mobile-menu__link mobile-menu__link--small">Made in Italy Scuole</a>
             <a href="programma.html" class="mobile-menu__link">Programme</a>
             <a href="selezione.html" class="mobile-menu__link">Official Selection</a>
             <a href="ospiti.html" class="mobile-menu__link">Guests</a>
