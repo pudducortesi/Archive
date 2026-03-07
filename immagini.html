@@ -15,6 +15,17 @@
             grid-auto-rows: auto;
         }
     </style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('error', function() {
+      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
+        ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
+        : this.style.display = 'none';
+    });
+  });
+});
+</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Vai al contenuto principale</a>

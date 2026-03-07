@@ -252,6 +252,17 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
 .fade-in-delay-3 { transition-delay: 0.3s; }
 .fade-in-delay-4 { transition-delay: 0.4s; }
     </style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('error', function() {
+      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
+        ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
+        : this.style.display = 'none';
+    });
+  });
+});
+</script>
 </head>
 <body>
 
