@@ -1569,6 +1569,68 @@ button {
 }
 
 /* ============================================
+   TRASPARENZA PAGE — Tables
+   ============================================ */
+.trasparenza-year {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-accent);
+    display: inline-block;
+}
+
+.trasparenza-table-wrap {
+    overflow-x: auto;
+}
+
+.trasparenza-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.trasparenza-table th {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted, #666);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.trasparenza-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+}
+
+.trasparenza-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.trasparenza-table tbody tr:hover {
+    background: #f0efed;
+}
+
+.trasparenza-table__amount {
+    font-weight: 700;
+    color: #1a6b3c;
+    white-space: nowrap;
+}
+
+.trasparenza-legal {
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* ============================================
    GALLERY PAGE — Filters, Grid, Lightbox
    ============================================ */
 .gallery-filters {
@@ -2083,6 +2145,15 @@ button {
 
     .concorsi-grid {
         grid-template-columns: 1fr;
+    }
+
+    .trasparenza-table {
+        font-size: 0.85rem;
+    }
+
+    .trasparenza-table th,
+    .trasparenza-table td {
+        padding: 0.65rem 0.75rem;
     }
 
     .staff-grid {
