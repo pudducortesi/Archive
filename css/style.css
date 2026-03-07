@@ -1169,6 +1169,7 @@ button {
 .footer__col {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer__link {
@@ -1183,9 +1184,11 @@ button {
 }
 
 .footer__bottom {
-    padding: 1.5rem 0;
+    margin-top: 2rem;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid rgba(255,255,255,.1);
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     font-size: 0.75rem;
     color: var(--color-text-muted);
@@ -1193,6 +1196,7 @@ button {
 
 .footer__legal {
     display: flex;
+    align-items: baseline;
     gap: 1.5rem;
 }
 

@@ -199,11 +199,11 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
 .footer__tagline { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; }
 .footer__columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 .footer__col-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-secondary); font-weight: 600; margin-bottom: 1.25rem; }
-.footer__col { display: flex; flex-direction: column; }
+.footer__col { display: flex; flex-direction: column; align-items: flex-start; }
 .footer__link { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.6rem; transition: color var(--transition); }
 .footer__link:hover { color: var(--color-accent); }
-.footer__bottom { padding: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-muted); }
-.footer__legal { display: flex; gap: 1.5rem; }
+.footer__bottom { margin-top: 2rem; padding: 1.5rem 0 0; border-top: 1px solid rgba(255,255,255,.1); display: flex; align-items: baseline; justify-content: space-between; font-size: 0.75rem; color: var(--color-text-muted); }
+.footer__legal { display: flex; align-items: baseline; gap: 1.5rem; }
 .footer__legal a { color: var(--color-text-muted); transition: color var(--transition); }
 .footer__legal a:hover { color: var(--color-text-secondary); }
 
@@ -585,7 +585,7 @@ button { border: none; background: none; cursor: pointer; color: inherit; font-f
                     <div class="footer__col">
                         <h4 class="footer__col-title">Informazioni</h4>
                         <a href="#" class="footer__link">Biglietteria</a>
-                        <a href="#" class="footer__link">Accreditamenti</a>
+                        <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditamenti</a>
                         <a href="#" class="footer__link">Come raggiungerci</a>
                         <a href="#" class="footer__link">FAQ</a>
                     </div>
