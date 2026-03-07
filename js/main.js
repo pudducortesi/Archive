@@ -322,6 +322,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Back to Top button ---
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // --- Scroll animations (Intersection Observer) ---
     const fadeElements = document.querySelectorAll('.featured__main, .featured__card, .program__card, .info__card, .countdown__container, .newsletter__container, .stats__item, .timeline__item, .guest-card, .ticket-card');
 

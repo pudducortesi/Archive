@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <header class="header" id="header">
         <div class="header__container">
             <a href="index.html" class="header__logo">
-                <img src="images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img">
+                <img src="images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img" loading="lazy">
             </a>
             <nav class="header__nav" id="mainNav">
                 <a href="festival.html" class="header__nav-link">Il Festival</a>
@@ -87,6 +87,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html" class="breadcrumb__link">Home</a>
+                <span class="breadcrumb__separator">/</span>
+                <span class="breadcrumb__current">Comunicati Stampa</span>
+            </nav>
             <h1 class="page-hero__title">Comunicati Stampa</h1>
             <p class="page-hero__subtitle">Le notizie ufficiali del B.A. Film Festival</p>
         </div>
@@ -242,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="footer__container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <img src="images/logo-baff.png" alt="BA Film Festival" class="footer__logo-img">
+                    <img src="images/logo-baff.png" alt="BA Film Festival" class="footer__logo-img" loading="lazy">
                     <p class="footer__tagline">Il cinema a Busto Arsizio</p>
                 </div>
                 <div class="footer__columns">
@@ -288,6 +293,12 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </footer>
+
+    
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Torna su">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
 
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">

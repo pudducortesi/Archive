@@ -5630,6 +5630,158 @@ textarea:focus-visible {
     color: var(--color-accent);
 }
 
+/* ============================================
+   UX AUDIT — Active Navigation Link
+   ============================================ */
+.header__nav-link--active {
+    color: var(--color-text);
+}
+
+.header__nav-link--active::after {
+    width: 100%;
+    background: var(--color-accent);
+}
+
+/* ============================================
+   UX AUDIT — Focus-visible for all interactive elements
+   ============================================ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.hero__cta:focus-visible,
+.ticket-card__cta:focus-visible,
+.accreditation-card__cta:focus-visible,
+.contact-form__submit:focus-visible,
+.newsletter__btn:focus-visible,
+.cookie-banner__btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   UX AUDIT — Back to Top Button
+   ============================================ */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 44px;
+    height: 44px;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--color-accent-hover);
+}
+
+/* ============================================
+   UX AUDIT — Content Readability (max-width)
+   ============================================ */
+.page-section__content {
+    max-width: 740px;
+}
+
+.page-section__content p {
+    line-height: 1.7;
+}
+
+/* ============================================
+   UX AUDIT — Schedule Tabs Mobile Touch Targets
+   ============================================ */
+.schedule__tab {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* ============================================
+   UX AUDIT — Breadcrumb Styles (consistent)
+   ============================================ */
+.breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb a,
+.breadcrumb__link {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover,
+.breadcrumb__link:hover {
+    color: #fff;
+}
+
+.breadcrumb__separator,
+.breadcrumb > span:not(.breadcrumb__current):not(.breadcrumb__link) {
+    margin: 0 0.4rem;
+    opacity: 0.5;
+}
+
+.breadcrumb__current {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* ============================================
+   UX AUDIT — Cookie Banner Mobile
+   ============================================ */
+@media (max-width: 768px) {
+    .cookie-banner__container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .cookie-banner__actions {
+        justify-content: center;
+    }
+
+    .back-to-top {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .schedule__tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 0.25rem;
+    }
+
+    .schedule__tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .schedule__tab {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
