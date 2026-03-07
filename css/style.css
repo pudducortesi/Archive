@@ -1218,6 +1218,177 @@ button {
 }
 
 /* ============================================
+   FESTIVAL PAGE — Concorsi Cards
+   ============================================ */
+.concorsi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.concorsi-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.concorsi-card__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.concorsi-card__text {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   FESTIVAL PAGE — Staff Grid
+   ============================================ */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.staff-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+}
+
+.staff-card__role {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.staff-card__name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.4;
+}
+
+.staff-thanks {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.staff-thanks__title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.staff-thanks__text {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+}
+
+/* ============================================
+   FESTIVAL PAGE — B.A. Film Factory
+   ============================================ */
+.page-section--factory {
+    background: #f5f5f5;
+}
+
+.factory-lab {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.factory-lab__title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.factory-lab__text {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* ============================================
+   FESTIVAL PAGE — Venues / Le Sale
+   ============================================ */
+.venues-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.venues-col__city {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-primary);
+    margin-bottom: 1.25rem;
+}
+
+.venues-col__city--mt {
+    margin-top: 2rem;
+}
+
+.venues-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.venues-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.venues-list__icon {
+    color: var(--color-accent);
+    font-size: 0.5rem;
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+}
+
+.venues-list__address {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+}
+
+.venues-list__note {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
@@ -1359,6 +1530,19 @@ button {
         align-items: flex-start;
         gap: 1rem;
     }
+
+    .concorsi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .venues-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1368,6 +1552,10 @@ button {
 
     .countdown__separator {
         font-size: 1.5rem;
+    }
+
+    .staff-grid {
+        grid-template-columns: 1fr;
     }
 }
 
