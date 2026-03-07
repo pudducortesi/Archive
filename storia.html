@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Storia — B.A. Film Festival</title>
+    <meta name="description" content="La storia del B.A. Film Festival dal 2003 a oggi: vent'anni di cinema a Busto Arsizio con ospiti, premi e anteprime.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar__container">
+            <div class="top-bar__left">
+                <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> |
+                <a href="stampa.html" class="top-bar__link">Stampa</a>
+                <a href="contatti.html" class="top-bar__link">Contatti</a>
+            </div>
+            <div class="top-bar__right">
+                <a href="#" class="top-bar__lang active">IT</a>
+                <a href="en/festival.html" class="top-bar__lang">EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img">
+            </a>
+            <nav class="header__nav" id="mainNav">
+                <a href="festival.html" class="header__nav-link header__nav-link--active">Il Festival</a>
+                <a href="programma.html" class="header__nav-link">Programma</a>
+                <a href="selezione.html" class="header__nav-link">Selezione Ufficiale</a>
+                <a href="ospiti.html" class="header__nav-link">Ospiti</a>
+                <a href="giuria.html" class="header__nav-link">Giuria</a>
+                <a href="news.html" class="header__nav-link">News</a>
+                <a href="accreditamenti.html" class="header__nav-link">PASS</a>
+                <a href="sponsor.html" class="header__nav-link">Friends</a>
+            </nav>
+            <button class="header__burger" id="burgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__content">
+            <a href="festival.html" class="mobile-menu__link">Il Festival</a>
+            <a href="programma.html" class="mobile-menu__link">Programma</a>
+            <a href="selezione.html" class="mobile-menu__link">Selezione Ufficiale</a>
+            <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
+            <a href="giuria.html" class="mobile-menu__link">Giuria</a>
+            <a href="news.html" class="mobile-menu__link">News</a>
+            <a href="accreditamenti.html" class="mobile-menu__link">PASS</a>
+            <a href="sponsor.html" class="mobile-menu__link">Friends</a>
+            <div class="mobile-menu__separator"></div>
+            <a href="https://www.istitutoantonioni.it" target="_blank" class="mobile-menu__link mobile-menu__link--small">Istituto Antonioni</a>
+            <a href="stampa.html" class="mobile-menu__link mobile-menu__link--small">Stampa</a>
+            <a href="contatti.html" class="mobile-menu__link mobile-menu__link--small">Contatti</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero__overlay"></div>
+        <div class="page-hero__content">
+            <h1 class="page-hero__title">La Storia del Festival</h1>
+            <p class="page-hero__subtitle">Vent'anni di cinema a Busto Arsizio</p>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="page-section">
+        <div class="page-section__container">
+            <div class="page-section__content">
+                <p>Il B.A. Film Festival nasce nel 2003 dalla passione di un gruppo di appassionati di cinema. In oltre vent'anni ha ospitato centinaia di film, masterclass, omaggi a grandi maestri del cinema italiano e internazionale, diventando un punto di riferimento per il cinema d'autore nel nord Italia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline interattiva -->
+    <section class="page-section page-section--alt">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Le edizioni</h2>
+
+            <!-- Mobile: dropdown -->
+            <div class="storia-select-wrap">
+                <select class="storia-select" id="storiaSelect" aria-label="Seleziona anno">
+                    <option value="2024">2024 — XXII edizione</option>
+                    <option value="2023">2023 — XXI edizione</option>
+                    <option value="2022">2022 — XX edizione</option>
+                    <option value="2021">2021 — XIX edizione</option>
+                    <option value="2020">2020 — XVIII edizione</option>
+                    <option value="2019">2019 — XVII edizione</option>
+                    <option value="2018">2018 — XVI edizione</option>
+                    <option value="2017">2017 — XV edizione</option>
+                    <option value="2016">2016 — XIV edizione</option>
+                    <option value="2015">2015 — XIII edizione</option>
+                    <option value="2014">2014 — XII edizione</option>
+                    <option value="2013">2013 — XI edizione</option>
+                    <option value="2012">2012 — X edizione</option>
+                    <option value="2011">2011 — IX edizione</option>
+                    <option value="2010">2010 — VIII edizione</option>
+                    <option value="2009">2009 — VII edizione</option>
+                    <option value="2008">2008 — VI edizione</option>
+                    <option value="2007">2007 — V edizione</option>
+                    <option value="2006">2006 — IV edizione</option>
+                    <option value="2005">2005 — III edizione</option>
+                    <option value="2004">2004 — II edizione</option>
+                    <option value="2003">2003 — I edizione</option>
+                </select>
+            </div>
+
+            <div class="storia-layout">
+                <!-- Lista anni desktop -->
+                <nav class="storia-years" aria-label="Seleziona edizione">
+                    <button class="storia-years__btn" data-year="2024">2024</button>
+                    <button class="storia-years__btn" data-year="2023">2023</button>
+                    <button class="storia-years__btn" data-year="2022">2022</button>
+                    <button class="storia-years__btn" data-year="2021">2021</button>
+                    <button class="storia-years__btn" data-year="2020">2020</button>
+                    <button class="storia-years__btn" data-year="2019">2019</button>
+                    <button class="storia-years__btn" data-year="2018">2018</button>
+                    <button class="storia-years__btn" data-year="2017">2017</button>
+                    <button class="storia-years__btn" data-year="2016">2016</button>
+                    <button class="storia-years__btn" data-year="2015">2015</button>
+                    <button class="storia-years__btn" data-year="2014">2014</button>
+                    <button class="storia-years__btn" data-year="2013">2013</button>
+                    <button class="storia-years__btn" data-year="2012">2012</button>
+                    <button class="storia-years__btn" data-year="2011">2011</button>
+                    <button class="storia-years__btn" data-year="2010">2010</button>
+                    <button class="storia-years__btn" data-year="2009">2009</button>
+                    <button class="storia-years__btn" data-year="2008">2008</button>
+                    <button class="storia-years__btn" data-year="2007">2007</button>
+                    <button class="storia-years__btn" data-year="2006">2006</button>
+                    <button class="storia-years__btn" data-year="2005">2005</button>
+                    <button class="storia-years__btn" data-year="2004">2004</button>
+                    <button class="storia-years__btn" data-year="2003">2003</button>
+                </nav>
+
+                <!-- Contenuto edizioni -->
+                <div class="storia-content">
+
+                    <article class="storia-entry" data-year="2024">
+                        <h3 class="storia-entry__year">2024 <span class="storia-entry__edition">XXII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio regista dell'anno a <strong>Bertrand Bonello</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Miglior Opera Prima: <strong>"Gli oceani sono i veri continenti"</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospite: <strong>Maurizio Nichetti</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Direzione artistica: <strong>Giulio Sangiorgio</strong></div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2023">
+                        <h3 class="storia-entry__year">2023 <span class="storia-entry__edition">XXI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Dino Ceccuzzi a <strong>Marco Bellocchio</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospite internazionale: <strong>Jerzy Skolimowski</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Nuovo direttore artistico: <strong>Giulio Sangiorgio</strong></div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2022">
+                        <h3 class="storia-entry__year">2022 <span class="storia-entry__edition">XX edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127881;</span> <strong>Ventennale del festival</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospite internazionale: <strong>Bille August</strong> (premio Oscar)</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 5 film Made in Italy in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 5 sale cinematografiche</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2021">
+                        <h3 class="storia-entry__year">2021 <span class="storia-entry__edition">XIX edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Omaggio a <strong>Roberto Rossellini</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Massimo Ghini</strong>, <strong>Nada</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 2 Masterclass. 4 sale</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2020">
+                        <h3 class="storia-entry__year">2020 <span class="storia-entry__edition">XVIII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#9888;</span> Edizione ridotta per <strong>Covid-19</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 3 serate evento. 2 sale cinematografiche</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2019">
+                        <h3 class="storia-entry__year">2019 <span class="storia-entry__edition">XVII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Il Primo Re"</strong> di Matteo Rovere</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Stracult a <strong>Luc Merenda</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 6 pellicole Made in Italy</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2018">
+                        <h3 class="storia-entry__year">2018 <span class="storia-entry__edition">XVI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Platinum a <strong>Luciano Ligabue</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Come un gatto in tangenziale"</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole Made in Italy</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2017">
+                        <h3 class="storia-entry__year">2017 <span class="storia-entry__edition">XV edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Indivisibili"</strong> di Edoardo De Angelis</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Lello Bersani a <strong>Valerio Caprara</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole Made in Italy</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2016">
+                        <h3 class="storia-entry__year">2016 <span class="storia-entry__edition">XIV edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Platinum a <strong>Laura Morante</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Veloce come il vento"</strong> di Stefano Mordini</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole Made in Italy</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2015">
+                        <h3 class="storia-entry__year">2015 <span class="storia-entry__edition">XIII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Miglior Film: <strong>"Il nome del figlio"</strong> di Francesca Archibugi</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> Premio Platinum Dino Ceccuzzi</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 7 pellicole Made in Italy</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2014">
+                        <h3 class="storia-entry__year">2014 <span class="storia-entry__edition">XII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Nuovo direttore artistico: <strong>Steve della Casa</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Vittoria Puccini</strong>, <strong>Geppi Cucciari</strong>, <strong>Ferzan Ozpetek</strong>, <strong>Francesco De Gregori</strong>, <strong>Claudio Amendola</strong>, <strong>Marco Giallini</strong>, <strong>Francesca Neri</strong>, <strong>Sydney Sibilia</strong></div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2013">
+                        <h3 class="storia-entry__year">2013 <span class="storia-entry__edition">XI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Omaggio a <strong>Federico Fellini</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 7 pellicole in concorso</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2012">
+                        <h3 class="storia-entry__year">2012 <span class="storia-entry__edition">X edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Omaggio: <strong>Erica Blanc</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole in concorso</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2011">
+                        <h3 class="storia-entry__year">2011 <span class="storia-entry__edition">IX edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Dino De Laurentiis</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2010">
+                        <h3 class="storia-entry__year">2010 <span class="storia-entry__edition">VIII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Luciano Vincenzoni</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2009">
+                        <h3 class="storia-entry__year">2009 <span class="storia-entry__edition">VII edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Florestano Vancini</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 9 pellicole in concorso</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2008">
+                        <h3 class="storia-entry__year">2008 <span class="storia-entry__edition">VI edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> Omaggio a <strong>Michelangelo Antonioni</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2007">
+                        <h3 class="storia-entry__year">2007 <span class="storia-entry__edition">V edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Bruno Bozzetto</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 11 pellicole per le scuole</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2006">
+                        <h3 class="storia-entry__year">2006 <span class="storia-entry__edition">IV edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 8 pellicole in anteprima in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> 7 pellicole per le scuole</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2005">
+                        <h3 class="storia-entry__year">2005 <span class="storia-entry__edition">III edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Omaggio a <strong>Francis Ford Coppola</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 8 pellicole in anteprima</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2004">
+                        <h3 class="storia-entry__year">2004 <span class="storia-entry__edition">II edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#11088;</span> Ospiti: <strong>Pupi Avati</strong>, <strong>Maurizio Costanzo</strong>, <strong>Ennio Morricone</strong></div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127916;</span> 10 pellicole in concorso</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127942;</span> 17 premi assegnati</div>
+                        </div>
+                    </article>
+
+                    <article class="storia-entry" data-year="2003">
+                        <h3 class="storia-entry__year">2003 <span class="storia-entry__edition">I edizione</span></h3>
+                        <div class="storia-entry__body">
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127881;</span> <strong>Prima edizione</strong> del B.A. Film Festival</div>
+                            <div class="storia-entry__detail"><span class="storia-entry__icon">&#127917;</span> Direttore artistico: <strong>Vittorio Giacci</strong></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter__container">
+            <h2 class="newsletter__title">Resta aggiornato</h2>
+            <p class="newsletter__text">Iscriviti alla newsletter per ricevere tutte le novità sul B.A. Film Festival.</p>
+            <form class="newsletter__form" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
+                <input type="hidden" name="subject" value="Iscrizione Newsletter BAFF 2026">
+                <input type="hidden" name="from_name" value="BAFF Newsletter">
+                <input type="hidden" name="to" value="info@bafilmfestival.it">
+                <input type="checkbox" name="botcheck" style="display:none">
+                <input type="email" name="email" class="newsletter__input" placeholder="La tua email" aria-label="Email" required>
+                <button type="submit" class="newsletter__btn">Iscriviti</button>
+            </form>
+            <p class="newsletter__success" style="display:none;">Iscritto! Grazie.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="images/logo-baff.png" alt="BA Film Festival" class="footer__logo-img">
+                    <p class="footer__tagline">Il cinema a Busto Arsizio</p>
+                </div>
+                <div class="footer__columns">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Il Festival</h4>
+                        <a href="festival.html" class="footer__link">Chi siamo</a>
+                        <a href="storia.html" class="footer__link">Storia</a>
+                        <a href="festival.html" class="footer__link">Regolamento</a>
+                        <a href="giuria.html" class="footer__link">Giuria</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Programma</h4>
+                        <a href="programma.html" class="footer__link">Concorso Italiano</a>
+                        <a href="programma.html" class="footer__link">Concorso Internazionale</a>
+                        <a href="programma.html" class="footer__link">Eventi Speciali</a>
+                        <a href="programma.html" class="footer__link">Masterclass</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Informazioni</h4>
+                        <a href="biglietteria.html" class="footer__link">Biglietteria</a>
+                        <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditamenti</a>
+                        <a href="contatti.html" class="footer__link">Come raggiungerci</a>
+                        <a href="contatti.html" class="footer__link">FAQ</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Seguici</h4>
+                        <a href="https://www.facebook.com/BAFilmFestival" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+                        <a href="https://www.instagram.com/bafilmfestival/" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+                        <a href="https://www.youtube.com/@bafilmfestival" target="_blank" rel="noopener" class="footer__link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 B.A. Film Festival — Busto Arsizio. Tutti i diritti riservati.</p>
+                <div class="footer__legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                    <a href="note-legali.html">Note legali</a>
+                    <a href="/admin/index.html">Admin Panel</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Questo sito utilizza cookie tecnici e, previo tuo consenso, cookie di profilazione per migliorare la tua esperienza di navigazione. Per saperne di pi&ugrave; consulta la nostra <a href="privacy.html">Privacy Policy</a> e la <a href="cookie.html">Cookie Policy</a>.</p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accetta</button>
+                <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieReject">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/storia.js"></script>
+</body>
+</html>

@@ -1389,6 +1389,128 @@ button {
 }
 
 /* ============================================
+   STORIA PAGE — Interactive Timeline
+   ============================================ */
+.storia-select-wrap {
+    display: none;
+    margin-bottom: 1.5rem;
+}
+
+.storia-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--color-text-primary);
+    cursor: pointer;
+}
+
+.storia-layout {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.storia-years {
+    flex: 0 0 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    border-right: 2px solid var(--color-border);
+    padding-right: 0;
+}
+
+.storia-years__btn {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-right: 3px solid transparent;
+    margin-right: -2px;
+    transition: all 0.2s ease;
+}
+
+.storia-years__btn:hover {
+    color: var(--color-text-primary);
+    background: rgba(0,0,0,0.03);
+}
+
+.storia-years__btn.active {
+    color: #fff;
+    background: var(--color-accent);
+    border-right-color: var(--color-accent);
+}
+
+.storia-content {
+    flex: 1;
+    min-height: 300px;
+}
+
+.storia-entry {
+    display: none;
+    animation: storiaFadeIn 0.3s ease;
+}
+
+.storia-entry.active {
+    display: block;
+}
+
+@keyframes storiaFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.storia-entry__year {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.storia-entry__edition {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    margin-left: 0.5rem;
+}
+
+.storia-entry__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.storia-entry__detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.storia-entry__icon {
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 0.1rem;
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
@@ -1537,6 +1659,22 @@ button {
 
     .staff-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .storia-select-wrap {
+        display: block;
+    }
+
+    .storia-years {
+        display: none;
+    }
+
+    .storia-layout {
+        flex-direction: column;
+    }
+
+    .storia-entry__year {
+        font-size: 1.5rem;
     }
 
     .venues-grid {
