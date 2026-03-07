@@ -139,94 +139,114 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- SEZIONE 2 — Lo Staff -->
-    <section class="page-section page-section--alt">
+    <section class="page-section page-section--dark">
         <div class="page-section__container">
             <h2 class="page-section__title">Lo Staff</h2>
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <span class="staff-card__role">Presidente B.A. Film Factory e Presidente Fondazione Istituto Michelangelo Antonioni</span>
-                    <span class="staff-card__name">Alessandro Munari</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Direzione artistica</span>
-                    <span class="staff-card__name">Giulio Sangiorgio</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Presidente onorario</span>
-                    <span class="staff-card__name">Gabriele Tosi</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Vice Presidente BA Film Factory</span>
-                    <span class="staff-card__name">Emilia Carnaghi</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Direttore esecutivo</span>
-                    <span class="staff-card__name">Paolo Castelli</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Responsabile tecnico</span>
-                    <span class="staff-card__name">Leonardo Chierichetti</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Ospitalità e Segreteria Organizzativa</span>
-                    <span class="staff-card__name">Vanessa Magni, Caterina Torretta</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Made in Italy – Scuole</span>
-                    <span class="staff-card__name">Paolo Castelli, Marco Longo, Elisabetta Bonfanti</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Rapporti con gli sponsor</span>
-                    <span class="staff-card__name">Elisabetta Bonfanti, Caterina Torretta</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Spazio Festival</span>
-                    <span class="staff-card__name">Giulia Gadda, Francesca Lonati</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Ufficio stampa BAFF</span>
-                    <span class="staff-card__name">Emilia Carnaghi</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Ufficio stampa nazionale</span>
-                    <span class="staff-card__name">Storyfinders - Lionella Bianca Fiorillo</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Allestimenti</span>
-                    <span class="staff-card__name">SpazioKreativo s.n.c.</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Progetto grafico e sito web</span>
-                    <span class="staff-card__name">Giuseppe Reale</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Social media</span>
-                    <span class="staff-card__name">ArmaSocial</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Illustrazione locandina 2024</span>
-                    <span class="staff-card__name">Elisa Puglielli</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Logo BA Film Festival</span>
-                    <span class="staff-card__name">Max Croci</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Logo BA Film Factory</span>
-                    <span class="staff-card__name">Beppe Facente</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Tipografia</span>
-                    <span class="staff-card__name">Grafiche Casbot</span>
-                </div>
-                <div class="staff-card">
-                    <span class="staff-card__role">Fotografo</span>
-                    <span class="staff-card__name">Matteo Scazzosi</span>
+
+            <!-- Tier 1: Direzione -->
+            <div class="staff-tier">
+                <h3 class="staff-tier__label">Direzione</h3>
+                <div class="staff-tier__row">
+                    <div class="staff-card staff-card--lead">
+                        <span class="staff-card__name">Alessandro Munari</span>
+                        <span class="staff-card__role">Presidente</span>
+                    </div>
+                    <div class="staff-card staff-card--lead">
+                        <span class="staff-card__name">Giulio Sangiorgio</span>
+                        <span class="staff-card__role">Direttore artistico</span>
+                    </div>
+                    <div class="staff-card staff-card--lead">
+                        <span class="staff-card__name">Paolo Castelli</span>
+                        <span class="staff-card__role">Direttore esecutivo</span>
+                    </div>
                 </div>
             </div>
-            <div class="staff-thanks">
-                <h3 class="staff-thanks__title">Si ringraziano</h3>
-                <p class="staff-thanks__text">Marco Crepaldi (direttore organizzativo dal 2004 al 2024), Carlotta Garavaglia, Steve della Casa con Paola Poli (co-direttori artistici dal 2014 al 2023), Valeria Brazzelli, Daniela Bianchi, Luca Borsa, Celeste Colombo, Dina Della Bella, Monica Bai, Francesco Gatti, Franco Mariotti, Vittorio Giacci (direttore artistico dal 2003 al 2013), Franco Martignoni, Elisabetta Russo, Silvia Salvetti, Marco Bianchi.</p>
+
+            <!-- Tier 2: Organizzazione -->
+            <div class="staff-tier">
+                <h3 class="staff-tier__label">Organizzazione</h3>
+                <div class="staff-tier__grid">
+                    <div class="staff-card">
+                        <span class="staff-card__name">Gabriele Tosi</span>
+                        <span class="staff-card__role">Presidente onorario</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Emilia Carnaghi</span>
+                        <span class="staff-card__role">Vice Presidente BA Film Factory</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Leonardo Chierichetti</span>
+                        <span class="staff-card__role">Responsabile tecnico</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Vanessa Magni, Caterina Torretta</span>
+                        <span class="staff-card__role">Ospitalità e Segreteria Organizzativa</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Paolo Castelli, Marco Longo, Elisabetta Bonfanti</span>
+                        <span class="staff-card__role">Made in Italy – Scuole</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Elisabetta Bonfanti, Caterina Torretta</span>
+                        <span class="staff-card__role">Rapporti con gli sponsor</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Giulia Gadda, Francesca Lonati</span>
+                        <span class="staff-card__role">Spazio Festival</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">SpazioKreativo s.n.c.</span>
+                        <span class="staff-card__role">Allestimenti</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Matteo Scazzosi</span>
+                        <span class="staff-card__role">Fotografo</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Grafiche Casbot</span>
+                        <span class="staff-card__role">Tipografia</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Elisa Puglielli</span>
+                        <span class="staff-card__role">Illustrazione locandina 2024</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Max Croci</span>
+                        <span class="staff-card__role">Logo BA Film Festival</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Beppe Facente</span>
+                        <span class="staff-card__role">Logo BA Film Factory</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tier 3: Comunicazione -->
+            <div class="staff-tier">
+                <h3 class="staff-tier__label">Comunicazione</h3>
+                <div class="staff-tier__grid">
+                    <div class="staff-card">
+                        <span class="staff-card__name">Emilia Carnaghi</span>
+                        <span class="staff-card__role">Ufficio stampa BAFF</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Storyfinders - Lionella Bianca Fiorillo</span>
+                        <span class="staff-card__role">Ufficio stampa nazionale</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">Giuseppe Reale</span>
+                        <span class="staff-card__role">Progetto grafico e sito web</span>
+                    </div>
+                    <div class="staff-card">
+                        <span class="staff-card__name">ArmaSocial</span>
+                        <span class="staff-card__role">Social media</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="staff-thanks" style="border-color: rgba(255,255,255,0.1);">
+                <h3 class="staff-thanks__title" style="color: rgba(255,255,255,0.5);">Si ringraziano</h3>
+                <p class="staff-thanks__text" style="color: rgba(255,255,255,0.35);">Marco Crepaldi (direttore organizzativo dal 2004 al 2024), Carlotta Garavaglia, Steve della Casa con Paola Poli (co-direttori artistici dal 2014 al 2023), Valeria Brazzelli, Daniela Bianchi, Luca Borsa, Celeste Colombo, Dina Della Bella, Monica Bai, Francesco Gatti, Franco Mariotti, Vittorio Giacci (direttore artistico dal 2003 al 2013), Franco Martignoni, Elisabetta Russo, Silvia Salvetti, Marco Bianchi.</p>
             </div>
         </div>
     </section>
@@ -376,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer__col">
                         <h4 class="footer__col-title">Il Festival</h4>
                         <a href="festival.html" class="footer__link">Chi siamo</a>
-                        <a href="storia.html" class="footer__link">Storia</a>
+                        <a href="festival.html#storia" class="footer__link">Storia</a>
                         <a href="immagini.html" class="footer__link">Immagini</a>
                         <a href="giuria.html" class="footer__link">Giuria</a>
                         <a href="trasparenza.html" class="footer__link">Trasparenza</a>

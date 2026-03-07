@@ -605,7 +605,7 @@ button {
    ============================================ */
 .tickets {
     padding: 60px 0;
-    background: #f8f8f8;
+    background: #f5f4f1;
 }
 
 .tickets__container {
@@ -619,12 +619,12 @@ button {
     font-family: var(--font-display);
     font-size: 28px;
     font-weight: 700;
-    color: #000;
+    color: #1a1a1a;
     margin-bottom: 4px;
 }
 
 .tickets__subtitle {
-    color: #888;
+    color: #666;
     font-size: 14px;
     margin-bottom: 32px;
 }
@@ -642,7 +642,7 @@ button {
     border-radius: 8px;
     border-top: 3px solid #C41E3A;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 16px;
+    padding: 1.1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -651,7 +651,7 @@ button {
 
 .tickets__name {
     font-family: var(--font-display);
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     color: #000;
@@ -659,14 +659,14 @@ button {
 
 .tickets__price {
     font-family: var(--font-display);
-    font-size: 24px;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #C41E3A;
     line-height: 1;
 }
 
 .tickets__desc {
-    font-size: 11px;
+    font-size: 0.72rem;
     color: #888;
     line-height: 1.3;
     white-space: nowrap;
@@ -678,12 +678,12 @@ button {
 .tickets__btn {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 0.55rem 0.75rem;
     margin-top: 4px;
     background: #C41E3A;
     color: #fff;
     font-family: var(--font-display);
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
@@ -698,13 +698,14 @@ button {
 .tickets__secure {
     margin-top: 16px;
     font-size: 11px;
-    color: #888;
+    color: #999;
 }
 
 @media (max-width: 768px) {
     .tickets__grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        max-width: 100%;
     }
     .tickets__title {
         font-size: 22px;
@@ -2046,24 +2047,25 @@ button {
    ============================================ */
 .historic-guests-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
 }
 
 .historic-guest-card {
-    background: #fff;
-    border-radius: 8px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-card);
     padding: 1.5rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     position: relative;
 }
 
 .historic-guest-card__top {
-    height: 3px;
-    background: var(--color-accent);
-    border-radius: 8px 8px 0 0;
+    height: 220px;
+    background: #1a1a1a;
+    border-radius: 6px 6px 0 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -2072,14 +2074,14 @@ button {
 
 .historic-guest-card__top--photo {
     position: relative;
-    height: 200px;
+    height: 220px;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
+    border-radius: 6px 6px 0 0;
 }
 
 .historic-guest-card__top--photo img {
     width: 100%;
-    height: 100%;
+    height: 220px;
     object-fit: cover;
     display: block;
 }
@@ -2433,6 +2435,18 @@ button {
         flex: 0 0 100%;
     }
 
+    .header__nav {
+        display: none;
+    }
+
+    .header__burger {
+        display: flex;
+    }
+
+    .historic-guests-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .editions__slide {
         flex: 0 0 calc(50% - 0.75rem);
     }
@@ -2449,14 +2463,6 @@ button {
 
     .header {
         top: 0;
-    }
-
-    .header__nav {
-        display: none;
-    }
-
-    .header__burger {
-        display: flex;
     }
 
     .mobile-menu__link {
@@ -2687,7 +2693,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #0f0f12 url('../images/hero-page.jpg') center/cover no-repeat;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0a0a 50%, #1a1a1a 100%);
     margin-top: calc(var(--top-bar-height) + var(--header-height));
     overflow: hidden;
 }
@@ -5963,6 +5969,155 @@ textarea:focus-visible {
         white-space: nowrap;
         flex-shrink: 0;
     }
+}
+
+/* ============================================
+   STAFF SECTION — Dark Tier Layout
+   ============================================ */
+.page-section--dark {
+    background: #111;
+    padding: 5rem 0;
+}
+
+.page-section--dark .page-section__title {
+    color: #fff;
+}
+
+.staff-tier {
+    margin-bottom: 3rem;
+}
+
+.staff-tier__label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #C41E3A;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.staff-tier__row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.staff-tier__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.page-section--dark .staff-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+    border-left: 2px solid #C41E3A;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    border-left: 2px solid #C41E3A;
+    border-radius: 0;
+}
+
+.staff-card--lead {
+    flex: 1;
+    min-width: 180px;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.06);
+    border-left: 3px solid #C41E3A;
+}
+
+.page-section--dark .staff-card__name {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.staff-card--lead .staff-card__name {
+    font-size: 1.1rem;
+}
+
+.page-section--dark .staff-card__role {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .staff-tier__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .staff-tier__row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-tier__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   GLOBAL CONSISTENCY — Card Hovers
+   ============================================ */
+.news-card,
+.film-card,
+.guest-card,
+.editions__slide {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.guest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Buttons — consistent border-radius */
+.btn,
+.hero__cta,
+.tickets__btn,
+.info__link {
+    border-radius: 4px;
+}
+
+/* Section spacing — mobile */
+@media (max-width: 768px) {
+    .page-section {
+        padding: 3rem 0;
+    }
+}
+
+/* Image containers — consistent overflow/radius */
+.featured__image,
+.editions__slide-image,
+.guest-card__image,
+.film-card__image,
+.news-card__image {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* ============================================
+   SPONSOR — Logo Image Styling
+   ============================================ */
+.sponsor-logo img {
+    max-height: 60px;
+    width: auto;
+    filter: grayscale(30%);
+    opacity: 0.85;
+    transition: opacity 0.2s, filter 0.2s;
+}
+
+.sponsor-logo:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 /* Reduced motion preference */
