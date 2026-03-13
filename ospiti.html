@@ -13,9 +13,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .guest-card, .ospite-card, .film-card, .historic-guest-card, figure')
-        ? this.closest('li, .gallery-item, .photo-item, .card, .guest-card, .ospite-card, .film-card, .historic-guest-card, figure').style.display = 'none'
-        : this.style.display = 'none';
+      var card = this.closest('.guest-card, .historic-guest-card, .ospite-card, .film-card, li, .gallery-item, .photo-item, .card, figure');
+      if (card) { card.style.display = 'none'; }
+      else { this.style.display = 'none'; }
     });
   });
 });

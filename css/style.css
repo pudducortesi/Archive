@@ -1965,8 +1965,8 @@ button {
 }
 
 .historic-guest-card__top {
-    height: 220px;
-    background: #f0f0f0;
+    height: 0;
+    background: transparent;
     border-radius: 6px 6px 0 0;
     position: absolute;
     top: 0;
