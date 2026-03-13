@@ -509,9 +509,10 @@ button {
 
 .hero__dates {
     font-size: 1rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 400;
+    font-weight: 600;
+    text-transform: uppercase;
     margin-bottom: 2.5rem;
 }
 
@@ -533,6 +534,56 @@ button {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
     box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
+}
+
+/* Hero Countdown (desktop only) */
+@media (min-width: 768px) {
+    .hero-countdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2.5rem;
+    }
+    .hero-countdown__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 80px;
+    }
+    .hero-countdown__number {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        color: #ffffff;
+        line-height: 1;
+    }
+    .hero-countdown__unit {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 0.4rem;
+    }
+    .hero-countdown__separator {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2.5rem);
+        color: var(--color-accent);
+        font-weight: 300;
+        margin-bottom: 1.2rem;
+    }
+}
+@media (max-width: 767px) {
+    .hero-countdown {
+        display: none;
+    }
+}
+
+button.hero__scroll-arrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .hero__scroll-indicator {

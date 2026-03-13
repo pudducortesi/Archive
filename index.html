@@ -125,12 +125,33 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="hero__content">
             <p class="hero__edition" style="color:#ffffff;">BUSTO ARSIZIO</p>
             <h1 class="hero__title" style="color:var(--color-accent);">XXIV EDIZIONE</h1>
-            <p class="hero__dates" style="font-family:var(--font-display);font-weight:900;">21 — 28 Marzo 2026</p>
+            <p class="hero__dates">21 — 28 Marzo 2026</p>
             <a href="programma.html" class="hero__cta">Scopri il programma</a>
+            <div class="hero-countdown" id="countdown">
+                <div class="hero-countdown__block">
+                    <span class="hero-countdown__number" id="days">--</span>
+                    <span class="hero-countdown__unit">Giorni</span>
+                </div>
+                <div class="hero-countdown__separator">:</div>
+                <div class="hero-countdown__block">
+                    <span class="hero-countdown__number" id="hours">--</span>
+                    <span class="hero-countdown__unit">Ore</span>
+                </div>
+                <div class="hero-countdown__separator">:</div>
+                <div class="hero-countdown__block">
+                    <span class="hero-countdown__number" id="minutes">--</span>
+                    <span class="hero-countdown__unit">Minuti</span>
+                </div>
+                <div class="hero-countdown__separator">:</div>
+                <div class="hero-countdown__block">
+                    <span class="hero-countdown__number" id="seconds">--</span>
+                    <span class="hero-countdown__unit">Secondi</span>
+                </div>
+            </div>
         </div>
-        <a href="programma.html#calendario" class="hero__scroll-arrow" aria-label="Scorri in basso">
+        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </a>
+        </button>
     </section>
 
     <!-- Announcement Banner -->
@@ -553,35 +574,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="program__card-arrow">&rarr;</span>
                 </a>
             </div>
-        </div>
-    </section>
-
-    <!-- Countdown / Next Edition -->
-    <section class="countdown">
-        <div class="countdown__container">
-            <h2 class="countdown__label">XXIV Edizione</h2>
-            <div class="countdown__timer" id="countdown">
-                <div class="countdown__block">
-                    <span class="countdown__number" id="days">--</span>
-                    <span class="countdown__unit">Giorni</span>
-                </div>
-                <div class="countdown__separator">:</div>
-                <div class="countdown__block">
-                    <span class="countdown__number" id="hours">--</span>
-                    <span class="countdown__unit">Ore</span>
-                </div>
-                <div class="countdown__separator">:</div>
-                <div class="countdown__block">
-                    <span class="countdown__number" id="minutes">--</span>
-                    <span class="countdown__unit">Minuti</span>
-                </div>
-                <div class="countdown__separator">:</div>
-                <div class="countdown__block">
-                    <span class="countdown__number" id="seconds">--</span>
-                    <span class="countdown__unit">Secondi</span>
-                </div>
-            </div>
-            <p class="countdown__date">21 — 28 Marzo 2026 &middot; Busto Arsizio</p>
         </div>
     </section>
 
