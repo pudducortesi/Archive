@@ -496,6 +496,16 @@ button {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0.75rem;
 }
+@media (min-width: 768px) {
+    .hero__subtitle {
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: var(--color-accent);
+    }
+}
 
 .hero__dates {
     font-size: 1rem;
@@ -554,6 +564,28 @@ button {
 @keyframes scrollLine {
     0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
     50% { opacity: 1; transform: scaleY(1); }
+}
+
+.hero__scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+    animation: heroBounce 2s ease-in-out infinite;
+}
+.hero__scroll-arrow:hover {
+    color: #fff;
+}
+@keyframes heroBounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
 }
 
 /* ============================================
