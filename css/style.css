@@ -6110,18 +6110,18 @@ textarea:focus-visible {
 /* Homepage subnav: fixed, hidden by default, visible on scroll past hero */
 .festival-subnav--home {
   display: none;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: calc(var(--top-bar-height) + var(--header-height));
+  left: 0;
+  right: 0;
   z-index: 99;
   background: #ffffff;
   opacity: 0;
-  transform: translateY(-100%);
   pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s;
 }
 .festival-subnav--home.subnav--visible {
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
 }
 @media (max-width: 767px) {
