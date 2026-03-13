@@ -6058,17 +6058,12 @@ textarea:focus-visible {
 }
 
 /* Countdown banner variant */
-.page-hero--countdown {
-  background: #0a0a0a;
-}
-.page-hero--countdown .page-hero__subtitle {
-  margin-top: 1.5rem;
-}
 .page-hero--countdown .hero-countdown {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  margin-top: 1rem;
 }
 .page-hero--countdown .hero-countdown__block {
   display: flex;
