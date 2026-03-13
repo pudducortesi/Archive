@@ -302,20 +302,39 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
         <div class="mobile-menu__content">
-            <a href="#" class="mobile-menu__link">Il Festival</a>
-            <a href="#" class="mobile-menu__link">Programma</a>
-            <a href="#" class="mobile-menu__link">Selezione Ufficiale</a>
-            <a href="#" class="mobile-menu__link">Ospiti</a>
-            <a href="#" class="mobile-menu__link">Giuria</a>
-            <a href="#" class="mobile-menu__link">News</a>
-            <a href="accreditamenti.html" class="mobile-menu__link">PASS</a>
-            <div class="mobile-menu__separator"></div>
-            <a href="https://www.istitutoantonioni.it" target="_blank" class="mobile-menu__link mobile-menu__link--small">Istituto Antonioni</a>
-            <a href="#" class="mobile-menu__link mobile-menu__link--small">Stampa</a>
-            <a href="#" class="mobile-menu__link mobile-menu__link--small">Contatti</a>
+            <div class="mobile-menu__header">
+                <img src="images/logo-baff-header.png" alt="BAFF" class="mobile-menu__logo">
+                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Chiudi menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="mobile-menu__nav">
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Il Festival</span>
+                    <a href="festival.html" class="mobile-menu__link mobile-menu__link--sub">Il Festival</a>
+                    <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">Storia</a>
+                    <a href="immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
+                    <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
+                    <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
+                    <a href="festival.html#libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                    <a href="festival.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                </div>
+                <a href="programma.html" class="mobile-menu__link">Programma</a>
+                <a href="selezione.html" class="mobile-menu__link">Selezione Ufficiale</a>
+                <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
+                <a href="giuria.html" class="mobile-menu__link">Giuria</a>
+                <a href="news.html" class="mobile-menu__link">News</a>
+                <a href="accreditamenti.html" class="mobile-menu__link">PASS</a>
+                <a href="sponsor.html" class="mobile-menu__link">Friends</a>
+            </nav>
+            <div class="mobile-menu__footer">
+                <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
+                <a href="stampa.html" class="mobile-menu__footer-link">Stampa</a>
+                <a href="contatti.html" class="mobile-menu__footer-link">Contatti</a>
+            </div>
         </div>
     </div>
 
