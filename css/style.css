@@ -6057,9 +6057,12 @@ textarea:focus-visible {
   .festival-subnav__link { padding: 0.75rem 0.875rem; font-size: 0.7rem; }
 }
 
-/* Homepage subnav: hidden by default, visible on scroll past hero */
+/* Homepage subnav: fixed, hidden by default, visible on scroll past hero */
 .festival-subnav--home {
-  top: 0;
+  position: fixed;
+  top: calc(var(--top-bar-height) + var(--header-height));
+  left: 0;
+  right: 0;
   z-index: 99;
   background: #ffffff;
   opacity: 0;

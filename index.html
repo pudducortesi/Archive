@@ -807,6 +807,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (!entry.isIntersecting) {
+                        console.log('hero left viewport');
                         hero.style.display = 'none';
                         subnav.classList.add('subnav--visible');
                     } else {
