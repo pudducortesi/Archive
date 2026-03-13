@@ -6406,7 +6406,7 @@ textarea:focus-visible {
   max-width: 680px;
   margin: 0 auto;
   padding: 0 2rem;
-  padding-top: 35vh;
+  padding-top: 15vh;
   display: flex;
   flex-direction: column;
   background: transparent;
