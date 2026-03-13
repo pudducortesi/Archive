@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <!-- Countdown Banner -->
-    <section class="page-hero page-hero--countdown">
+    <section class="page-hero page-hero--countdown" id="countdownBanner" style="display:none">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
             <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="hero__dates">21 — 28 Marzo 2026</p>
             <a href="programma.html" class="hero__cta">Scopri il programma</a>
         </div>
-        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})">
+        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="if(window.matchMedia('(min-width:768px)').matches){var h=document.querySelector('.hero'),cb=document.getElementById('countdownBanner'),sn=document.getElementById('homeSubnav');h.nextElementSibling.scrollIntoView({behavior:'smooth'});h.style.display='none';cb.style.display='block';sn.classList.add('subnav--visible')}else{document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})}">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
     </section>
