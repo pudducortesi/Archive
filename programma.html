@@ -54,17 +54,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="immagini.html" class="header__dropdown-link">Immagini</a>
                         <a href="festival.html#sedi" class="header__dropdown-link">Luoghi</a>
                         <a href="festival.html#trasparenza" class="header__dropdown-link">Trasparenza</a>
-                        <a href="festival.html#libreria" class="header__dropdown-link">BAFF in Libreria</a>
-                        <a href="festival.html#scuole" class="header__dropdown-link">Made in Italy Scuole</a>
                     </div>
                 </div>
-                <a href="programma.html" class="header__nav-link header__nav-link--active">Programma</a>
-                <a href="selezione.html" class="header__nav-link">Selezione Ufficiale</a>
+                <div class="header__nav-dropdown">
+                    <a href="programma.html" class="header__nav-link header__nav-link--active">Programma</a>
+                    <div class="header__dropdown-menu">
+                        <a href="programma.html#sezioni" class="header__dropdown-link">Le sezioni</a>
+                        <a href="programma.html#eventi-speciali" class="header__dropdown-link">Eventi Speciali</a>
+                        <a href="programma.html#masterclass" class="header__dropdown-link">Masterclass</a>
+                        <a href="programma.html#fuori-orario" class="header__dropdown-link">Fuori Orario</a>
+                        <a href="programma.html#prima-di-diventare-grandi" class="header__dropdown-link">Prima di diventare grandi</a>
+                        <a href="programma.html#visioni-future-lab" class="header__dropdown-link">Visioni Future Lab</a>
+                        <a href="programma.html#mostre" class="header__dropdown-link">Mostre</a>
+                        <a href="programma.html#baff-in-libreria" class="header__dropdown-link">BAFF in Libreria</a>
+                    </div>
+                </div>
+                <div class="header__nav-dropdown">
+                    <a href="selezione.html" class="header__nav-link">Selezione Ufficiale</a>
+                    <div class="header__dropdown-menu">
+                        <a href="selezione.html#concorso-italiano" class="header__dropdown-link">Concorso Italiano</a>
+                        <a href="selezione.html#concorso-internazionale" class="header__dropdown-link">Concorso Internazionale</a>
+                        <a href="selezione.html#scuole" class="header__dropdown-link">Made in Italy Scuole</a>
+                    </div>
+                </div>
                 <a href="ospiti.html" class="header__nav-link">Ospiti</a>
                 <a href="giuria.html" class="header__nav-link">Giuria</a>
                 <a href="news.html" class="header__nav-link">News</a>
                 <a href="accreditamenti.html" class="header__nav-link">PASS</a>
                 <a href="sponsor.html" class="header__nav-link">Friends</a>
+                <a href="programma.html#mostre" class="header__nav-link">Mostre</a>
             </nav>
             <button class="header__burger" id="burgerBtn" aria-label="Menu">
                 <span></span>
@@ -91,16 +109,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
                     <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
                     <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
-                    <a href="festival.html#libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
-                    <a href="festival.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
                 </div>
-                <a href="programma.html" class="mobile-menu__link">Programma</a>
-                <a href="selezione.html" class="mobile-menu__link">Selezione Ufficiale</a>
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Programma</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                </div>
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                </div>
                 <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
                 <a href="giuria.html" class="mobile-menu__link">Giuria</a>
                 <a href="news.html" class="mobile-menu__link">News</a>
                 <a href="accreditamenti.html" class="mobile-menu__link">Pass</a>
                 <a href="sponsor.html" class="mobile-menu__link">Friends</a>
+                <a href="programma.html#mostre" class="mobile-menu__link">Mostre</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
@@ -126,8 +160,22 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <nav class="festival-subnav" id="programmaSubnav">
+      <div class="festival-subnav__container">
+        <a href="#sezioni" class="festival-subnav__link">Le sezioni</a>
+        <a href="#eventi-speciali" class="festival-subnav__link">Eventi Speciali</a>
+        <a href="#masterclass" class="festival-subnav__link">Masterclass</a>
+        <a href="#fuori-orario" class="festival-subnav__link">Fuori Orario</a>
+        <a href="#prima-di-diventare-grandi" class="festival-subnav__link">Prima di diventare grandi</a>
+        <a href="#visioni-future-lab" class="festival-subnav__link">Visioni Future Lab</a>
+        <a href="#mostre" class="festival-subnav__link">Mostre</a>
+        <a href="#baff-in-libreria" class="festival-subnav__link">BAFF in Libreria</a>
+        <a href="#calendario" class="festival-subnav__link">Calendario</a>
+      </div>
+    </nav>
+
     <!-- Program Categories -->
-    <section class="page-section">
+    <section class="page-section" id="sezioni">
         <div class="page-section__container">
             <h2 class="page-section__title">Le sezioni del festival</h2>
             <p class="page-section__subtitle">Scopri le quattro anime della XXIV edizione del B.A. Film Festival.</p>
@@ -174,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Daily Schedule -->
-    <section class="page-section page-section--alt">
+    <section class="page-section page-section--alt" id="calendario">
         <div class="page-section__container">
             <h2 class="page-section__title">Programma giornaliero</h2>
             <p class="page-section__subtitle">Il calendario completo delle proiezioni e degli eventi, giorno per giorno.</p>
@@ -526,6 +574,102 @@ document.addEventListener('DOMContentLoaded', function() {
 
             </div>
         </div>
+    </section>
+
+    <!-- Masterclass -->
+    <section class="page-section" id="masterclass">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Masterclass</h2>
+        <p class="page-section__intro">Incontri esclusivi con i protagonisti del cinema contemporaneo. Il programma delle masterclass sarà annunciato prossimamente.</p>
+        <div class="coming-soon-banner">
+          <span>Programma in arrivo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prima di diventare grandi -->
+    <section class="page-section page-section--alt" id="prima-di-diventare-grandi">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Prima di diventare grandi</h2>
+        <p class="page-section__intro">Contenuti in arrivo.</p>
+        <div class="coming-soon-banner">
+          <span>Programma in arrivo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visioni Future Lab -->
+    <section class="page-section" id="visioni-future-lab">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Visioni Future Lab</h2>
+        <p class="page-section__intro">Contenuti in arrivo.</p>
+        <div class="coming-soon-banner">
+          <span>Programma in arrivo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fuori Orario -->
+    <section class="page-section page-section--alt" id="fuori-orario">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Fuori Orario / BAFF</h2>
+        <p class="page-section__intro">In collaborazione con la trasmissione di Rai 3 <em>Fuori Orario</em>.</p>
+        <div class="eventi-grid">
+          <div class="evento-card">
+            <div class="evento-card__tag">Fuori Orario</div>
+            <h3 class="evento-card__title">Brebbia e Ferri</h3>
+            <div class="evento-card__body">
+              <p>In collaborazione con la trasmissione di Rai 3 <em>Fuori Orario</em>, inauguriamo una nuova sezione dedicata a linguaggi sperimentali del passato e del presente, in due incontri — a metà tra masterclass e proiezione — dedicati a due autori eccentrici e indomabili: il varesino Gianfranco Brebbia e il bergamasco Luca Ferri.</p>
+              <p>Della vasta e sommersa opera di Brebbia (1923–74), Fulvio Baglivi (Rai 3) parlerà con la figlia del filmmaker Giovanna Brebbia e il critico Mauro Gervasini. Altrettanto instancabile è Luca Ferri, che in dialogo con Roberto Turigliatto (Rai 3) presenterà il suo film più recente, <em>Il Damo</em>.</p>
+            </div>
+            <div class="evento-card__credits">
+              <span>In collaborazione con Rai 3 — Fuori Orario</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mostre -->
+    <section class="page-section" id="mostre">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Mostre</h2>
+        <p class="page-section__intro">Contenuti in arrivo.</p>
+        <div class="coming-soon-banner">
+          <span>Programma in arrivo</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAFF in Libreria -->
+    <section class="page-section page-section--alt" id="baff-in-libreria">
+      <div class="page-section__container">
+        <h2 class="page-section__title">BAFF in Libreria</h2>
+        <p class="page-section__intro">BAFF in Libreria offre occasioni preziose per ragionare e discutere di cinema insieme a scrittori, autori e giornalisti. Tre i saggi proposti quest'anno:</p>
+        <div class="libreria-grid">
+          <div class="libro-card">
+            <div class="libro-card__body">
+              <h3 class="libro-card__title">Flashback. Il cinema americano come riflesso politico culturale degli anni '80</h3>
+              <p class="libro-card__author">Matteo Inzaghi — De Piante Editore</p>
+              <p class="libro-card__desc">Descrive film, serie TV, registi, sceneggiatori e attori che hanno caratterizzato il periodo, approfondendo il legame tra approccio artistico e peculiarità politiche, storiche e culturali. Un libro che permette di riscoprire un decennio di sperimentazioni estetiche, innovazioni narrative e personaggi indimenticabili, e che invita il lettore a guardare il cinema non solo come spettacolo, ma come specchio della società e della storia.</p>
+            </div>
+          </div>
+          <div class="libro-card">
+            <div class="libro-card__body">
+              <h3 class="libro-card__title">Checco Zalone – Da Cado dalle nubi a Buen Camino. Di cosa ridiamo quando ridiamo di lui</h3>
+              <p class="libro-card__author">Gianni Canova — Sagoma Editore</p>
+              <p class="libro-card__desc">Il critico cinematografico Gianni Canova analizza il fenomeno comico di Checco Zalone e il suo enorme successo nel cinema italiano contemporaneo. Tra analisi cinematografica e riflessione culturale, il libro esplora il modo in cui Zalone racconta l'Italia, i suoi vizi e le sue contraddizioni, attraverso una risata capace di parlare a un pubblico vastissimo.</p>
+            </div>
+          </div>
+          <div class="libro-card">
+            <div class="libro-card__body">
+              <h3 class="libro-card__title">La fine della fine</h3>
+              <p class="libro-card__author">Davide Ferrario — Einaudi</p>
+              <p class="libro-card__desc">Una riflessione sul modo in cui oggi raccontiamo e consumiamo le storie. In un'epoca dominata dalla serialità e dalla fruizione immediata dei contenuti, Ferrario si interroga su cosa significhi ancora dare una "fine" a un racconto. Attraverso ricordi personali e considerazioni sul cinema contemporaneo, esplora il rapporto tra narrazione, tecnologia e immaginario collettivo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Locations -->

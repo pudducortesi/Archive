@@ -55,17 +55,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         <a href="immagini.html" class="header__dropdown-link">Immagini</a>
                         <a href="festival.html#sedi" class="header__dropdown-link">Luoghi</a>
                         <a href="festival.html#trasparenza" class="header__dropdown-link">Trasparenza</a>
-                        <a href="festival.html#libreria" class="header__dropdown-link">BAFF in Libreria</a>
-                        <a href="festival.html#scuole" class="header__dropdown-link">Made in Italy Scuole</a>
                     </div>
                 </div>
-                <a href="programma.html" class="header__nav-link">Programma</a>
-                <a href="selezione.html" class="header__nav-link header__nav-link--active">Selezione Ufficiale</a>
+                <div class="header__nav-dropdown">
+                    <a href="programma.html" class="header__nav-link">Programma</a>
+                    <div class="header__dropdown-menu">
+                        <a href="programma.html#sezioni" class="header__dropdown-link">Le sezioni</a>
+                        <a href="programma.html#eventi-speciali" class="header__dropdown-link">Eventi Speciali</a>
+                        <a href="programma.html#masterclass" class="header__dropdown-link">Masterclass</a>
+                        <a href="programma.html#fuori-orario" class="header__dropdown-link">Fuori Orario</a>
+                        <a href="programma.html#prima-di-diventare-grandi" class="header__dropdown-link">Prima di diventare grandi</a>
+                        <a href="programma.html#visioni-future-lab" class="header__dropdown-link">Visioni Future Lab</a>
+                        <a href="programma.html#mostre" class="header__dropdown-link">Mostre</a>
+                        <a href="programma.html#baff-in-libreria" class="header__dropdown-link">BAFF in Libreria</a>
+                    </div>
+                </div>
+                <div class="header__nav-dropdown">
+                    <a href="selezione.html" class="header__nav-link header__nav-link--active">Selezione Ufficiale</a>
+                    <div class="header__dropdown-menu">
+                        <a href="selezione.html#concorso-italiano" class="header__dropdown-link">Concorso Italiano</a>
+                        <a href="selezione.html#concorso-internazionale" class="header__dropdown-link">Concorso Internazionale</a>
+                        <a href="selezione.html#scuole" class="header__dropdown-link">Made in Italy Scuole</a>
+                    </div>
+                </div>
                 <a href="ospiti.html" class="header__nav-link">Ospiti</a>
                 <a href="giuria.html" class="header__nav-link">Giuria</a>
                 <a href="news.html" class="header__nav-link">News</a>
                 <a href="accreditamenti.html" class="header__nav-link">PASS</a>
                 <a href="sponsor.html" class="header__nav-link">Friends</a>
+                <a href="programma.html#mostre" class="header__nav-link">Mostre</a>
             </nav>
             <button class="header__burger" id="burgerBtn" aria-label="Menu">
                 <span></span>
@@ -92,16 +110,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
                     <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
                     <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
-                    <a href="festival.html#libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
-                    <a href="festival.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
                 </div>
-                <a href="programma.html" class="mobile-menu__link">Programma</a>
-                <a href="selezione.html" class="mobile-menu__link">Selezione Ufficiale</a>
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Programma</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                </div>
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                </div>
                 <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
                 <a href="giuria.html" class="mobile-menu__link">Giuria</a>
                 <a href="news.html" class="mobile-menu__link">News</a>
                 <a href="accreditamenti.html" class="mobile-menu__link">Pass</a>
                 <a href="sponsor.html" class="mobile-menu__link">Friends</a>
+                <a href="programma.html#mostre" class="mobile-menu__link">Mostre</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
@@ -139,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Concorso Italiano -->
-    <section class="film-section">
+    <section class="film-section" id="concorso-italiano">
         <div class="film-section__container">
             <div class="film-section__header">
                 <h2 class="section-title">Concorso Italiano</h2>
@@ -218,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Concorso Internazionale -->
-    <section class="film-section film-section--alt">
+    <section class="film-section film-section--alt" id="concorso-internazionale">
         <div class="film-section__container">
             <div class="film-section__header">
                 <h2 class="section-title">Concorso Internazionale</h2>
@@ -296,77 +330,79 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- I Primi Passi dei Maestri -->
-    <section class="film-section">
-        <div class="film-section__container">
-            <div class="film-section__header">
-                <h2 class="section-title">I Primi Passi dei Maestri</h2>
-                <p class="film-section__subtitle">Una rassegna dedicata alle opere prime che hanno segnato la storia del cinema. Proiezioni in versione restaurata.</p>
+    <!-- Made in Italy Scuole -->
+    <section class="page-section page-section--alt" id="scuole">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Made in Italy Scuole</h2>
+        <p class="page-section__intro">I film selezionati per il programma scolastico della XXIV edizione del B.A. Film Festival.</p>
+        <div class="scuole-grid">
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/_QODnFNXYJQ" title="Orfeo - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
             </div>
-            <div class="film-grid film-grid--4">
-
-                <a href="film/accattone.html" class="film-card-link">
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6e/Accattone_locandina.jpg/220px-Accattone_locandina.jpg" alt="Accattone" style="width:100%;height:100%;object-fit:cover">
-                        <div class="film-card__hover-overlay"><span>Scopri di pi&ugrave;</span></div>
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">I Primi Passi dei Maestri</span>
-                        <h3 class="film-card__title">Accattone</h3>
-                        <p class="film-card__director">di Pier Paolo Pasolini</p>
-                        <div class="film-card__meta">Italia &middot; 1961 &middot; 120 min</div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="film/i-pugni-in-tasca.html" class="film-card-link">
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2015/03/effettocinema2.jpg" alt="I pugni in tasca" style="width:100%;height:100%;object-fit:cover">
-                        <div class="film-card__hover-overlay"><span>Scopri di pi&ugrave;</span></div>
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">I Primi Passi dei Maestri</span>
-                        <h3 class="film-card__title">I pugni in tasca</h3>
-                        <p class="film-card__director">di Marco Bellocchio</p>
-                        <div class="film-card__meta">Italia &middot; 1965 &middot; 105 min</div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="film/prima-della-rivoluzione.html" class="film-card-link">
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2015/03/GiovanniGaravaglia-3887Baff-2016-day-3spettatori.jpg" alt="Prima della rivoluzione" style="width:100%;height:100%;object-fit:cover">
-                        <div class="film-card__hover-overlay"><span>Scopri di pi&ugrave;</span></div>
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">I Primi Passi dei Maestri</span>
-                        <h3 class="film-card__title">Prima della rivoluzione</h3>
-                        <p class="film-card__director">di Bernardo Bertolucci</p>
-                        <div class="film-card__meta">Italia &middot; 1964 &middot; 115 min</div>
-                    </div>
-                </article>
-                </a>
-
-                <a href="film/ossessione.html" class="film-card-link">
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2015/03/cinemaperbanner.jpg" alt="Ossessione" style="width:100%;height:100%;object-fit:cover">
-                        <div class="film-card__hover-overlay"><span>Scopri di pi&ugrave;</span></div>
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">I Primi Passi dei Maestri</span>
-                        <h3 class="film-card__title">Ossessione</h3>
-                        <p class="film-card__director">di Luchino Visconti</p>
-                        <div class="film-card__meta">Italia &middot; 1943 &middot; 140 min</div>
-                    </div>
-                </article>
-                </a>
-
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">Orfeo</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Regia:</strong> Virgilio Villoresi</span>
+                <span><strong>Anno:</strong> 2025</span>
+                <span><strong>Durata:</strong> 74 min</span>
+                <span><strong>Genere:</strong> Animazione / Fantasy / Drammatico</span>
+              </div>
+              <p class="scuole-card__synopsis">Orfeo, un pianista solitario e visionario, vive in un mondo sospeso tra realtà e sogno. Dopo aver incontrato l'enigmatica Eura, la sua vita prende una piega onirica quando lei scompare e lui entra in un aldilà fatto di creature immaginarie e misteri. Il film è un adattamento del <em>Poema a fumetti</em> di Dino Buzzati, che ripropone il mito di Orfeo ed Euridice in chiave moderna e poetica.</p>
             </div>
+          </div>
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/oN2F4BmncP0" title="Gioia mia - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">Gioia mia</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Regia:</strong> Margherita Spampinato</span>
+                <span><strong>Anno:</strong> 2025</span>
+                <span><strong>Durata:</strong> 90 min</span>
+                <span><strong>Genere:</strong> Coming of age</span>
+              </div>
+              <p class="scuole-card__synopsis">Nico, undicenne iperconnesso, legato a smartphone e social, vive con fastidio l'allontanamento dalla tecnologia. Passa un'estate in Sicilia con la zia Gela, una donna molto diversa da lui. All'inizio ostile e diffidente, la convivenza tra i due porta gradualmente alla scoperta di un legame profondo e all'incontro tra mondi generazionali e modi di vivere opposti.</p>
+            </div>
+          </div>
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/3wAMRQBxI5o" title="Tienimi presente - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">Tienimi presente</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Regia:</strong> Alberto Palmiero</span>
+                <span><strong>Anno:</strong> 2025</span>
+                <span><strong>Durata:</strong> 80 min</span>
+                <span><strong>Genere:</strong> Drammatico / Commedia</span>
+              </div>
+              <p class="scuole-card__synopsis">Alberto, giovane regista deluso e in crisi, decide di tornare nella sua città natale dopo anni trascorsi a Roma cercando di realizzare un film. Nel rientro in provincia tra vecchi amici, nuove esperienze e riflessioni personali, scopre che la rinuncia può trasformarsi in un'occasione di riscoperta e crescita.</p>
+            </div>
+          </div>
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/ZQPSreIUCyY" title="La vita da grandi - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">La vita da grandi</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Regia:</strong> Greta Scarano</span>
+                <span><strong>Anno:</strong> 2025</span>
+                <span><strong>Durata:</strong> 95 min</span>
+                <span><strong>Genere:</strong> Commedia / Drammatico</span>
+              </div>
+              <p class="scuole-card__synopsis">Irene, trasferitasi a Rimini per prendersi cura del fratello adulto autistico Omar, intraprende con lui un "corso intensivo per diventare adulti". Attraverso sfide quotidiane e momenti intimi, il film esplora la normalità e la diversità, mostrando come l'autismo non definisca la persona in tutta la sua complessità.</p>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
 
     <!-- Edizioni passate in evidenza -->
