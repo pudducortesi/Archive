@@ -6551,12 +6551,12 @@ textarea:focus-visible {
 .search-overlay__result svg { color: var(--color-text-muted); flex-shrink: 0; }
 @media (min-width: 768px) {
   .search-overlay__panel {
-    top: 0;
+    top: 120px;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
     width: 600px;
-    border-radius: 0 0 12px 12px;
+    border-radius: 12px;
     max-height: 70vh;
   }
 }
