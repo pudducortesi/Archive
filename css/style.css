@@ -104,7 +104,11 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+}
+
+.guest-card__image img[src=""],
+.guest-card__image img:not([src]) {
+    display: none;
 }
 
 /* ============================================
@@ -421,7 +425,7 @@ button {
   flex-shrink: 0;
 }
 .mobile-menu__logo {
-  height: 32px;
+  height: 40px;
   width: auto;
 }
 .mobile-menu__close {
@@ -4599,12 +4603,13 @@ button {
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
+    background: #f5f5f5;
 }
 
 .guest-card__placeholder {
     width: 100%;
     height: 100%;
-    background: var(--color-bg-alt);
+    background: #f5f5f5;
     border: 1px dashed var(--color-border);
     border-radius: 50%;
     display: flex;
@@ -5125,10 +5130,7 @@ button {
     box-shadow: var(--shadow-card-hover);
 }
 
-.shop-item--featured {
-    border-color: var(--color-accent);
-    border-width: 2px;
-}
+/* removed .shop-item--featured and .shop-item--recommended styles */
 
 .shop-item__badge {
     position: absolute;
@@ -6117,26 +6119,7 @@ textarea:focus-visible {
   transition: box-shadow 0.2s;
 }
 .shop-item:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.1); }
-.shop-item--featured { background: #fff9f9; }
-.shop-item--recommended {
-  border-left: 3px solid #C41E3A;
-  position: relative;
-}
-.shop-item--recommended::after {
-  content: "Consigliato";
-  position: absolute;
-  top: -1px;
-  right: 1rem;
-  background: #C41E3A;
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border-radius: 0 0 4px 4px;
-}
+/* .shop-item--featured and .shop-item--recommended removed */
 .shop-item__info { display: flex; flex-direction: column; gap: 0.2rem; }
 .shop-item__name {
   font-family: var(--font-display);
