@@ -6121,14 +6121,13 @@ textarea:focus-visible {
   padding: 1.5rem;
   align-items: flex-start;
 }
-.scuole-card__poster {
+.scuole-card__video {
   flex-shrink: 0;
-  width: 110px;
+  width: 220px;
 }
-.scuole-card__poster img {
-  width: 110px;
+.scuole-card__video iframe {
+  width: 220px;
   height: 155px;
-  object-fit: cover;
   border-radius: 4px;
   display: block;
 }
@@ -6158,21 +6157,9 @@ textarea:focus-visible {
   line-height: 1.6;
   margin: 0;
 }
-.scuole-card__trailer {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #C41E3A;
-  text-decoration: none;
-  letter-spacing: 0.02em;
-}
-.scuole-card__trailer:hover { text-decoration: underline; }
 @media (max-width: 900px) {
   .scuole-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
   .scuole-card { flex-direction: column; }
-  .scuole-card__poster { width: 100%; }
-  .scuole-card__poster img { width: 100%; height: 200px; }
+  .scuole-card__video { width: 100%; }
+  .scuole-card__video iframe { width: 100%; height: 200px; }
 }
