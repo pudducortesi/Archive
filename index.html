@@ -154,6 +154,17 @@ document.addEventListener('DOMContentLoaded', function() {
         </button>
     </section>
 
+    <!-- Homepage Subnav -->
+    <nav class="home-subnav" id="homeSubnav">
+        <div class="home-subnav__container">
+            <a href="#film" class="home-subnav__link">Film in Concorso</a>
+            <a href="#calendario" class="home-subnav__link">Calendario</a>
+            <a href="#ospiti" class="home-subnav__link">Ospiti</a>
+            <a href="#news" class="home-subnav__link">News</a>
+            <a href="#friends" class="home-subnav__link">Friends</a>
+        </div>
+    </nav>
+
     <!-- Announcement Banner -->
     <main id="main-content">
     <section class="announcement">
@@ -166,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Calendario -->
-    <section class="page-section page-section--alt" id="calendario-home">
+    <section class="page-section page-section--alt" id="calendario">
       <div class="page-section__container">
         <h2 class="page-section__title">Calendario</h2>
 
@@ -479,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Featured Section (Like Cannes Editorial Hero) -->
-    <section class="featured">
+    <section class="featured" id="news">
         <div class="featured__container">
             <div class="featured__header">
                 <h2 class="section-title">In evidenza</h2>
@@ -534,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Program Section -->
-    <section class="program">
+    <section class="program" id="film">
         <div class="program__container">
             <div class="program__header">
                 <h2 class="section-title section-title--light">Programma</h2>
@@ -578,7 +589,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Past Editions Slider -->
-    <section class="editions">
+    <section class="editions" id="ospiti">
         <div class="editions__container">
             <div class="editions__header">
                 <h2 class="section-title">Edizioni precedenti</h2>
@@ -669,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Info Section -->
-    <section class="info">
+    <section class="info" id="friends">
         <div class="info__container">
             <div class="info__card">
                 <div class="info__icon">
@@ -787,6 +798,22 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </div>
+    <script>
+    // Hero hide on scroll (desktop only)
+    if (window.matchMedia('(min-width: 768px)').matches) {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (!entry.isIntersecting) {
+                        hero.style.display = 'none';
+                    }
+                });
+            }, { threshold: 0 });
+            observer.observe(hero);
+        }
+    }
+    </script>
     <script src="js/main.js"></script>
     <!-- Search Overlay -->
     <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
