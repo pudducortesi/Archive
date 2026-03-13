@@ -6074,6 +6074,25 @@ textarea:focus-visible {
 }
 .shop-item:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.1); }
 .shop-item--featured { background: #fff9f9; }
+.shop-item--recommended {
+  border-left: 3px solid #C41E3A;
+  position: relative;
+}
+.shop-item--recommended::after {
+  content: "Consigliato";
+  position: absolute;
+  top: -1px;
+  right: 1rem;
+  background: #C41E3A;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0 0 4px 4px;
+}
 .shop-item__info { display: flex; flex-direction: column; gap: 0.2rem; }
 .shop-item__name {
   font-family: var(--font-display);
