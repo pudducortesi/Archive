@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="hero__dates">21 — 28 Marzo 2026</p>
             <a href="programma.html" class="hero__cta">Scopri il programma</a>
         </div>
-        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="if(window.matchMedia('(min-width:768px)').matches){var h=document.querySelector('.hero'),cb=document.getElementById('countdownBanner'),sn=document.getElementById('homeSubnav');h.nextElementSibling.scrollIntoView({behavior:'smooth'});h.style.display='none';cb.style.display='block';sn.classList.add('subnav--visible')}else{document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})}">
+        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="if(window.matchMedia('(min-width:768px)').matches){var h=document.querySelector('.hero'),cb=document.getElementById('countdownBanner'),sn=document.getElementById('homeSubnav');h.nextElementSibling.scrollIntoView({behavior:'smooth'});h.style.display='none';cb.style.display='block';sn.classList.add('subnav--visible');var ab=document.getElementById('accreditBanner');if(ab)ab.style.display='block'}else{document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})}">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
     </section>
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- Announcement Banner -->
     <main id="main-content">
-    <section class="announcement">
+    <section class="announcement" id="accreditBanner" style="display:none">
         <div class="announcement__container">
             <div class="announcement__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
