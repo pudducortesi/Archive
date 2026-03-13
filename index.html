@@ -132,55 +132,114 @@ document.addEventListener('DOMContentLoaded', function() {
           <h2 class="page-section__title">Acquista i tuoi Pass</h2>
           <p class="page-section__subtitle">XXIV Edizione — 21–28 Marzo 2026</p>
         </div>
-        <div class="pass-grid">
+        <div class="shop-layout">
 
-          <div class="pass-card">
-            <div class="pass-card__header">
-              <span class="pass-card__name">Ingresso Singolo</span>
-              <span class="pass-card__price">€8</span>
+          <!-- Products -->
+          <div class="shop-items" id="shopItems">
+
+            <div class="shop-item" data-product="single" data-price="8">
+              <div class="shop-item__info">
+                <span class="shop-item__name">Ingresso Singolo</span>
+                <span class="shop-item__desc">Una proiezione a scelta</span>
+              </div>
+              <div class="shop-item__right">
+                <span class="shop-item__price">€8</span>
+                <div class="shop-item__qty-ctrl">
+                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
+                  <span class="shop-item__qty" data-qty>0</span>
+                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
+                </div>
+              </div>
             </div>
-            <p class="pass-card__desc">Una proiezione a scelta</p>
-            <a href="shop.html#single" class="btn btn--primary pass-card__btn">Acquista</a>
+
+            <div class="shop-item" data-product="single-reduced" data-price="5">
+              <div class="shop-item__info">
+                <span class="shop-item__name">Ingresso Ridotto</span>
+                <span class="shop-item__desc">Under 26 / Over 65</span>
+              </div>
+              <div class="shop-item__right">
+                <span class="shop-item__price">€5</span>
+                <div class="shop-item__qty-ctrl">
+                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
+                  <span class="shop-item__qty" data-qty>0</span>
+                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="shop-item shop-item--featured" data-product="daily" data-price="20">
+              <div class="shop-item__info">
+                <span class="shop-item__name">Pass Giornaliero</span>
+                <span class="shop-item__desc">Tutte le proiezioni di una giornata</span>
+              </div>
+              <div class="shop-item__right">
+                <span class="shop-item__price">€20</span>
+                <div class="shop-item__qty-ctrl">
+                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
+                  <span class="shop-item__qty" data-qty>0</span>
+                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="shop-item" data-product="festival" data-price="80">
+              <div class="shop-item__info">
+                <span class="shop-item__name">Pass Festival</span>
+                <span class="shop-item__desc">Accesso illimitato all'intera edizione</span>
+              </div>
+              <div class="shop-item__right">
+                <span class="shop-item__price">€80</span>
+                <div class="shop-item__qty-ctrl">
+                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
+                  <span class="shop-item__qty" data-qty>0</span>
+                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="shop-item" data-product="festival-reduced" data-price="60">
+              <div class="shop-item__info">
+                <span class="shop-item__name">Pass Festival Ridotto</span>
+                <span class="shop-item__desc">Under 26 / Over 65 — intera edizione</span>
+              </div>
+              <div class="shop-item__right">
+                <span class="shop-item__price">€60</span>
+                <div class="shop-item__qty-ctrl">
+                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
+                  <span class="shop-item__qty" data-qty>0</span>
+                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-          <div class="pass-card">
-            <div class="pass-card__header">
-              <span class="pass-card__name">Ingresso Ridotto</span>
-              <span class="pass-card__price">€5</span>
+          <!-- Cart sidebar -->
+          <aside class="shop-cart" id="shopCart">
+            <h3 class="shop-cart__title">Riepilogo</h3>
+            <div class="shop-cart__items" id="cartItems">
+              <p class="shop-cart__empty">Nessun biglietto selezionato</p>
             </div>
-            <p class="pass-card__desc">Under 26 / Over 65</p>
-            <a href="shop.html#single-reduced" class="btn btn--primary pass-card__btn">Acquista</a>
-          </div>
-
-          <div class="pass-card">
-            <div class="pass-card__header">
-              <span class="pass-card__name">Pass Giornaliero</span>
-              <span class="pass-card__price">€20</span>
+            <div class="shop-cart__divider"></div>
+            <div class="shop-cart__total">
+              <span>Totale</span>
+              <span class="shop-cart__total-value" id="cartTotal">€0,00</span>
             </div>
-            <p class="pass-card__desc">Tutte le proiezioni di una giornata</p>
-            <a href="shop.html#daily" class="btn btn--primary pass-card__btn">Acquista</a>
-          </div>
-
-          <div class="pass-card pass-card--featured">
-            <div class="pass-card__header">
-              <span class="pass-card__name">Pass Festival</span>
-              <span class="pass-card__price">€80</span>
-            </div>
-            <p class="pass-card__desc">Accesso illimitato all'intera edizione</p>
-            <a href="shop.html#festival" class="btn btn--primary pass-card__btn">Acquista</a>
-          </div>
-
-          <div class="pass-card">
-            <div class="pass-card__header">
-              <span class="pass-card__name">Pass Festival Ridotto</span>
-              <span class="pass-card__price">€60</span>
-            </div>
-            <p class="pass-card__desc">Under 26 / Over 65 — intera edizione</p>
-            <a href="shop.html#festival-reduced" class="btn btn--primary pass-card__btn">Acquista</a>
-          </div>
+            <form class="shop-checkout" id="checkoutForm">
+              <input type="hidden" name="botcheck">
+              <div class="shop-checkout__field">
+                <label for="checkoutEmail">Email <span>(opzionale)</span></label>
+                <input type="email" id="checkoutEmail" placeholder="mario@esempio.it" autocomplete="email">
+              </div>
+              <button type="submit" class="shop-checkout__submit" id="checkoutSubmit" disabled>Procedi al pagamento</button>
+              <p class="shop-checkout__secure">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Pagamento sicuro — Stripe
+              </p>
+            </form>
+          </aside>
 
         </div>
-        <p class="pass-secure">&#128274; Pagamento sicuro — powered by Stripe</p>
       </div>
     </section>
 
@@ -479,7 +538,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Informazioni</h4>
-                        <a href="biglietteria.html" class="footer__link">Biglietteria</a>
+                        <a href="index.html#biglietteria-home" class="footer__link">Biglietteria</a>
                         <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditamenti</a>
                         <a href="festival.html#sedi" class="footer__link">Luoghi</a>
                         <a href="contatti.html" class="footer__link">Contatti</a>
@@ -523,5 +582,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
 </body>
 </html>
