@@ -6419,6 +6419,11 @@ textarea:focus-visible {
   line-height: 1.6;
   color: var(--color-text-secondary, #444);
 }
+.evento-card__image {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+}
 
 /* ── Search trigger button ── */
 .header__search-btn {

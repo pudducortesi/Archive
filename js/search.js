@@ -20,7 +20,7 @@
     { title: 'BAFF in Libreria', url: 'programma.html#baff-in-libreria', text: 'BAFF libreria libri saggi Flashback cinema americano anni 80 Inzaghi Checco Zalone Canova La fine della fine Ferrario Einaudi' },
     { title: 'Selezione Ufficiale', url: 'selezione.html', text: 'selezione ufficiale film concorso italiano internazionale La luce che resta Cenere e vento Nessuno lo sapra I giorni del silenzio Dove comincia il mare' },
     { title: 'Concorso Italiano', url: 'selezione.html#concorso-italiano', text: 'concorso italiano film italiani 2025 2026 Giulia Mancini Alessandro Ferrara Paola Ferretti Roberto Montanari' },
-    { title: 'Concorso Internazionale', url: 'selezione.html#concorso-internazionale', text: 'concorso internazionale Francia Spagna Corea Germania Argentina Giappone Les heures perdues La orilla del rio' },
+    { title: 'Concorso Internazionale', url: 'selezione.html#concorso-internazionale', text: 'concorso internazionale Francia Spagna Corea Germania Argentina Giappone Les heures perdues La orilla del rio Fantaisie Isabel Pagliai Macdo Racornelia Ezell Messico Grecia Boys go to Jupiter Julian Glander USA Buffet Infinity Simon Glassman Canada' },
     { title: 'Made in Italy Scuole', url: 'selezione.html#scuole', text: 'Made in Italy Scuole Orfeo Gioia mia Tienimi presente La vita da grandi animazione coming of age studenti' },
     { title: 'Ospiti', url: 'ospiti.html', text: 'ospiti registi attori sceneggiatori masterclass Marco Ferretti Chiara Beltrame Luca Santoro Isabelle Moreau' },
     { title: 'Giuria', url: 'giuria.html', text: 'giuria presidente Lucia Mancini giurati concorso italiano internazionale' },
