@@ -1966,7 +1966,7 @@ button {
 
 .historic-guest-card__top {
     height: 220px;
-    background: #1a1a1a;
+    background: #f0f0f0;
     border-radius: 6px 6px 0 0;
     position: absolute;
     top: 0;
@@ -1979,6 +1979,7 @@ button {
     height: 220px;
     overflow: hidden;
     border-radius: 6px 6px 0 0;
+    background: #f0f0f0;
 }
 
 .historic-guest-card__top--photo img {
