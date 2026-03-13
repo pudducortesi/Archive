@@ -6059,6 +6059,12 @@ textarea:focus-visible {
 
 
 
+/* Homepage countdown banner: no margin-top needed since hero handles header offset */
+#countdownBanner {
+  margin-top: 0;
+  overflow: visible;
+}
+
 /* Homepage subnav: fixed, hidden by default, visible on scroll past hero */
 .festival-subnav--home {
   display: none;
