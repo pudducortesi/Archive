@@ -6331,3 +6331,47 @@ textarea:focus-visible {
   .evento-card { padding: 1.25rem 1.25rem; }
   .evento-card__title { font-size: 1.05rem; }
 }
+
+/* --- BAFF in Libreria --- */
+.libreria-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.libro-card {
+  background: #ffffff;
+  border-left: 3px solid #C41E3A;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  padding: 1.5rem 2rem;
+  transition: box-shadow 0.2s;
+}
+.libro-card:hover {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+.libro-card__title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 0.35rem 0;
+  line-height: 1.35;
+}
+.libro-card__author {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #C41E3A;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem 0;
+}
+.libro-card__desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #444);
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .libro-card { padding: 1.25rem 1.25rem; }
+}
