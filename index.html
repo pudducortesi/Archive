@@ -144,120 +144,315 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Ticket Purchase Section -->
-    <section class="page-section" id="biglietteria-home">
+    <!-- Calendario -->
+    <section class="page-section page-section--alt" id="calendario-home">
       <div class="page-section__container">
-        <div class="section-header">
-          <h2 class="page-section__title">Acquista i tuoi Pass</h2>
-          <p class="page-section__subtitle">XXIV Edizione — 21–28 Marzo 2026</p>
+        <h2 class="page-section__title">Calendario</h2>
+
+        <div class="schedule">
+            <div class="schedule__tabs">
+                <button class="schedule__tab schedule__tab--active" data-day="day-1">Sab 21</button>
+                <button class="schedule__tab" data-day="day-2">Dom 22</button>
+                <button class="schedule__tab" data-day="day-3">Lun 23</button>
+                <button class="schedule__tab" data-day="day-4">Mar 24</button>
+                <button class="schedule__tab" data-day="day-5">Mer 25</button>
+                <button class="schedule__tab" data-day="day-6">Gio 26</button>
+                <button class="schedule__tab" data-day="day-7">Ven 27</button>
+                <button class="schedule__tab" data-day="day-8">Sab 28</button>
+            </div>
+
+            <!-- Sabato 21 Marzo -->
+            <div class="schedule__day schedule__day--active" id="day-1">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Cerimonia di apertura</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Ingresso libero</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 1</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 2</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film di apertura</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Anteprima</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+            </div>
+
+            <!-- Domenica 22 Marzo -->
+            <div class="schedule__day" id="day-2">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass: Il cinema del reale</span>
+                        <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso con accredito</span>
+                    </div>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 3</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 4</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">I Primi Passi: Opera prima 1</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
+                    </div>
+                    <span class="schedule__event-tag">Retrospettiva</span>
+                </div>
+            </div>
+
+            <!-- Lunedi 23 Marzo -->
+            <div class="schedule__day" id="day-3">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Incontro con il regista ospite</span>
+                        <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso libero</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 5</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 6</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Proiezione speciale</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Fuori concorso</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+            </div>
+
+            <!-- Martedi 24 Marzo -->
+            <div class="schedule__day" id="day-4">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass: Scrivere per il cinema</span>
+                        <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso con accredito</span>
+                    </div>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 7</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 8</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">I Primi Passi: Opera prima 2</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
+                    </div>
+                    <span class="schedule__event-tag">Retrospettiva</span>
+                </div>
+            </div>
+
+            <!-- Mercoledi 25 Marzo -->
+            <div class="schedule__day" id="day-5">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Tavola rotonda: Il futuro del cinema indipendente</span>
+                        <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso libero</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 9</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 10</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">I Primi Passi: Opera prima 3</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
+                    </div>
+                    <span class="schedule__event-tag">Retrospettiva</span>
+                </div>
+            </div>
+
+            <!-- Giovedi 26 Marzo -->
+            <div class="schedule__day" id="day-6">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass: Dirigere gli attori</span>
+                        <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso con accredito</span>
+                    </div>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 11</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 12</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Proiezione speciale con ospite</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Fuori concorso</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+            </div>
+
+            <!-- Venerdi 27 Marzo -->
+            <div class="schedule__day" id="day-7">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Incontro con la giuria</span>
+                        <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso libero</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 13</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film in concorso 14</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">I Primi Passi: Opera prima 4</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
+                    </div>
+                    <span class="schedule__event-tag">Retrospettiva</span>
+                </div>
+            </div>
+
+            <!-- Sabato 28 Marzo -->
+            <div class="schedule__day" id="day-8">
+                <div class="schedule__event">
+                    <span class="schedule__time">11:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Replica: miglior film Concorso Italiano</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Replica</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Replica: miglior film Concorso Internazionale</span>
+                        <span class="schedule__event-detail">Sala Verdi &mdash; Replica</span>
+                    </div>
+                    <span class="schedule__event-tag">Concorso</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Film di chiusura</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Anteprima</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Cerimonia di premiazione</span>
+                        <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Ingresso con invito</span>
+                    </div>
+                    <span class="schedule__event-tag">Evento speciale</span>
+                </div>
+            </div>
+
         </div>
-        <div class="shop-layout">
 
-          <!-- Products -->
-          <div class="shop-items" id="shopItems">
-
-            <div class="shop-item" data-product="single" data-price="8">
-              <div class="shop-item__info">
-                <span class="shop-item__name">Ingresso Singolo</span>
-                <span class="shop-item__desc">Una proiezione a scelta</span>
-              </div>
-              <div class="shop-item__right">
-                <span class="shop-item__price">€8</span>
-                <div class="shop-item__qty-ctrl">
-                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
-                  <span class="shop-item__qty" data-qty>0</span>
-                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="shop-item" data-product="single-reduced" data-price="5">
-              <div class="shop-item__info">
-                <span class="shop-item__name">Ingresso Ridotto</span>
-                <span class="shop-item__desc">Under 26 / Over 65</span>
-              </div>
-              <div class="shop-item__right">
-                <span class="shop-item__price">€5</span>
-                <div class="shop-item__qty-ctrl">
-                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
-                  <span class="shop-item__qty" data-qty>0</span>
-                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="shop-item" data-product="daily" data-price="20">
-              <div class="shop-item__info">
-                <span class="shop-item__name">Pass Giornaliero</span>
-                <span class="shop-item__desc">Tutte le proiezioni di una giornata</span>
-              </div>
-              <div class="shop-item__right">
-                <span class="shop-item__price">€20</span>
-                <div class="shop-item__qty-ctrl">
-                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
-                  <span class="shop-item__qty" data-qty>0</span>
-                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="shop-item" data-product="festival" data-price="80">
-              <div class="shop-item__info">
-                <span class="shop-item__name">Pass Festival</span>
-                <span class="shop-item__desc">Accesso illimitato all'intera edizione</span>
-              </div>
-              <div class="shop-item__right">
-                <span class="shop-item__price">€80</span>
-                <div class="shop-item__qty-ctrl">
-                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
-                  <span class="shop-item__qty" data-qty>0</span>
-                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="shop-item" data-product="festival-reduced" data-price="60">
-              <div class="shop-item__info">
-                <span class="shop-item__name">Pass Festival Ridotto</span>
-                <span class="shop-item__desc">Under 26 / Over 65 — intera edizione</span>
-              </div>
-              <div class="shop-item__right">
-                <span class="shop-item__price">€60</span>
-                <div class="shop-item__qty-ctrl">
-                  <button class="shop-item__qty-btn" data-action="decrease" aria-label="Diminuisci">−</button>
-                  <span class="shop-item__qty" data-qty>0</span>
-                  <button class="shop-item__qty-btn" data-action="increase" aria-label="Aumenta">+</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Cart sidebar -->
-          <aside class="shop-cart" id="shopCart">
-            <h3 class="shop-cart__title">Riepilogo</h3>
-            <div class="shop-cart__items" id="cartItems">
-              <p class="shop-cart__empty">Nessun biglietto selezionato</p>
-            </div>
-            <div class="shop-cart__divider"></div>
-            <div class="shop-cart__total">
-              <span>Totale</span>
-              <span class="shop-cart__total-value" id="cartTotal">€0,00</span>
-            </div>
-            <form class="shop-checkout" id="checkoutForm">
-              <input type="hidden" name="botcheck">
-              <div class="shop-checkout__field">
-                <label for="checkoutEmail">Email <span>(opzionale)</span></label>
-                <input type="email" id="checkoutEmail" placeholder="mario@esempio.it" autocomplete="email">
-              </div>
-              <button type="submit" class="shop-checkout__submit" id="checkoutSubmit" disabled>Procedi al pagamento</button>
-              <p class="shop-checkout__secure">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                Pagamento sicuro — Stripe
-              </p>
-            </form>
-          </aside>
-
+        <div style="text-align:center;margin-top:2.5rem;">
+            <a href="programma.html#calendario" class="hero__cta">Vedi il programma completo</a>
         </div>
       </div>
     </section>
@@ -601,7 +796,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     <script src="js/main.js"></script>
-    <script src="js/shop.js"></script>
     <!-- Search Overlay -->
     <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
       <div id="searchOverlayBackdrop" class="search-overlay__backdrop"></div>
