@@ -2657,6 +2657,25 @@ button {
 }
 
 /* ============================================
+   EDITORIAL IMAGES (Desktop only)
+   ============================================ */
+@media (min-width: 768px) {
+    .editorial-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-top: 2rem;
+        display: block;
+    }
+}
+@media (max-width: 767px) {
+    .editorial-image {
+        display: none;
+    }
+}
+
+/* ============================================
    STATS (Inner pages)
    ============================================ */
 .stats {
