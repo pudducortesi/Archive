@@ -6000,10 +6000,12 @@ textarea:focus-visible {
   position: sticky;
   top: calc(var(--top-bar-height) + var(--header-height));
   z-index: 90;
-  background: #fff;
-  border-bottom: 1px solid var(--color-border);
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   overflow-x: auto;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .festival-subnav::-webkit-scrollbar { display: none; }
 .festival-subnav__container {
@@ -6018,10 +6020,10 @@ textarea:focus-visible {
   display: inline-block;
   padding: 0.875rem 1.25rem;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-text-muted);
+  color: #555555;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
