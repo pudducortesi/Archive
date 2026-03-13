@@ -181,4 +181,20 @@
 
     // Initial state
     updateCart();
+
+    // Pre-select product from URL hash (e.g. shop.html#festival)
+    (function () {
+        var hash = window.location.hash.replace('#', '');
+        if (!hash) return;
+        var target = document.querySelector('.shop-item[data-product="' + hash + '"]');
+        if (!target) return;
+        var increaseBtn = target.querySelector('[data-action="increase"]');
+        if (increaseBtn) {
+            increaseBtn.click();
+            setTimeout(function () {
+                var cart = document.getElementById('shopCart');
+                if (cart) cart.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 200);
+        }
+    })();
 })();

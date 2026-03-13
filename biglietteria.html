@@ -114,54 +114,36 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Tipologie di biglietto -->
+    <!-- Acquista i tuoi biglietti -->
     <section class="page-section">
         <div class="page-section__container">
-            <h2 class="page-section__title">Tipologie di biglietto</h2>
-            <p class="page-section__intro">Scegli la soluzione più adatta alle tue esigenze per vivere al meglio la XXIV edizione del B.A. Film Festival.</p>
-            <div class="ticket-grid">
-                <div class="ticket-card">
-                    <div class="ticket-card__header">
-                        <h3 class="ticket-card__type">Singolo Ingresso</h3>
-                        <div class="ticket-card__price">&euro;8</div>
-                        <p class="ticket-card__reduced">Ridotto &euro;5</p>
-                    </div>
-                    <ul class="ticket-card__features">
-                        <li>Per una singola proiezione a scelta</li>
-                        <li>Accesso alla sala 30 minuti prima dello spettacolo</li>
-                        <li>Posto non numerato</li>
-                        <li>Acquistabile online e in loco</li>
-                    </ul>
-                    <a href="shop.html" class="ticket-card__cta">Acquista biglietto</a>
+            <h2 class="page-section__title">Acquista i tuoi biglietti</h2>
+            <p class="page-section__intro">Scegli il pass più adatto a te e acquista direttamente online in pochi secondi.</p>
+            <div class="pass-grid" style="max-width:900px;">
+                <div class="pass-card">
+                    <div class="pass-card__header"><span class="pass-card__name">Ingresso Singolo</span><span class="pass-card__price">€8</span></div>
+                    <p class="pass-card__desc">Una proiezione a scelta</p>
+                    <a href="shop.html#single" class="btn btn--primary pass-card__btn">Acquista</a>
                 </div>
-                <div class="ticket-card ticket-card--featured">
-                    <span class="ticket-card__badge">Consigliato</span>
-                    <div class="ticket-card__header">
-                        <h3 class="ticket-card__type">Abbonamento Giornaliero</h3>
-                        <div class="ticket-card__price">&euro;20</div>
-                        <p class="ticket-card__reduced">&nbsp;</p>
-                    </div>
-                    <ul class="ticket-card__features">
-                        <li>Tutte le proiezioni di una giornata a scelta</li>
-                        <li>Accesso prioritario alle sale</li>
-                        <li>Ingresso agli eventi speciali del giorno</li>
-                        <li>Acquistabile online e in loco</li>
-                    </ul>
-                    <a href="shop.html" class="ticket-card__cta">Acquista abbonamento</a>
+                <div class="pass-card">
+                    <div class="pass-card__header"><span class="pass-card__name">Ingresso Ridotto</span><span class="pass-card__price">€5</span></div>
+                    <p class="pass-card__desc">Under 26 / Over 65</p>
+                    <a href="shop.html#single-reduced" class="btn btn--primary pass-card__btn">Acquista</a>
                 </div>
-                <div class="ticket-card">
-                    <div class="ticket-card__header">
-                        <h3 class="ticket-card__type">Abbonamento Festival</h3>
-                        <div class="ticket-card__price">&euro;80</div>
-                        <p class="ticket-card__reduced">Ridotto &euro;60</p>
-                    </div>
-                    <ul class="ticket-card__features">
-                        <li>Accesso a tutte le proiezioni e eventi</li>
-                        <li>Accesso prioritario a tutte le sale</li>
-                        <li>Ingresso alle masterclass e incontri</li>
-                        <li>Bag ufficiale del festival in omaggio</li>
-                    </ul>
-                    <a href="shop.html" class="ticket-card__cta">Acquista abbonamento</a>
+                <div class="pass-card">
+                    <div class="pass-card__header"><span class="pass-card__name">Pass Giornaliero</span><span class="pass-card__price">€20</span></div>
+                    <p class="pass-card__desc">Tutte le proiezioni di una giornata</p>
+                    <a href="shop.html#daily" class="btn btn--primary pass-card__btn">Acquista</a>
+                </div>
+                <div class="pass-card pass-card--featured">
+                    <div class="pass-card__header"><span class="pass-card__name">Pass Festival</span><span class="pass-card__price">€80</span></div>
+                    <p class="pass-card__desc">Accesso illimitato all'intera edizione</p>
+                    <a href="shop.html#festival" class="btn btn--primary pass-card__btn">Acquista</a>
+                </div>
+                <div class="pass-card">
+                    <div class="pass-card__header"><span class="pass-card__name">Pass Festival Ridotto</span><span class="pass-card__price">€60</span></div>
+                    <p class="pass-card__desc">Under 26 / Over 65 — intera edizione</p>
+                    <a href="shop.html#festival-reduced" class="btn btn--primary pass-card__btn">Acquista</a>
                 </div>
             </div>
         </div>
