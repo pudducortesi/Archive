@@ -6058,6 +6058,9 @@ textarea:focus-visible {
 }
 
 /* Countdown banner variant */
+.page-hero--countdown {
+  padding: 3rem 0;
+}
 .page-hero--countdown .hero-countdown {
   display: flex;
   align-items: center;

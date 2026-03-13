@@ -119,6 +119,20 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__edition" style="color:#ffffff;">BUSTO ARSIZIO</p>
+            <h1 class="hero__title" style="color:var(--color-accent);">XXIV EDIZIONE</h1>
+            <p class="hero__dates">21 — 28 Marzo 2026</p>
+            <a href="programma.html" class="hero__cta">Scopri il programma</a>
+        </div>
+        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="if(window.matchMedia('(min-width:768px)').matches){var h=document.querySelector('.hero'),cb=document.getElementById('countdownBanner'),sn=document.getElementById('homeSubnav');h.nextElementSibling.scrollIntoView({behavior:'smooth'});h.style.display='none';cb.style.display='block';sn.style.display='block';sn.classList.add('subnav--visible');var ab=document.getElementById('accreditBanner');if(ab)ab.style.display='block'}else{document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})}">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+    </section>
+
     <!-- Countdown Banner -->
     <section class="page-hero page-hero--countdown" id="countdownBanner" style="display:none;min-height:350px;position:relative;z-index:10">
         <div class="page-hero__overlay"></div>
@@ -149,20 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-            <p class="hero__edition" style="color:#ffffff;">BUSTO ARSIZIO</p>
-            <h1 class="hero__title" style="color:var(--color-accent);">XXIV EDIZIONE</h1>
-            <p class="hero__dates">21 — 28 Marzo 2026</p>
-            <a href="programma.html" class="hero__cta">Scopri il programma</a>
-        </div>
-        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="if(window.matchMedia('(min-width:768px)').matches){var h=document.querySelector('.hero'),cb=document.getElementById('countdownBanner'),sn=document.getElementById('homeSubnav');h.nextElementSibling.scrollIntoView({behavior:'smooth'});h.style.display='none';cb.style.display='block';cb.style.paddingTop='calc(var(--top-bar-height) + var(--header-height) + 2rem)';sn.style.display='block';sn.classList.add('subnav--visible');var ab=document.getElementById('accreditBanner');if(ab)ab.style.display='block'}else{document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})}">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
     </section>
 
     <!-- Homepage Subnav -->
