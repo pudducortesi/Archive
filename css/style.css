@@ -6091,3 +6091,77 @@ textarea:focus-visible {
   .festival-subnav__container { padding: 0 1rem; }
   .festival-subnav__link { padding: 0.75rem 0.875rem; font-size: 0.7rem; }
 }
+
+/* --- Made in Italy Scuole --- */
+.scuole-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.scuole-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+  border-left: 3px solid #C41E3A;
+  padding: 1.5rem;
+  align-items: flex-start;
+}
+.scuole-card__poster {
+  flex-shrink: 0;
+  width: 110px;
+}
+.scuole-card__poster img {
+  width: 110px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+.scuole-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.scuole-card__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+.scuole-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+.scuole-card__synopsis {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+.scuole-card__trailer {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #C41E3A;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.scuole-card__trailer:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .scuole-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .scuole-card { flex-direction: column; }
+  .scuole-card__poster { width: 100%; }
+  .scuole-card__poster img { width: 100%; height: 200px; }
+}
