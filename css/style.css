@@ -6057,46 +6057,14 @@ textarea:focus-visible {
   .festival-subnav__link { padding: 0.75rem 0.875rem; font-size: 0.7rem; }
 }
 
-/* ============================================
-   HOMEPAGE — Sticky Sub-navigation
-   ============================================ */
-.home-subnav {
-  position: sticky;
+/* Homepage subnav override: stick to top, higher z-index */
+.festival-subnav--home {
   top: 0;
-  z-index: 90;
-  background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-.home-subnav::-webkit-scrollbar { display: none; }
-.home-subnav__container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  gap: 0;
-  white-space: nowrap;
-}
-.home-subnav__link {
-  display: inline-block;
-  padding: 0.875rem 1.25rem;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 600;
-  color: var(--color-text-secondary);
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-}
-.home-subnav__link:hover,
-.home-subnav__link.active {
-  color: #C41E3A;
-  border-bottom-color: #C41E3A;
+  z-index: 100;
+  background: #ffffff;
 }
 @media (max-width: 767px) {
-  .home-subnav { display: none; }
+  .festival-subnav--home { display: none; }
 }
 
 /* --- Made in Italy Scuole --- */
