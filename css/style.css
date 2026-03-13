@@ -1979,7 +1979,7 @@ button {
     height: 220px;
     overflow: hidden;
     border-radius: 6px 6px 0 0;
-    background: #f0f0f0;
+    background: transparent;
 }
 
 .historic-guest-card__top--photo img {
@@ -4605,7 +4605,7 @@ button {
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
-    background: #f0f0f0;
+    background: transparent;
 }
 
 .guest-card__placeholder {
