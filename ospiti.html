@@ -13,8 +13,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure, .guest-card__image') 
-        ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure, .guest-card__image').style.display = 'none'
+      this.closest('li, .gallery-item, .photo-item, .card, .guest-card, .ospite-card, .film-card, .historic-guest-card, figure')
+        ? this.closest('li, .gallery-item, .photo-item, .card, .guest-card, .ospite-card, .film-card, .historic-guest-card, figure').style.display = 'none'
         : this.style.display = 'none';
     });
   });
