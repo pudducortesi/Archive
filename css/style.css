@@ -6057,6 +6057,11 @@ textarea:focus-visible {
   .festival-subnav__link { padding: 0.75rem 0.875rem; font-size: 0.7rem; }
 }
 
+/* Homepage hero: countdown as main element */
+.page-hero--home .page-hero__subtitle {
+  margin-top: 1.5rem;
+}
+
 /* Homepage subnav override: stick to top, higher z-index */
 .festival-subnav--home {
   top: 0;

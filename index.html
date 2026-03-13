@@ -119,14 +119,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-            <p class="hero__edition" style="color:#ffffff;">BUSTO ARSIZIO</p>
-            <h1 class="hero__title" style="color:var(--color-accent);">XXIV EDIZIONE</h1>
-            <p class="hero__dates">21 — 28 Marzo 2026</p>
-            <a href="programma.html" class="hero__cta">Scopri il programma</a>
+    <!-- Hero Banner -->
+    <section class="page-hero page-hero--home" id="homeHero">
+        <div class="page-hero__content">
             <div class="hero-countdown" id="countdown">
                 <div class="hero-countdown__block">
                     <span class="hero-countdown__number" id="days">--</span>
@@ -148,10 +143,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="hero-countdown__unit">Secondi</span>
                 </div>
             </div>
+            <p class="page-hero__subtitle">Busto Arsizio</p>
         </div>
-        <button class="hero__scroll-arrow" aria-label="Scorri in basso" onclick="document.querySelector('.hero').nextElementSibling.scrollIntoView({behavior:'smooth'})">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
     </section>
 
     <!-- Homepage Subnav -->
@@ -801,7 +794,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <script>
     // Hero hide on scroll (desktop only)
     if (window.matchMedia('(min-width: 768px)').matches) {
-        const hero = document.querySelector('.hero');
+        const hero = document.getElementById('homeHero');
         if (hero) {
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
