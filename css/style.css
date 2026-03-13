@@ -6061,9 +6061,12 @@ textarea:focus-visible {
 .page-hero--countdown {
   min-height: 420px;
   height: auto;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+.page-hero--countdown .breadcrumb {
+  text-align: center;
 }
 .page-hero--countdown .hero-countdown {
   display: flex;
@@ -6105,6 +6108,7 @@ textarea:focus-visible {
 
 /* Homepage subnav: fixed, hidden by default, visible on scroll past hero */
 .festival-subnav--home {
+  display: none;
   position: fixed;
   top: calc(var(--top-bar-height) + var(--header-height));
   left: 0;
