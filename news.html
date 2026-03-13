@@ -135,6 +135,15 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <!-- Sticky Sub-navigation -->
+    <nav class="festival-subnav" id="newsSubnav">
+        <div class="festival-subnav__container">
+            <a href="#ultime-notizie" class="festival-subnav__link">Ultime notizie</a>
+            <a href="#archivio" class="festival-subnav__link">Archivio</a>
+            <a href="#newsletter" class="festival-subnav__link">Resta aggiornato</a>
+        </div>
+    </nav>
+
     <!-- Featured News -->
     <section class="page-section">
         <div class="page-section__container">
@@ -153,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- News Grid -->
-    <section class="page-section page-section--alt">
+    <section class="page-section page-section--alt" id="ultime-notizie">
         <div class="page-section__container">
             <h2 class="page-section__title">Ultime notizie</h2>
             <div class="news-grid">
@@ -210,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Archivio -->
-    <section class="page-section">
+    <section class="page-section" id="archivio">
         <div class="page-section__container">
             <h2 class="page-section__title">Archivio</h2>
             <p class="page-section__subtitle">Esplora le news delle edizioni precedenti del B.A. Film Festival.</p>
@@ -224,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Newsletter -->
-    <section class="newsletter">
+    <section class="newsletter" id="newsletter">
         <div class="newsletter__container">
             <h2 class="newsletter__title">Resta aggiornato</h2>
             <p class="newsletter__text">Iscriviti alla newsletter per ricevere tutte le novità sul B.A. Film Festival direttamente nella tua casella di posta.</p>
