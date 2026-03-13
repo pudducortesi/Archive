@@ -6057,16 +6057,20 @@ textarea:focus-visible {
   .festival-subnav__link { padding: 0.75rem 0.875rem; font-size: 0.7rem; }
 }
 
-/* Homepage hero: countdown as main element */
-.page-hero--home .page-hero__subtitle {
-  margin-top: 1.5rem;
-}
-
-/* Homepage subnav override: stick to top, higher z-index */
+/* Homepage subnav: hidden by default, visible on scroll past hero */
 .festival-subnav--home {
   top: 0;
-  z-index: 100;
+  z-index: 99;
   background: #ffffff;
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.festival-subnav--home.subnav--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 @media (max-width: 767px) {
   .festival-subnav--home { display: none; }
