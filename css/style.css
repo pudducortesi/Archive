@@ -2582,7 +2582,7 @@ button.hero__scroll-arrow {
         display: none !important;
     }
     .festival-subnav {
-        margin-top: 1rem;
+        margin-top: 0;
     }
 
     /* Mobile menu: reorder — Programma first */
