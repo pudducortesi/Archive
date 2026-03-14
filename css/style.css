@@ -2402,6 +2402,16 @@ button.hero__scroll-arrow {
         height: 84px;
     }
 
+    /* Mobile header: logo left, search + cart + burger right */
+    .header__search-btn {
+        margin-left: auto;
+        margin-right: 0.15rem;
+    }
+    .header__cart-btn {
+        display: flex;
+        margin-right: 0.15rem;
+    }
+
     .hero__title {
         font-size: clamp(2.5rem, 10vw, 4rem);
     }
@@ -6488,6 +6498,17 @@ textarea:focus-visible {
   margin-right: 0.25rem;
 }
 .header__search-btn:hover { color: #C41E3A; }
+
+/* ── Cart icon button (mobile only) ── */
+.header__cart-btn {
+  display: none;            /* hidden on desktop */
+  align-items: center;
+  padding: 0.4rem;
+  color: var(--color-text);
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.header__cart-btn:hover { color: #C41E3A; }
 
 /* ── Search overlay ── */
 /* ── Search overlay — fullscreen white ── */
