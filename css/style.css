@@ -2559,6 +2559,17 @@ button.hero__scroll-arrow {
 
 }
 
+@media (max-width: 767px) {
+    .header__container {
+        gap: 0.25rem;
+    }
+    .header__search-btn,
+    .header__cart,
+    .header__burger {
+        padding: 0.25rem;
+    }
+}
+
 @media (max-width: 480px) {
     .footer__columns .footer__col {
         flex: 1 1 100%;
@@ -6485,7 +6496,6 @@ textarea:focus-visible {
   align-items: center;
   border-radius: 4px;
   transition: color 0.15s;
-  margin-right: 0.25rem;
 }
 .header__search-btn:hover { color: #C41E3A; }
 
