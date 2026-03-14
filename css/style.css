@@ -37,6 +37,12 @@ html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -1257,6 +1263,8 @@ button.hero__scroll-arrow {
 .footer {
     background: var(--color-bg-alt);
     border-top: 1px solid var(--color-border);
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .footer__container {
