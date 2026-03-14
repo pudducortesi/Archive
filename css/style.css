@@ -2579,7 +2579,7 @@ button.hero__scroll-arrow {
         display: none;
     }
     .page-hero {
-        display: none;
+        display: none !important;
     }
 
     /* Mobile menu: reorder — Programma first */
