@@ -2568,6 +2568,9 @@ button.hero__scroll-arrow {
     .header__burger {
         padding: 0.25rem;
     }
+    .hero__scroll-arrow {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
