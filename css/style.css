@@ -2571,6 +2571,13 @@ button.hero__scroll-arrow {
     .hero__scroll-arrow {
         display: none;
     }
+
+    /* Mobile menu: show only Programma group */
+    .mobile-menu__group:nth-child(1),
+    .mobile-menu__group:nth-child(3),
+    .mobile-menu__nav > .mobile-menu__link {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
