@@ -2402,16 +2402,6 @@ button.hero__scroll-arrow {
         height: 84px;
     }
 
-    /* Mobile header: logo left, search + cart + burger right */
-    .header__search-btn {
-        margin-left: auto;
-        margin-right: 0.15rem;
-    }
-    .header__cart-btn {
-        display: flex;
-        margin-right: 0.15rem;
-    }
-
     .hero__title {
         font-size: clamp(2.5rem, 10vw, 4rem);
     }
@@ -2567,6 +2557,18 @@ button.hero__scroll-arrow {
         grid-template-columns: repeat(2, 1fr);
     }
 
+}
+
+@media (max-width: 767px) {
+    /* Mobile header: logo left, search + cart + burger right */
+    .header__search-btn {
+        margin-left: auto;
+        margin-right: 0.15rem;
+    }
+    .header__cart-btn {
+        display: flex;
+        margin-right: 0.15rem;
+    }
 }
 
 @media (max-width: 480px) {
