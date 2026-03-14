@@ -2578,6 +2578,9 @@ button.hero__scroll-arrow {
     .hero__scroll-arrow {
         display: none;
     }
+    .page-hero {
+        display: none;
+    }
 
     /* Mobile menu: reorder — Programma first */
     .mobile-menu__nav {
