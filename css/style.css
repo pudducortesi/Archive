@@ -2559,18 +2559,6 @@ button.hero__scroll-arrow {
 
 }
 
-@media (max-width: 767px) {
-    /* Mobile header: logo left, search + cart + burger right */
-    .header__search-btn {
-        margin-left: auto;
-        margin-right: 0.15rem;
-    }
-    .header__cart-btn {
-        display: flex;
-        margin-right: 0.15rem;
-    }
-}
-
 @media (max-width: 480px) {
     .footer__columns .footer__col {
         flex: 1 1 100%;
@@ -6501,16 +6489,16 @@ textarea:focus-visible {
 }
 .header__search-btn:hover { color: #C41E3A; }
 
-/* ── Cart icon button (mobile only) ── */
-.header__cart-btn {
-  display: none;            /* hidden on desktop */
+/* ── Cart icon button ── */
+.header__cart {
+  display: flex;
   align-items: center;
   padding: 0.4rem;
   color: var(--color-text);
   border-radius: 4px;
   transition: color 0.15s;
 }
-.header__cart-btn:hover { color: #C41E3A; }
+.header__cart:hover { color: #C41E3A; }
 
 /* ── Search overlay ── */
 /* ── Search overlay — fullscreen white ── */
