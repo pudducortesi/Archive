@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ordine confermato — B.A. Film Festival</title>
-    <meta name="robots" content="noindex">
+    <title>Istituzionale — B.A. Film Festival</title>
+    <meta name="description" content="Informazioni istituzionali sul B.A. Film Festival: ente associativo, consiglio direttivo, statuto e documenti scaricabili.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
+      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure')
         ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
         : this.style.display = 'none';
     });
@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="top-bar">
         <div class="top-bar__container">
             <div class="top-bar__left">
-                <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> | 
+                <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> |
                 <a href="stampa.html" class="top-bar__link">Stampa</a>
                 <a href="contatti.html" class="top-bar__link">Contatti</a>
                 <a href="istituzionale.html" class="top-bar__link">Istituzionale</a>
             </div>
             <div class="top-bar__right">
                 <a href="#" class="top-bar__lang active">IT</a>
-                <a href="en/shop-success.html" class="top-bar__lang">EN</a>
+                <a href="#" class="top-bar__lang">EN</a>
             </div>
         </div>
     </div>
@@ -130,34 +130,82 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="page-hero">
         <div class="page-hero__overlay"></div>
         <div class="page-hero__content">
-            <h1 class="page-hero__title">Ordine confermato</h1>
-            <p class="page-hero__subtitle">Grazie per il tuo acquisto</p>
+            <h1 class="page-hero__title">Istituzionale</h1>
+            <p class="page-hero__subtitle">L'associazione e i suoi organi</p>
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html" class="breadcrumb__link">Home</a>
                 <span class="breadcrumb__separator">/</span>
-                <a href="shop.html">Biglietteria</a>
-                <span class="breadcrumb__separator">/</span>
-                <span class="breadcrumb__current">Conferma</span>
+                <span class="breadcrumb__current">Istituzionale</span>
             </nav>
         </div>
     </section>
 
-    <!-- Confirmation -->
-    <section class="page-section">
-        <div class="page-section__container" style="max-width: 640px; text-align: center; padding-top: 3rem; padding-bottom: 4rem;">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2" style="margin-bottom: 1.5rem;">
-                <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
-            </svg>
-            <h2 style="font-family: var(--font-heading); font-size: 1.75rem; margin-bottom: 1rem;">Il pagamento &egrave; andato a buon fine</h2>
-            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-light); margin-bottom: 0.75rem;">
-                Riceverai i biglietti all&rsquo;indirizzo email indicato entro pochi minuti in formato PDF.
-                Presentali all&rsquo;ingresso della sala, stampati o direttamente dal telefono.
-            </p>
-            <p style="font-size: 0.95rem; line-height: 1.7; color: var(--color-text-light); margin-bottom: 2rem;">
-                Riceverai anche una ricevuta di pagamento da Stripe. Per qualsiasi problema scrivi a
-                <a href="mailto:info@bafilmfestival.it">info@bafilmfestival.it</a>.
-            </p>
-            <a href="index.html" class="btn btn--primary" style="display: inline-block; padding: 0.9rem 2.5rem;">Torna alla home</a>
+    <!-- Subnav -->
+    <nav class="page-subnav" style="background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border); position: sticky; top: calc(var(--top-bar-height) + var(--header-height)); z-index: 99;">
+        <div style="max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; display: flex; gap: 2rem; align-items: center; height: 48px;">
+            <a href="#ente" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); text-decoration: none;">Ente Associativo</a>
+            <a href="#consiglio" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); text-decoration: none;">Consiglio Direttivo</a>
+            <a href="#statuto" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); text-decoration: none;">Area Download</a>
+        </div>
+    </nav>
+
+    <!-- Ente Associativo -->
+    <section class="page-section" id="ente">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Ente Associativo</h2>
+            <div class="page-section__content">
+                <p>Il B.A. Film Festival &egrave; organizzato dall'Associazione Culturale B.A. Film Festival, ente senza scopo di lucro fondato con l'obiettivo di promuovere la cultura cinematografica e audiovisiva nel territorio di Busto Arsizio e dell'alto milanese. L'associazione opera nel campo della diffusione culturale, dell'educazione all'immagine e della valorizzazione del patrimonio cinematografico italiano e internazionale.</p>
+                <p>Attraverso l'organizzazione del festival e di attivit&agrave; collaterali durante tutto l'anno, l'associazione si propone di creare un punto di riferimento per cinefili, professionisti del settore e giovani appassionati di cinema, favorendo il dialogo tra autori, pubblico e istituzioni culturali.</p>
+                <p>L'associazione &egrave; iscritta al Registro Unico Nazionale del Terzo Settore (RUNTS) e opera in conformit&agrave; con le disposizioni del Codice del Terzo Settore (D.Lgs. 117/2017). Le attivit&agrave; dell'ente sono finanziate attraverso contributi pubblici, sponsorizzazioni private, quote associative e ricavi derivanti dalla biglietteria del festival.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consiglio Direttivo -->
+    <section class="page-section page-section--alt" id="consiglio">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Consiglio Direttivo</h2>
+            <div class="page-section__content">
+                <p>Il Consiglio Direttivo dell'associazione &egrave; composto dai seguenti membri, eletti dall'Assemblea dei Soci:</p>
+            </div>
+            <div class="contact-grid" style="margin-top: 2rem;">
+                <div class="contact-card">
+                    <h3 class="contact-card__title">Mario Rossi</h3>
+                    <p class="contact-card__text">Presidente</p>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-card__title">Laura Bianchi</h3>
+                    <p class="contact-card__text">Vicepresidente</p>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-card__title">Giuseppe Verdi</h3>
+                    <p class="contact-card__text">Segretario Generale</p>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-card__title">Anna Ferrari</h3>
+                    <p class="contact-card__text">Tesoriere</p>
+                </div>
+                <div class="contact-card">
+                    <h3 class="contact-card__title">Marco Colombo</h3>
+                    <p class="contact-card__text">Consigliere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Area Download -->
+    <section class="page-section" id="statuto">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Area Download</h2>
+            <div class="page-section__content">
+                <p>In questa sezione &egrave; possibile scaricare lo statuto dell'associazione e i principali documenti istituzionali.</p>
+            </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <a href="#" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--color-accent); color: #fff; padding: 1rem 2rem; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; border-radius: 4px; transition: background 0.2s;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Scarica Statuto Associativo
+                </a>
+            </div>
         </div>
     </section>
 
@@ -190,8 +238,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer__col">
                         <h4 class="footer__col-title">Informazioni</h4>
                         <a href="shop.html" class="footer__link">Biglietteria</a>
-                        <a href="shop.html" class="footer__link">Acquista biglietti</a>
-                        <a href="sponsor.html" class="footer__link">Friends</a>
+                        <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditamenti</a>
+                        <a href="festival.html#sedi" class="footer__link">Luoghi</a>
                         <a href="contatti.html" class="footer__link">Contatti</a>
                         <a href="comunicati.html" class="footer__link">Comunicati stampa</a>
                     </div>
@@ -215,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </footer>
 
-    
+
     <!-- Back to Top -->
     <button class="back-to-top" aria-label="Torna su">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
