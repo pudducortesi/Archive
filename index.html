@@ -137,8 +137,9 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
+    if (img.closest('.carousel-slide')) return;
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
+      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure')
         ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
         : this.style.display = 'none';
     });
