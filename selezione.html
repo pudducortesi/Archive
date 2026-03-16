@@ -14,9 +14,15 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
-        ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
-        : this.style.display = 'none';
+      var filmCard = this.closest('.film-card');
+      if (filmCard) {
+        var imgWrap = this.closest('.film-card__image');
+        if (imgWrap) imgWrap.style.display = 'none';
+        return;
+      }
+      var card = this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, figure');
+      if (card) { card.style.display = 'none'; }
+      else { this.style.display = 'none'; }
     });
   });
 });
@@ -173,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-gioia-mia.jpg" alt="Gioia mia" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-gioia-mia.jpg" alt="Gioia mia" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Italiano</span>
@@ -187,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-tienimi-presente.jpg" alt="Tienimi presente" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-tienimi-presente.jpg" alt="Tienimi presente" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Italiano</span>
@@ -201,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-una-cosa-vicina.jpg" alt="Una cosa vicina" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-una-cosa-vicina.jpg" alt="Una cosa vicina" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Italiano</span>
@@ -215,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-waking-hours.webp" alt="Waking Hours" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-waking-hours.webp" alt="Waking Hours" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Italiano</span>
@@ -229,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-le-bambine.jpg" alt="Le bambine" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-le-bambine.jpg" alt="Le bambine" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Italiano</span>
@@ -256,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-boys-go-to-jupiter.webp" alt="Boys go to Jupiter" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-boys-go-to-jupiter.webp" alt="Boys go to Jupiter" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Internazionale</span>
@@ -270,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-buffet-infinity.webp" alt="Buffet Infinity" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-buffet-infinity.webp" alt="Buffet Infinity" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Internazionale</span>
@@ -284,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-fantaisie.webp" alt="Fantaisie" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-fantaisie.webp" alt="Fantaisie" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Internazionale</span>
@@ -298,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="images/locandina-macdo.webp" alt="Macdo" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none'">
+                        <img src="images/locandina-macdo.webp" alt="Macdo" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Concorso Internazionale</span>
@@ -642,8 +648,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </footer>
 
-
-    
     <!-- Back to Top -->
     <button class="back-to-top" aria-label="Torna su">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
