@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="top-bar">
         <div class="top-bar__container">
             <div class="top-bar__left">
-                <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> | 
+                <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> |
+                <a href="accreditamenti.html" class="top-bar__link">PASS</a> |
                 <a href="stampa.html" class="top-bar__link">Stampa</a>
                 <a href="contatti.html" class="top-bar__link">Contatti</a>
                 <a href="istituzionale.html" class="top-bar__link">Istituzionale</a>
@@ -50,12 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="festival.html" class="header__nav-link">Il Festival</a>
                 <a href="programma.html" class="header__nav-link">Programma</a>
                 <a href="selezione.html" class="header__nav-link">Selezione Ufficiale</a>
+                <a href="shop.html" class="header__nav-link">Tickets</a>
                 <a href="ospiti.html" class="header__nav-link">Ospiti</a>
                 <a href="giuria.html" class="header__nav-link header__nav-link--active">Giuria</a>
-                <a href="news.html" class="header__nav-link">News</a>
-                <a href="accreditamenti.html" class="header__nav-link">PASS</a>
-                <a href="sponsor.html" class="header__nav-link">Friends</a>
-                <a href="shop.html" class="header__nav-link">Tickets</a>
+                <a href="luoghi.html" class="header__nav-link">Luoghi</a>
+                <a href="sponsor.html" class="header__nav-link">Sponsor</a>
             </nav>
             <button class="search-trigger header__search-btn" aria-label="Cerca">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -108,15 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
                     <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
                 </div>
+                <a href="shop.html" class="mobile-menu__link">Tickets</a>
                 <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
                 <a href="giuria.html" class="mobile-menu__link">Giuria</a>
-                <a href="news.html" class="mobile-menu__link">News</a>
-                <a href="accreditamenti.html" class="mobile-menu__link">Pass</a>
-                <a href="sponsor.html" class="mobile-menu__link">Friends</a>
-                <a href="shop.html" class="mobile-menu__link">Tickets</a>
+                <a href="luoghi.html" class="mobile-menu__link">Luoghi</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsor</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
                 <a href="stampa.html" class="mobile-menu__footer-link">Stampa</a>
                 <a href="contatti.html" class="mobile-menu__footer-link">Contatti</a>
                 <a href="istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
@@ -140,149 +140,22 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Sticky Sub-navigation -->
-    <nav class="festival-subnav" id="giuriaSubnav">
-        <div class="festival-subnav__container">
-            <a href="#presidente" class="festival-subnav__link">Presidente di Giuria</a>
-            <a href="#giuria-italiana" class="festival-subnav__link">Giuria Concorso Italiano</a>
-            <a href="#giuria-internazionale" class="festival-subnav__link">Giuria Concorso Internazionale</a>
-            <a href="#regolamento" class="festival-subnav__link">Il Regolamento</a>
-        </div>
-    </nav>
-
-    <!-- Presidente di Giuria -->
-    <section class="page-section" id="presidente">
+    <!-- Concorso Internazionale Opere Prime -->
+    <section class="page-section" id="concorso-internazionale">
         <div class="page-section__container">
-            <h2 class="page-section__title">Presidente di Giuria</h2>
-            <div class="jury-president">
-                <div class="jury-president__photo guest-honor__photo-placeholder">
-                    <span>Foto in arrivo</span>
-                </div>
-                <div class="jury-president__info">
-                    <h3 class="jury-president__name">Lucia Mancini</h3>
-                    <p class="jury-president__role">Regista e Sceneggiatrice</p>
-                    <p class="jury-president__bio">Lucia Mancini è una delle voci più autorevoli del cinema italiano contemporaneo. Nata a Roma nel 1962, ha esordito alla regia nel 1991 con il lungometraggio <em>Le stanze vuote</em>, che le è valso il David di Donatello per la migliore opera prima. Nel corso di una carriera trentennale, ha diretto dodici lungometraggi e numerosi documentari, esplorando temi legati all'identità, alla memoria e alle trasformazioni della società italiana. I suoi film sono stati presentati nei principali festival internazionali, tra cui Venezia, Cannes e Berlino. Nel 2018 ha ricevuto il Leone d'Oro alla carriera alla Mostra del Cinema di Venezia. Docente di regia presso il Centro Sperimentale di Cinematografia, Mancini è un punto di riferimento per le nuove generazioni di cineasti italiani.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Giuria Concorso Italiano -->
-    <section class="page-section page-section--alt" id="giuria-italiana">
-        <div class="page-section__container">
-            <h2 class="page-section__title">Giuria Concorso Italiano</h2>
-            <p class="page-section__subtitle">I cinque giurati chiamati a valutare i film in concorso nella sezione dedicata al cinema italiano.</p>
-            <div class="jury-grid">
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Marco Rinaldi</h3>
-                    <p class="jury-card__role">Regista</p>
-                    <p class="jury-card__bio">Autore di film pluripremiati come <em>Il confine invisibile</em> e <em>Terre lontane</em>, Marco Rinaldi è tra i registi italiani più apprezzati della sua generazione. Ha vinto due Nastri d'Argento e un David di Donatello.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Sofia Bellini</h3>
-                    <p class="jury-card__role">Critico cinematografico</p>
-                    <p class="jury-card__bio">Firma storica del Corriere della Sera per la sezione cinema, Sofia Bellini collabora con le riviste Cahiers du Cinéma Italia e Cineforum. È autrice di saggi sul neorealismo e sul cinema italiano contemporaneo.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Giulia Ferretti</h3>
-                    <p class="jury-card__role">Attrice</p>
-                    <p class="jury-card__bio">Protagonista di oltre venti film e di importanti produzioni teatrali, Giulia Ferretti ha ricevuto la Coppa Volpi a Venezia nel 2022. Ha lavorato con registi come Sorrentino, Garrone e Ferro.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Alessandro Bianchi</h3>
-                    <p class="jury-card__role">Produttore</p>
-                    <p class="jury-card__bio">Fondatore della casa di produzione Luce Nuova Films, Alessandro Bianchi ha prodotto oltre quaranta opere tra lungometraggi, cortometraggi e serie televisive, con distribuzioni in tutta Europa.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Chiara Valentini</h3>
-                    <p class="jury-card__role">Sceneggiatrice</p>
-                    <p class="jury-card__bio">Sceneggiatrice di successo, Chiara Valentini ha firmato i copioni di film come <em>Notte di vetro</em> e <em>L'ultimo capitolo</em>. Ha vinto il Premio Solinas nel 2019 e collabora con le principali produzioni italiane.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Giuria Concorso Internazionale -->
-    <section class="page-section" id="giuria-internazionale">
-        <div class="page-section__container">
-            <h2 class="page-section__title">Giuria Concorso Internazionale</h2>
-            <p class="page-section__subtitle">Cinque professionisti del cinema internazionale compongono la giuria del concorso dedicato alle opere provenienti da tutto il mondo.</p>
-            <div class="jury-grid">
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Hélène Duval</h3>
-                    <p class="jury-card__role">Critico cinematografico</p>
-                    <p class="jury-card__bio">Critica e giornalista francese, direttrice editoriale di Les Inrockuptibles Cinema. Autrice di monografie su Agnès Varda e Claire Denis, è una voce autorevole nel panorama della critica europea.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Carlos Ruiz Mendoza</h3>
-                    <p class="jury-card__role">Regista</p>
-                    <p class="jury-card__bio">Regista spagnolo noto per il suo cinema sociale e politico. Il suo film <em>La frontera</em> ha vinto il Premio della Giuria al Festival di San Sebastián nel 2023. I suoi lavori sono distribuiti in oltre trenta paesi.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Anna Kowalski</h3>
-                    <p class="jury-card__role">Produttrice</p>
-                    <p class="jury-card__bio">Produttrice polacca con base a Berlino, fondatrice di East Bridge Films. Ha prodotto oltre venti film tra Polonia, Germania e Francia, portando al grande pubblico opere premiate a Cannes e a Locarno.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">James Nwosu</h3>
-                    <p class="jury-card__role">Attore</p>
-                    <p class="jury-card__bio">Attore britannico-nigeriano, protagonista di film acclamati come <em>A Quiet Storm</em> e <em>The Other Side</em>. Ha ricevuto una nomination ai BAFTA come miglior attore protagonista nel 2024.</p>
-                </article>
-                <article class="jury-card">
-                    <h3 class="jury-card__name">Yuki Tanaka</h3>
-                    <p class="jury-card__role">Sceneggiatrice e Regista</p>
-                    <p class="jury-card__bio">Regista e sceneggiatrice giapponese, il suo lungometraggio d'esordio <em>Shizuka na Machi</em> ha vinto il Grand Prix al Festival di Cannes — Un Certain Regard nel 2021. Il suo cinema esplora la vita quotidiana con una sensibilità unica.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Il Regolamento -->
-    <section class="page-section page-section--alt" id="regolamento">
-        <div class="page-section__container">
-            <h2 class="page-section__title">Il Regolamento</h2>
+            <h2 class="page-section__title">Concorso Internazionale Opere Prime</h2>
             <div class="page-section__content">
-                <p>La Giuria del B.A. Film Festival opera nel rispetto del regolamento ufficiale del festival, garantendo trasparenza, imparzialità e rigore nella valutazione delle opere in concorso. Ogni giurato esamina tutti i film selezionati nella propria sezione durante le giornate del festival.</p>
-                <p><strong>Criteri di valutazione</strong> — I film vengono valutati sulla base di diversi criteri fondamentali: qualità della regia, originalità della sceneggiatura, interpretazione degli attori, fotografia, montaggio, colonna sonora e capacità complessiva dell'opera di comunicare con il pubblico. Particolare attenzione viene riservata alla coerenza della visione artistica e all'innovazione del linguaggio cinematografico.</p>
-                <p><strong>Processo di voto</strong> — Al termine delle proiezioni, la giuria si riunisce in sessione plenaria sotto la guida del Presidente di Giuria. Le deliberazioni sono segrete e le decisioni vengono prese a maggioranza. In caso di parità, il voto del Presidente è determinante. I risultati vengono comunicati esclusivamente durante la cerimonia di premiazione.</p>
-                <p><strong>I premi assegnati dalla giuria sono:</strong></p>
+                <p>Come l'anno scorso, si conferma la decisione del direttore artistico di far s&igrave; che a scegliere i vincitori del festival siano realt&agrave; legate al mondo della critica cinematografica. Cos&igrave;, dopo il coinvolgimento, l'anno passato, di testate come Cineforum e Sentieriselvaggi, quest'anno &egrave; la volta della redazione di <strong>Spietati.it</strong>, sito pionieristico della critica cinematografica online, fucina di talenti (lo stesso direttore artistico ha collaborato alla testata per un lungo periodo) e punto di riferimento di un discorso sul cinema approfondito, seriamente critico, mai promozionale e realmente indipendente. Uno spazio libero, fondato nel 1999 e diretto attualmente da Luca Pacilio, che sceglier&agrave; il vincitore del concorso internazionale.</p>
             </div>
-            <div class="prizes-grid">
-                <div class="prize-card">
-                    <div class="prize-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-                    </div>
-                    <h4 class="prize-card__title">Miglior Film</h4>
-                    <p class="prize-card__desc">Il riconoscimento principale, assegnato al miglior lungometraggio in concorso.</p>
-                </div>
-                <div class="prize-card">
-                    <div class="prize-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/><rect x="2" y="2" width="20" height="20" rx="4"/></svg>
-                    </div>
-                    <h4 class="prize-card__title">Miglior Regia</h4>
-                    <p class="prize-card__desc">Premio per la migliore regia, che valorizza la visione e la capacità narrativa del regista.</p>
-                </div>
-                <div class="prize-card">
-                    <div class="prize-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    </div>
-                    <h4 class="prize-card__title">Miglior Attore / Attrice</h4>
-                    <p class="prize-card__desc">Premio per la migliore interpretazione maschile e femminile nelle opere in concorso.</p>
-                </div>
-                <div class="prize-card">
-                    <div class="prize-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    </div>
-                    <h4 class="prize-card__title">Premio della Giuria</h4>
-                    <p class="prize-card__desc">Riconoscimento speciale della giuria a un'opera che si distingue per originalità e coraggio artistico.</p>
-                </div>
-                <div class="prize-card">
-                    <div class="prize-card__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h4 class="prize-card__title">Premio del Pubblico</h4>
-                    <p class="prize-card__desc">L'unico premio deciso direttamente dagli spettatori attraverso le votazioni durante le proiezioni.</p>
-                </div>
+        </div>
+    </section>
+
+    <!-- Concorso Italiano Opere Prime -->
+    <section class="page-section page-section--alt" id="concorso-italiano">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Concorso Italiano Opere Prime</h2>
+            <div class="page-section__content">
+                <p>E dato che gli spazi della critica cinematografica sono in evoluzione, si &egrave; deciso di affidare la giuria del concorso italiano opere prime a due podcast di giovani critici: <strong>Il Salotto Monogatari Podcast</strong>, nato nel 2019 come spassionata occasione di incontro online fra cinefili in giro per l'Italia, che oggi vede come membri attivi Matteo Arcamone, Marco Grif&ograve;, Simone Malaspina, Paolo Torino e Alessandro Valenti, e <strong>Casaba Podcast</strong> che dal 2021 a cadenza settimanale parla delle nuove uscite al cinema, fa approfondimento dai festival con daily report e interviste, condotto da Edoardo Saccone, Leo Canali, Ossydiana Speri e Emma Marinoni.</p>
             </div>
         </div>
     </section>

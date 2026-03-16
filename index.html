@@ -130,119 +130,7 @@
         .quicknav__link { padding: 0.75rem 0.8rem; font-size: 0.7rem; }
     }
 
-    /* === NEWS CAROUSEL (Biennale style) === */
-    .news-biennale {
-        background: #fff;
-        padding: 3.5rem 0 3rem;
-    }
-    .news-biennale__header {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto 2rem;
-        padding: 0 2rem;
-    }
-    .news-biennale__title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #111;
-        margin: 0;
-        flex-shrink: 0;
-    }
-    .news-biennale__line {
-        flex: 1;
-        height: 1px;
-        background: #ddd;
-        border: none;
-        margin: 0;
-    }
-    .news-biennale__wrap {
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 3.5rem;
-    }
-    .news-biennale__track {
-        display: flex;
-        gap: 1.5rem;
-        overflow: hidden;
-        transition: transform 0.4s ease;
-    }
-    .news-biennale__card {
-        flex: 0 0 calc(33.333% - 1rem);
-        min-width: 0;
-        text-decoration: none;
-        color: inherit;
-        display: block;
-    }
-    .news-biennale__card-img {
-        width: 100%;
-        aspect-ratio: 4/3;
-        object-fit: cover;
-        display: block;
-        border-radius: 2px;
-    }
-    .news-biennale__card-body { padding: 0.75rem 0; }
-    .news-biennale__card-tag {
-        display: inline-block;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.7rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--color-accent, #CC0000);
-        margin-bottom: 0.3rem;
-    }
-    .news-biennale__card-date {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.72rem;
-        color: #999;
-        margin-bottom: 0.35rem;
-    }
-    .news-biennale__card-title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: #111;
-        line-height: 1.35;
-        margin: 0 0 0.3rem;
-    }
-    .news-biennale__card-excerpt {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.82rem;
-        color: #666;
-        line-height: 1.45;
-        margin: 0;
-    }
-    .news-biennale__btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 50%;
-        width: 38px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background 0.2s, border-color 0.2s;
-        padding: 0;
-    }
-    .news-biennale__btn:hover { background: var(--color-accent, #CC0000); border-color: var(--color-accent, #CC0000); color: #fff; }
-    .news-biennale__btn:hover svg { stroke: #fff; }
-    .news-biennale__btn--prev { left: 0; }
-    .news-biennale__btn--next { right: 0; }
-    @media (max-width: 768px) {
-        .news-biennale__card { flex: 0 0 calc(100%); }
-        .news-biennale__wrap { padding: 0 2.8rem; }
-    }
+    
     </style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -286,11 +174,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="festival.html" class="header__nav-link">Il Festival</a>
                 <a href="programma.html" class="header__nav-link">Programma</a>
                 <a href="selezione.html" class="header__nav-link">Selezione Ufficiale</a>
+                <a href="shop.html" class="header__nav-link">Tickets</a>
                 <a href="ospiti.html" class="header__nav-link">Ospiti</a>
                 <a href="giuria.html" class="header__nav-link">Giuria</a>
-                <a href="news.html" class="header__nav-link">News</a>
-                <a href="sponsor.html" class="header__nav-link">Friends</a>
-                <a href="shop.html" class="header__nav-link">Tickets</a>
+                <a href="luoghi.html" class="header__nav-link">Luoghi</a>
+                <a href="sponsor.html" class="header__nav-link">Sponsor</a>
             </nav>
             <button class="search-trigger header__search-btn" aria-label="Cerca">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -343,15 +231,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
                     <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
                 </div>
+                <a href="shop.html" class="mobile-menu__link">Tickets</a>
                 <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
                 <a href="giuria.html" class="mobile-menu__link">Giuria</a>
-                <a href="news.html" class="mobile-menu__link">News</a>
-                <a href="accreditamenti.html" class="mobile-menu__link">Pass</a>
-                <a href="sponsor.html" class="mobile-menu__link">Friends</a>
-                <a href="shop.html" class="mobile-menu__link">Tickets</a>
+                <a href="luoghi.html" class="mobile-menu__link">Luoghi</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsor</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
                 <a href="stampa.html" class="mobile-menu__footer-link">Stampa</a>
                 <a href="contatti.html" class="mobile-menu__footer-link">Contatti</a>
                 <a href="istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
@@ -390,107 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <li><a href="stampa.html" class="quicknav__link">Press</a></li>
         </ul>
     </nav>
-
-    <!-- News Carousel (Biennale-style) -->
-    <section class="news-biennale" id="news">
-        <div class="news-biennale__header">
-            <h2 class="news-biennale__title">News</h2>
-            <hr class="news-biennale__line">
-        </div>
-        <div class="news-biennale__wrap">
-            <button class="news-biennale__btn news-biennale__btn--prev" aria-label="Precedente" id="newsPrev">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="news-biennale__track" id="newsTrack">
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/hero-main.jpg" alt="Selezione Ufficiale BAFF 2026" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Selezione Ufficiale</span>
-                        <p class="news-biennale__card-date">1 Marzo 2026</p>
-                        <h3 class="news-biennale__card-title">La Selezione Ufficiale della XXIV edizione</h3>
-                        <p class="news-biennale__card-excerpt">I film selezionati per il concorso italiano e internazionale della nuova edizione.</p>
-                    </div>
-                </a>
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/abel-ferrara.jpg" alt="Ospiti confermati" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Ospiti</span>
-                        <p class="news-biennale__card-date">28 Febbraio 2026</p>
-                        <h3 class="news-biennale__card-title">Ospiti confermati: Abel Ferrara e Sergio Rubini</h3>
-                        <p class="news-biennale__card-excerpt">Due grandi nomi del cinema italiano e internazionale tra gli ospiti della XXIV edizione.</p>
-                    </div>
-                </a>
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/kevin-lee.jpg" alt="Masterclass" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Masterclass</span>
-                        <p class="news-biennale__card-date">25 Febbraio 2026</p>
-                        <h3 class="news-biennale__card-title">I primi passi dei maestri: rassegna dedicata</h3>
-                        <p class="news-biennale__card-excerpt">Un viaggio attraverso le opere prime dei grandi registi del cinema mondiale.</p>
-                    </div>
-                </a>
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/sergio-rubini.jpg" alt="Biglietteria" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Biglietteria</span>
-                        <p class="news-biennale__card-date">20 Febbraio 2026</p>
-                        <h3 class="news-biennale__card-title">Apertura biglietteria online</h3>
-                        <p class="news-biennale__card-excerpt">Acquista i tuoi biglietti per tutte le proiezioni e gli eventi speciali del festival.</p>
-                    </div>
-                </a>
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/hero-page.jpg" alt="Concorso scuole" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Scuole</span>
-                        <p class="news-biennale__card-date">15 Febbraio 2026</p>
-                        <h3 class="news-biennale__card-title">Made in Italy Scuole: i cortometraggi selezionati</h3>
-                        <p class="news-biennale__card-excerpt">Le scuole di cinema italiane presentano i loro migliori lavori in concorso.</p>
-                    </div>
-                </a>
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/elisabetta-sgarbi.jpg" alt="Elisabetta Sgarbi" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Evento speciale</span>
-                        <p class="news-biennale__card-date">10 Febbraio 2026</p>
-                        <h3 class="news-biennale__card-title">Elisabetta Sgarbi presenta il suo ultimo film</h3>
-                        <p class="news-biennale__card-excerpt">L'editrice e regista sarà ospite a Varese per una proiezione speciale.</p>
-                    </div>
-                </a>
-                <a href="news.html" class="news-biennale__card">
-                    <img src="images/mauro-giovanardi.jpg" alt="Accreditamenti" class="news-biennale__card-img">
-                    <div class="news-biennale__card-body">
-                        <span class="news-biennale__card-tag">Festival</span>
-                        <p class="news-biennale__card-date">5 Febbraio 2026</p>
-                        <h3 class="news-biennale__card-title">Aperte le iscrizioni per gli accreditamenti stampa</h3>
-                        <p class="news-biennale__card-excerpt">Giornalisti e operatori del settore possono richiedere il pass per la XXIV edizione.</p>
-                    </div>
-                </a>
-            </div>
-            <button class="news-biennale__btn news-biennale__btn--next" aria-label="Successivo" id="newsNext">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-        </div>
-    </section>
-
-    <script>
-    (function() {
-        var track = document.getElementById('newsTrack');
-        if (!track) return;
-        var cards = track.querySelectorAll('.news-biennale__card');
-        var visibleCount = window.innerWidth < 768 ? 1 : 3;
-        var current = 0;
-        var maxIdx = Math.max(0, cards.length - visibleCount);
-
-        function goTo(idx) {
-            current = Math.max(0, Math.min(idx, maxIdx));
-            var cardW = cards[0].offsetWidth + 24; /* 24 = 1.5rem gap */
-            track.style.transform = 'translateX(-' + (current * cardW) + 'px)';
-        }
-
-        document.getElementById('newsPrev').addEventListener('click', function() { goTo(current - 1); });
-        document.getElementById('newsNext').addEventListener('click', function() { goTo(current + 1); });
-    })();
-    </script>
 
     <!-- Carosello Ospiti & Eventi -->
     <section class="carousel-section" id="carosello">
@@ -688,7 +475,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Calendario -->
     <section class="page-section page-section--alt" id="calendario">
       <div class="page-section__container">
-        <h2 class="page-section__title">Calendario</h2>
+        <h2 class="page-section__title">Programma</h2>
 
         <div class="schedule">
             <div class="schedule__tabs">
@@ -995,7 +782,18 @@ document.addEventListener('DOMContentLoaded', function() {
         <div style="text-align:center;margin-top:2.5rem;">
             <a href="programma.html#calendario" class="hero__cta">Vedi il programma completo</a>
         </div>
+        <div style="text-align:center;margin-top:1.5rem;">
+            <a href="shop.html" style="display:inline-block;background:#CC0000;color:#fff;padding:0.9rem 2.5rem;font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;border-radius:3px;transition:background 0.2s;">Acquista i Biglietti</a>
+        </div>
       </div>
+    </section>
+
+    <!-- Masterclass -->
+    <section class="page-section" id="masterclass-home">
+        <div class="page-section__container">
+            <h2 class="page-section__title">Masterclass</h2>
+            <p class="page-section__intro" style="max-width:700px;">Le masterclass della XXIV edizione saranno annunciate a breve.</p>
+        </div>
     </section>
 
     <!-- Program Section -->
