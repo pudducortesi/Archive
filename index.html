@@ -281,188 +281,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </ul>
     </nav>
 
-    <!-- Carosello Ospiti & Eventi -->
-    <section class="carousel-section" id="carosello">
-        <div class="carousel-section__header">
-            <h2 class="carousel-section__title">Ospiti &amp; Momenti</h2>
-        </div>
-        <div class="carousel-track-wrap">
-            <button class="carousel-btn carousel-btn--prev" aria-label="Precedente">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            </button>
-            <div class="carousel-track" id="carouselTrack">
-                <div class="carousel-slide">
-                    <img src="images/abel-ferrara.jpg" alt="Abel Ferrara" class="carousel-slide__img">
-                    <div class="carousel-slide__caption">Abel Ferrara &middot; 21 Marzo &middot; Teatro Sociale</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/elisabetta-sgarbi.jpg" alt="Elisabetta Sgarbi" class="carousel-slide__img">
-                    <div class="carousel-slide__caption">Elisabetta Sgarbi &middot; 23 Marzo &middot; Varese</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/kevin-lee.jpg" alt="Kevin B. Lee" class="carousel-slide__img">
-                    <div class="carousel-slide__caption">Kevin B. Lee &middot; 26 Marzo &middot; Cinema Fratello Sole</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/mauro-giovanardi.jpg" alt="Mauro Ermanno Giovanardi" class="carousel-slide__img">
-                    <div class="carousel-slide__caption">Mauro Ermanno Giovanardi &middot; 20 Marzo &middot; San Giovanni Bosco</div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="images/sergio-rubini.jpg" alt="Sergio Rubini" class="carousel-slide__img">
-                    <div class="carousel-slide__caption">Sergio Rubini &middot; 28 Marzo &middot; Teatro Sociale</div>
-                </div>
-            </div>
-            <button class="carousel-btn carousel-btn--next" aria-label="Successivo">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </button>
-        </div>
-        <div class="carousel-dots" id="carouselDots"></div>
-    </section>
-
-    <style>
-    .carousel-section {
-        background: #fff;
-        padding: 3rem 0 2.5rem;
-        overflow: hidden;
-    }
-    .carousel-section__header {
-        max-width: var(--max-width, 1200px);
-        margin: 0 auto 1.5rem;
-        padding: 0 2rem;
-    }
-    .carousel-section__title {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 1.1rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--color-text, #111);
-        margin: 0;
-    }
-    .carousel-track-wrap {
-        position: relative;
-        max-width: var(--max-width, 1200px);
-        margin: 0 auto;
-        padding: 0 3.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0;
-    }
-    .carousel-track {
-        display: flex;
-        gap: 1.25rem;
-        overflow: hidden;
-        scroll-behavior: smooth;
-        width: 100%;
-    }
-    .carousel-slide {
-        flex: 0 0 calc(33.333% - 0.9rem);
-        min-width: 0;
-        border-radius: 3px;
-        overflow: hidden;
-        background: #f0f0f0;
-        position: relative;
-    }
-    .carousel-slide__img {
-        width: 100%;
-        aspect-ratio: 3/4;
-        object-fit: cover;
-        display: block;
-    }
-    .carousel-slide__caption {
-        padding: 0.6rem 0.8rem;
-        font-family: 'DM Sans', sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--color-text-secondary, #555);
-        background: #fff;
-    }
-    .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 2;
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 50%;
-        width: 38px;
-        height: 38px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: background 0.2s, border-color 0.2s;
-        padding: 0;
-    }
-    .carousel-btn:hover { background: var(--color-accent, #CC0000); border-color: var(--color-accent, #CC0000); color: #fff; }
-    .carousel-btn:hover svg { stroke: #fff; }
-    .carousel-btn--prev { left: 0; }
-    .carousel-btn--next { right: 0; }
-    .carousel-dots {
-        display: flex;
-        justify-content: center;
-        gap: 6px;
-        margin-top: 1rem;
-    }
-    .carousel-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #ddd;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        transition: background 0.2s;
-    }
-    .carousel-dot--active { background: var(--color-accent, #CC0000); }
-    @media (max-width: 768px) {
-        .carousel-slide { flex: 0 0 calc(100% - 0rem); }
-        .carousel-track-wrap { padding: 0 2.8rem; }
-    }
-    </style>
-
-    <script>
-    (function() {
-        var track = document.getElementById('carouselTrack');
-        var dotsWrap = document.getElementById('carouselDots');
-        if (!track) return;
-        var slides = track.querySelectorAll('.carousel-slide');
-        var visibleCount = window.innerWidth < 768 ? 1 : 3;
-        var current = 0;
-        var total = slides.length;
-        var maxIndex = Math.max(0, total - visibleCount);
-
-        // Build dots
-        for (var i = 0; i <= maxIndex; i++) {
-            var dot = document.createElement('button');
-            dot.className = 'carousel-dot' + (i === 0 ? ' carousel-dot--active' : '');
-            dot.setAttribute('aria-label', 'Slide ' + (i+1));
-            dot.dataset.idx = i;
-            dot.addEventListener('click', function() { goTo(parseInt(this.dataset.idx)); });
-            dotsWrap.appendChild(dot);
-        }
-
-        function goTo(idx) {
-            current = Math.max(0, Math.min(idx, maxIndex));
-            var slideW = slides[0].offsetWidth + 20; // 20 = gap
-            track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
-            track.style.transition = 'transform 0.4s ease';
-            track.style.display = 'flex';
-            dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, i) {
-                d.classList.toggle('carousel-dot--active', i === current);
-            });
-        }
-
-        document.querySelector('.carousel-btn--prev').addEventListener('click', function() { goTo(current - 1); });
-        document.querySelector('.carousel-btn--next').addEventListener('click', function() { goTo(current + 1); });
-
-        // Auto-advance every 5s
-        setInterval(function() { goTo(current < maxIndex ? current + 1 : 0); }, 5000);
-    })();
-    </script>
-
     <!-- Announcement Banner -->
     <main id="main-content">
     <section class="announcement" id="accreditBanner" style="display:none;position:relative;z-index:1">
@@ -790,6 +608,189 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </section>
 
+    <!-- Carosello Ospiti & Eventi -->
+    <section class="carousel-section" id="carosello">
+        <div class="carousel-section__header">
+            <h2 class="carousel-section__title">Ospiti &amp; Momenti</h2>
+        </div>
+        <div class="carousel-track-wrap">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Precedente">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide">
+                    <img src="images/abel-ferrara.jpg" alt="Abel Ferrara" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Abel Ferrara &middot; 21 Marzo &middot; Teatro Sociale</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/elisabetta-sgarbi.jpg" alt="Elisabetta Sgarbi" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Elisabetta Sgarbi &middot; 23 Marzo &middot; Varese</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/kevin-lee.jpg" alt="Kevin B. Lee" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Kevin B. Lee &middot; 26 Marzo &middot; Cinema Fratello Sole</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/mauro-giovanardi.jpg" alt="Mauro Ermanno Giovanardi" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Mauro Ermanno Giovanardi &middot; 20 Marzo &middot; San Giovanni Bosco</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/sergio-rubini.jpg" alt="Sergio Rubini" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Sergio Rubini &middot; 28 Marzo &middot; Teatro Sociale</div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn--next" aria-label="Successivo">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <style>
+    .carousel-section {
+        background: #fff;
+        padding: 3rem 0 2.5rem;
+        overflow: hidden;
+    }
+    .carousel-section__header {
+        max-width: var(--max-width, 1200px);
+        margin: 0 auto 1.5rem;
+        padding: 0 2rem;
+    }
+    .carousel-section__title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-text, #111);
+        margin: 0;
+    }
+    .carousel-track-wrap {
+        position: relative;
+        max-width: var(--max-width, 1200px);
+        margin: 0 auto;
+        padding: 0 3.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+    .carousel-track {
+        display: flex;
+        gap: 1.25rem;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        width: 100%;
+    }
+    .carousel-slide {
+        flex: 0 0 calc(33.333% - 0.9rem);
+        min-width: 0;
+        border-radius: 3px;
+        overflow: hidden;
+        background: #f0f0f0;
+        position: relative;
+    }
+    .carousel-slide__img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        display: block;
+    }
+    .carousel-slide__caption {
+        padding: 0.6rem 0.8rem;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--color-text-secondary, #555);
+        background: #fff;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        padding: 0;
+    }
+    .carousel-btn:hover { background: var(--color-accent, #CC0000); border-color: var(--color-accent, #CC0000); color: #fff; }
+    .carousel-btn:hover svg { stroke: #fff; }
+    .carousel-btn--prev { left: 0; }
+    .carousel-btn--next { right: 0; }
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 1rem;
+    }
+    .carousel-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #ddd;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.2s;
+    }
+    .carousel-dot--active { background: var(--color-accent, #CC0000); }
+    @media (max-width: 768px) {
+        .carousel-slide { flex: 0 0 calc(100% - 0rem); }
+        .carousel-track-wrap { padding: 0 2.8rem; }
+    }
+    </style>
+
+    <script>
+    (function() {
+        var track = document.getElementById('carouselTrack');
+        var dotsWrap = document.getElementById('carouselDots');
+        if (!track) return;
+        var slides = track.querySelectorAll('.carousel-slide');
+        var visibleCount = window.innerWidth < 768 ? 1 : 3;
+        var current = 0;
+        var total = slides.length;
+        var maxIndex = Math.max(0, total - visibleCount);
+
+        // Build dots
+        for (var i = 0; i <= maxIndex; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' carousel-dot--active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i+1));
+            dot.dataset.idx = i;
+            dot.addEventListener('click', function() { goTo(parseInt(this.dataset.idx)); });
+            dotsWrap.appendChild(dot);
+        }
+
+        function goTo(idx) {
+            current = Math.max(0, Math.min(idx, maxIndex));
+            var slideW = slides[0].offsetWidth + 20; // 20 = gap
+            track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
+            track.style.transition = 'transform 0.4s ease';
+            track.style.display = 'flex';
+            dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+                d.classList.toggle('carousel-dot--active', i === current);
+            });
+        }
+
+        document.querySelector('.carousel-btn--prev').addEventListener('click', function() { goTo(current - 1); });
+        document.querySelector('.carousel-btn--next').addEventListener('click', function() { goTo(current + 1); });
+
+        // Auto-advance every 5s
+        setInterval(function() { goTo(current < maxIndex ? current + 1 : 0); }, 5000);
+    })();
+    </script>
+
+    
     <!-- Masterclass -->
     <section class="page-section" id="masterclass-home">
         <div class="page-section__container">
