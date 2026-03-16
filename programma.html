@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Programma — B.A. Film Festival</title>
-    <meta name="description" content="Il programma completo della XXIV edizione del B.A. Film Festival. Concorso Italiano, Concorso Internazionale, retrospettive ed eventi speciali. 21-28 Marzo 2026.">
+    <meta name="description" content="Il programma completo della XXIV edizione del B.A. Film Festival. Concorso Italiano, Concorso Internazionale, retrospettive ed eventi speciali. 20-28 Marzo 2026.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -216,7 +216,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <button class="filter-tag" data-filter="Evento speciale" onclick="filterEvents('Evento speciale',this)">Evento Speciale</button>
         <button class="filter-tag" data-filter="Concorso" onclick="filterEvents('Concorso',this)">Concorso</button>
         <button class="filter-tag" data-filter="Masterclass" onclick="filterEvents('Masterclass',this)">Masterclass</button>
-        <button class="filter-tag" data-filter="Retrospettiva" onclick="filterEvents('Retrospettiva',this)">Retrospettiva</button>
+        <button class="filter-tag" data-filter="Made in Italy Scuole" onclick="filterEvents('Made in Italy Scuole',this)">Made in Italy Scuole</button>
+        <button class="filter-tag" data-filter="BAFF in Libreria" onclick="filterEvents('BAFF in Libreria',this)">BAFF in Libreria</button>
+        <button class="filter-tag" data-filter="Fuori Orario" onclick="filterEvents('Fuori Orario',this)">Fuori Orario</button>
       </div>
     </div>
     <style>
@@ -245,299 +247,360 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <div class="schedule">
                 <div class="schedule__tabs">
-                    <button class="schedule__tab schedule__tab--active" data-day="day-1">Sab 21</button>
-                    <button class="schedule__tab" data-day="day-2">Dom 22</button>
-                    <button class="schedule__tab" data-day="day-3">Lun 23</button>
-                    <button class="schedule__tab" data-day="day-4">Mar 24</button>
-                    <button class="schedule__tab" data-day="day-5">Mer 25</button>
-                    <button class="schedule__tab" data-day="day-6">Gio 26</button>
-                    <button class="schedule__tab" data-day="day-7">Ven 27</button>
-                    <button class="schedule__tab" data-day="day-8">Sab 28</button>
+                    <button class="schedule__tab schedule__tab--active" data-day="day-1">Ven 20</button>
+                    <button class="schedule__tab" data-day="day-2">Sab 21</button>
+                    <button class="schedule__tab" data-day="day-3">Dom 22</button>
+                    <button class="schedule__tab" data-day="day-4">Lun 23</button>
+                    <button class="schedule__tab" data-day="day-5">Mar 24</button>
+                    <button class="schedule__tab" data-day="day-6">Mer 25</button>
+                    <button class="schedule__tab" data-day="day-7">Gio 26</button>
+                    <button class="schedule__tab" data-day="day-8">Ven 27</button>
+                    <button class="schedule__tab" data-day="day-9">Sab 28</button>
                 </div>
 
-                <!-- Domenica 15 Marzo -->
+                <!-- Venerdì 20 Marzo — Pre-apertura -->
                 <div class="schedule__day schedule__day--active" id="day-1">
                     <div class="schedule__event">
-                        <span class="schedule__time">10:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Cerimonia di apertura</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Ingresso libero</span>
-                        </div>
-                        <span class="schedule__event-tag">Evento speciale</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 1</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 2</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
                         <span class="schedule__time">21:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film di apertura</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Anteprima</span>
-                        </div>
-                        <span class="schedule__event-tag">Evento speciale</span>
-                    </div>
-                </div>
-
-                <!-- Lunedi 16 Marzo -->
-                <div class="schedule__day" id="day-2">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Masterclass: Il cinema del reale</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso con accredito</span>
-                        </div>
-                        <span class="schedule__event-tag">Masterclass</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 3</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 4</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">I Primi Passi: Opera prima 1</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
-                        </div>
-                        <span class="schedule__event-tag">Retrospettiva</span>
-                    </div>
-                </div>
-
-                <!-- Martedi 17 Marzo -->
-                <div class="schedule__day" id="day-3">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Incontro con il regista ospite</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso libero</span>
-                        </div>
-                        <span class="schedule__event-tag">Evento speciale</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 5</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 6</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Proiezione speciale</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Fuori concorso</span>
-                        </div>
-                        <span class="schedule__event-tag">Evento speciale</span>
-                    </div>
-                </div>
-
-                <!-- Mercoledi 18 Marzo -->
-                <div class="schedule__day" id="day-4">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Masterclass: Scrivere per il cinema</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso con accredito</span>
-                        </div>
-                        <span class="schedule__event-tag">Masterclass</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 7</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 8</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">I Primi Passi: Opera prima 2</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
-                        </div>
-                        <span class="schedule__event-tag">Retrospettiva</span>
-                    </div>
-                </div>
-
-                <!-- Giovedi 19 Marzo -->
-                <div class="schedule__day" id="day-5">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Tavola rotonda: Il futuro del cinema indipendente</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso libero</span>
-                        </div>
-                        <span class="schedule__event-tag">Evento speciale</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 9</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 10</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">I Primi Passi: Opera prima 3</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
-                        </div>
-                        <span class="schedule__event-tag">Retrospettiva</span>
-                    </div>
-                </div>
-
-                <!-- Venerdi 20 Marzo -->
-                <div class="schedule__day" id="day-6">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Masterclass: Dirigere gli attori</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso con accredito</span>
-                        </div>
-                        <span class="schedule__event-tag">Masterclass</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 11</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 12</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Italiano</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Proiezione speciale con ospite</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Fuori concorso</span>
+                            <span class="schedule__event-title">Mauro Ermanno Giovanardi in concerto &mdash; &ldquo;E poi scegliere con cura le parole&rdquo; Tour</span>
+                            <span class="schedule__event-detail">Cinema Teatro San Giovanni Bosco &mdash; &euro;18,00 + 1,5ddp</span>
                         </div>
                         <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                 </div>
 
                 <!-- Sabato 21 Marzo -->
-                <div class="schedule__day" id="day-7">
+                <div class="schedule__day" id="day-2">
                     <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
+                        <span class="schedule__time">16:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Incontro con la giuria</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Ingresso libero</span>
+                            <span class="schedule__event-title">Prima di diventare grandi &mdash; Masterclass su Abel Ferrara, di Giulio Sangiorgio</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
                         </div>
-                        <span class="schedule__event-tag">Evento speciale</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 13</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Concorso Internazionale</span>
-                        </div>
-                        <span class="schedule__event-tag">Concorso</span>
+                        <span class="schedule__event-tag">Masterclass</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">18:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film in concorso 14</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Concorso Italiano</span>
+                            <span class="schedule__event-title">Matteo Inzaghi presenta <em>Flashback. Il cinema americano come riflesso politico-culturale degli anni Ottanta</em></span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
                         </div>
-                        <span class="schedule__event-tag">Concorso</span>
+                        <span class="schedule__event-tag">BAFF in Libreria</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
+                        <span class="schedule__time">20:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">I Primi Passi: Opera prima 4</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospettiva</span>
+                            <span class="schedule__event-title">Serata di inaugurazione XXIV Edizione &mdash; Incontro con Abel Ferrara</span>
+                            <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;8,00</span>
                         </div>
-                        <span class="schedule__event-tag">Retrospettiva</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Turn in the Wound</em> (UK/Germania/Italia/USA, 2024, 77&rsquo;)</span>
+                            <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;8,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                 </div>
 
                 <!-- Domenica 22 Marzo -->
-                <div class="schedule__day" id="day-8">
+                <div class="schedule__day" id="day-3">
                     <div class="schedule__event">
-                        <span class="schedule__time">11:00</span>
+                        <span class="schedule__time">10:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Replica: miglior film Concorso Italiano</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Replica</span>
+                            <span class="schedule__event-title"><em>Il gesto delle mani</em> di Francesco Clerici (Italia, 2015, 77&rsquo;)</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; Incontro con Francesco Clerici e Lorenzo Donghi</span>
                         </div>
-                        <span class="schedule__event-tag">Concorso</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">16:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Masterclass su Roberto Rossellini, di Michelangelo Frammartino &mdash; <em>Francesco giullare di Dio</em> (Italia, 1950, 75&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Masterclass</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>La ragazza nella nebbia</em> (Italia, 2017, 127&rsquo;) &mdash; Incontro con Donato Carrisi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Lunedì 23 Marzo -->
+                <div class="schedule__day" id="day-4">
+                    <div class="schedule__event">
+                        <span class="schedule__time">10:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Prima di diventare grandi: <em>Titicut Follies</em> di Frederick Wiseman &mdash; Incontro con Luca Mosso</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
+                        </div>
+                        <span class="schedule__event-tag">Masterclass</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">12:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Inaugurazione BAFF Memorabilia</span>
+                            <span class="schedule__event-detail">Galleria Boragno &mdash; Visitabile fino a gio 26, 10.00&ndash;13.00 / 15.00&ndash;18.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">15:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Replica: miglior film Concorso Internazionale</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Replica</span>
+                            <span class="schedule__event-title">Proiezione pomeridiana</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00 (valido per la doppia proiezione pomeridiana)</span>
                         </div>
                         <span class="schedule__event-tag">Concorso</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
+                        <span class="schedule__time">17:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Film di chiusura</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Anteprima</span>
+                            <span class="schedule__event-title"><em>Macdo</em> di Racomelia Ezell (Italia/Grecia, 2025, 117&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">17:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Waking Hours</em> di Federico Cammarata e Filippo Foscarini (Italia, 2025, 78&rsquo;) &mdash; con Filippo Foscarini</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">18:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Inaugurazione foto/video-installazione &ldquo;Guerre dimenticate. La realt&agrave; supera la finzione&rdquo; a cura di MEMORA</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; Visitabile fino a sab 28, 10.00&ndash;13.00 / 15.00&ndash;18.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Scerbanenco tra romanzi, cinema e fumetto &mdash; <em>L&rsquo;isola degli idealisti</em> di Elisabetta Sgarbi (Italia, 2024, 112&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Nuovo (Varese) &mdash; Ingresso libero su prenotazione &mdash; Con Elisabetta Sgarbi, Eugenio Lio, Paolo Bacilieri, Alberto Pezzotta</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Martedì 24 Marzo -->
+                <div class="schedule__day" id="day-5">
+                    <div class="schedule__event">
+                        <span class="schedule__time">9:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Tienimi presente</em> di Alberto Palmiero (Italia, 2025, 80&rsquo;) &mdash; con Alberto Palmiero e Vincenzo Pezone</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Proiezione pomeridiana</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00 (valido per la doppia proiezione pomeridiana)</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">17:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Proiezione a sorpresa</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">17:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Boys Go to Jupiter</em> di Julian Glander (USA, 2024, 90&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Libera</em> (Italia, 1993, 85&rsquo;) &mdash; Incontro con Pappi Corsicato e Isabel Pagliai</span>
+                            <span class="schedule__event-detail">Cinema Teatro Dante &mdash; &euro;5,00</span>
                         </div>
                         <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">21:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Cerimonia di premiazione</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Ingresso con invito</span>
+                            <span class="schedule__event-title"><em>Fantaisie</em> di Isabel Pagliai (Francia, 2025, 79&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro San Giovanni Bosco &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                </div>
+
+                <!-- Mercoledì 25 Marzo -->
+                <div class="schedule__day" id="day-6">
+                    <div class="schedule__event">
+                        <span class="schedule__time">9:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Gioia mia</em> di Margherita Spampinato (Italia, 2025, 90&rsquo;) &mdash; con Margherita Spampinato</span>
+                            <span class="schedule__event-detail">Cinema Teatro Manzoni &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Una cosa vicina</em> di Loris G. Nese (Italia, 2025, 90&rsquo;) &mdash; con Loris G. Nese e Chiara Marotta</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">18:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Gianni Canova presenta <em>Checco Zalone. Da Cado dalle nubi a Buen Camino</em></span>
+                            <span class="schedule__event-detail">Sala Piero Monaco &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">BAFF in Libreria</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>The Chronology of Water</em> di Kristen Stewart (Francia/Lituania/UK/USA, 2025, 128&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Il mito della Pista Stelvio</em> a cura di Cactus Production &mdash; con Flavio Vanetti</span>
+                            <span class="schedule__event-detail">Sala Ratti &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Giovedì 26 Marzo -->
+                <div class="schedule__day" id="day-7">
+                    <div class="schedule__event">
+                        <span class="schedule__time">9:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Vita da grandi</em> di Greta Scarano (Italia, 2025, 96&rsquo;) &mdash; con Yuri Tuci</span>
+                            <span class="schedule__event-detail">Cinema Teatro Manzoni &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">16:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Afterlives</em> di Kevin B. Lee (Germania/Francia/Belgio, 2025, 88&rsquo;) &mdash; Incontro con Kevin B. Lee e Chiara Grizzaffi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Masterclass</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Canone effimero</em> di Gianluca e Massimiliano De Serio (Italia, 2025, 120&rsquo;) &mdash; Incontro con Antonio Rezza e Flavia Mastrella</span>
+                            <span class="schedule__event-detail">Sala Ratti &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>The Chronology of Water</em> di Kristen Stewart (Anteprima Italiana) + Cortometraggi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Venerdì 27 Marzo -->
+                <div class="schedule__day" id="day-8">
+                    <div class="schedule__event">
+                        <span class="schedule__time">9:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Orfeo</em> di Virgilio Villoresi (Italia, 2025, 74&rsquo;) &mdash; con Virgilio Villoresi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Canone effimero</em> di Gianluca e Massimiliano De Serio (Italia, 2025, 120&rsquo;) &mdash; Incontro con i registi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Fuori Orario @ BAFF: <em>Il damo</em> di Luca Ferri &mdash; Incontro con Luca Ferri e Roberto Turigliatto</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Fuori Orario</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>I tartassati</em> di Steno (Italia/Francia, 1959, 105&rsquo;) &mdash; Incontro con Enrico Vanzina</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Sabato 28 Marzo -->
+                <div class="schedule__day" id="day-9">
+                    <div class="schedule__event">
+                        <span class="schedule__time">10:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Fuori Orario @ BAFF: Il cinema di Gianfranco Brebbia &mdash; con Fulvio Baglivi, Giovanna Brebbia, Mauro Gervasini</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; &euro;5,00</span>
+                        </div>
+                        <span class="schedule__event-tag">Fuori Orario</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Fuori Orario @ BAFF: <em>Il damo</em> di Luca Ferri &mdash; Incontro con Luca Ferri e Roberto Turigliatto</span>
+                            <span class="schedule__event-detail">Sala Piero Monaco (Biblioteca comunale)</span>
+                        </div>
+                        <span class="schedule__event-tag">Fuori Orario</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">18:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Davide Ferrario presenta <em>La fine della fine</em></span>
+                            <span class="schedule__event-detail">Sala Piero Monaco</span>
+                        </div>
+                        <span class="schedule__event-tag">BAFF in Libreria</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Conversazione con Sergio Rubini &mdash; Concerto Sergio Rubini Michele Fazio Trio &ndash; Sud</span>
+                            <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;12,00 + 1,5ddp &mdash; in collaborazione con Events in Jazz 2025</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">22:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Hundreds of Beavers</em> di Mike Cheslik &mdash; Film di chiusura</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; &euro;5,00</span>
                         </div>
                         <span class="schedule__event-tag">Evento speciale</span>
                     </div>
