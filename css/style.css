@@ -452,6 +452,10 @@ button {
     justify-content: center;
     text-align: center;
     background: #0f0f12 url('../images/denise-jans-OaVJQZ-nFD0-unsplash.jpg') center/cover no-repeat;
+    background-image: url('../images/Gemini_Generated_Image_vq9q8gvq9q8gvq9q.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -462,7 +466,7 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.5);
     pointer-events: none;
 }
 
