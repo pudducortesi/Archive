@@ -769,6 +769,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     .carousel-dot--active { background: var(--color-accent, #CC0000); }
 
+    /* Hide logo slide on mobile */
+    @media (max-width: 768px) {
+        .carousel-slide--logo { display: none; }
+    }
+
     /* Desktop: static 3-col grid, no carousel */
     @media (min-width: 769px) {
         .carousel-track {
