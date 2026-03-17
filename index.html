@@ -745,6 +745,25 @@ document.addEventListener('DOMContentLoaded', function() {
         .carousel-slide { flex: 0 0 calc(100% - 0rem); }
         .carousel-track-wrap { padding: 0 2.8rem; }
     }
+    @media (min-width: 769px) {
+        .carousel-track {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            transform: none !important;
+            transition: none !important;
+            gap: 1.25rem;
+        }
+        .carousel-slide {
+            flex: none !important;
+            width: auto !important;
+        }
+        .carousel-btn {
+            display: none !important;
+        }
+        .carousel-dots {
+            display: none !important;
+        }
+    }
     </style>
 
     <script>
@@ -769,6 +788,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dotsWrap.appendChild(dot);
         }
 
+        if (window.innerWidth < 769) {
         goTo(0);
 
         function goTo(idx) {
@@ -787,6 +807,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Auto-advance every 5s
         setInterval(function() { goTo(current < maxIndex ? current + 1 : 0); }, 5000);
+        }
     }, 100);
     });
     </script>
