@@ -2730,7 +2730,7 @@ button.hero__scroll-arrow {
 }
 
 .page-hero__title {
-    font-family: 'Bangers', var(--font-display), sans-serif;
+    font-family: 'Bebas Neue', var(--font-display), sans-serif;
     font-size: clamp(4.5rem, 10vw, 8rem);
     font-weight: 400;
     line-height: 0.9;
