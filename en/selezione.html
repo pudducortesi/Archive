@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Official Selection — B.A. Film Festival</title>
-    <meta name="description" content="Official Selection of the XXIV Edition of the B.A. Film Festival. Films in competition in the Italian Competition, International Competition and The First Steps of the Masters sections.">
+    <meta name="description" content="Official Selection of the XXIV Edition of the B.A. Film Festival. Films in competition in the Italian Competition, International Competition and The Masters' First Steps sections.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/film-detail.css">
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
-        ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
-        : this.style.display = 'none';
+      var filmCard = this.closest('.film-card');
+      if (filmCard) {
+        var imgWrap = this.closest('.film-card__image');
+        if (imgWrap) imgWrap.style.display = 'none';
+        return;
+      }
+      var card = this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, figure');
+      if (card) { card.style.display = 'none'; }
+      else { this.style.display = 'none'; }
     });
   });
 });
@@ -54,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__nav-link">Tickets</a>
                 <a href="ospiti.html" class="header__nav-link">Guests</a>
                 <a href="giuria.html" class="header__nav-link">Jury</a>
-                <a href="../luoghi.html" class="header__nav-link">Venues</a>
+                <a href="luoghi.html" class="header__nav-link">Venues</a>
                 <a href="sponsor.html" class="header__nav-link">Sponsors</a>
             </nav>
-            <button class="search-trigger header__search-btn" aria-label="Cerca">
+            <button class="search-trigger header__search-btn" aria-label="Search">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </button>
-            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Carrello">
+            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Cart">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             </a>
             <button class="header__burger" id="burgerBtn" aria-label="Menu">
@@ -76,49 +83,49 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="mobile-menu__content">
             <div class="mobile-menu__header">
                 <img src="../images/logo-baff-header.png" alt="BAFF" class="mobile-menu__logo">
-                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Chiudi menu">
+                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
             <nav class="mobile-menu__nav">
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Il Festival</span>
-                    <a href="../festival.html" class="mobile-menu__link mobile-menu__link--sub">Il Festival</a>
-                    <a href="../festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">Storia</a>
-                    <a href="../immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
-                    <a href="../festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
-                    <a href="../festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
+                    <span class="mobile-menu__group-label">The Festival</span>
+                    <a href="festival.html" class="mobile-menu__link mobile-menu__link--sub">The Festival</a>
+                    <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">History</a>
+                    <a href="../immagini.html" class="mobile-menu__link mobile-menu__link--sub">Gallery</a>
+                    <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Venues</a>
+                    <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Transparency</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Programma</span>
-                    <a href="../programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
-                    <a href="../programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
-                    <a href="../programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
-                    <a href="../programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
-                    <a href="../programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
-                    <a href="../programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
-                    <a href="../programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
-                    <a href="../programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
-                    <a href="../programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                    <span class="mobile-menu__group-label">Programme</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programme</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Sections</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Special Events</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">After Hours</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Before Growing Up</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Exhibitions</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
-                    <a href="../selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
-                    <a href="../selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
-                    <a href="../selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
-                    <a href="../selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                    <span class="mobile-menu__group-label">Official Selection</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Official Selection</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Italian Competition</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">International Competition</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Schools</a>
                 </div>
-                <a href="../ospiti.html" class="mobile-menu__link">Ospiti</a>
-                <a href="../giuria.html" class="mobile-menu__link">Giuria</a>
-                <a href="../news.html" class="mobile-menu__link">News</a>
-                <a href="../accreditamenti.html" class="mobile-menu__link">Pass</a>
-                <a href="../sponsor.html" class="mobile-menu__link">Sponsor</a>
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="mobile-menu__link">Tickets</a>
+                <a href="ospiti.html" class="mobile-menu__link">Guests</a>
+                <a href="giuria.html" class="mobile-menu__link">Jury</a>
+                <a href="luoghi.html" class="mobile-menu__link">Venues</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsors</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
-                <a href="../stampa.html" class="mobile-menu__footer-link">Stampa</a>
-                <a href="../contatti.html" class="mobile-menu__footer-link">Contatti</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
+                <a href="press.html" class="mobile-menu__footer-link">Press</a>
+                <a href="contatti.html" class="mobile-menu__footer-link">Contacts</a>
                 <a href="../istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
             </div>
         </div>
@@ -140,19 +147,29 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <!-- Sticky Sub-navigation -->
+    <nav class="festival-subnav" id="selezioneSubnav">
+        <div class="festival-subnav__container">
+            <a href="#concorso-italiano" class="festival-subnav__link">Italian Competition</a>
+            <a href="#concorso-internazionale" class="festival-subnav__link">International Competition</a>
+            <a href="#film-chiusura" class="festival-subnav__link">Closing Film</a>
+            <a href="#scuole" class="festival-subnav__link">Schools</a>
+        </div>
+    </nav>
+
     <!-- Introduction -->
     <section class="section-intro">
         <div class="section-intro__container">
             <div class="section-intro__body">
                 <p class="section-intro__lead">The Official Selection of the XXIV edition of the B.A. Film Festival represents the beating heart of the event: a journey through the most significant voices of contemporary Italian and international cinema.</p>
-                <p class="section-intro__text">The selection committee, composed of critics, programmers and industry professionals, reviewed over 1,200 works from 45 countries. From this work of research and analysis emerged the 12 titles in competition, divided into the Italian Competition and International Competition sections, as well as the 4 films of the special retrospective <em>The First Steps of the Masters</em>.</p>
                 <p class="section-intro__text">Each selected film carries a unique vision of the world, a distinctive cinematic language and a story capable of questioning and moving. From debuts to works by established directors, the Official Selection of BAFF 2026 invites the audience to discover the cinema of tomorrow.</p>
+
             </div>
         </div>
     </section>
 
     <!-- Italian Competition -->
-    <section class="film-section">
+    <section class="film-section" id="concorso-italiano">
         <div class="film-section__container">
             <div class="film-section__header">
                 <h2 class="section-title">Italian Competition</h2>
@@ -162,73 +179,71 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-2.jpg" alt="La luce che resta" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-gioia-mia.jpg" alt="Gioia mia" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Italian Competition</span>
-                        <h3 class="film-card__title">La luce che resta</h3>
-                        <p class="film-card__director">by Giulia Mancini</p>
-                        <div class="film-card__meta">Italy &middot; 2025 &middot; 104 min</div>
+                        <h3 class="film-card__title">Gioia mia</h3>
+                        <p class="film-card__director">by Margherita Spampinato</p>
+                        <div class="film-card__meta">2025 &middot; 90 min &middot; Drama</div>
+                        <p class="film-card__synopsis">Nico, a modern and rebellious child, spends the summer with a strict and religious Sicilian aunt. Clashes and mistrust will give way to a deep bond, capable of changing them both.</p>
+                        <p class="film-card__notes">Presented in competition at Locarno 2025 &mdash; CIN&Eacute;+ Special Jury Prize and Pardo for Best Performance to Aurora Quattrocchi.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-10.jpg" alt="Cenere e vento" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-tienimi-presente.jpg" alt="Tienimi presente" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Italian Competition</span>
-                        <h3 class="film-card__title">Cenere e vento</h3>
-                        <p class="film-card__director">by Alessandro Ferrara</p>
-                        <div class="film-card__meta">Italy &middot; 2025 &middot; 118 min</div>
+                        <h3 class="film-card__title">Tienimi presente</h3>
+                        <p class="film-card__director">by Alberto Palmiero</p>
+                        <div class="film-card__meta">2025 &middot; 80 min &middot; Comedy</div>
+                        <p class="film-card__synopsis">Alberto, a young aspiring director in Rome, returns to his hometown after years of failed attempts. Through unexpected encounters and a confrontation with his own past, he will realise that his life could become the material for the film he has always tried to make.</p>
+                        <p class="film-card__notes">Winner of the Poste Italiane Best First Film Award at the Rome Film Festival 2025.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-12.jpg" alt="Nessuno lo saprà" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-una-cosa-vicina.jpg" alt="Una cosa vicina" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Italian Competition</span>
-                        <h3 class="film-card__title">Nessuno lo sapr&agrave;</h3>
-                        <p class="film-card__director">by Paola Ferretti</p>
-                        <div class="film-card__meta">Italy &middot; 2026 &middot; 95 min</div>
+                        <h3 class="film-card__title">Una cosa vicina</h3>
+                        <p class="film-card__director">by Loris Giuseppe Nese</p>
+                        <div class="film-card__meta">2025 &middot; 90 min &middot; Drama</div>
+                        <p class="film-card__synopsis">In the 1990s, a boy grows up amid family secrets and the premature death of the men in his family. As an adult, he will discover the weight of his surname in the city and, through cinema, will begin to confront the past and rebuild his own identity.</p>
+                        <p class="film-card__notes">Official selection Venice Days &ndash; Venice 2025. Andrea Pazienza Award and Libero Bizzarri Award.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-15.jpg" alt="I giorni del silenzio" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-waking-hours.webp" alt="Waking Hours" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Italian Competition</span>
-                        <h3 class="film-card__title">I giorni del silenzio</h3>
-                        <p class="film-card__director">by Roberto Montanari</p>
-                        <div class="film-card__meta">Italy &middot; 2025 &middot; 112 min</div>
+                        <h3 class="film-card__title">Waking Hours</h3>
+                        <p class="film-card__director">by Federico Cammarata and Filippo Foscarini</p>
+                        <div class="film-card__meta">2025 &middot; 78 min &middot; Documentary</div>
+                        <p class="film-card__synopsis">On the edge of a forest at the eastern border of Europe, a clan of Afghan smugglers lives in wait for people to ferry across the frontier. Between sleepless nights and improvised fires, the community lives suspended between survival, solidarity and danger.</p>
+                        <p class="film-card__notes">Official selection International Critics' Week &ndash; Venice 2025.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-16.jpg" alt="Dove comincia il mare" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-le-bambine.jpg" alt="Le bambine" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">Italian Competition</span>
-                        <h3 class="film-card__title">Dove comincia il mare</h3>
-                        <p class="film-card__director">by Francesca Ferro</p>
-                        <div class="film-card__meta">Italy &middot; 2026 &middot; 98 min</div>
-                    </div>
-                </article>
-
-                <article class="film-card">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-17.jpg" alt="L'ultimo treno per Ferrara" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section">Italian Competition</span>
-                        <h3 class="film-card__title">L'ultimo treno per Ferrara</h3>
-                        <p class="film-card__director">by Enrico Damiani</p>
-                        <div class="film-card__meta">Italy &middot; 2025 &middot; 108 min</div>
+                        <h3 class="film-card__title">Le bambine</h3>
+                        <p class="film-card__director">by Valentina Bertani and Nicole Bertani</p>
+                        <div class="film-card__meta">2025 &middot; 105 min &middot; Drama</div>
+                        <p class="film-card__synopsis">It is 1997, Linda is an eight-year-old girl who leaves Switzerland to move to Italy with her mother. She will form a special bond with her peers Azzurra and Marta; together they will learn to defend their freedom in a world dominated by adults.</p>
+                        <p class="film-card__notes">In competition at Locarno 2025 &mdash; Special Mention of the Youth Jury.</p>
                     </div>
                 </article>
 
@@ -237,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- International Competition -->
-    <section class="film-section film-section--alt">
+    <section class="film-section film-section--alt" id="concorso-internazionale">
         <div class="film-section__container">
             <div class="film-section__header">
                 <h2 class="section-title">International Competition</h2>
@@ -247,73 +262,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-19.jpg" alt="Les heures perdues" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-boys-go-to-jupiter.webp" alt="Boys go to Jupiter" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">International Competition</span>
-                        <h3 class="film-card__title">Les heures perdues</h3>
-                        <p class="film-card__director">by Claire Dumont</p>
-                        <div class="film-card__meta">France &middot; 2025 &middot; 110 min</div>
+                        <h3 class="film-card__title">Boys go to Jupiter</h3>
+                        <p class="film-card__director">by Julian Glander</p>
+                        <div class="film-card__meta">USA &middot; 2024 &middot; 90 min &middot; Animation, Comedy</div>
+                        <p class="film-card__synopsis">A teenager in suburban Florida desperately scrambles to earn $5,000 in this dreamy and surreal animated coming-of-age story.</p>
+                        <p class="film-card__notes">A sort of E.T. in the age of platform capitalism, suspended between surrealism and disenchantment in a suburban Florida as abstract and garish as a video game.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-20.jpg" alt="La orilla del río" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-buffet-infinity.webp" alt="Buffet Infinity" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">International Competition</span>
-                        <h3 class="film-card__title">La orilla del r&iacute;o</h3>
-                        <p class="film-card__director">by Pablo Mendoza</p>
-                        <div class="film-card__meta">Spain &middot; 2026 &middot; 102 min</div>
+                        <h3 class="film-card__title">Buffet Infinity</h3>
+                        <p class="film-card__director">by Simon Glassman</p>
+                        <div class="film-card__meta">Canada &middot; 2025 &middot; 100 min &middot; Horror, Comedy</div>
+                        <p class="film-card__synopsis">Set in the fictitious Westridge County in Alberta, two restaurants vie for dominance, giving rise to cults, sinkholes and other apocalyptic consequences.</p>
+                        <p class="film-card__notes">A tribute to old cable TV depicting a bizarre feud between two restaurants in an increasingly delirious and horrific tour de force told entirely through television commercials.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-21.jpg" alt="Baram-ui sigan" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-fantaisie.webp" alt="Fantaisie" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">International Competition</span>
-                        <h3 class="film-card__title">Baram-ui sigan</h3>
-                        <p class="film-card__director">by Park Joon-ho</p>
-                        <div class="film-card__meta">South Korea &middot; 2025 &middot; 126 min</div>
+                        <h3 class="film-card__title">Fantaisie</h3>
+                        <p class="film-card__director">by Isabel Pagliai</p>
+                        <div class="film-card__meta">France &middot; 2025 &middot; 79 min &middot; Documentary</div>
+                        <p class="film-card__synopsis">Lost in her fears and fantasies, a woman writes in a notebook that a young man finds on a train. Together they find themselves in the heart of a nocturnal forest where dreams come to life.</p>
+                        <p class="film-card__notes">A paradoxical documentation of Louise's inner world, a stream of consciousness set between light and shadow, a chronicle of two solitudes meeting between the lines of a diary.</p>
                     </div>
                 </article>
 
                 <article class="film-card">
                     <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-23.jpg" alt="Die stille Mauer" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/locandina-macdo.webp" alt="Macdo" loading="lazy" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="film-card__body">
                         <span class="film-card__section">International Competition</span>
-                        <h3 class="film-card__title">Die stille Mauer</h3>
-                        <p class="film-card__director">by Katrin Weissman</p>
-                        <div class="film-card__meta">Germany &middot; 2025 &middot; 99 min</div>
-                    </div>
-                </article>
-
-                <article class="film-card">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-13.jpg" alt="El último verano" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section">International Competition</span>
-                        <h3 class="film-card__title">El &uacute;ltimo verano</h3>
-                        <p class="film-card__director">by Luciana Vidal</p>
-                        <div class="film-card__meta">Argentina &middot; 2026 &middot; 115 min</div>
-                    </div>
-                </article>
-
-                <article class="film-card">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-14.jpg" alt="Hikari no kawa" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section">International Competition</span>
-                        <h3 class="film-card__title">Hikari no kawa</h3>
-                        <p class="film-card__director">by Tanaka Yuki</p>
-                        <div class="film-card__meta">Japan &middot; 2025 &middot; 121 min</div>
+                        <h3 class="film-card__title">Macdo</h3>
+                        <p class="film-card__director">by Racornelia Ezell</p>
+                        <div class="film-card__meta">Mexico, Greece &middot; 2025 &middot; 118 min &middot; Comedy, Drama</div>
+                        <p class="film-card__synopsis">A home video captures the Christmas Eve of 1997 of a family in Mexico City, revealing how love and intimacy can conceal control and abuse behind a surface of warmth and tradition.</p>
+                        <p class="film-card__notes">A merciless excavation into the everyday horror of the family institution carried out through the language of amateur film. Hypnotic intensity between the flickering image of an old analogue camcorder and the crescendo of dramatic tension.</p>
                     </div>
                 </article>
 
@@ -321,60 +320,23 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- The First Steps of the Masters -->
-    <section class="film-section">
+    <!-- Closing Film -->
+    <section class="film-section" id="film-chiusura">
         <div class="film-section__container">
             <div class="film-section__header">
-                <h2 class="section-title">The First Steps of the Masters</h2>
-                <p class="film-section__subtitle">A retrospective dedicated to the debut films that marked the history of cinema. Screenings in restored versions.</p>
+                <h2 class="section-title">Closing Film</h2>
+                <p class="film-section__subtitle">The film closing the XXIV Edition of the B.A. Film Festival</p>
             </div>
-            <div class="film-grid film-grid--4">
+            <div class="film-grid">
 
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://upload.wikimedia.org/wikipedia/it/thumb/6/6e/Accattone_locandina.jpg/220px-Accattone_locandina.jpg" alt="Accattone" style="width:100%;height:100%;object-fit:cover">
-                    </div>
+                <article class="film-card">
+                    <div class="film-card__image"><img src="https://image.tmdb.org/t/p/w500/kizHFOpAKMSRiRdnLvQMJbqbYrk.jpg" alt="Hundreds of Beavers" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
                     <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">The First Steps of the Masters</span>
-                        <h3 class="film-card__title">Accattone</h3>
-                        <p class="film-card__director">by Pier Paolo Pasolini</p>
-                        <div class="film-card__meta">Italy &middot; 1961 &middot; 120 min</div>
-                    </div>
-                </article>
-
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2015/03/effettocinema2.jpg" alt="I pugni in tasca" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">The First Steps of the Masters</span>
-                        <h3 class="film-card__title">I pugni in tasca</h3>
-                        <p class="film-card__director">by Marco Bellocchio</p>
-                        <div class="film-card__meta">Italy &middot; 1965 &middot; 105 min</div>
-                    </div>
-                </article>
-
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2015/03/GiovanniGaravaglia-3887Baff-2016-day-3spettatori.jpg" alt="Prima della rivoluzione" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">The First Steps of the Masters</span>
-                        <h3 class="film-card__title">Prima della rivoluzione</h3>
-                        <p class="film-card__director">by Bernardo Bertolucci</p>
-                        <div class="film-card__meta">Italy &middot; 1964 &middot; 115 min</div>
-                    </div>
-                </article>
-
-                <article class="film-card film-card--classic">
-                    <div class="film-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2015/03/cinemaperbanner.jpg" alt="Ossessione" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="film-card__body">
-                        <span class="film-card__section film-card__section--classic">The First Steps of the Masters</span>
-                        <h3 class="film-card__title">Ossessione</h3>
-                        <p class="film-card__director">by Luchino Visconti</p>
-                        <div class="film-card__meta">Italy &middot; 1943 &middot; 140 min</div>
+                        <span class="film-card__section">Closing Film</span>
+                        <h3 class="film-card__title">Hundreds of Beavers</h3>
+                        <p class="film-card__director">by Mike Cheslik</p>
+                        <div class="film-card__meta">USA &middot; 2022 &middot; 108 min &middot; Comedy</div>
+                        <p class="film-card__synopsis">An apple cider salesman facing an apocalyptic winter must reinvent himself as a beaver trapper in this wild black-and-white slapstick comedy paying tribute to silent cinema and classic cartoons.</p>
                     </div>
                 </article>
 
@@ -382,17 +344,253 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- How to submit a film -->
-    <section class="cta-section">
-        <div class="cta-section__container">
-            <div class="cta-section__content">
-                <h2 class="cta-section__title">How to submit a film</h2>
-                <p class="cta-section__text">The B.A. Film Festival accepts submissions for the XXIV edition throughout the year. Feature films, short films and documentaries completed after 1 January 2025 are eligible. Works must be submitted in their original version with Italian or English subtitles.</p>
-                <p class="cta-section__text">Submission is exclusively through the FilmFreeway platform. The deadline for submissions to the next edition is <strong>30 November 2026</strong>.</p>
-                <div class="cta-section__actions">
-                    <a href="#" class="cta-section__btn cta-section__btn--primary">Submit your film</a>
-                    <a href="#" class="cta-section__btn cta-section__btn--secondary">Download regulations</a>
-                </div>
+    <!-- Made in Italy Schools -->
+    <section class="page-section page-section--alt" id="scuole">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Made in Italy Schools</h2>
+        <p class="page-section__intro">The films selected for the schools programme of the XXIV edition of the B.A. Film Festival.</p>
+        <div class="scuole-grid">
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/_QODnFNXYJQ" title="Orfeo - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">Orfeo</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Director:</strong> Virgilio Villoresi</span>
+                <span><strong>Year:</strong> 2025</span>
+                <span><strong>Duration:</strong> 74 min</span>
+                <span><strong>Genre:</strong> Animation / Fantasy / Drama</span>
+              </div>
+              <p class="scuole-card__synopsis">Orfeo, a solitary and visionary pianist, lives in a world suspended between reality and dream. After meeting the enigmatic Eura, his life takes a dreamlike turn when she disappears and he enters an afterlife made of imaginary creatures and mysteries. The film is an adaptation of Dino Buzzati's <em>Poema a fumetti</em>, which reinterprets the myth of Orpheus and Eurydice in a modern and poetic key.</p>
+            </div>
+          </div>
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/oN2F4BmncP0" title="Gioia mia - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">Gioia mia</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Director:</strong> Margherita Spampinato</span>
+                <span><strong>Year:</strong> 2025</span>
+                <span><strong>Duration:</strong> 90 min</span>
+                <span><strong>Genre:</strong> Coming of age</span>
+              </div>
+              <p class="scuole-card__synopsis">Nico, an eleven-year-old glued to his smartphone and social media, resents being cut off from technology. He spends a summer in Sicily with his aunt Gela, a woman very different from him. Initially hostile and suspicious, their cohabitation gradually leads to the discovery of a deep bond and an encounter between generational worlds and opposite ways of living.</p>
+            </div>
+          </div>
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/3wAMRQBxI5o" title="Tienimi presente - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">Tienimi presente</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Director:</strong> Alberto Palmiero</span>
+                <span><strong>Year:</strong> 2025</span>
+                <span><strong>Duration:</strong> 80 min</span>
+                <span><strong>Genre:</strong> Drama / Comedy</span>
+              </div>
+              <p class="scuole-card__synopsis">Alberto, a young disappointed director in crisis, decides to return to his hometown after years spent in Rome trying to make a film. Back in the provinces among old friends, new experiences and personal reflections, he discovers that giving up can turn into an opportunity for rediscovery and growth.</p>
+            </div>
+          </div>
+
+          <div class="scuole-card">
+            <div class="scuole-card__video">
+              <iframe src="https://www.youtube.com/embed/ZQPSreIUCyY" title="La vita da grandi - Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="scuole-card__body">
+              <h3 class="scuole-card__title">La vita da grandi</h3>
+              <div class="scuole-card__meta">
+                <span><strong>Director:</strong> Greta Scarano</span>
+                <span><strong>Year:</strong> 2025</span>
+                <span><strong>Duration:</strong> 95 min</span>
+                <span><strong>Genre:</strong> Comedy / Drama</span>
+              </div>
+              <p class="scuole-card__synopsis">Irene, who has moved to Rimini to care for her adult autistic brother Omar, embarks with him on an "intensive course in becoming adults." Through daily challenges and intimate moments, the film explores normality and diversity, showing how autism does not define a person in all their complexity.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Editions Highlights -->
+    <section class="film-section film-section--alt">
+        <div class="film-section__container">
+            <div class="film-section__header">
+                <h2 class="section-title">Past Editions Highlights</h2>
+                <p class="film-section__subtitle">A selection of films from previous editions of the B.A. Film Festival</p>
+            </div>
+
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--color-text);">XXII Edition — 2024</h3>
+            <div class="film-grid">
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2024/09/Gli-oceani-sono-i-veri-continenti.jpg" alt="Gli oceani sono i veri continenti" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2024</span>
+                        <h3 class="film-card__title">Gli oceani sono i veri continenti</h3>
+                        <p class="film-card__director">Best First Film</p>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2024/09/Palazzina-laf-.jpg" alt="Palazzina LAF" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2024</span>
+                        <h3 class="film-card__title">Palazzina LAF</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2024/09/Disco-Boy-.jpg" alt="Disco Boy" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2024</span>
+                        <h3 class="film-card__title">Disco Boy</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2024/09/Felicit%C3%A0-di-Micaela-Ramazzotti.jpg" alt="Felicità" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2024</span>
+                        <h3 class="film-card__title">Felicit&agrave;</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2024/09/La-primavera-della-mia-vita-.jpg" alt="La primavera della mia vita" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2024</span>
+                        <h3 class="film-card__title">La primavera della mia vita</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2024/09/Con-la-grazia-di-un-dio-.jpg" alt="Con la grazia di un dio" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2024</span>
+                        <h3 class="film-card__title">Con la grazia di un dio</h3>
+                    </div>
+                </article>
+            </div>
+
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin:2.5rem 0 1.5rem;color:var(--color-text);">XXI Edition — 2023</h3>
+            <div class="film-grid">
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2023/03/brado.jpg" alt="Brado" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2023</span>
+                        <h3 class="film-card__title">Brado</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2023/04/chiaraok.jpeg" alt="Chiara" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2023</span>
+                        <h3 class="film-card__title">Chiara</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2023/03/piano-piano.jpg" alt="Piano piano" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2023</span>
+                        <h3 class="film-card__title">Piano piano</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2023/03/le-voci-sole.jpg" alt="Le voci sole" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2023</span>
+                        <h3 class="film-card__title">Le voci sole</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2023/03/Lombra-del-giorno-locandina-2.jpeg" alt="L'ombra del giorno" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2023</span>
+                        <h3 class="film-card__title">L'ombra del giorno</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2023/04/ragazzecartaok.jpg" alt="Le ragazze di carta" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2023</span>
+                        <h3 class="film-card__title">Le ragazze di carta</h3>
+                    </div>
+                </article>
+            </div>
+
+            <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin:2.5rem 0 1.5rem;color:var(--color-text);">XX Edition — 2022</h3>
+            <div class="film-grid">
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2022/03/Calcinculo_Cartonato_.jpg" alt="Calcinculo" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2022</span>
+                        <h3 class="film-card__title">Calcinculo</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2022/03/lapprendistato.jpeg" alt="L'apprendistato" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2022</span>
+                        <h3 class="film-card__title">L'apprendistato</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2022/03/il-legionario.jpeg" alt="Il legionario" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2022</span>
+                        <h3 class="film-card__title">Il legionario</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2022/03/gusciinfranti.jpg" alt="Gusci infranti" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2022</span>
+                        <h3 class="film-card__title">Gusci infranti</h3>
+                    </div>
+                </article>
+                <article class="film-card">
+                    <div class="film-card__image">
+                        <img src="https://www.baff.it/wp-content/uploads/2022/03/freakout.jpeg" alt="Freakout" style="width:100%;height:100%;object-fit:cover">
+                    </div>
+                    <div class="film-card__body">
+                        <span class="film-card__section">BAFF 2022</span>
+                        <h3 class="film-card__title">Freakout</h3>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -411,10 +609,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer__col">
                         <h4 class="footer__col-title">The Festival</h4>
                         <a href="festival.html" class="footer__link">About us</a>
-                        <a href="../storia.html" class="footer__link">History</a>
+                        <a href="festival.html#storia" class="footer__link">History</a>
                         <a href="../immagini.html" class="footer__link">Gallery</a>
                         <a href="giuria.html" class="footer__link">Jury</a>
-                        <a href="../festival.html#trasparenza" class="footer__link">Transparency</a>
+                        <a href="festival.html#trasparenza" class="footer__link">Transparency</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Programme</h4>
@@ -427,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4 class="footer__col-title">Information</h4>
                         <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Box Office</a>
                         <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditations</a>
-                        <a href="../festival.html#sedi" class="footer__link">Venues</a>
+                        <a href="festival.html#sedi" class="footer__link">Venues</a>
                         <a href="contatti.html" class="footer__link">Contacts</a>
                         <a href="../comunicati.html" class="footer__link">Press releases</a>
                     </div>
@@ -451,10 +649,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </footer>
 
-
-    
     <!-- Back to Top -->
-    <button class="back-to-top" aria-label="Torna su">
+    <button class="back-to-top" aria-label="Back to top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
@@ -470,20 +666,20 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <script src="../js/main.js"></script>
     <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
       <div id="searchOverlayBackdrop" class="search-overlay__backdrop"></div>
       <div class="search-overlay__panel">
         <div class="search-overlay__header">
           <div class="search-overlay__input-wrap">
             <svg class="search-overlay__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Cerca nel sito..." autocomplete="off" spellcheck="false">
+            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Search the site..." autocomplete="off" spellcheck="false">
           </div>
-          <button class="search-close" aria-label="Chiudi ricerca">
+          <button class="search-close" aria-label="Close search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
         <div class="search-overlay__body" id="searchResults">
-          <p class="search-overlay__hint">Digita per cercare nel sito...</p>
+          <p class="search-overlay__hint">Type to search the site...</p>
         </div>
       </div>
     </div>

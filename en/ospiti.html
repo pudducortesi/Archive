@@ -13,9 +13,9 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
-        ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
-        : this.style.display = 'none';
+      var card = this.closest('.guest-card, .historic-guest-card, .ospite-card, .film-card, li, .gallery-item, .photo-item, .card, figure');
+      if (card) { card.style.display = 'none'; }
+      else { this.style.display = 'none'; }
     });
   });
 });
@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__nav-link">Tickets</a>
                 <a href="ospiti.html" class="header__nav-link header__nav-link--active">Guests</a>
                 <a href="giuria.html" class="header__nav-link">Jury</a>
-                <a href="../luoghi.html" class="header__nav-link">Venues</a>
+                <a href="luoghi.html" class="header__nav-link">Venues</a>
                 <a href="sponsor.html" class="header__nav-link">Sponsors</a>
             </nav>
-            <button class="search-trigger header__search-btn" aria-label="Cerca">
+            <button class="search-trigger header__search-btn" aria-label="Search">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </button>
-            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Carrello">
+            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Cart">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             </a>
             <button class="header__burger" id="burgerBtn" aria-label="Menu">
@@ -76,49 +76,49 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="mobile-menu__content">
             <div class="mobile-menu__header">
                 <img src="../images/logo-baff-header.png" alt="BAFF" class="mobile-menu__logo">
-                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Chiudi menu">
+                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
             <nav class="mobile-menu__nav">
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Il Festival</span>
-                    <a href="../festival.html" class="mobile-menu__link mobile-menu__link--sub">Il Festival</a>
-                    <a href="../festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">Storia</a>
-                    <a href="../immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
-                    <a href="../festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
-                    <a href="../festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
+                    <span class="mobile-menu__group-label">The Festival</span>
+                    <a href="festival.html" class="mobile-menu__link mobile-menu__link--sub">The Festival</a>
+                    <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">History</a>
+                    <a href="immagini.html" class="mobile-menu__link mobile-menu__link--sub">Images</a>
+                    <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Venues</a>
+                    <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Transparency</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Programma</span>
-                    <a href="../programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
-                    <a href="../programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
-                    <a href="../programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
-                    <a href="../programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
-                    <a href="../programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
-                    <a href="../programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
-                    <a href="../programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
-                    <a href="../programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
-                    <a href="../programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                    <span class="mobile-menu__group-label">Programme</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programme</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Sections</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Special Events</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Exhibitions</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
-                    <a href="../selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
-                    <a href="../selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
-                    <a href="../selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
-                    <a href="../selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                    <span class="mobile-menu__group-label">Official Selection</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Official Selection</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Italian Competition</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">International Competition</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
                 </div>
-                <a href="../ospiti.html" class="mobile-menu__link">Ospiti</a>
-                <a href="../giuria.html" class="mobile-menu__link">Giuria</a>
-                <a href="../news.html" class="mobile-menu__link">News</a>
-                <a href="../accreditamenti.html" class="mobile-menu__link">Pass</a>
-                <a href="../sponsor.html" class="mobile-menu__link">Sponsor</a>
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="mobile-menu__link">Tickets</a>
+                <a href="ospiti.html" class="mobile-menu__link">Guests</a>
+                <a href="giuria.html" class="mobile-menu__link">Jury</a>
+                <a href="luoghi.html" class="mobile-menu__link">Venues</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsors</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
-                <a href="../stampa.html" class="mobile-menu__footer-link">Stampa</a>
-                <a href="../contatti.html" class="mobile-menu__footer-link">Contatti</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
+                <a href="press.html" class="mobile-menu__footer-link">Press</a>
+                <a href="contatti.html" class="mobile-menu__footer-link">Contacts</a>
                 <a href="../istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
             </div>
         </div>
@@ -140,114 +140,91 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <!-- Sticky Sub-navigation -->
+    <nav class="festival-subnav" id="ospitiSubnav">
+        <div class="festival-subnav__container">
+            <a href="#ospite-onore" class="festival-subnav__link">Guest of honour</a>
+            <a href="#gli-ospiti" class="festival-subnav__link">The guests</a>
+            <a href="#masterclass" class="festival-subnav__link">Masterclass</a>
+            <a href="#ospiti-storici" class="festival-subnav__link">Past guests</a>
+        </div>
+    </nav>
+
     <!-- Guest of Honor -->
-    <section class="page-section">
+    <section class="page-section" id="ospite-onore">
         <div class="page-section__container">
             <h2 class="section-title">Guest of honour</h2>
             <div class="guest-main">
                 <div class="guest-main__image">
-                    <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-4.jpg" alt="Marco Ferretti" style="width:100%;height:100%;object-fit:cover">
+                    <img src="../images/abel-ferrara.jpg" alt="Abel Ferrara" style="width:100%;height:100%;object-fit:cover">
                 </div>
                 <div class="guest-main__body">
                     <span class="guest-main__role">Director</span>
-                    <h3 class="guest-main__name">Marco Ferretti</h3>
-                    <p class="guest-main__bio">Marco Ferretti is one of the most acclaimed Italian directors of his generation. Born in Rome in 1962, he made his directorial debut in 1991 with the feature film <em>La luce di settembre</em>, which earned him the Critics' Prize at the Venice Film Festival. Over a thirty-year career he has directed fifteen films, receiving recognition at Cannes, Berlin and Toronto. His intimate and poetic cinema explores family bonds and the transformation of the Italian landscape with a gaze that is both rigorous and compassionate. Among his most celebrated works are <em>Vento di pianura</em> (2003), <em>Il confine dell'acqua</em> (2012) and the recent <em>Cenere viva</em> (2025), which had its world premiere at BAFF.</p>
+                    <h3 class="guest-main__name">Abel Ferrara</h3>
+                    <p class="guest-main__bio">Abel Ferrara is an American director, screenwriter and actor, a central figure in American independent cinema. Born in the Bronx in 1951, he made his directorial debut in the 1970s with low-budget films, before establishing himself with works such as <em>Bad Lieutenant</em> (1992), <em>The Addiction</em> (1995) and <em>The Funeral</em> (1996). His raw and visceral cinema explores themes of redemption, addiction and violence with a radical and uncompromising gaze. Since the 2000s he has lived between Rome and Italy, where he has directed numerous films including <em>Pasolini</em> (2014) and <em>Padre Pio</em> (2022). Guest of honour of the XXIV edition of BAFF.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Guest Grid -->
-    <section class="page-section page-section--grey">
+    <section class="page-section page-section--grey" id="gli-ospiti">
         <div class="page-section__container">
             <h2 class="section-title">The guests</h2>
             <div class="guest-grid">
 
                 <div class="guest-card">
                     <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-9.jpg" alt="Chiara Beltrame" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/abel-ferrara.jpg" alt="Abel Ferrara" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="guest-card__body">
-                        <h3 class="guest-card__name">Chiara Beltrame</h3>
-                        <span class="guest-card__role">Actress</span>
-                        <p class="guest-card__desc">Star of <em>Cenere viva</em>, David di Donatello winner 2024.</p>
+                        <h3 class="guest-card__name">Abel Ferrara</h3>
+                        <span class="guest-card__role">21 March</span>
+                        <p class="guest-card__desc">Teatro Sociale</p>
                     </div>
                 </div>
 
                 <div class="guest-card">
                     <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-12.jpg" alt="Luca Santoro" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/elisabetta-sgarbi.jpg" alt="Elisabetta Sgarbi" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="guest-card__body">
-                        <h3 class="guest-card__name">Luca Santoro</h3>
-                        <span class="guest-card__role">Director</span>
-                        <p class="guest-card__desc">Young filmmaker of the documentary <em>Terra madre</em>, selected at Locarno.</p>
+                        <h3 class="guest-card__name">Elisabetta Sgarbi</h3>
+                        <span class="guest-card__role">23 March</span>
+                        <p class="guest-card__desc">Varese</p>
                     </div>
                 </div>
 
                 <div class="guest-card">
                     <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-2.jpg" alt="Isabelle Moreau" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/kevin-lee.jpg" alt="Kevin B. Lee" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="guest-card__body">
-                        <h3 class="guest-card__name">Isabelle Moreau</h3>
-                        <span class="guest-card__role">Screenwriter</span>
-                        <p class="guest-card__desc">Franco-Italian screenwriter, author of <em>Les jours longs</em> and <em>Notte chiara</em>.</p>
+                        <h3 class="guest-card__name">Kevin B. Lee</h3>
+                        <span class="guest-card__role">26 March</span>
+                        <p class="guest-card__desc">Cinema Fratello Sole</p>
                     </div>
                 </div>
 
                 <div class="guest-card">
                     <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-10.jpg" alt="Roberto Mancuso" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/mauro-giovanardi.jpg" alt="Mauro Ermanno Giovanardi" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="guest-card__body">
-                        <h3 class="guest-card__name">Roberto Mancuso</h3>
-                        <span class="guest-card__role">Film critic</span>
-                        <p class="guest-card__desc">Renowned columnist for the <em>Corriere della Sera</em>, author of essays on neorealism.</p>
+                        <h3 class="guest-card__name">Mauro Ermanno Giovanardi</h3>
+                        <span class="guest-card__role">20 March</span>
+                        <p class="guest-card__desc">San Giovanni Bosco</p>
                     </div>
                 </div>
 
                 <div class="guest-card">
                     <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-12.jpg" alt="Elena Vicari" style="width:100%;height:100%;object-fit:cover">
+                        <img src="../images/sergio-rubini.jpg" alt="Sergio Rubini" style="width:100%;height:100%;object-fit:cover">
                     </div>
                     <div class="guest-card__body">
-                        <h3 class="guest-card__name">Elena Vicari</h3>
-                        <span class="guest-card__role">Director</span>
-                        <p class="guest-card__desc">Director of <em>Sotto il cielo di marzo</em>, Solinas Prize winner for best screenplay.</p>
-                    </div>
-                </div>
-
-                <div class="guest-card">
-                    <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-15.jpg" alt="Thomas Lindqvist" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="guest-card__body">
-                        <h3 class="guest-card__name">Thomas Lindqvist</h3>
-                        <span class="guest-card__role">Actor</span>
-                        <p class="guest-card__desc">Swedish actor starring in <em>Midnattssol</em>, in the BAFF international competition.</p>
-                    </div>
-                </div>
-
-                <div class="guest-card">
-                    <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-16.jpg" alt="Giulia Ferrara" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="guest-card__body">
-                        <h3 class="guest-card__name">Giulia Ferrara</h3>
-                        <span class="guest-card__role">Screenwriter</span>
-                        <p class="guest-card__desc">Co-author of the series <em>Ombre italiane</em>, nominated for the Nastri d'Argento.</p>
-                    </div>
-                </div>
-
-                <div class="guest-card">
-                    <div class="guest-card__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/Matteo_Scazzosi-17.jpg" alt="David Okonkwo" style="width:100%;height:100%;object-fit:cover">
-                    </div>
-                    <div class="guest-card__body">
-                        <h3 class="guest-card__name">David Okonkwo</h3>
-                        <span class="guest-card__role">Director</span>
-                        <p class="guest-card__desc">Anglo-Nigerian director of <em>The Quiet Road</em>, awarded at Sundance 2025.</p>
+                        <h3 class="guest-card__name">Sergio Rubini</h3>
+                        <span class="guest-card__role">28 March</span>
+                        <p class="guest-card__desc">Teatro Sociale</p>
                     </div>
                 </div>
 
@@ -256,12 +233,27 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Masterclass Section -->
-    <section class="page-section">
+    <section class="page-section" id="masterclass">
         <div class="page-section__container">
-            <h2 class="section-title">Masterclasses</h2>
+            <h2 class="section-title">Masterclass</h2>
             <p class="page-section__intro">Exclusive encounters with the protagonists of contemporary cinema.</p>
 
             <div class="masterclass-list">
+
+                <div class="masterclass-list__item">
+                    <div class="masterclass-list__date">
+                        <span class="masterclass-list__day">21</span>
+                        <span class="masterclass-list__month">Mar</span>
+                    </div>
+                    <div class="masterclass-list__body">
+                        <h3 class="masterclass-list__title">Lecture on Abel Ferrara</h3>
+                        <p class="masterclass-list__topic">An outstanding lecture on the festival's opening guest, Abel Ferrara, given by artistic director Giulio Sangiorgio. The event is designed for students but open to all enthusiasts who wish to prepare for the evening with the American director.</p>
+                        <p class="masterclass-list__info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Saturday 21 March, 4:00 PM &mdash; Istituto Cinematografico Michelangelo Antonioni
+                        </p>
+                    </div>
+                </div>
 
                 <div class="masterclass-list__item">
                     <div class="masterclass-list__date">
@@ -269,26 +261,41 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="masterclass-list__month">Mar</span>
                     </div>
                     <div class="masterclass-list__body">
-                        <h3 class="masterclass-list__title">Masterclass with Marco Ferretti</h3>
-                        <p class="masterclass-list__topic"><strong>Topic:</strong> Landscape as character &mdash; thirty years of cinema between reality and poetry</p>
+                        <h3 class="masterclass-list__title">Il gesto delle mani &mdash; Encounter with Francesco Clerici</h3>
+                        <p class="masterclass-list__topic">Screening of <em>Il gesto delle mani</em> by Francesco Clerici, which follows the creation process of one of the sculptures by artist Velasco Vitali, from wax to bronze, at the Fonderia Artistica Battaglia in Milan. Followed by a conversation with the filmmaker, who will discuss his work as a documentarian and educator.</p>
                         <p class="masterclass-list__info">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            3:00 PM &mdash; Cinema Teatro Sociale, Busto Arsizio
+                            Sunday 22 March, 10:00 AM &mdash; Istituto Cinematografico Michelangelo Antonioni
                         </p>
                     </div>
                 </div>
 
                 <div class="masterclass-list__item">
                     <div class="masterclass-list__date">
-                        <span class="masterclass-list__day">24</span>
+                        <span class="masterclass-list__day">22</span>
                         <span class="masterclass-list__month">Mar</span>
                     </div>
                     <div class="masterclass-list__body">
-                        <h3 class="masterclass-list__title">Masterclass with Isabelle Moreau</h3>
-                        <p class="masterclass-list__topic"><strong>Topic:</strong> Writing between two languages &mdash; screenwriting as a cultural bridge</p>
+                        <h3 class="masterclass-list__title">Francesco, Giullare di Dio &mdash; with Michelangelo Frammartino</h3>
+                        <p class="masterclass-list__topic">On the occasion of the 800th anniversary of the death of Italy's Patron Saint, screening of <em>Francesco, Giullare di Dio</em> (1950) by Roberto Rossellini. The film will be introduced by director Michelangelo Frammartino, who was a guest at BAFF in 2025. &laquo;Getting to know Roberto Rossellini's cinema today is essential &mdash; in his era the great director had already envisioned and accomplished all the contemporary and experimental cinema possible&raquo; (Giulio Sangiorgio).</p>
                         <p class="masterclass-list__info">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            11:00 AM &mdash; Conference Hall, Palazzo Marliani Cicogna
+                            Sunday 22 March, 4:00 PM &mdash; Cinema Fratello Sole
+                        </p>
+                    </div>
+                </div>
+
+                <div class="masterclass-list__item">
+                    <div class="masterclass-list__date">
+                        <span class="masterclass-list__day">23</span>
+                        <span class="masterclass-list__month">Mar</span>
+                    </div>
+                    <div class="masterclass-list__body">
+                        <h3 class="masterclass-list__title">Tribute to Frederick Wiseman &mdash; Masterclass with Luca Mosso</h3>
+                        <p class="masterclass-list__topic">A tribute to Frederick Wiseman, one of the greatest documentary filmmakers in the history of cinema, who passed away last month. His debut work <em>Titicut Follies</em> will be presented, which captures the harrowing conditions inside the Bridgewater criminal asylum in Massachusetts. Followed by a masterclass on Wiseman curated by Luca Mosso, director of Filmmaker Festival Milano.</p>
+                        <p class="masterclass-list__info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Monday 23 March, 10:00 AM &mdash; Istituto Cinematografico Michelangelo Antonioni
                         </p>
                     </div>
                 </div>
@@ -299,15 +306,112 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="masterclass-list__month">Mar</span>
                     </div>
                     <div class="masterclass-list__body">
-                        <h3 class="masterclass-list__title">Masterclass with David Okonkwo</h3>
-                        <p class="masterclass-list__topic"><strong>Topic:</strong> Independent cinema and identity &mdash; telling stories between Africa and Europe</p>
+                        <h3 class="masterclass-list__title">Afterlives &mdash; Encounter with Kevin B. Lee</h3>
+                        <p class="masterclass-list__topic">Kevin B. Lee, one of the world's foremost video essay creators (over 360 productions), is at BAFF with his first feature film <em>Afterlives</em>, which critically examines the historical and digital traces of extremist propaganda, questioning how images of violence circulate, mutate and persist. &laquo;An extraordinary opportunity to see the debut film of an artist who reflects on images through images&raquo; (Giulio Sangiorgio).</p>
                         <p class="masterclass-list__info">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                            4:30 PM &mdash; Cinema Teatro Sociale, Busto Arsizio
+                            Thursday 26 March, 3:00 PM &mdash; Cinema Fratello Sole
                         </p>
                     </div>
                 </div>
 
+                <div class="masterclass-list__item">
+                    <div class="masterclass-list__date">
+                        <span class="masterclass-list__day">27</span>
+                        <span class="masterclass-list__month">Mar</span>
+                    </div>
+                    <div class="masterclass-list__body">
+                        <h3 class="masterclass-list__title">Canone effimero &mdash; Gianluca and Massimiliano De Serio</h3>
+                        <p class="masterclass-list__topic">Turin-based directors Gianluca and Massimiliano De Serio will present <em>Canone effimero</em>, already selected at the Berlinale. The documentary is a kind of archive of a vanishing Italy, capturing rituals, places and musical traditions that are being lost. Evocative images and a cinema conceived as a repository of memory.</p>
+                        <p class="masterclass-list__info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Friday 27 March, 3:00 PM &mdash; Cinema Fratello Sole
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Historic Guests -->
+    <section class="page-section page-section--factory" id="ospiti-storici">
+        <div class="page-section__container">
+            <h2 class="page-section__title">BAFF's distinguished guests</h2>
+            <p class="page-section__intro">Over twenty years of encounters with Italian and international cinema</p>
+            <div class="historic-guests-grid">
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2015/03/manifesto-MARIO-E-RAPweb.jpg" alt="Mario Monicelli" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">Historic editions</span>
+                    <h3 class="historic-guest-card__name">Mario Monicelli</h3>
+                    <p class="historic-guest-card__text">A tribute to the great master of Italian comedy. An evening dedicated to his career through photographs and previously unseen anecdotes.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top"></div>
+                    <span class="historic-guest-card__badge">2014</span>
+                    <h3 class="historic-guest-card__name">Ferzan Ozpetek</h3>
+                    <p class="historic-guest-card__text">Guest of the XI edition, he met the audience during a special evening dedicated to his cinema between Italy and Turkey.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2015/02/ligabuestoria.jpg" alt="Luciano Ligabue" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2018</span>
+                    <h3 class="historic-guest-card__name">Luciano Ligabue</h3>
+                    <p class="historic-guest-card__text">BAFF 2018 opening night. Encounter with the director and screening of the film Made in Italy at the Teatro Sociale Delia Cajelli.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2019/03/enrico-vanzinaok.jpg" alt="Enrico Vanzina" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2019</span>
+                    <h3 class="historic-guest-card__name">Enrico Vanzina</h3>
+                    <p class="historic-guest-card__text">Platinum Dino Ceccuzzi Award for cinematic excellence. Public talk "The Cinema He Made and Loved".</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2021/09/ghiniok.jpg" alt="Massimo Ghini" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2021</span>
+                    <h3 class="historic-guest-card__name">Massimo Ghini</h3>
+                    <p class="historic-guest-card__text">Star of the evening with a screening of the docufilm The Rossellinis &mdash; A family that is all one movie.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2021/09/Nadaok.jpg" alt="Nada" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2021</span>
+                    <h3 class="historic-guest-card__name">Nada</h3>
+                    <p class="historic-guest-card__text">A conversation about her career between music and cinema, from her performances as an actress to the RAI fiction inspired by her autobiography.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2022/03/august.jpg" alt="Bille August" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2022</span>
+                    <h3 class="historic-guest-card__name">Bille August</h3>
+                    <p class="historic-guest-card__text">Danish director, two-time Palme d'Or winner at Cannes (Pelle the Conqueror, The Best Intentions). International guest of the twentieth anniversary edition.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top"></div>
+                    <span class="historic-guest-card__badge">2023</span>
+                    <h3 class="historic-guest-card__name">Marco Bellocchio</h3>
+                    <p class="historic-guest-card__text">Dino Ceccuzzi Award for cinematic excellence. One of the greatest living Italian directors.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top"></div>
+                    <span class="historic-guest-card__badge">2023</span>
+                    <h3 class="historic-guest-card__name">Jerzy Skolimowski</h3>
+                    <p class="historic-guest-card__text">BAFF Special Award international guest. Polish director and creator of EO, awarded at Cannes.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2024/09/BBonello2.jpg" alt="Bertrand Bonello" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2024</span>
+                    <h3 class="historic-guest-card__name">Bertrand Bonello</h3>
+                    <p class="historic-guest-card__text">BAFF 2024 Director of the Year Award. The French director of Zombi Child and The Beast presented his first film Quelque chose d'organique.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2024/09/nichetti.jpg" alt="Maurizio Nichetti" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2024</span>
+                    <h3 class="historic-guest-card__name">Maurizio Nichetti</h3>
+                    <p class="historic-guest-card__text">At BAFF he recounted the birth of his poetic and surreal cinema, from Ratataplan to his most recent works.</p>
+                </div>
+                <div class="historic-guest-card">
+                    <div class="historic-guest-card__top--photo"><img src="https://www.baff.it/wp-content/uploads/2019/03/merendapagina.jpg" alt="Luc Merenda" loading="lazy"></div>
+                    <span class="historic-guest-card__badge">2019</span>
+                    <h3 class="historic-guest-card__name">Luc Merenda</h3>
+                    <p class="historic-guest-card__text">Stracult Award. Icon of 1970s Italian crime cinema.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -326,10 +430,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer__col">
                         <h4 class="footer__col-title">The Festival</h4>
                         <a href="festival.html" class="footer__link">About us</a>
-                        <a href="../storia.html" class="footer__link">History</a>
-                        <a href="../immagini.html" class="footer__link">Gallery</a>
+                        <a href="festival.html#storia" class="footer__link">History</a>
+                        <a href="immagini.html" class="footer__link">Images</a>
                         <a href="giuria.html" class="footer__link">Jury</a>
-                        <a href="../festival.html#trasparenza" class="footer__link">Transparency</a>
+                        <a href="festival.html#trasparenza" class="footer__link">Transparency</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Programme</h4>
@@ -340,11 +444,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Information</h4>
-                        <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Box Office</a>
+                        <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Box office</a>
                         <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditations</a>
-                        <a href="../festival.html#sedi" class="footer__link">Venues</a>
+                        <a href="luoghi.html" class="footer__link">Venues</a>
                         <a href="contatti.html" class="footer__link">Contacts</a>
-                        <a href="../comunicati.html" class="footer__link">Press releases</a>
+                        <a href="comunicati.html" class="footer__link">Press releases</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Follow us</h4>
@@ -367,9 +471,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
 
 
-    
+
     <!-- Back to Top -->
-    <button class="back-to-top" aria-label="Torna su">
+    <button class="back-to-top" aria-label="Back to top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
@@ -386,20 +490,20 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="../js/main.js"></script>
     <script src="../js/supabase-public.js"></script>
     <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
       <div id="searchOverlayBackdrop" class="search-overlay__backdrop"></div>
       <div class="search-overlay__panel">
         <div class="search-overlay__header">
           <div class="search-overlay__input-wrap">
             <svg class="search-overlay__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Cerca nel sito..." autocomplete="off" spellcheck="false">
+            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Search the site..." autocomplete="off" spellcheck="false">
           </div>
-          <button class="search-close" aria-label="Chiudi ricerca">
+          <button class="search-close" aria-label="Close search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
         <div class="search-overlay__body" id="searchResults">
-          <p class="search-overlay__hint">Digita per cercare nel sito...</p>
+          <p class="search-overlay__hint">Type to search the site...</p>
         </div>
       </div>
     </div>

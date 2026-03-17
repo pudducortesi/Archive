@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Programme — B.A. Film Festival</title>
-    <meta name="description" content="The full programme of the XXIV edition of the B.A. Film Festival. Italian Competition, International Competition, retrospectives and special events. 21-28 March 2026.">
+    <meta name="description" content="The full programme of the XXIV edition of the B.A. Film Festival. Italian Competition, International Competition, retrospectives and special events. 20-28 March 2026.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
+      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure')
         ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
         : this.style.display = 'none';
     });
@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__nav-link">Tickets</a>
                 <a href="ospiti.html" class="header__nav-link">Guests</a>
                 <a href="giuria.html" class="header__nav-link">Jury</a>
-                <a href="../luoghi.html" class="header__nav-link">Venues</a>
+                <a href="luoghi.html" class="header__nav-link">Venues</a>
                 <a href="sponsor.html" class="header__nav-link">Sponsors</a>
             </nav>
-            <button class="search-trigger header__search-btn" aria-label="Cerca">
+            <button class="search-trigger header__search-btn" aria-label="Search">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </button>
-            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Carrello">
+            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Cart">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             </a>
             <button class="header__burger" id="burgerBtn" aria-label="Menu">
@@ -76,49 +76,49 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="mobile-menu__content">
             <div class="mobile-menu__header">
                 <img src="../images/logo-baff-header.png" alt="BAFF" class="mobile-menu__logo">
-                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Chiudi menu">
+                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
             <nav class="mobile-menu__nav">
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Il Festival</span>
-                    <a href="../festival.html" class="mobile-menu__link mobile-menu__link--sub">Il Festival</a>
-                    <a href="../festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">Storia</a>
-                    <a href="../immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
-                    <a href="../festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
-                    <a href="../festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
+                    <span class="mobile-menu__group-label">The Festival</span>
+                    <a href="festival.html" class="mobile-menu__link mobile-menu__link--sub">The Festival</a>
+                    <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">History</a>
+                    <a href="../immagini.html" class="mobile-menu__link mobile-menu__link--sub">Gallery</a>
+                    <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Venues</a>
+                    <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Transparency</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Programma</span>
-                    <a href="../programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
-                    <a href="../programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
-                    <a href="../programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
-                    <a href="../programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
-                    <a href="../programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
-                    <a href="../programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
-                    <a href="../programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
-                    <a href="../programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
-                    <a href="../programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                    <span class="mobile-menu__group-label">Programme</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programme</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">The Sections</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Special Events</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Special Events</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Before Growing Up</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Exhibitions</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in the Bookshop</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
-                    <a href="../selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
-                    <a href="../selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
-                    <a href="../selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
-                    <a href="../selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                    <span class="mobile-menu__group-label">Official Selection</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Official Selection</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Italian Competition</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">International Competition</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Schools</a>
                 </div>
-                <a href="../ospiti.html" class="mobile-menu__link">Ospiti</a>
-                <a href="../giuria.html" class="mobile-menu__link">Giuria</a>
-                <a href="../news.html" class="mobile-menu__link">News</a>
-                <a href="../accreditamenti.html" class="mobile-menu__link">Pass</a>
-                <a href="../sponsor.html" class="mobile-menu__link">Sponsor</a>
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="mobile-menu__link">Tickets</a>
+                <a href="ospiti.html" class="mobile-menu__link">Guests</a>
+                <a href="giuria.html" class="mobile-menu__link">Jury</a>
+                <a href="luoghi.html" class="mobile-menu__link">Venues</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsors</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
-                <a href="../stampa.html" class="mobile-menu__footer-link">Stampa</a>
-                <a href="../contatti.html" class="mobile-menu__footer-link">Contatti</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
+                <a href="press.html" class="mobile-menu__footer-link">Press</a>
+                <a href="contatti.html" class="mobile-menu__footer-link">Contacts</a>
                 <a href="../istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
             </div>
         </div>
@@ -140,348 +140,449 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
+    <nav class="festival-subnav" id="programmaSubnav">
+      <div class="festival-subnav__container">
+        <a href="#sezioni" class="festival-subnav__link">The Sections</a>
+        <a href="#eventi-speciali" class="festival-subnav__link">Special Events</a>
+        <a href="#masterclass" class="festival-subnav__link">Masterclass</a>
+        <a href="#eventi-speciali" class="festival-subnav__link">Special Events</a>
+        <a href="#prima-di-diventare-grandi" class="festival-subnav__link">Before Growing Up</a>
+        <a href="#visioni-future-lab" class="festival-subnav__link">Visioni Future Lab</a>
+        <a href="#mostre" class="festival-subnav__link">Exhibitions</a>
+        <a href="#baff-in-libreria" class="festival-subnav__link">BAFF in the Bookshop</a>
+        <a href="#calendario" class="festival-subnav__link">Calendar</a>
+      </div>
+    </nav>
+
     <!-- Program Categories -->
-    <section class="page-section">
+    <section class="page-section" id="sezioni">
         <div class="page-section__container">
-            <h2 class="page-section__title">Festival sections</h2>
+            <h2 class="page-section__title">The festival sections</h2>
             <p class="page-section__subtitle">Discover the four pillars of the XXIV edition of the B.A. Film Festival.</p>
             <div class="program-categories">
 
-                <div class="program-category">
+                <a href="#concorso-italiano" class="program-category" style="text-decoration:none;color:inherit;">
                     <div class="program-category__icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/><rect x="2" y="2" width="20" height="20" rx="4"/></svg>
                     </div>
                     <h3 class="program-category__title">Italian Competition</h3>
                     <p class="program-category__desc">The competition dedicated to the best of contemporary Italian cinema. A rigorous selection of works representing the vitality and diversity of the national film landscape, from emerging directors to the most established talents.</p>
-                    <span class="program-category__meta">8 films in competition</span>
-                </div>
+                </a>
 
-                <div class="program-category">
+                <a href="#concorso-internazionale" class="program-category" style="text-decoration:none;color:inherit;">
                     <div class="program-category__icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     </div>
                     <h3 class="program-category__title">International Competition</h3>
                     <p class="program-category__desc">The international competition brings together works from around the world, offering a window onto the most innovative and stimulating cinematographies on the global scene. Stories, languages and visions that cross borders and cultures.</p>
-                    <span class="program-category__meta">10 films from around the world</span>
-                </div>
+                </a>
 
-                <div class="program-category">
+                <a href="#prima-di-diventare-grandi" class="program-category" style="text-decoration:none;color:inherit;">
                     <div class="program-category__icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                     </div>
-                    <h3 class="program-category__title">The First Steps of the Masters</h3>
+                    <h3 class="program-category__title">Before Growing Up</h3>
                     <p class="program-category__desc">A unique retrospective dedicated to the debut films of great directors. A fascinating journey to the origins of talent, rediscovering how the masters of cinema took their first steps in the world of the seventh art.</p>
-                    <span class="program-category__meta">Special retrospective</span>
-                </div>
+                </a>
 
-                <div class="program-category">
+                <a href="#eventi-speciali" class="program-category" style="text-decoration:none;color:inherit;">
                     <div class="program-category__icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
                     <h3 class="program-category__title">Special Events</h3>
                     <p class="program-category__desc">Masterclasses with internationally renowned directors and actors, meetings with authors, round tables on the future of cinema and special screenings. Unique moments of insight and dialogue between the audience and the protagonists of the big screen.</p>
-                    <span class="program-category__meta">Masterclasses, meetings and screenings</span>
-                </div>
+                </a>
 
             </div>
         </div>
     </section>
 
     <!-- Daily Schedule -->
-    <section class="page-section page-section--alt">
+    <section class="page-section page-section--alt" id="calendario">
         <div class="page-section__container">
             <h2 class="page-section__title">Daily schedule</h2>
             <p class="page-section__subtitle">The complete calendar of screenings and events, day by day.</p>
 
-            <div class="schedule">
+
+    <!-- Filter Bar -->
+    <div style="max-width:var(--max-width,1200px);margin:0 auto;padding:1.5rem 2rem 0;">
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
+        <span style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:#555;margin-right:0.5rem;">Filter:</span>
+        <button class="filter-tag filter-tag--active" data-filter="all" onclick="filterEvents('all',this)">All</button>
+        <button class="filter-tag" data-filter="Evento speciale" onclick="filterEvents('Evento speciale',this)">Special Event</button>
+        <button class="filter-tag" data-filter="Concorso" onclick="filterEvents('Concorso',this)">Competition</button>
+        <button class="filter-tag" data-filter="Masterclass" onclick="filterEvents('Masterclass',this)">Masterclass</button>
+        <button class="filter-tag" data-filter="Made in Italy Scuole" onclick="filterEvents('Made in Italy Scuole',this)">Made in Italy Schools</button>
+        <button class="filter-tag" data-filter="BAFF in Libreria" onclick="filterEvents('BAFF in Libreria',this)">BAFF in the Bookshop</button>
+        <button class="filter-tag" data-filter="Evento speciale" onclick="filterEvents('Evento speciale',this)">Special Event</button>
+      </div>
+    </div>
+    <style>
+    .filter-tag {
+      display:inline-block;padding:0.4rem 1rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:600;
+      border:1px solid #ddd;border-radius:20px;background:#fff;color:#555;cursor:pointer;transition:all 0.2s;
+    }
+    .filter-tag:hover { border-color:#CC0000;color:#CC0000; }
+    .filter-tag--active { background:#CC0000;color:#fff;border-color:#CC0000; }
+    </style>
+    <script>
+    function filterEvents(tag, btn) {
+      document.querySelectorAll('.filter-tag').forEach(function(b) { b.classList.remove('filter-tag--active'); });
+      btn.classList.add('filter-tag--active');
+      document.querySelectorAll('.schedule__event').forEach(function(ev) {
+        var evTag = ev.querySelector('.schedule__event-tag');
+        if (!evTag) return;
+        if (tag === 'all' || evTag.textContent.trim() === tag) {
+          ev.style.display = '';
+        } else {
+          ev.style.display = 'none';
+        }
+      });
+    }
+    </script>
+
+    <div class="schedule">
                 <div class="schedule__tabs">
-                    <button class="schedule__tab schedule__tab--active" data-day="day-1">Sat 21</button>
-                    <button class="schedule__tab" data-day="day-2">Sun 22</button>
-                    <button class="schedule__tab" data-day="day-3">Mon 23</button>
-                    <button class="schedule__tab" data-day="day-4">Tue 24</button>
-                    <button class="schedule__tab" data-day="day-5">Wed 25</button>
-                    <button class="schedule__tab" data-day="day-6">Thu 26</button>
-                    <button class="schedule__tab" data-day="day-7">Fri 27</button>
-                    <button class="schedule__tab" data-day="day-8">Sat 28</button>
+                    <button class="schedule__tab schedule__tab--active" data-day="day-1">Fri 20</button>
+                    <button class="schedule__tab" data-day="day-2">Sat 21</button>
+                    <button class="schedule__tab" data-day="day-3">Sun 22</button>
+                    <button class="schedule__tab" data-day="day-4">Mon 23</button>
+                    <button class="schedule__tab" data-day="day-5">Tue 24</button>
+                    <button class="schedule__tab" data-day="day-6">Wed 25</button>
+                    <button class="schedule__tab" data-day="day-7">Thu 26</button>
+                    <button class="schedule__tab" data-day="day-8">Fri 27</button>
+                    <button class="schedule__tab" data-day="day-9">Sat 28</button>
                 </div>
 
+                <!-- Friday 20 March — Pre-opening -->
                 <div class="schedule__day schedule__day--active" id="day-1">
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Mauro Ermanno Giovanardi in concert &mdash; &ldquo;E poi scegliere con cura le parole&rdquo; Tour</span>
+                            <span class="schedule__event-detail">Cinema Teatro San Giovanni Bosco &mdash; &euro;18.00 + 1.5 booking fee</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Saturday 21 March -->
+                <div class="schedule__day" id="day-2">
+                    <div class="schedule__event">
+                        <span class="schedule__time">16:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Before Growing Up &mdash; Masterclass on Abel Ferrara, by Giulio Sangiorgio</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
+                        </div>
+                        <span class="schedule__event-tag">Masterclass</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">18:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Matteo Inzaghi presents <em>Flashback. Il cinema americano come riflesso politico-culturale degli anni Ottanta</em></span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
+                        </div>
+                        <span class="schedule__event-tag">BAFF in Libreria</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Opening night XXIV Edition &mdash; Meeting with Abel Ferrara &mdash; <em>Turn in the Wound</em> (UK/Germany/Italy/USA, 2024, 77&rsquo;)</span>
+                            <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;8.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Sunday 22 March -->
+                <div class="schedule__day" id="day-3">
                     <div class="schedule__event">
                         <span class="schedule__time">10:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Opening ceremony</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Free admission</span>
+                            <span class="schedule__event-title"><em>Il gesto delle mani</em> by Francesco Clerici (Italy, 2015, 77&rsquo;)</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; Meeting with Francesco Clerici and Lorenzo Donghi</span>
                         </div>
-                        <span class="schedule__event-tag">Special event</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
+                        <span class="schedule__time">16:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 1</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Italian Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 2</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; International Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Opening film</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Premiere</span>
-                        </div>
-                        <span class="schedule__event-tag">Special event</span>
-                    </div>
-                </div>
-
-                <div class="schedule__day" id="day-2">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Masterclass: Cinema of the real</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Accreditation required</span>
+                            <span class="schedule__event-title">Masterclass on Roberto Rossellini, by Michelangelo Frammartino &mdash; <em>Francesco giullare di Dio</em> (Italy, 1950, 75&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
                         </div>
                         <span class="schedule__event-tag">Masterclass</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
+                        <span class="schedule__time">20:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 3</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Italian Competition</span>
+                            <span class="schedule__event-title"><em>La ragazza nella nebbia</em> (Italy, 2017, 127&rsquo;) &mdash; Meeting with Donato Carrisi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8.00</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 4</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; International Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">The First Steps: Debut film 1</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospective</span>
-                        </div>
-                        <span class="schedule__event-tag">Retrospective</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                 </div>
 
-                <div class="schedule__day" id="day-3">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Meeting with the guest director</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Free admission</span>
-                        </div>
-                        <span class="schedule__event-tag">Special event</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 5</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Italian Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 6</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; International Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Special screening</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Out of competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Special event</span>
-                    </div>
-                </div>
-
+                <!-- Monday 23 March -->
                 <div class="schedule__day" id="day-4">
                     <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
+                        <span class="schedule__time">10:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Masterclass: Writing for cinema</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Accreditation required</span>
+                            <span class="schedule__event-title">Before Growing Up: <em>Titicut Follies</em> by Frederick Wiseman &mdash; Meeting with Luca Mosso</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
                         </div>
                         <span class="schedule__event-tag">Masterclass</span>
                     </div>
                     <div class="schedule__event">
+                        <span class="schedule__time">12:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Opening of BAFF Memorabilia</span>
+                            <span class="schedule__event-detail">Galleria Boragno &mdash; Open until Thu 26, 10:00&ndash;13:00 / 15:00&ndash;18:00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
                         <span class="schedule__time">15:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 7</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Italian Competition</span>
+                            <span class="schedule__event-title"><em>Macdo</em> by Racomelia Ezell (Mexico/Greece, 2025, 117&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00 (valid for the double afternoon screening)</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Concorso internazionale</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
+                        <span class="schedule__time">17:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 8</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; International Competition</span>
+                            <span class="schedule__event-title"><em>Waking Hours</em> by Federico Cammarata and Filippo Foscarini (Italy, 2025, 78&rsquo;) &mdash; with Filippo Foscarini</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Concorso</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
+                        <span class="schedule__time">18:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">The First Steps: Debut film 2</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospective</span>
+                            <span class="schedule__event-title">Opening of the photo/video installation &ldquo;Forgotten Wars. Reality Surpasses Fiction&rdquo; curated by MEMORA</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; Open until Sat 28, 10:00&ndash;13:00 / 15:00&ndash;18:00</span>
                         </div>
-                        <span class="schedule__event-tag">Retrospective</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Scerbanenco between novels, cinema and comics &mdash; <em>L&rsquo;isola degli idealisti</em> by Elisabetta Sgarbi (Italy, 2024, 112&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Nuovo (Varese) &mdash; Free admission by reservation &mdash; With Elisabetta Sgarbi, Eugenio Lio, Paolo Bacilieri, Alberto Pezzotta</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                 </div>
 
+                <!-- Tuesday 24 March -->
                 <div class="schedule__day" id="day-5">
                     <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
+                        <span class="schedule__time">9:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Round table: The future of independent cinema</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Free admission</span>
+                            <span class="schedule__event-title"><em>Tienimi presente</em> by Alberto Palmiero (Italy, 2025, 80&rsquo;) &mdash; with Alberto Palmiero and Vincenzo Pezone</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
                         </div>
-                        <span class="schedule__event-tag">Special event</span>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">15:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 9</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; International Competition</span>
+                            <span class="schedule__event-title"><em>Boys Go to Jupiter</em> by Julian Glander (USA, 2024, 90&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00 (valid for the double afternoon screening)</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Concorso internazionale</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
+                        <span class="schedule__time">17:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 10</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Italian Competition</span>
+                            <span class="schedule__event-title">Surprise screening</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Libera</em> (Italy, 1993, 85&rsquo;) &mdash; Meeting with Pappi Corsicato and Isabel Pagliai</span>
+                            <span class="schedule__event-detail">Cinema Teatro Dante &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">21:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">The First Steps: Debut film 3</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospective</span>
+                            <span class="schedule__event-title"><em>Fantaisie</em> by Isabel Pagliai (France, 2025, 79&rsquo;)</span>
+                            <span class="schedule__event-detail">Cinema Teatro San Giovanni Bosco &mdash; &euro;5.00</span>
                         </div>
-                        <span class="schedule__event-tag">Retrospective</span>
+                        <span class="schedule__event-tag">Concorso</span>
                     </div>
                 </div>
 
+                <!-- Wednesday 25 March -->
                 <div class="schedule__day" id="day-6">
                     <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
+                        <span class="schedule__time">9:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Masterclass: Directing actors</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Accreditation required</span>
+                            <span class="schedule__event-title"><em>Gioia mia</em> by Margherita Spampinato (Italy, 2025, 90&rsquo;) &mdash; with Margherita Spampinato</span>
+                            <span class="schedule__event-detail">Cinema Teatro Manzoni &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Buffet Infinity</em> by Simon Glassman (Canada, 2025, 100&rsquo;) &mdash; with Dino Primo</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00 (valid for the double afternoon screening)</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso internazionale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">17:30</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Una cosa vicina</em> by Loris G. Nese (Italy, 2025, 90&rsquo;) &mdash; with Loris G. Nese and Chiara Marotta</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso italiano</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">18:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Gianni Canova presents <em>Checco Zalone. Da Cado dalle nubi a Buen Camino</em></span>
+                            <span class="schedule__event-detail">Sala Piero Monaco &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">BAFF in Libreria</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Le bambine</em> by Valentina and Nicole Bertani (Italy/Switzerland/France, 2025, 105&rsquo;) &mdash; with Valentina and Nicole Bertani</span>
+                            <span class="schedule__event-detail">Sala Ratti &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Concorso italiano</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">21:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Il mito della Pista Stelvio</em> curated by Cactus Production in Progress &mdash; with Flavio Vanetti</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; Free admission</span>
+                        </div>
+                        <span class="schedule__event-tag">Documentario</span>
+                    </div>
+                </div>
+
+                <!-- Thursday 26 March -->
+                <div class="schedule__day" id="day-7">
+                    <div class="schedule__event">
+                        <span class="schedule__time">9:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Vita da grandi</em> by Greta Scarano (Italy, 2025, 96&rsquo;) &mdash; with Yuri Tuci</span>
+                            <span class="schedule__event-detail">Cinema Teatro Manzoni &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">16:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Afterlives</em> by Kevin B. Lee (Germany/France/Belgium, 2025, 88&rsquo;) &mdash; Meeting with Kevin B. Lee and Chiara Grizzaffi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
                         </div>
                         <span class="schedule__event-tag">Masterclass</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
+                        <span class="schedule__time">20:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 11</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; International Competition</span>
+                            <span class="schedule__event-title"><em>The Chronology of Water</em> by Kristen Stewart (France/Lithuania/UK/USA, 2025, 128&rsquo;)</span>
+                            <span class="schedule__event-detail">Sala Ratti &mdash; &euro;5.00</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 12</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Italian Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">21:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Special screening with guest</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Out of competition</span>
+                            <span class="schedule__event-title">Before Growing Up &mdash; Short films</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8.00</span>
                         </div>
-                        <span class="schedule__event-tag">Special event</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                 </div>
 
-                <div class="schedule__day" id="day-7">
-                    <div class="schedule__event">
-                        <span class="schedule__time">10:30</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Meeting with the jury</span>
-                            <span class="schedule__event-detail">Palazzo Marliani-Cicogna &mdash; Free admission</span>
-                        </div>
-                        <span class="schedule__event-tag">Special event</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">15:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 13</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; International Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">Competition film 14</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Italian Competition</span>
-                        </div>
-                        <span class="schedule__event-tag">Competition</span>
-                    </div>
-                    <div class="schedule__event">
-                        <span class="schedule__time">21:00</span>
-                        <div class="schedule__event-info">
-                            <span class="schedule__event-title">The First Steps: Debut film 4</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Retrospective</span>
-                        </div>
-                        <span class="schedule__event-tag">Retrospective</span>
-                    </div>
-                </div>
-
+                <!-- Friday 27 March -->
                 <div class="schedule__day" id="day-8">
                     <div class="schedule__event">
-                        <span class="schedule__time">11:00</span>
+                        <span class="schedule__time">9:30</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Encore: Best Italian Competition film</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Encore</span>
+                            <span class="schedule__event-title"><em>Orfeo</em> by Virgilio Villoresi (Italy, 2025, 74&rsquo;) &mdash; with Virgilio Villoresi</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Made in Italy Scuole</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">15:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Encore: Best International Competition film</span>
-                            <span class="schedule__event-detail">Sala Verdi &mdash; Encore</span>
+                            <span class="schedule__event-title"><em>Canone effimero</em> by Gianluca and Massimiliano De Serio (Italy, 2025, 120&rsquo;) &mdash; Meeting with the directors</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
                         </div>
-                        <span class="schedule__event-tag">Competition</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
-                        <span class="schedule__time">18:00</span>
+                        <span class="schedule__time">15:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Closing film</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; Premiere</span>
+                            <span class="schedule__event-title"><em>Il damo</em> by Luca Ferri &mdash; Meeting with Luca Ferri and Roberto Turigliatto</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
                         </div>
-                        <span class="schedule__event-tag">Special event</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                     <div class="schedule__event">
                         <span class="schedule__time">21:00</span>
                         <div class="schedule__event-info">
-                            <span class="schedule__event-title">Awards ceremony</span>
-                            <span class="schedule__event-detail">Cinema Teatro Sociale &mdash; By invitation only</span>
+                            <span class="schedule__event-title"><em>I tartassati</em> by Steno (Italy/France, 1959, 105&rsquo;) &mdash; Meeting with Enrico Vanzina</span>
+                            <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8.00</span>
                         </div>
-                        <span class="schedule__event-tag">Special event</span>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                </div>
+
+                <!-- Saturday 28 March -->
+                <div class="schedule__day" id="day-9">
+                    <div class="schedule__event">
+                        <span class="schedule__time">10:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">The cinema of Gianfranco Brebbia &mdash; with Fulvio Baglivi, Giovanna Brebbia, Mauro Gervasini</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">15:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Il damo</em> by Luca Ferri &mdash; Meeting with Luca Ferri and Roberto Turigliatto</span>
+                            <span class="schedule__event-detail">Sala Piero Monaco (Municipal Library)</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">18:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Davide Ferrario presents <em>La fine della fine</em></span>
+                            <span class="schedule__event-detail">Sala Piero Monaco</span>
+                        </div>
+                        <span class="schedule__event-tag">BAFF in Libreria</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">20:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title">Conversation with Sergio Rubini &mdash; Concert Sergio Rubini Michele Fazio Trio &ndash; Sud</span>
+                            <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;12.00 + 1.5 booking fee &mdash; in collaboration with Events in Jazz 2025</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
+                    </div>
+                    <div class="schedule__event">
+                        <span class="schedule__time">22:00</span>
+                        <div class="schedule__event-info">
+                            <span class="schedule__event-title"><em>Hundreds of Beavers</em> by Mike Cheslik &mdash; Closing film</span>
+                            <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; &euro;5.00</span>
+                        </div>
+                        <span class="schedule__event-tag">Evento speciale</span>
                     </div>
                 </div>
 
@@ -489,35 +590,299 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Locations -->
-    <section class="page-section">
+    <div id="concorso-italiano"></div>
+    <div id="concorso-internazionale"></div>
+
+    <!-- Special Events -->
+    <section class="page-section" id="eventi-speciali">
         <div class="page-section__container">
-            <h2 class="page-section__title">Venues</h2>
-            <p class="page-section__subtitle">The venues of the XXIV edition of the B.A. Film Festival in Busto Arsizio.</p>
-            <div class="locations__grid">
-                <div class="locations__card">
-                    <div class="locations__card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <h3 class="locations__card-name">Cinema Teatro Sociale</h3>
-                    <p class="locations__card-address">Main venue of the festival. Competition screenings, premieres, opening and closing ceremonies.</p>
+            <h2 class="page-section__title">Special Events</h2>
+            <div class="eventi-grid">
+
+                <div class="evento-card">
+                  <div class="evento-card__tag">Pre-opening</div>
+                  <h3 class="evento-card__title">Mauro Ermanno Giovanardi — <em>E poi scegliere con cura le parole</em></h3>
+                  <div class="evento-card__body">
+                    <p>The pre-opening of the festival is entrusted to Mauro Ermanno Giovanardi, who will present his new album <em>E poi scegliere con cura le parole</em>.</p>
+                    <p>&laquo;Among those made over the last thirty years, this is my most thought-out, carefully weighed, long-awaited album... and also the most troubled one &mdash; says Giovanardi &mdash; Within it, between its folds, lies my entire way of being and my approach to music: made of discipline, perseverance, sacrifice and, at the same time, love, respect, ethical, moral and existential sense. It is, of all of them, the most existentialist record I have ever made. An existentialism that, however, does not let itself be dragged nor drags into darkness, into the maelstrom of malaise, but which is faced with a certain lightness. A "thoughtful lightness", to quote Calvino in his Six Memos for the Next Millennium&raquo;.</p>
+                  </div>
+                  <div class="evento-card__credits">
+                    <span>Mauro Ermanno Giovanardi — new album presentation</span>
+                  </div>
                 </div>
-                <div class="locations__card">
-                    <div class="locations__card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+
+                <div class="evento-card">
+                    <div class="evento-card__tag">Meeting</div>
+                    <h3 class="evento-card__title">Scerbanenco between novels, cinema and comics</h3>
+                    <div class="evento-card__body">
+                        <p>Elisabetta Sgarbi and Eugenio Lio, director and screenwriter of <em>L'isola degli idealisti</em> (2024), will present the film adaptation of the eponymous "lost" novel by Scerbanenco, first published by their Nave di Teseo. Also taking part in the meeting will be Alberto Pezzotta, who recently published <em>Il noir italiano prima e dopo Scerbanenco</em> for Mimesis, an exhaustive survey of Italian crime fiction from the post-war period to the 1970s, and Paolo Bacilieri, creator of the recent comic adaptations of <em>Venere privata</em> and <em>Traditori di tutti</em> &mdash; the first and second instalments of the "Duca Lamberti tetralogy" (1966) &mdash; published by Oblomov in 2022 and 2025.</p>
+                        <div class="evento-card__analysis">
+                          <h4 class="evento-card__analysis-title">L'isola degli idealisti — Giorgio Scerbanenco</h4>
+                          <ul class="evento-card__analysis-list">
+                            <li>The novel combines elements of the detective genre with a strong moral and psychological reflection on human relationships.</li>
+                            <li>The island becomes a symbolic, almost claustrophobic space where tensions, secrets and ethical ambiguities emerge.</li>
+                            <li>Scerbanenco constructs complex, often contradictory characters, far from any idealisation.</li>
+                            <li>The central theme is the conflict between idealism and reality, between moral aspirations and human frailties.</li>
+                            <li>The narrative alternates between introspection and suspense, maintaining a constant emotional tension.</li>
+                            <li>The style is sober and precise, with incisive dialogue that reveals psychologies and power dynamics.</li>
+                            <li>The isolated setting fosters an investigation of feelings and individual responsibilities.</li>
+                            <li>Overall, the work reflects on the limits of utopia and the inevitable complexity of human action.</li>
+                          </ul>
+                        </div>
                     </div>
-                    <h3 class="locations__card-name">Sala Verdi</h3>
-                    <p class="locations__card-address">Second screening venue. International competition, encores and special screenings.</p>
-                </div>
-                <div class="locations__card">
-                    <div class="locations__card-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <div class="evento-card__credits">
+                        <span>With: Elisabetta Sgarbi, Eugenio Lio, Alberto Pezzotta, Paolo Bacilieri</span>
                     </div>
-                    <h3 class="locations__card-name">Palazzo Marliani-Cicogna</h3>
-                    <p class="locations__card-address">Home to masterclasses, meetings with directors, round tables and press conferences.</p>
                 </div>
+
+                <div class="evento-card">
+                    <div class="evento-card__tag">Italian Premiere</div>
+                    <h3 class="evento-card__title">The Chronology of Water</h3>
+                    <div class="evento-card__body">
+                        <p>BAFF 2026 will present the Italian premiere of <em>The Chronology of Water</em>, the directorial debut of American actress Kristen Stewart, distributed in Italy by Wanted Cinema and presented at the 2025 Cannes Film Festival in the Un Certain Regard section.</p>
+                        <p>Having achieved worldwide fame with the role of Bella Swan in the Twilight saga, and subsequently appearing in films by Woody Allen, Olivier Assayas, David Fincher, Sean Penn and David Cronenberg, in 2025 Stewart directed her first feature film. Based on the autobiography of American writer Lidia Yuknavitch, the film tells the story of a young woman who grew up in an environment devastated by violence and alcohol, and who finds unexpected freedom in literature and words.</p>
+                    </div>
+                    <div class="evento-card__credits">
+                        <span>Director: Kristen Stewart · Cannes 2025, Un Certain Regard · Italian distribution: Wanted Cinema</span>
+                    </div>
+                </div>
+
+                <div class="evento-card">
+                    <div class="evento-card__tag">Special Event</div>
+                    <h3 class="evento-card__title">Special Event — Brebbia and Ferri</h3>
+                    <div class="evento-card__body">
+                        <p>In collaboration with the Rai 3 programme <em>Fuori Orario</em>, we inaugurate a new section dedicated to experimental languages of the past and present, in two encounters &mdash; halfway between masterclass and screening &mdash; devoted to two eccentric and indomitable filmmakers: Gianfranco Brebbia from Varese and Luca Ferri from Bergamo.</p>
+                        <p>Fulvio Baglivi (Rai 3) will discuss the vast and largely unseen work of Brebbia (1923&ndash;74) with the filmmaker's daughter Giovanna Brebbia and the critic Mauro Gervasini. Equally tireless is Luca Ferri, who in dialogue with Roberto Turigliatto (Rai 3) will present his most recent film, <em>Il Damo</em>.</p>
+                    </div>
+                    <div class="evento-card__credits">
+                        <span>In collaboration with Rai 3 — Fuori Orario</span>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
+
+    <!-- Masterclass -->
+    <section class="page-section" id="masterclass">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Masterclass</h2>
+        <p class="page-section__intro">6 sessions with great masters of documentary and research cinema.</p>
+
+        <div class="masterclass-list">
+
+          <div class="masterclass-list__item">
+            <div class="masterclass-list__date">
+              <span class="masterclass-list__day">21</span>
+              <span class="masterclass-list__month">Mar</span>
+            </div>
+            <div class="masterclass-list__body">
+              <h3 class="masterclass-list__title">Lecture on Abel Ferrara</h3>
+              <p class="masterclass-list__topic">An outstanding lecture on the festival's opening guest, Abel Ferrara, given by artistic director Giulio Sangiorgio. The session is designed for students but open to all enthusiasts wishing to prepare for the evening with the American director.</p>
+              <p class="masterclass-list__info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Saturday 21 March, 4:00 PM &mdash; Istituto Cinematografico Michelangelo Antonioni
+              </p>
+            </div>
+          </div>
+
+          <div class="masterclass-list__item">
+            <div class="masterclass-list__date">
+              <span class="masterclass-list__day">22</span>
+              <span class="masterclass-list__month">Mar</span>
+            </div>
+            <div class="masterclass-list__body">
+              <h3 class="masterclass-list__title">Il gesto delle mani &mdash; Meeting with Francesco Clerici</h3>
+              <p class="masterclass-list__topic">Screening of <em>Il gesto delle mani</em> by Francesco Clerici, which follows the creation process of one of the sculptures by artist Velasco Vitali, from wax to bronze, at the Fonderia Artistica Battaglia in Milan. Followed by a meeting with the director, who will discuss his work as a documentary filmmaker and educator.</p>
+              <p class="masterclass-list__info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Sunday 22 March, 10:00 AM &mdash; Istituto Cinematografico Michelangelo Antonioni
+              </p>
+            </div>
+          </div>
+
+          <div class="masterclass-list__item">
+            <div class="masterclass-list__date">
+              <span class="masterclass-list__day">22</span>
+              <span class="masterclass-list__month">Mar</span>
+            </div>
+            <div class="masterclass-list__body">
+              <h3 class="masterclass-list__title">Francesco Giullare di Dio &mdash; with Michelangelo Frammartino</h3>
+              <p class="masterclass-list__topic">On the occasion of the 800th anniversary of the death of the Patron Saint of Italy, screening of <em>Francesco, Giullare di Dio</em> (1950) by Roberto Rossellini. The film will be introduced by director Michelangelo Frammartino, previously a guest at BAFF in 2025. &laquo;Knowing Roberto Rossellini's cinema today is fundamental &mdash; for his time, the great director had already envisioned and achieved all the contemporary and research cinema possible&raquo; (Giulio Sangiorgio).</p>
+              <p class="masterclass-list__info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Sunday 22 March, 4:00 PM &mdash; Cinema Fratello Sole
+              </p>
+            </div>
+          </div>
+
+          <div class="masterclass-list__item">
+            <div class="masterclass-list__date">
+              <span class="masterclass-list__day">23</span>
+              <span class="masterclass-list__month">Mar</span>
+            </div>
+            <div class="masterclass-list__body">
+              <h3 class="masterclass-list__title">Tribute to Frederick Wiseman &mdash; Masterclass with Luca Mosso</h3>
+              <p class="masterclass-list__topic">A tribute to Frederick Wiseman, one of the greatest documentary filmmakers in the history of cinema, who passed away last month. His debut work <em>Titicut Follies</em> will be screened, depicting the hellish conditions of the Bridgewater criminal asylum in Massachusetts. Followed by a masterclass on Wiseman led by Luca Mosso, director of Filmmaker Festival Milano.</p>
+              <p class="masterclass-list__info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Monday 23 March, 10:00 AM &mdash; Istituto Cinematografico Michelangelo Antonioni
+              </p>
+            </div>
+          </div>
+
+          <div class="masterclass-list__item">
+            <div class="masterclass-list__date">
+              <span class="masterclass-list__day">26</span>
+              <span class="masterclass-list__month">Mar</span>
+            </div>
+            <div class="masterclass-list__body">
+              <h3 class="masterclass-list__title">Afterlives &mdash; Meeting with Kevin B. Lee</h3>
+              <p class="masterclass-list__topic">Kevin B. Lee, one of the world's foremost video essay creators (over 360 productions), is at BAFF with his first feature film <em>Afterlives</em>, which critically addresses the historical and digital traces of extremist propaganda, questioning how images of violence circulate, mutate and persist. &laquo;An extraordinary opportunity to see the debut film of an artist who reflects on images through images&raquo; (Giulio Sangiorgio).</p>
+              <p class="masterclass-list__info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Thursday 26 March, 3:00 PM &mdash; Cinema Fratello Sole
+              </p>
+            </div>
+          </div>
+
+          <div class="masterclass-list__item">
+            <div class="masterclass-list__date">
+              <span class="masterclass-list__day">27</span>
+              <span class="masterclass-list__month">Mar</span>
+            </div>
+            <div class="masterclass-list__body">
+              <h3 class="masterclass-list__title">Canone effimero &mdash; Gianluca and Massimiliano De Serio</h3>
+              <p class="masterclass-list__topic">Turin-based directors Gianluca and Massimiliano De Serio will present <em>Canone effimero</em>, already selected for the Berlinale. The documentary is a kind of archive of a vanishing Italy, capturing rituals, places and musical traditions that are being lost. Evocative images and a cinema conceived as a repository and memory.</p>
+              <p class="masterclass-list__info">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Friday 27 March, 3:00 PM &mdash; Cinema Fratello Sole
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Before Growing Up -->
+    <section class="page-section page-section--alt" id="prima-di-diventare-grandi">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Before Growing Up</h2>
+        <p class="page-section__intro">Screenings and meetings dedicated to the discovery of Italian cinema through analysis and dialogue with its protagonists.</p>
+
+        <div class="eventi-grid">
+
+          <div class="evento-card">
+            <div class="evento-card__tag">Film analysis</div>
+            <h3 class="evento-card__title">La ragazza nella nebbia</h3>
+            <div class="evento-card__body">
+              <p><em>La ragazza nella nebbia</em> (2017) by Donato Carrisi is a psychological thriller that builds tension more through atmosphere than action. The direction uses fog as a symbolic element, representing moral ambiguity and the uncertainty of truth. The non-linear narrative, with continuous flashbacks, reflects the fragmentation of point of view and draws the viewer into the investigative game.</p>
+              <p>The character of Inspector Vogel embodies the media spectacularisation of crime, criticising the relationship between justice and public opinion. The cold cinematography and desaturated tones accentuate the sense of isolation of the small Alpine village. The tight editing maintains high suspense while favouring the psychological over the action-driven. The performances, particularly that of Toni Servillo, give depth to the inner conflicts. Overall, the film reflects on the theme of manipulated truth and the fragility of perception.</p>
+            </div>
+            <div class="evento-card__credits">
+              <span>Director: Donato Carrisi · 2017 · With Toni Servillo</span>
+            </div>
+          </div>
+
+          <div class="evento-card">
+            <div class="evento-card__tag">Film analysis</div>
+            <h3 class="evento-card__title">I tartassati (1959)</h3>
+            <div class="evento-card__body">
+              <p><em>I tartassati</em>, directed by Steno, is a satirical comedy about the conflict between a tax-evading shopkeeper and a marshal of the Financial Police. The film combines comedy and social criticism, typical of post-war Italian comedy. Tot&ograve; constructs a cunning and opportunistic character through wordplay and memorable gags.</p>
+              <p>Aldo Fabrizi's marshal represents legality and moral rigour. The direction favours quick dialogue and tight comic timing. The urban setting reflects the contrasts of reconstruction-era Italy. The film satirises the relationship between citizens and the State, offering a critique that remains relevant today.</p>
+            </div>
+            <div class="evento-card__credits">
+              <span>Director: Steno · 1959 · With Tot&ograve; and Aldo Fabrizi — Meeting with Enrico Vanzina (coming soon)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Visioni Future Lab -->
+    <section class="page-section" id="visioni-future-lab">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Visioni Future. Primi passi d'autore &mdash; III Edition</h2>
+        <div class="page-section__content">
+          <p>Now in its third edition, the <strong>Visioni Future. Primi passi d'autore</strong> competition is dedicated to students of film schools and academies, as well as young aspiring directors and filmmakers who have produced a short film as a thesis, final diploma project, curricular exercise or independent production during their studies.</p>
+          <p>The contest, organised by Milano Film Network and the Istituto Cinematografico Michelangelo Antonioni, aims to support young talents in their path towards professional development. The authors of the ten best works will be hosted in Busto Arsizio during the festival week to participate in lectures and workshops designed to facilitate entry into the working world. Over the three workshop days, participants will be able to meet decision makers from the film industry, receive advice on how to promote their work at festivals, and develop the subject of a new project with expert tutors.</p>
+          <p>The selected aspiring directors come from the Academies of Fine Arts of Palermo, Bari, Turin and Milan; from NABA in Milan, IUAV in Venice, the Volont&egrave; Film School in Rome, the Istituto Antonioni in Busto Arsizio, CISA in Lugano and Ca' Foscari in Venice.</p>
+          <p>The tutors who will follow the participants are Alice Arecco, Luca Mosso and Ivan Casagrande Conti from Milano Film Network; Andrea Caccia and Marco Longo, lecturers at the Istituto Cinematografico Michelangelo Antonioni.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Event — Brebbia and Ferri -->
+    <section class="page-section page-section--alt" id="evento-speciale-brebbia-ferri">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Special Event — Brebbia and Ferri</h2>
+        <p class="page-section__intro">In collaboration with the Rai 3 programme <em>Fuori Orario</em>.</p>
+        <div class="eventi-grid">
+          <div class="evento-card">
+            <div class="evento-card__tag">Special Event</div>
+            <h3 class="evento-card__title">Brebbia and Ferri</h3>
+            <div class="evento-card__body">
+              <p>In collaboration with the Rai 3 programme <em>Fuori Orario</em>, we inaugurate a new section dedicated to experimental languages of the past and present, in two encounters &mdash; halfway between masterclass and screening &mdash; devoted to two eccentric and indomitable filmmakers: Gianfranco Brebbia from Varese and Luca Ferri from Bergamo.</p>
+              <p>Fulvio Baglivi (Rai 3) will discuss the vast and largely unseen work of Brebbia (1923&ndash;74) with the filmmaker's daughter Giovanna Brebbia and the critic Mauro Gervasini. Equally tireless is Luca Ferri, who in dialogue with Roberto Turigliatto (Rai 3) will present his most recent film, <em>Il Damo</em>.</p>
+            </div>
+            <div class="evento-card__credits">
+              <span>In collaboration with Rai 3 — Fuori Orario</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exhibitions -->
+    <section class="page-section" id="mostre">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Exhibitions</h2>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:700;margin:1.5rem 0 1rem;">Forgotten Wars. Reality Surpasses Fiction</h3>
+        <div class="page-section__content">
+          <p>A video installation created by the Memora collective for the B.A. Film Festival. The project combines photography and video reportage to reflect on wars rarely covered by the media and on the invisible consequences of contemporary conflicts.</p>
+          <p>The installation features two photographs by Davide Canella, from the series <em>Siria Intima</em> and <em>Dunkerque, dall'altra parte della Manica</em>, offering an intimate and non-spectacular look at territories scarred by war.</p>
+          <p>Alongside the images, a 70-inch TV screen loops three video reports:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li><strong>Revolution in Myanmar</strong> by Carlo Cozzoli (7'), on the protests in the Asian country</li>
+            <li><strong>Faith and War</strong> (1'30''), a video on the setting up of the Memora collective exhibition in Milan</li>
+            <li><strong>Scars of the Earth</strong> by Carlo Cozzoli and Francesco Maviglia (8'), dedicated to the environmental and social consequences of conflicts in Nigeria</li>
+          </ul>
+          <p>The combination of photographs and videos creates an immersive environment that invites the audience to reflect on forgotten wars, on the marginal territories of information and on the memory of conflicts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAFF in the Bookshop -->
+    <section class="page-section page-section--alt" id="baff-in-libreria">
+      <div class="page-section__container">
+        <h2 class="page-section__title">BAFF in the Bookshop</h2>
+        <p class="page-section__intro">BAFF in the Bookshop offers valuable opportunities to discuss and debate cinema with writers, authors and journalists. Three essays are featured this year:</p>
+        <div class="libreria-grid">
+          <div class="libro-card">
+            <div class="libro-card__body">
+              <h3 class="libro-card__title">Flashback. Il cinema americano come riflesso politico culturale degli anni '80</h3>
+              <p class="libro-card__author">Matteo Inzaghi — De Piante Editore</p>
+              <p class="libro-card__desc">The book describes films, TV series, directors, screenwriters and actors that defined the period, delving into the connection between artistic approach and political, historical and cultural specificities. A book that allows readers to rediscover a decade of aesthetic experimentation, narrative innovation and unforgettable characters, inviting them to view cinema not merely as entertainment, but as a mirror of society and history.</p>
+            </div>
+          </div>
+          <div class="libro-card">
+            <div class="libro-card__body">
+              <h3 class="libro-card__title">Checco Zalone – Da Cado dalle nubi a Buen Camino. Di cosa ridiamo quando ridiamo di lui</h3>
+              <p class="libro-card__author">Gianni Canova — Sagoma Editore</p>
+              <p class="libro-card__desc">Film critic Gianni Canova analyses the comic phenomenon of Checco Zalone and his enormous success in contemporary Italian cinema. Combining film analysis and cultural reflection, the book explores how Zalone portrays Italy, its vices and contradictions, through laughter that speaks to a vast audience.</p>
+            </div>
+          </div>
+          <div class="libro-card">
+            <div class="libro-card__body">
+              <h3 class="libro-card__title">La fine della fine</h3>
+              <p class="libro-card__author">Davide Ferrario — Einaudi</p>
+              <p class="libro-card__desc">A reflection on the way we tell and consume stories today. In an era dominated by seriality and the immediate consumption of content, Ferrario questions what it still means to give an "ending" to a story. Through personal memories and considerations on contemporary cinema, he explores the relationship between narrative, technology and the collective imagination.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     </main>
@@ -534,10 +899,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer__col">
                         <h4 class="footer__col-title">The Festival</h4>
                         <a href="festival.html" class="footer__link">About us</a>
-                        <a href="../storia.html" class="footer__link">History</a>
+                        <a href="festival.html#storia" class="footer__link">History</a>
                         <a href="../immagini.html" class="footer__link">Gallery</a>
                         <a href="giuria.html" class="footer__link">Jury</a>
-                        <a href="../festival.html#trasparenza" class="footer__link">Transparency</a>
+                        <a href="festival.html#trasparenza" class="footer__link">Transparency</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Programme</h4>
@@ -550,7 +915,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4 class="footer__col-title">Information</h4>
                         <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Box Office</a>
                         <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditations</a>
-                        <a href="../festival.html#sedi" class="footer__link">Venues</a>
+                        <a href="festival.html#sedi" class="footer__link">Venues</a>
                         <a href="contatti.html" class="footer__link">Contacts</a>
                         <a href="../comunicati.html" class="footer__link">Press releases</a>
                     </div>
@@ -575,9 +940,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </footer>
 
 
-    
+
     <!-- Back to Top -->
-    <button class="back-to-top" aria-label="Torna su">
+    <button class="back-to-top" aria-label="Back to top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
@@ -594,20 +959,20 @@ document.addEventListener('DOMContentLoaded', function() {
     <script src="../js/main.js"></script>
     <script src="../js/supabase-public.js"></script>
     <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
       <div id="searchOverlayBackdrop" class="search-overlay__backdrop"></div>
       <div class="search-overlay__panel">
         <div class="search-overlay__header">
           <div class="search-overlay__input-wrap">
             <svg class="search-overlay__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Cerca nel sito..." autocomplete="off" spellcheck="false">
+            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Search the site..." autocomplete="off" spellcheck="false">
           </div>
-          <button class="search-close" aria-label="Chiudi ricerca">
+          <button class="search-close" aria-label="Close search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
         <div class="search-overlay__body" id="searchResults">
-          <p class="search-overlay__hint">Digita per cercare nel sito...</p>
+          <p class="search-overlay__hint">Type to search the site...</p>
         </div>
       </div>
     </div>

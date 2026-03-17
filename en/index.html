@@ -9,11 +9,127 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+    /* === HERO BIENNALE === */
+    .hero-biennale {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #0d0d0d;
+    }
+    .hero-biennale__content {
+        position: absolute;
+        bottom: 3rem;
+        left: 3rem;
+        z-index: 2;
+        max-width: 600px;
+    }
+    .hero-biennale__eyebrow {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #fff;
+        margin: 0 0 0.5rem;
+    }
+    .hero-biennale__title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 1.05;
+        margin: 0 0 0.5rem;
+        letter-spacing: -0.01em;
+    }
+    .hero-biennale__subtitle {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #fff;
+        margin: 0;
+        opacity: 0.9;
+    }
+    .hero-biennale__scroll {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        background: none;
+        border: 2px solid rgba(255,255,255,0.5);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: border-color 0.3s;
+        padding: 0;
+    }
+    .hero-biennale__scroll:hover { border-color: #fff; }
+    .hero-biennale__scroll svg { stroke: rgba(255,255,255,0.8); }
+    @media (max-width: 768px) {
+        .hero-biennale__content {
+            left: 1.5rem;
+            bottom: 5rem;
+            right: 1.5rem;
+        }
+    }
+
+    /* === QUICK NAV BAR === */
+    .quicknav {
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        padding: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .quicknav::-webkit-scrollbar { display: none; }
+    .quicknav__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        white-space: nowrap;
+    }
+    .quicknav__link {
+        display: block;
+        padding: 0.9rem 1.2rem;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .quicknav__link:hover { color: var(--color-accent, #CC0000); }
+    .quicknav__sep {
+        color: #ccc;
+        font-size: 0.7rem;
+        user-select: none;
+    }
+    @media (max-width: 768px) {
+        .quicknav__list { justify-content: flex-start; padding: 0 1rem; }
+        .quicknav__link { padding: 0.75rem 0.8rem; font-size: 0.7rem; }
+    }
+
+
+    </style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('img').forEach(function(img) {
+    if (img.closest('.carousel-slide')) return;
     img.addEventListener('error', function() {
-      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure') 
+      this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure')
         ? this.closest('li, .gallery-item, .photo-item, .card, .ospite-card, .film-card, figure').style.display = 'none'
         : this.style.display = 'none';
     });
@@ -30,9 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="top-bar__left">
                 <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> |
                 <a href="accreditamenti.html" class="top-bar__link">PASS</a> |
-                <a href="press.html" class="top-bar__link">Press</a>
+                <a href="stampa.html" class="top-bar__link">Press</a>
                 <a href="contatti.html" class="top-bar__link">Contacts</a>
-                <a href="../istituzionale.html" class="top-bar__link">Istituzionale</a>
+                <a href="istituzionale.html" class="top-bar__link">Institutional</a>
             </div>
             <div class="top-bar__right">
                 <a href="../index.html" class="top-bar__lang">IT</a>
@@ -54,13 +170,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__nav-link">Tickets</a>
                 <a href="ospiti.html" class="header__nav-link">Guests</a>
                 <a href="giuria.html" class="header__nav-link">Jury</a>
-                <a href="../luoghi.html" class="header__nav-link">Venues</a>
+                <a href="luoghi.html" class="header__nav-link">Venues</a>
                 <a href="sponsor.html" class="header__nav-link">Sponsors</a>
             </nav>
-            <button class="search-trigger header__search-btn" aria-label="Cerca">
+            <button class="search-trigger header__search-btn" aria-label="Search">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </button>
-            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Carrello">
+            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Cart">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             </a>
             <button class="header__burger" id="burgerBtn" aria-label="Menu">
@@ -76,73 +192,89 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="mobile-menu__content">
             <div class="mobile-menu__header">
                 <img src="../images/logo-baff-header.png" alt="BAFF" class="mobile-menu__logo">
-                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Chiudi menu">
+                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
             </div>
             <nav class="mobile-menu__nav">
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Il Festival</span>
-                    <a href="../festival.html" class="mobile-menu__link mobile-menu__link--sub">Il Festival</a>
-                    <a href="../festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">Storia</a>
-                    <a href="../immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
-                    <a href="../festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
-                    <a href="../festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
+                    <span class="mobile-menu__group-label">The Festival</span>
+                    <a href="festival.html" class="mobile-menu__link mobile-menu__link--sub">The Festival</a>
+                    <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">History</a>
+                    <a href="immagini.html" class="mobile-menu__link mobile-menu__link--sub">Images</a>
+                    <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Venues</a>
+                    <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Transparency</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Programma</span>
-                    <a href="../programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
-                    <a href="../programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
-                    <a href="../programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
-                    <a href="../programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
-                    <a href="../programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
-                    <a href="../programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
-                    <a href="../programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
-                    <a href="../programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
-                    <a href="../programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                    <span class="mobile-menu__group-label">Programme</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programme</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">The sections</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Special Events</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">After Hours</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Before Growing Up</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Future Visions Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Exhibitions</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in the Bookshop</a>
                 </div>
                 <div class="mobile-menu__group">
-                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
-                    <a href="../selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
-                    <a href="../selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
-                    <a href="../selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
-                    <a href="../selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                    <span class="mobile-menu__group-label">Official Selection</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Official Selection</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Italian Competition</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">International Competition</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Schools</a>
                 </div>
-                <a href="../ospiti.html" class="mobile-menu__link">Ospiti</a>
-                <a href="../giuria.html" class="mobile-menu__link">Giuria</a>
-                <a href="../news.html" class="mobile-menu__link">News</a>
-                <a href="../accreditamenti.html" class="mobile-menu__link">Pass</a>
-                <a href="../sponsor.html" class="mobile-menu__link">Sponsor</a>
                 <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="mobile-menu__link">Tickets</a>
+                <a href="ospiti.html" class="mobile-menu__link">Guests</a>
+                <a href="giuria.html" class="mobile-menu__link">Jury</a>
+                <a href="luoghi.html" class="mobile-menu__link">Venues</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsors</a>
             </nav>
             <div class="mobile-menu__footer">
                 <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
-                <a href="../stampa.html" class="mobile-menu__footer-link">Stampa</a>
-                <a href="../contatti.html" class="mobile-menu__footer-link">Contatti</a>
-                <a href="../istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
+                <a href="stampa.html" class="mobile-menu__footer-link">Press</a>
+                <a href="contatti.html" class="mobile-menu__footer-link">Contacts</a>
+                <a href="istituzionale.html" class="mobile-menu__footer-link">Institutional</a>
             </div>
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-            <p class="hero__edition">XXIV Edition</p>
-            <h1 class="hero__title">B.A. Film Festival</h1>
-            <p class="hero__subtitle">Busto Arsizio — 2026</p>
-            <p class="hero__dates">21 — 28 March 2026</p>
-            <a href="programma.html" class="hero__cta">Discover the programme</a>
+    <!-- Hero Section (Biennale-inspired) -->
+    <section class="hero-biennale" role="img" aria-label="Poster BAFF XXIV Edition 2026" style="background-color:#0d0d0d;">
+        <img src="../images/BAFF_2026_locandina.jpeg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;">
+        <div class="hero-biennale__content">
+            <p class="hero-biennale__eyebrow">BUSTO ARSIZIO &middot; 21-28 MARCH 2026</p>
+            <h1 class="hero-biennale__title">XXIV EDITION</h1>
+            <p class="hero-biennale__subtitle">B.A. Film Festival</p>
         </div>
-        <div class="hero__scroll-indicator">
-            <span>Scroll</span>
-            <div class="hero__scroll-line"></div>
-        </div>
+        <button class="hero-biennale__scroll" aria-label="Scroll down" onclick="this.parentElement.nextElementSibling.scrollIntoView({behavior:'smooth'})">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
     </section>
+
+    <!-- Quick Navigation Bar (Biennale-style) -->
+    <nav class="quicknav">
+        <ul class="quicknav__list">
+            <li><a href="selezione.html" class="quicknav__link">Film Submissions</a></li>
+            <li class="quicknav__sep">|</li>
+            <li><a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="quicknav__link">Tickets</a></li>
+            <li class="quicknav__sep">|</li>
+            <li><a href="accreditamenti.html" class="quicknav__link">Accreditations</a></li>
+            <li class="quicknav__sep">|</li>
+            <li><a href="luoghi.html" class="quicknav__link">Venues</a></li>
+            <li class="quicknav__sep">|</li>
+            <li><a href="contatti.html#come-raggiungerci" class="quicknav__link">How to reach us</a></li>
+            <li class="quicknav__sep">|</li>
+            <li><a href="contatti.html" class="quicknav__link">Contacts</a></li>
+            <li class="quicknav__sep">|</li>
+            <li><a href="stampa.html" class="quicknav__link">Press</a></li>
+        </ul>
+    </nav>
 
     <!-- Announcement Banner -->
     <main id="main-content">
-    <section class="announcement">
+    <section class="announcement" id="accreditBanner" style="display:none;position:relative;z-index:1">
         <div class="announcement__container">
             <div class="announcement__icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
@@ -151,70 +283,581 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Featured Section -->
-    <section class="featured">
-        <div class="featured__container">
-            <div class="featured__header">
-                <h2 class="section-title">Highlights</h2>
-                <a href="news.html" class="section-link">All news &rarr;</a>
+    <!-- Schedule -->
+    <section class="page-section page-section--alt" id="calendario">
+      <div class="page-section__container">
+        <h2 class="page-section__title">Programme</h2>
+
+        <div class="schedule">
+            <div class="schedule__tabs">
+                <button class="schedule__tab schedule__tab--active" data-day="day-1">Fri 20</button>
+                <button class="schedule__tab" data-day="day-2">Sat 21</button>
+                <button class="schedule__tab" data-day="day-3">Sun 22</button>
+                <button class="schedule__tab" data-day="day-4">Mon 23</button>
+                <button class="schedule__tab" data-day="day-5">Tue 24</button>
+                <button class="schedule__tab" data-day="day-6">Wed 25</button>
+                <button class="schedule__tab" data-day="day-7">Thu 26</button>
+                <button class="schedule__tab" data-day="day-8">Fri 27</button>
+                <button class="schedule__tab" data-day="day-9">Sat 28</button>
             </div>
-            <div class="featured__grid">
-                <article class="featured__main">
-                    <div class="featured__image">
-                        <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-1.jpg" alt="BAFF 2026 Official Selection" style="width:100%;height:100%;object-fit:cover">
+
+            <!-- Friday 20 March -->
+            <div class="schedule__day schedule__day--active" id="day-1">
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Mauro Ermanno Giovanardi in concert</span>
+                        <span class="schedule__event-detail">Cinema Teatro San Giovanni Bosco &mdash; &euro;18.00 + 1.5 presale fee</span>
                     </div>
-                    <div class="featured__body">
-                        <span class="featured__tag">Official Selection</span>
-                        <h3 class="featured__title">The Official Selection of the XXIV edition</h3>
-                        <p class="featured__excerpt">The films selected for the Italian and international competition will be announced soon.</p>
-                        <span class="featured__date">1 March 2026</span>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Saturday 21 March -->
+            <div class="schedule__day" id="day-2">
+                <div class="schedule__event">
+                    <span class="schedule__time">16:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass: Before Growing Up &mdash; on Abel Ferrara</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
                     </div>
-                </article>
-                <div class="featured__side">
-                    <article class="featured__card">
-                        <div class="featured__card-image">
-                            <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-13.jpg" alt="Meeting with the guest director" style="width:100%;height:100%;object-fit:cover">
-                        </div>
-                        <div class="featured__card-body">
-                            <span class="featured__tag">Special event</span>
-                            <h4 class="featured__card-title">Meeting with the guest director</h4>
-                            <span class="featured__date">28 February 2026</span>
-                        </div>
-                    </article>
-                    <article class="featured__card">
-                        <div class="featured__card-image">
-                            <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-14.jpg" alt="The first steps of the masters" style="width:100%;height:100%;object-fit:cover">
-                        </div>
-                        <div class="featured__card-body">
-                            <span class="featured__tag">Masterclass</span>
-                            <h4 class="featured__card-title">The first steps of the masters: dedicated retrospective</h4>
-                            <span class="featured__date">25 February 2026</span>
-                        </div>
-                    </article>
-                    <article class="featured__card">
-                        <div class="featured__card-image">
-                            <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-15.jpg" alt="Online box office opening" style="width:100%;height:100%;object-fit:cover">
-                        </div>
-                        <div class="featured__card-body">
-                            <span class="featured__tag">Box Office</span>
-                            <h4 class="featured__card-title">Online box office opening</h4>
-                            <span class="featured__date">20 February 2026</span>
-                        </div>
-                    </article>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">BAFF in the Bookshop: Matteo Inzaghi presents Flashback</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">20:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Opening night XXIV Edition &mdash; Meeting with Abel Ferrara &mdash; <em>Turn in the Wound</em> (UK/Germany/Italy/USA, 2024, 77&rsquo;)</span>
+                        <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;8.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Sunday 22 March -->
+            <div class="schedule__day" id="day-3">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Il gesto delle mani by Francesco Clerici</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">16:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass on Rossellini with Michelangelo Frammartino</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">20:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">La ragazza nella nebbia &mdash; Meeting with Donato Carrisi</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Monday 23 March -->
+            <div class="schedule__day" id="day-4">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass: Titicut Follies by Frederick Wiseman</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni</span>
+                    </div>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">12:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">BAFF Memorabilia opening</span>
+                        <span class="schedule__event-detail">Galleria Boragno</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Macdo</em> by Racomelia Ezell (Mexico/Greece, 2025, 117&rsquo;)</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00 (valid for the double afternoon screening)</span>
+                    </div>
+                    <span class="schedule__event-tag">International competition</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">20:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Scerbanenco between novels, cinema and comics</span>
+                        <span class="schedule__event-detail">Cinema Nuovo (Varese) &mdash; Free admission by reservation</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Tuesday 24 March -->
+            <div class="schedule__day" id="day-5">
+                <div class="schedule__event">
+                    <span class="schedule__time">9:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Tienimi presente by Alberto Palmiero</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                    </div>
+                    <span class="schedule__event-tag">Made in Italy Schools</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Boys Go to Jupiter</em> by Julian Glander (USA, 2024, 90&rsquo;)</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00 (valid for the double afternoon screening)</span>
+                    </div>
+                    <span class="schedule__event-tag">International competition</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">17:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Surprise screening</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">20:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Libera &mdash; Meeting with Pappi Corsicato and Isabel Pagliai</span>
+                        <span class="schedule__event-detail">Cinema Teatro Dante &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Wednesday 25 March -->
+            <div class="schedule__day" id="day-6">
+                <div class="schedule__event">
+                    <span class="schedule__time">9:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Gioia mia by Margherita Spampinato</span>
+                        <span class="schedule__event-detail">Cinema Teatro Manzoni &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Made in Italy Schools</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Buffet Infinity</em> by Simon Glassman (Canada, 2025, 100&rsquo;) &mdash; with Dino Primo</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00 (valid for the double afternoon screening)</span>
+                    </div>
+                    <span class="schedule__event-tag">International competition</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">17:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Una cosa vicina</em> by Loris G. Nese (Italy, 2025, 90&rsquo;) &mdash; with Loris G. Nese and Chiara Marotta</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole</span>
+                    </div>
+                    <span class="schedule__event-tag">Italian competition</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Le bambine</em> by Valentina and Nicole Bertani (Italy/Switzerland/France, 2025, 105&rsquo;) &mdash; with Valentina and Nicole Bertani</span>
+                        <span class="schedule__event-detail">Sala Ratti &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Italian competition</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Il mito della Pista Stelvio</em> by Cactus Production in Progress &mdash; with Flavio Vanetti</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; Free admission</span>
+                    </div>
+                    <span class="schedule__event-tag">Documentary</span>
+                </div>
+            </div>
+
+            <!-- Thursday 26 March -->
+            <div class="schedule__day" id="day-7">
+                <div class="schedule__event">
+                    <span class="schedule__time">9:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Vita da grandi by Greta Scarano</span>
+                        <span class="schedule__event-detail">Cinema Teatro Manzoni &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Made in Italy Schools</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">16:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Masterclass: Afterlives by Kevin B. Lee</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Masterclass</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">20:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>The Chronology of Water</em> by Kristen Stewart (France/Lithuania/UK/USA, 2025, 128&rsquo;)</span>
+                        <span class="schedule__event-detail">Sala Ratti &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Before Growing Up &mdash; Short films</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Friday 27 March -->
+            <div class="schedule__day" id="day-8">
+                <div class="schedule__event">
+                    <span class="schedule__time">9:30</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Orfeo by Virgilio Villoresi</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Made in Italy Schools</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Canone effimero by Gianluca and Massimiliano De Serio</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">21:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">I tartassati by Steno &mdash; Meeting with Enrico Vanzina</span>
+                        <span class="schedule__event-detail">Cinema Teatro Fratello Sole &mdash; &euro;8.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+            <!-- Saturday 28 March -->
+            <div class="schedule__day" id="day-9">
+                <div class="schedule__event">
+                    <span class="schedule__time">10:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">The cinema of Gianfranco Brebbia</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">15:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title"><em>Il damo</em> by Luca Ferri &mdash; Meeting with Luca Ferri and Roberto Turigliatto</span>
+                        <span class="schedule__event-detail">Sala Piero Monaco (Municipal Library)</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">18:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">BAFF in the Bookshop: Davide Ferrario presents La fine della fine</span>
+                        <span class="schedule__event-detail">Sala Piero Monaco</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">20:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Conversation with Sergio Rubini &mdash; Concerto Sud</span>
+                        <span class="schedule__event-detail">Teatro Sociale Delia Cajelli &mdash; &euro;12.00 + 1.5 presale fee</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+                <div class="schedule__event">
+                    <span class="schedule__time">22:00</span>
+                    <div class="schedule__event-info">
+                        <span class="schedule__event-title">Hundreds of Beavers by Mike Cheslik</span>
+                        <span class="schedule__event-detail">Istituto Cinematografico Michelangelo Antonioni &mdash; &euro;5.00</span>
+                    </div>
+                    <span class="schedule__event-tag">Special event</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+            <a href="programma.html" style="display:inline-block;background:transparent;color:#CC0000;border:2px solid #CC0000;padding:0.85rem 2.5rem;font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;border-radius:3px;transition:all 0.2s;">View the Full Programme</a>
+            <a href="https://oooh.events/evento/?search=Busto+arsizio" target="_blank" rel="noopener" style="display:inline-block;background:#CC0000;color:#fff;border:2px solid #CC0000;padding:0.85rem 2.5rem;font-family:'Montserrat',sans-serif;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;text-decoration:none;border-radius:3px;transition:all 0.2s;">Buy Tickets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guests & Events Carousel -->
+    <section class="carousel-section" id="carosello">
+        <div class="carousel-section__header">
+            <h2 class="carousel-section__title">Guests &amp; Highlights</h2>
+        </div>
+        <div class="carousel-track-wrap">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide">
+                    <img src="../images/abel-ferrara.jpg" alt="Abel Ferrara" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Abel Ferrara &middot; 21 March &middot; Teatro Sociale</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/elisabetta-sgarbi.jpg" alt="Elisabetta Sgarbi" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Elisabetta Sgarbi &middot; 23 March &middot; Varese</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/kevin-lee.jpg" alt="Kevin B. Lee" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Kevin B. Lee &middot; 26 March &middot; Cinema Fratello Sole</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/mauro-giovanardi.jpg" alt="Mauro Ermanno Giovanardi" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Mauro Ermanno Giovanardi &middot; 20 March &middot; San Giovanni Bosco</div>
+                </div>
+                <div class="carousel-slide carousel-slide--logo">
+                    <div class="carousel-slide__img" style="aspect-ratio:3/4;background:#f5f5f5;display:flex;align-items:center;justify-content:center;">
+                        <img src="../images/logo-baff.png" alt="B.A. Film Festival" style="width:60%;height:auto;object-fit:contain;">
+                    </div>
+                    <div class="carousel-slide__caption">B.A. Film Festival &middot; XXIV Edition</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/sergio-rubini.jpg" alt="Sergio Rubini" class="carousel-slide__img">
+                    <div class="carousel-slide__caption">Sergio Rubini &middot; 28 March &middot; Teatro Sociale</div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <style>
+    .carousel-section {
+        background: #fff;
+        padding: 3rem 0 2.5rem;
+        overflow: hidden;
+    }
+    .carousel-section__header {
+        max-width: var(--max-width, 1200px);
+        margin: 0 auto 1.5rem;
+        padding: 0 2rem;
+    }
+    .carousel-section__title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--color-text, #111);
+        margin: 0;
+    }
+    .carousel-track-wrap {
+        position: relative;
+        max-width: var(--max-width, 1200px);
+        margin: 0 auto;
+        padding: 0 3.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+    .carousel-track {
+        display: flex;
+        gap: 1.25rem;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        width: 100%;
+        transition: transform 0.4s ease;
+    }
+    .carousel-slide {
+        flex: 0 0 calc(33.333% - 0.84rem);
+        min-width: 0;
+        border-radius: 3px;
+        overflow: hidden;
+        background: #f0f0f0;
+        position: relative;
+    }
+    .carousel-slide__img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        display: block;
+    }
+    .carousel-slide__caption {
+        padding: 0.6rem 0.8rem;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--color-text-secondary, #555);
+        background: #fff;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        padding: 0;
+    }
+    .carousel-btn:hover { background: var(--color-accent, #CC0000); border-color: var(--color-accent, #CC0000); color: #fff; }
+    .carousel-btn:hover svg { stroke: #fff; }
+    .carousel-btn--prev { left: 0; }
+    .carousel-btn--next { right: 0; }
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 1rem;
+    }
+    .carousel-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #ddd;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.2s;
+    }
+    .carousel-dot--active { background: var(--color-accent, #CC0000); }
+    @media (max-width: 768px) {
+        .carousel-slide { flex: 0 0 calc(100% - 0rem); }
+        .carousel-track-wrap { padding: 0 2.8rem; }
+    }
+    @media (min-width: 769px) {
+        .carousel-track {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            transform: none !important;
+            transition: none !important;
+            gap: 1.25rem;
+            align-items: start !important;
+        }
+        .carousel-slide {
+            flex: none !important;
+            width: auto !important;
+        }
+        .carousel-btn {
+            display: none !important;
+        }
+        .carousel-dots {
+            display: none !important;
+        }
+        .carousel-slide__progress {
+            display: none !important;
+        }
+    }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        var track = document.getElementById('carouselTrack');
+        var dotsWrap = document.getElementById('carouselDots');
+        if (!track) return;
+        var slides = track.querySelectorAll('.carousel-slide');
+        var visibleCount = window.innerWidth < 768 ? 1 : 3;
+        var current = 0;
+        var total = slides.length;
+        var maxIndex = Math.max(0, total - visibleCount);
+
+        // Build dots
+        for (var i = 0; i <= maxIndex; i++) {
+            var dot = document.createElement('button');
+            dot.className = 'carousel-dot' + (i === 0 ? ' carousel-dot--active' : '');
+            dot.setAttribute('aria-label', 'Slide ' + (i+1));
+            dot.dataset.idx = i;
+            dot.addEventListener('click', function() { goTo(parseInt(this.dataset.idx)); });
+            dotsWrap.appendChild(dot);
+        }
+
+        if (window.innerWidth < 769) {
+        goTo(0);
+
+        function goTo(idx) {
+            current = Math.max(0, Math.min(idx, maxIndex));
+            var slideW = slides[0].offsetWidth + parseInt(getComputedStyle(track).gap || '20');
+            track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
+            track.style.transition = 'transform 0.4s ease';
+            track.style.display = 'flex';
+            dotsWrap.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+                d.classList.toggle('carousel-dot--active', i === current);
+            });
+        }
+
+        document.querySelector('.carousel-btn--prev').addEventListener('click', function() { goTo(current - 1); });
+        document.querySelector('.carousel-btn--next').addEventListener('click', function() { goTo(current + 1); });
+
+        // Auto-advance every 5s
+        setInterval(function() { goTo(current < maxIndex ? current + 1 : 0); }, 5000);
+        }
+    }, 100);
+    });
+    </script>
+
+
+    <!-- Masterclass -->
+    <section class="page-section" id="masterclass-home" style="background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%); border-top: 3px solid #CC0000; padding: 3.5rem 0;">
+        <div class="page-section__container">
+            <div style="display:flex; align-items:center; gap:3rem; flex-wrap:wrap;">
+                <div style="flex:1; min-width:260px;">
+                    <span style="font-family:'Montserrat',sans-serif; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:#CC0000;">Education & Culture</span>
+                    <h2 style="font-family:'Montserrat',sans-serif; font-size:2.2rem; font-weight:900; color:#111; margin:0.4rem 0 1rem; line-height:1.1;">Masterclass</h2>
+                    <p style="font-family:'DM Sans',sans-serif; font-size:1rem; color:#444; line-height:1.7; max-width:520px;">6 sessions with great authors of documentary and experimental cinema. From 21 to 27 March, at the Istituto Cinematografico Michelangelo Antonioni and Cinema Fratello Sole.</p>
+                    <a href="programma.html#masterclass" style="display:inline-block; margin-top:1.5rem; background:#CC0000; color:#fff; padding:0.8rem 2rem; font-family:'Montserrat',sans-serif; font-size:0.82rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; text-decoration:none; border-radius:3px;">Discover the Masterclasses</a>
+                </div>
+                <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:0.75rem; min-width:200px;">
+                    <div style="background:#CC0000; color:#fff; border-radius:3px; padding:0.9rem 1.4rem;">
+                        <div style="font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:900; line-height:1;">6</div>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.8rem; opacity:0.9; margin-top:0.2rem;">Sessions</div>
+                    </div>
+                    <div style="background:#111; color:#fff; border-radius:3px; padding:0.9rem 1.4rem;">
+                        <div style="font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:900; line-height:1;">7</div>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.8rem; opacity:0.9; margin-top:0.2rem;">Days</div>
+                    </div>
+                    <div style="background:#f0f0f0; color:#111; border-radius:3px; padding:0.9rem 1.4rem;">
+                        <div style="font-family:'Montserrat',sans-serif; font-size:1.6rem; font-weight:900; line-height:1;">2</div>
+                        <div style="font-family:'DM Sans',sans-serif; font-size:0.8rem; opacity:0.7; margin-top:0.2rem;">Venues</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Program Section -->
-    <section class="program">
+    <section class="program" id="film">
         <div class="program__container">
             <div class="program__header">
-                <h2 class="section-title section-title--light">Programme</h2>
+                <h2 class="section-title section-title--light">Festival Sections</h2>
                 <p class="program__subtitle">Explore the festival sections</p>
             </div>
             <div class="program__grid">
-                <a href="selezione.html" class="program__card">
+                <a href="selezione.html#concorso-italiano" class="program__card">
                     <div class="program__card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"/><rect x="2" y="2" width="20" height="20" rx="4"/></svg>
                     </div>
@@ -222,7 +865,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="program__card-desc">The best of contemporary Italian cinema in competition.</p>
                     <span class="program__card-arrow">&rarr;</span>
                 </a>
-                <a href="selezione.html" class="program__card">
+                <a href="selezione.html#concorso-internazionale" class="program__card">
                     <div class="program__card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     </div>
@@ -230,15 +873,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="program__card-desc">Films from around the world selected for the international competition.</p>
                     <span class="program__card-arrow">&rarr;</span>
                 </a>
-                <a href="selezione.html" class="program__card">
+                <a href="programma.html#prima-di-diventare-grandi" class="program__card">
                     <div class="program__card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                     </div>
-                    <h3 class="program__card-title">The First Steps of the Masters</h3>
+                    <h3 class="program__card-title">Before Growing Up</h3>
                     <p class="program__card-desc">A retrospective dedicated to the debut films of great directors.</p>
                     <span class="program__card-arrow">&rarr;</span>
                 </a>
-                <a href="programma.html" class="program__card">
+                <a href="programma.html#eventi-speciali" class="program__card">
                     <div class="program__card-icon">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
@@ -250,37 +893,8 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Countdown / Next Edition -->
-    <section class="countdown">
-        <div class="countdown__container">
-            <h2 class="countdown__label">XXIV Edition</h2>
-            <div class="countdown__timer" id="countdown">
-                <div class="countdown__block">
-                    <span class="countdown__number" id="days">--</span>
-                    <span class="countdown__unit">Days</span>
-                </div>
-                <div class="countdown__separator">:</div>
-                <div class="countdown__block">
-                    <span class="countdown__number" id="hours">--</span>
-                    <span class="countdown__unit">Hours</span>
-                </div>
-                <div class="countdown__separator">:</div>
-                <div class="countdown__block">
-                    <span class="countdown__number" id="minutes">--</span>
-                    <span class="countdown__unit">Minutes</span>
-                </div>
-                <div class="countdown__separator">:</div>
-                <div class="countdown__block">
-                    <span class="countdown__number" id="seconds">--</span>
-                    <span class="countdown__unit">Seconds</span>
-                </div>
-            </div>
-            <p class="countdown__date">21 — 28 March 2026 &middot; Busto Arsizio</p>
-        </div>
-    </section>
-
     <!-- Past Editions Slider -->
-    <section class="editions">
+    <section class="editions" id="ospiti">
         <div class="editions__container">
             <div class="editions__header">
                 <h2 class="section-title">Past Editions</h2>
@@ -297,13 +911,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="editions__track" id="editionsTrack">
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="https://www.baff.it/wp-content/uploads/2024/04/slide-Baff-2024ok2.jpg" alt="XXIII Edition 2025" style="width:100%;height:100%;object-fit:cover">
-                        </div>
-                        <h3 class="editions__slide-title">XXIII Edition — 2025</h3>
-                        <p class="editions__slide-text">Opening with David Cronenberg</p>
-                    </a>
-                    <a href="festival.html" class="editions__slide">
-                        <div class="editions__slide-image">
                             <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-1.jpg" alt="XXII Edition 2024" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XXII Edition — 2024</h3>
@@ -311,10 +918,45 @@ document.addEventListener('DOMContentLoaded', function() {
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="https://www.baff.it/wp-content/uploads/2024/01/storia2022.jpg" alt="XX Edition 2022" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2024/06/slide2023-1.jpg" alt="XXI Edition 2023" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <h3 class="editions__slide-title">XXI Edition — 2023</h3>
+                        <p class="editions__slide-text">Guest of honour: Paolo Virzì</p>
+                    </a>
+                    <a href="festival.html" class="editions__slide">
+                        <div class="editions__slide-image">
+                            <img src="https://www.baff.it/wp-content/uploads/2024/01/storia2022august.jpg" alt="XX Edition 2022" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XX Edition — 2022</h3>
                         <p class="editions__slide-text">Guest of honour: Bille August</p>
+                    </a>
+                    <a href="festival.html" class="editions__slide">
+                        <div class="editions__slide-image">
+                            <img src="https://www.baff.it/wp-content/uploads/2023/01/retro2021.jpg" alt="XIX Edition 2021" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+                        </div>
+                        <h3 class="editions__slide-title">XIX Edition — 2021</h3>
+                        <p class="editions__slide-text">Special post-pandemic edition</p>
+                    </a>
+                    <a href="festival.html" class="editions__slide">
+                        <div class="editions__slide-image">
+                            <img src="https://www.baff.it/wp-content/uploads/2021/09/storia2020.jpg" alt="XVIII Edition 2020" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+                        </div>
+                        <h3 class="editions__slide-title">XVIII Edition — 2020</h3>
+                        <p class="editions__slide-text">Digital edition</p>
+                    </a>
+                    <a href="festival.html" class="editions__slide">
+                        <div class="editions__slide-image">
+                            <img src="https://www.baff.it/wp-content/uploads/2021/09/fronte2019.jpg" alt="XVII Edition 2019" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <h3 class="editions__slide-title">XVII Edition — 2019</h3>
+                        <p class="editions__slide-text">Guest of honour: Ferruccio Soleri</p>
+                    </a>
+                    <a href="festival.html" class="editions__slide">
+                        <div class="editions__slide-image">
+                            <img src="https://www.baff.it/wp-content/uploads/2015/02/ligabuestoria.jpg" alt="XVI Edition 2018" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <h3 class="editions__slide-title">XVI Edition — 2018</h3>
+                        <p class="editions__slide-text">Guest of honour: Luciano Ligabue</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
@@ -330,13 +972,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h3 class="editions__slide-title">XIV Edition — 2016</h3>
                         <p class="editions__slide-text">Dino Ceccuzzi Award to Laura Morante</p>
                     </a>
+                    <a href="festival.html" class="editions__slide">
+                        <div class="editions__slide-image">
+                            <img src="https://www.baff.it/wp-content/uploads/2015/02/2015.jpg" alt="XIII Edition 2015" style="width:100%;height:100%;object-fit:cover">
+                        </div>
+                        <h3 class="editions__slide-title">XIII Edition — 2015</h3>
+                        <p class="editions__slide-text">Guest of honour: Pupi Avati</p>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Info Section -->
-    <section class="info">
+    <section class="info" id="friends">
         <div class="info__container">
             <div class="info__card">
                 <div class="info__icon">
@@ -344,7 +993,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <h3 class="info__title">Location</h3>
                 <p class="info__text">Via Magenta, 70<br>21052 Busto Arsizio (VA)</p>
-                <a href="../festival.html#sedi" class="info__link">Venues &rarr;</a>
+                <a href="contatti.html#come-raggiungerci" class="info__link">How to reach us &rarr;</a>
             </div>
             <div class="info__card">
                 <div class="info__icon">
@@ -365,13 +1014,13 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Newsletter (disabilitata) -->
+    <!-- Newsletter (disabled) -->
     <!--
     <section class="newsletter">
         <div class="newsletter__container">
             <h2 class="newsletter__title">Stay updated</h2>
             <p class="newsletter__text">Subscribe to our newsletter to receive all the latest news about the B.A. Film Festival.</p>
-            <form class="newsletter__form" action="https://api.web3forms.com/submit" method="POST">
+            <form class="newsletter__form" id="newsletterForm" action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="WEB3FORMS_KEY">
                 <input type="hidden" name="subject" value="Iscrizione Newsletter BAFF 2026">
                 <input type="hidden" name="from_name" value="BAFF Newsletter">
@@ -380,7 +1029,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <input type="email" name="email" class="newsletter__input" placeholder="Your email" aria-label="Email" required>
                 <button type="submit" class="newsletter__btn">Subscribe</button>
             </form>
-            <p class="newsletter__success" style="display:none;">Subscribed! Thank you.</p>
+            <p class="newsletter__success" id="newsletterSuccess" style="display:none;">Subscribed! Thank you.</p>
         </div>
     </section>
     -->
@@ -399,10 +1048,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="footer__col">
                         <h4 class="footer__col-title">The Festival</h4>
                         <a href="festival.html" class="footer__link">About us</a>
-                        <a href="../storia.html" class="footer__link">History</a>
-                        <a href="../immagini.html" class="footer__link">Gallery</a>
+                        <a href="festival.html#storia" class="footer__link">History</a>
+                        <a href="immagini.html" class="footer__link">Images</a>
                         <a href="giuria.html" class="footer__link">Jury</a>
-                        <a href="../festival.html#trasparenza" class="footer__link">Transparency</a>
+                        <a href="festival.html#trasparenza" class="footer__link">Transparency</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Programme</h4>
@@ -413,11 +1062,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Information</h4>
-                        <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Box Office</a>
+                        <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Box office</a>
                         <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditations</a>
-                        <a href="../festival.html#sedi" class="footer__link">Venues</a>
+                        <a href="festival.html#sedi" class="footer__link">Venues</a>
                         <a href="contatti.html" class="footer__link">Contacts</a>
-                        <a href="../comunicati.html" class="footer__link">Press releases</a>
+                        <a href="comunicati.html" class="footer__link">Press releases</a>
                     </div>
                     <div class="footer__col">
                         <h4 class="footer__col-title">Follow us</h4>
@@ -432,46 +1081,58 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="footer__legal">
                     <a href="privacy.html">Privacy Policy</a>
                     <a href="cookie.html">Cookie Policy</a>
-                    <a href="legal.html">Legal Notice</a>
+                    <a href="note-legali.html">Legal Notice</a>
                     <a href="/admin/index.html">Admin Panel</a>
                 </div>
             </div>
         </div>
     </footer>
 
-
-    
     <!-- Back to Top -->
-    <button class="back-to-top" aria-label="Torna su">
+    <button class="back-to-top" aria-label="Back to top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-banner__container">
-            <p class="cookie-banner__text">This website uses technical cookies and, with your consent, profiling cookies to improve your browsing experience. Learn more in our <a href="privacy.html">Privacy Policy</a> and <a href="cookie.html">Cookie Policy</a>.</p>
+            <p class="cookie-banner__text">This site uses technical cookies and, with your consent, profiling cookies to improve your browsing experience. For more information see our <a href="privacy.html">Privacy Policy</a> and <a href="cookie.html">Cookie Policy</a>.</p>
             <div class="cookie-banner__actions">
                 <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accept</button>
                 <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieReject">Reject</button>
             </div>
         </div>
     </div>
+    <script>
+    // Sticky header visibility on scroll past hero
+    if (window.matchMedia('(min-width: 768px)').matches) {
+        var heroBiennale = document.querySelector('.hero-biennale');
+        if (heroBiennale) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    document.getElementById('header').classList.toggle('header--scrolled', !entry.isIntersecting);
+                });
+            }, { threshold: 0 });
+            obs.observe(heroBiennale);
+        }
+    }
+    </script>
     <script src="../js/main.js"></script>
     <!-- Search Overlay -->
-    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
       <div id="searchOverlayBackdrop" class="search-overlay__backdrop"></div>
       <div class="search-overlay__panel">
         <div class="search-overlay__header">
           <div class="search-overlay__input-wrap">
             <svg class="search-overlay__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Cerca nel sito..." autocomplete="off" spellcheck="false">
+            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Search the site..." autocomplete="off" spellcheck="false">
           </div>
-          <button class="search-close" aria-label="Chiudi ricerca">
+          <button class="search-close" aria-label="Close search">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
           </button>
         </div>
         <div class="search-overlay__body" id="searchResults">
-          <p class="search-overlay__hint">Digita per cercare nel sito...</p>
+          <p class="search-overlay__hint">Type to search the site...</p>
         </div>
       </div>
     </div>
