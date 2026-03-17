@@ -18,12 +18,6 @@
         overflow: hidden;
         background-color: #0d0d0d;
     }
-    .hero-biennale__overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0,0,0,0.15);
-        z-index: 1;
-    }
     .hero-biennale__content {
         position: absolute;
         bottom: 3rem;
@@ -249,7 +243,6 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Hero Section (Biennale-inspired) -->
     <section class="hero-biennale" role="img" aria-label="Locandina BAFF XXIV Edizione 2026" style="background-color:#0d0d0d;">
         <img src="images/BAFF_2026_locandina.jpeg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;">
-        <div class="hero-biennale__overlay"></div>
         <div class="hero-biennale__content">
             <p class="hero-biennale__eyebrow">BUSTO ARSIZIO &middot; 21-28 MARZO 2026</p>
             <h1 class="hero-biennale__title">XXIV EDIZIONE</h1>
@@ -687,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function() {
         transition: transform 0.4s ease;
     }
     .carousel-slide {
-        flex: 0 0 calc(33.333% - 0.9rem);
+        flex: 0 0 calc(33.333% - 0.84rem);
         min-width: 0;
         border-radius: 3px;
         overflow: hidden;
@@ -776,9 +769,11 @@ document.addEventListener('DOMContentLoaded', function() {
             dotsWrap.appendChild(dot);
         }
 
+        goTo(0);
+
         function goTo(idx) {
             current = Math.max(0, Math.min(idx, maxIndex));
-            var slideW = slides[0].offsetWidth + 20; // 20 = gap
+            var slideW = slides[0].offsetWidth + parseInt(getComputedStyle(track).gap || '20');
             track.style.transform = 'translateX(-' + (current * slideW) + 'px)';
             track.style.transition = 'transform 0.4s ease';
             track.style.display = 'flex';
