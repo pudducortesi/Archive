@@ -17,10 +17,6 @@
         height: 100vh;
         overflow: hidden;
         background-color: #0d0d0d;
-        background-image: url('images/BAFF_2026_locandina.jpeg');
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
     }
     .hero-biennale__overlay {
         position: absolute;
@@ -251,7 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <!-- Hero Section (Biennale-inspired) -->
-    <section class="hero-biennale" role="img" aria-label="Locandina BAFF XXIV Edizione 2026" style="background-color:#0d0d0d; background-image:url('images/BAFF_2026_locandina.jpeg'); background-size:cover; background-position:center top; background-repeat:no-repeat;">
+    <section class="hero-biennale" role="img" aria-label="Locandina BAFF XXIV Edizione 2026" style="background-color:#0d0d0d;">
+        <img src="images/BAFF_2026_locandina.jpeg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:0;">
         <div class="hero-biennale__overlay"></div>
         <div class="hero-biennale__content">
             <p class="hero-biennale__eyebrow">BUSTO ARSIZIO &middot; 21-28 MARZO 2026</p>
@@ -687,6 +684,7 @@ document.addEventListener('DOMContentLoaded', function() {
         overflow: hidden;
         scroll-behavior: smooth;
         width: 100%;
+        transition: transform 0.4s ease;
     }
     .carousel-slide {
         flex: 0 0 calc(33.333% - 0.9rem);
@@ -757,7 +755,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </style>
 
     <script>
-    (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
         var track = document.getElementById('carouselTrack');
         var dotsWrap = document.getElementById('carouselDots');
         if (!track) return;
@@ -793,7 +792,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Auto-advance every 5s
         setInterval(function() { goTo(current < maxIndex ? current + 1 : 0); }, 5000);
-    })();
+    }, 100);
+    });
     </script>
 
     
@@ -870,21 +870,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="editions__track" id="editionsTrack">
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-1.jpg" alt="XXII Edizione 2024" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-1.jpg" alt="XXII Edizione 2024" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XXII Edizione — 2024</h3>
                         <p class="editions__slide-text">Ospiti: Nichetti, Tornatore, Frassica</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2024/06/slide2023-1.jpg" alt="XXI Edizione 2023" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2024/06/slide2023-1.jpg" alt="XXI Edizione 2023" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XXI Edizione — 2023</h3>
                         <p class="editions__slide-text">Ospite d'onore: Paolo Virzì</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2024/01/storia2022august.jpg" alt="XX Edizione 2022" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2024/01/storia2022august.jpg" alt="XX Edizione 2022" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XX Edizione — 2022</h3>
                         <p class="editions__slide-text">Ospite d'onore: Bille August</p>
@@ -905,35 +905,35 @@ document.addEventListener('DOMContentLoaded', function() {
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2021/09/fronte2019.jpg" alt="XVII Edizione 2019" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2021/09/fronte2019.jpg" alt="XVII Edizione 2019" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XVII Edizione — 2019</h3>
                         <p class="editions__slide-text">Ospite d'onore: Ferruccio Soleri</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2015/02/ligabuestoria.jpg" alt="XVI Edizione 2018" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2015/02/ligabuestoria.jpg" alt="XVI Edizione 2018" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XVI Edizione — 2018</h3>
                         <p class="editions__slide-text">Ospite d'onore: Luciano Ligabue</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2015/02/2017.jpg" alt="XV Edizione 2017" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2015/02/2017.jpg" alt="XV Edizione 2017" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XV Edizione — 2017</h3>
                         <p class="editions__slide-text">Ospite d'onore: Carlo Verdone</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2017/02/2016.jpg" alt="XIV Edizione 2016" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2017/02/2016.jpg" alt="XIV Edizione 2016" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XIV Edizione — 2016</h3>
                         <p class="editions__slide-text">Premio Dino Ceccuzzi a Laura Morante</p>
                     </a>
                     <a href="festival.html" class="editions__slide">
                         <div class="editions__slide-image">
-                            <img src="http://www.baff.it/wp-content/uploads/2015/02/2015.jpg" alt="XIII Edizione 2015" style="width:100%;height:100%;object-fit:cover">
+                            <img src="https://www.baff.it/wp-content/uploads/2015/02/2015.jpg" alt="XIII Edizione 2015" style="width:100%;height:100%;object-fit:cover">
                         </div>
                         <h3 class="editions__slide-title">XIII Edizione — 2015</h3>
                         <p class="editions__slide-text">Ospite d'onore: Pupi Avati</p>
