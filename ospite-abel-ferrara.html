@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Abel Ferrara — Ospite d'onore BAFF XXIV</title>
+    <meta name="description" content="Abel Ferrara, ospite d'onore della XXIV edizione del B.A. Film Festival. Biografia, filmografia e incontro al Teatro Sociale di Busto Arsizio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('img').forEach(function(img) {
+    img.addEventListener('error', function() {
+      var card = this.closest('.guest-card, .historic-guest-card, .ospite-card, .film-card, li, .gallery-item, .photo-item, .card, figure');
+      if (card) { card.style.display = 'none'; }
+      else { this.style.display = 'none'; }
+    });
+  });
+});
+</script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar__container">
+            <div class="top-bar__left">
+                <a href="https://www.istitutoantonioni.it" target="_blank" class="top-bar__link">Istituto Antonioni</a> |
+                <a href="accreditamenti.html" class="top-bar__link">PASS</a> |
+                <a href="stampa.html" class="top-bar__link">Stampa</a>
+                <a href="contatti.html" class="top-bar__link">Contatti</a>
+                <a href="istituzionale.html" class="top-bar__link">Istituzionale</a>
+            </div>
+            <div class="top-bar__right">
+                <a href="#" class="top-bar__lang active">IT</a>
+                <a href="en/ospiti.html" class="top-bar__lang">EN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">
+                <img src="images/logo-baff-header.png" alt="BA Film Festival" class="header__logo-img" loading="lazy">
+            </a>
+            <nav class="header__nav" id="mainNav">
+                <a href="festival.html" class="header__nav-link">Il Festival</a>
+                <a href="programma.html" class="header__nav-link">Programma</a>
+                <a href="selezione.html" class="header__nav-link">Selezione Ufficiale</a>
+                <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__nav-link">Tickets</a>
+                <a href="ospiti.html" class="header__nav-link header__nav-link--active">Ospiti</a>
+                <a href="giuria.html" class="header__nav-link">Giuria</a>
+                <a href="luoghi.html" class="header__nav-link">Luoghi</a>
+                <a href="sponsor.html" class="header__nav-link">Sponsor</a>
+            </nav>
+            <button class="search-trigger header__search-btn" aria-label="Cerca">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </button>
+            <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="header__cart" aria-label="Carrello">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </a>
+            <button class="header__burger" id="burgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="mobile-menu__content">
+            <div class="mobile-menu__header">
+                <img src="images/logo-baff-header.png" alt="BAFF" class="mobile-menu__logo">
+                <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Chiudi menu">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <nav class="mobile-menu__nav">
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Il Festival</span>
+                    <a href="festival.html" class="mobile-menu__link mobile-menu__link--sub">Il Festival</a>
+                    <a href="festival.html#storia" class="mobile-menu__link mobile-menu__link--sub">Storia</a>
+                    <a href="immagini.html" class="mobile-menu__link mobile-menu__link--sub">Immagini</a>
+                    <a href="festival.html#sedi" class="mobile-menu__link mobile-menu__link--sub">Luoghi</a>
+                    <a href="festival.html#trasparenza" class="mobile-menu__link mobile-menu__link--sub">Trasparenza</a>
+                </div>
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Programma</span>
+                    <a href="programma.html" class="mobile-menu__link mobile-menu__link--sub">Programma</a>
+                    <a href="programma.html#sezioni" class="mobile-menu__link mobile-menu__link--sub">Le sezioni</a>
+                    <a href="programma.html#eventi-speciali" class="mobile-menu__link mobile-menu__link--sub">Eventi Speciali</a>
+                    <a href="programma.html#masterclass" class="mobile-menu__link mobile-menu__link--sub">Masterclass</a>
+                    <a href="programma.html#fuori-orario" class="mobile-menu__link mobile-menu__link--sub">Fuori Orario</a>
+                    <a href="programma.html#prima-di-diventare-grandi" class="mobile-menu__link mobile-menu__link--sub">Prima di diventare grandi</a>
+                    <a href="programma.html#visioni-future-lab" class="mobile-menu__link mobile-menu__link--sub">Visioni Future Lab</a>
+                    <a href="programma.html#mostre" class="mobile-menu__link mobile-menu__link--sub">Mostre</a>
+                    <a href="programma.html#baff-in-libreria" class="mobile-menu__link mobile-menu__link--sub">BAFF in Libreria</a>
+                </div>
+                <div class="mobile-menu__group">
+                    <span class="mobile-menu__group-label">Selezione Ufficiale</span>
+                    <a href="selezione.html" class="mobile-menu__link mobile-menu__link--sub">Selezione Ufficiale</a>
+                    <a href="selezione.html#concorso-italiano" class="mobile-menu__link mobile-menu__link--sub">Concorso Italiano</a>
+                    <a href="selezione.html#concorso-internazionale" class="mobile-menu__link mobile-menu__link--sub">Concorso Internazionale</a>
+                    <a href="selezione.html#scuole" class="mobile-menu__link mobile-menu__link--sub">Made in Italy Scuole</a>
+                </div>
+                <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="mobile-menu__link">Tickets</a>
+                <a href="ospiti.html" class="mobile-menu__link">Ospiti</a>
+                <a href="giuria.html" class="mobile-menu__link">Giuria</a>
+                <a href="luoghi.html" class="mobile-menu__link">Luoghi</a>
+                <a href="sponsor.html" class="mobile-menu__link">Sponsor</a>
+            </nav>
+            <div class="mobile-menu__footer">
+                <a href="https://www.istitutoantonioni.it" target="_blank" rel="noopener" class="mobile-menu__footer-link">Istituto Antonioni</a>
+                <a href="accreditamenti.html" class="mobile-menu__footer-link">PASS</a>
+                <a href="stampa.html" class="mobile-menu__footer-link">Stampa</a>
+                <a href="contatti.html" class="mobile-menu__footer-link">Contatti</a>
+                <a href="istituzionale.html" class="mobile-menu__footer-link">Istituzionale</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="min-height: 40vh;">
+        <div class="page-hero__overlay"></div>
+        <div class="page-hero__content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html" class="breadcrumb__link">Home</a>
+                <span class="breadcrumb__separator">/</span>
+                <a href="ospiti.html" class="breadcrumb__link">Ospiti</a>
+                <span class="breadcrumb__separator">/</span>
+                <span class="breadcrumb__current">Abel Ferrara</span>
+            </nav>
+            <h1 class="page-hero__title">Abel Ferrara</h1>
+        </div>
+    </section>
+
+    <!-- Guest Bio -->
+    <section class="page-section">
+        <div class="page-section__container">
+            <div class="guest-main">
+                <div class="guest-main__image">
+                    <img src="images/abel-ferrara.jpg" alt="Abel Ferrara" style="width:100%;height:100%;object-fit:cover">
+                </div>
+                <div class="guest-main__body">
+                    <span class="guest-main__role">Regista &mdash; Ospite d'onore</span>
+                    <span class="guest-main__role">21 Marzo 2026 &middot; Teatro Sociale</span>
+                    <h3 class="guest-main__name">Abel Ferrara</h3>
+                    <p class="guest-main__bio">Abel Ferrara nasce nel Bronx, New York, il 19 luglio 1951, da padre di origini italiane (di Sarno, provincia di Salerno) e madre irlandese. Cresciuto cattolico, scopre il cinema grazie al nonno paterno e a quindici anni incontra Nicholas St. John, lo sceneggiatore con cui costruir&agrave; i film pi&ugrave; importanti della sua carriera.</p>
+                    <p class="guest-main__bio">Esordisce nel 1979 con <em>The Driller Killer</em>, cui segue <em>L'angelo della vendetta</em> (<em>Ms. 45</em>, 1981), icona del cinema di genere femminista. La notoriet&agrave; internazionale arriva con <em>King of New York</em> (1990), con Christopher Walken, e con la cosiddetta Trilogia del Peccato: <em>Il cattivo tenente</em> (1992, con Harvey Keitel), <em>The Addiction</em> (1995) e <em>The Funeral</em> (1996). Il suo cinema &mdash; crudo, visionario, attraversato da temi di redenzione, violenza e fede &mdash; lo consacra come uno dei maestri del cinema indipendente americano.</p>
+                    <p class="guest-main__bio">Dopo il settembre 2001 si trasferisce a Roma, dove continua a girare film radicati nella cultura italiana ed europea: <em>Mary</em> (2005, con Juliette Binoche, premio speciale a Venezia), <em>Pasolini</em> (2014, con Willem Dafoe), <em>Padre Pio</em> (2022, con Shia LaBeouf). Vive tuttora tra Roma e New York, esibendosi occasionalmente come musicista.</p>
+                    <p class="guest-main__bio">Ospite d'onore della XXIV edizione del B.A. Film Festival, Ferrara incontrer&agrave; il pubblico in una serata straordinaria al Teatro Sociale di Busto Arsizio.</p>
+                </div>
+            </div>
+            <p style="margin-top: 2rem;"><a href="ospiti.html" class="press-materials__btn">&larr; Torna alla pagina Ospiti</a></p>
+        </div>
+    </section>
+
+    <!-- Filmography -->
+    <section class="page-section page-section--grey">
+        <div class="page-section__container">
+            <h2 class="section-title">Filmografia essenziale</h2>
+            <ul>
+                <li><em>The Driller Killer</em> (1979)</li>
+                <li><em>L'angelo della vendetta / Ms. 45</em> (1981)</li>
+                <li><em>King of New York</em> (1990)</li>
+                <li><em>Il cattivo tenente / Bad Lieutenant</em> (1992)</li>
+                <li><em>The Addiction</em> (1995)</li>
+                <li><em>The Funeral</em> (1996)</li>
+                <li><em>Mary</em> (2005)</li>
+                <li><em>Pasolini</em> (2014)</li>
+                <li><em>Padre Pio</em> (2022)</li>
+                <li><em>Turn in the Wound</em> (2024)</li>
+            </ul>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="images/logo-baff.png" alt="BA Film Festival" class="footer__logo-img" loading="lazy">
+                    <p class="footer__tagline">Il cinema a Busto Arsizio</p>
+                </div>
+                <div class="footer__columns">
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Il Festival</h4>
+                        <a href="festival.html" class="footer__link">Chi siamo</a>
+                        <a href="festival.html#storia" class="footer__link">Storia</a>
+                        <a href="immagini.html" class="footer__link">Immagini</a>
+                        <a href="giuria.html" class="footer__link">Giuria</a>
+                        <a href="festival.html#trasparenza" class="footer__link">Trasparenza</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Programma</h4>
+                        <a href="programma.html" class="footer__link">Concorso Italiano</a>
+                        <a href="programma.html" class="footer__link">Concorso Internazionale</a>
+                        <a href="programma.html" class="footer__link">Eventi Speciali</a>
+                        <a href="programma.html" class="footer__link">Masterclass</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Informazioni</h4>
+                        <a href="https://oooh.events/evento/?search=Busto+arsizio&advanced_search_lat=45.4754304&advanced_search_lng=9.1979776" target="_blank" rel="noopener noreferrer" class="footer__link">Biglietteria</a>
+                        <a href="accreditamenti.html" class="footer__link">Pass &amp; Accreditamenti</a>
+                        <a href="festival.html#sedi" class="footer__link">Luoghi</a>
+                        <a href="contatti.html" class="footer__link">Contatti</a>
+                        <a href="comunicati.html" class="footer__link">Comunicati stampa</a>
+                    </div>
+                    <div class="footer__col">
+                        <h4 class="footer__col-title">Seguici</h4>
+                        <a href="https://www.facebook.com/BAFilmFestival" target="_blank" rel="noopener" class="footer__link">Facebook</a>
+                        <a href="https://www.instagram.com/bafilmfestival/" target="_blank" rel="noopener" class="footer__link">Instagram</a>
+                        <a href="https://www.youtube.com/@bafilmfestival" target="_blank" rel="noopener" class="footer__link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 B.A. Film Festival &mdash; Busto Arsizio. Tutti i diritti riservati.</p>
+                <div class="footer__legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                    <a href="note-legali.html">Note legali</a>
+                    <a href="/admin/index.html">Admin Panel</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Torna su">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner__container">
+            <p class="cookie-banner__text">Questo sito utilizza cookie tecnici e, previo tuo consenso, cookie di profilazione per migliorare la tua esperienza di navigazione. Per saperne di pi&ugrave; consulta la nostra <a href="privacy.html">Privacy Policy</a> e la <a href="cookie.html">Cookie Policy</a>.</p>
+            <div class="cookie-banner__actions">
+                <button class="cookie-banner__btn cookie-banner__btn--accept" id="cookieAccept">Accetta</button>
+                <button class="cookie-banner__btn cookie-banner__btn--reject" id="cookieReject">Rifiuta</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/supabase-public.js"></script>
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Cerca">
+      <div id="searchOverlayBackdrop" class="search-overlay__backdrop"></div>
+      <div class="search-overlay__panel">
+        <div class="search-overlay__header">
+          <div class="search-overlay__input-wrap">
+            <svg class="search-overlay__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="search" id="searchInput" class="search-overlay__input" placeholder="Cerca nel sito..." autocomplete="off" spellcheck="false">
+          </div>
+          <button class="search-close" aria-label="Chiudi ricerca">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="search-overlay__body" id="searchResults">
+          <p class="search-overlay__hint">Digita per cercare nel sito...</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/search.js"></script>
+</body>
+</html>
