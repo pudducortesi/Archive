@@ -2672,7 +2672,7 @@ button.hero__scroll-arrow {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d0a0a 50%, #1a1a1a 100%);
+    background-color: #1B2A4A;
     margin-top: calc(var(--top-bar-height) + var(--header-height));
     overflow: hidden;
 }
@@ -2680,35 +2680,72 @@ button.hero__scroll-arrow {
 .page-hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    inset: 0;
+    background-image: radial-gradient(circle, #E8B800 3px, transparent 3px);
+    background-size: 20px 20px;
+    opacity: 0.2;
     pointer-events: none;
+    z-index: 1;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 65% 55% at 15% 50%, rgba(204, 0, 0, 0.35) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 45% at 50% 110%, rgba(0, 0, 0, 0.55) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.page-hero .page-hero__topbar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #CC0000 60%, #E8B800 60%);
+    z-index: 4;
+}
+
+.page-hero .page-hero__bottombar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 5px;
+    background: #E8B800;
+    z-index: 4;
+}
+
+.page-hero .page-hero__leftbar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: #CC0000;
+    z-index: 4;
 }
 
 .page-hero__content {
     position: relative;
-    z-index: 2;
-    padding: 0 2rem;
+    z-index: 5;
+    padding: 0 2.5rem;
 }
 
 .page-hero__title {
-    font-family: var(--font-display);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
+    font-family: 'Bangers', var(--font-display), sans-serif;
+    font-size: clamp(4.5rem, 10vw, 8rem);
+    font-weight: 400;
+    line-height: 0.9;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.06em;
     color: #ffffff;
+    text-shadow: 4px 4px 0 rgba(0,0,0,0.45), 2px 2px 0 rgba(0,0,0,0.2);
 }
 
 .page-hero__subtitle {
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-    color: rgba(255, 255, 255, 0.75);
-    font-weight: 400;
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 700;
     text-transform: uppercase;
 }
 
