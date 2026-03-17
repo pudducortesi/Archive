@@ -695,10 +695,13 @@ document.addEventListener('DOMContentLoaded', function() {
         -webkit-overflow-scrolling: touch;
         scroll-behavior: smooth;
         scrollbar-width: none;
+        width: 100%;
     }
     .carousel-track::-webkit-scrollbar { display: none; }
     .carousel-slide {
-        flex: 0 0 calc(85% - 0.5rem);
+        flex: none;
+        width: 80%;
+        min-width: 80%;
         scroll-snap-align: center;
         border-radius: 3px;
         overflow: hidden;
