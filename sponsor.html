@@ -140,182 +140,92 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
 
-    <!-- Sticky Sub-navigation -->
-    <nav class="festival-subnav" id="sponsorSubnav">
-        <div class="festival-subnav__container">
-            <a href="#official-partner" class="festival-subnav__link">Main Sponsor</a>
-            <a href="#sponsor" class="festival-subnav__link">Sponsor</a>
-            <a href="#technical-partner" class="festival-subnav__link">Technical Partner</a>
-            <a href="#institutional-partner" class="festival-subnav__link">Institutional Partner</a>
-            <a href="#strategic-partner" class="festival-subnav__link">Strategic Partner</a>
-            <a href="#media-partner" class="festival-subnav__link">Media Partner</a>
-            <a href="#partner-culturali" class="festival-subnav__link">Partner Culturali</a>
-            <a href="#patrocinio" class="festival-subnav__link">Patrocinio</a>
-        </div>
-    </nav>
-
     <!-- Intro -->
-    <section class="section-intro">
-        <div class="section-intro__container">
-            <div class="section-intro__body">
-                <p class="section-intro__lead">Il B.A. Film Festival &egrave; reso possibile grazie al sostegno di aziende, enti e istituzioni che condividono la nostra passione per il cinema e la cultura.</p>
-                <p class="section-intro__text">Ogni anno i nostri Sponsor contribuiscono a portare il grande cinema a Busto Arsizio, sostenendo le proiezioni, gli eventi, le masterclass e le attivit&agrave; formative del festival. Grazie a loro, possiamo continuare a offrire un programma di altissimo livello accessibile a tutti.</p>
+    <section class="page-section" style="padding:2.5rem 0 1rem;">
+        <div class="page-section__container" style="max-width:1100px;margin:0 auto;padding:0 1.5rem;">
+            <p style="font-size:1rem;color:#666;max-width:600px;line-height:1.8;">Il BAFF è reso possibile grazie al sostegno di aziende, enti e istituzioni che condividono la nostra passione per il cinema e la cultura.</p>
+        </div>
+    </section>
+
+    <!-- Main Sponsor -->
+    <section style="padding:2rem 0 2.5rem;">
+        <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;text-align:center;">
+            <div style="border-top:3px solid #c0392b;display:inline-block;padding-top:1rem;margin-bottom:1.5rem;">
+                <span style="font-family:'Montserrat',sans-serif;font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:#c0392b;">Main Sponsor</span>
+            </div>
+            <div style="display:flex;justify-content:center;align-items:center;">
+                <img src="images/chimitex_spa.png" alt="Chimitex" loading="lazy" style="max-height:100px;max-width:280px;object-fit:contain;">
             </div>
         </div>
     </section>
 
-    <!-- Official Partner -->
-    <section class="sponsor-section sponsor-section--platinum" id="official-partner">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--platinum">Main Sponsor</span>
-                <h2 class="sponsor-section__title">Main Sponsor</h2>
-                <p class="sponsor-section__subtitle">Il partner ufficiale del festival, al fianco del BAFF nella realizzazione dell&rsquo;edizione 2026.</p>
-            </div>
-            <div class="sponsor-grid sponsor-grid--platinum">
-                <a href="#" class="sponsor-logo sponsor-logo--platinum">
-                    <img src="images/chimitex_spa.png" alt="Chimitex" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- All Sponsors Grid -->
+    <section style="padding:1rem 0 3rem;background:#fff;">
+        <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;">
+            <style>
+                .sp-grid { display:flex; flex-wrap:wrap; align-items:center; gap:2rem; padding:1.5rem 0; }
+                .sp-grid img { max-height:60px; max-width:180px; object-fit:contain; filter:grayscale(100%); opacity:0.7; transition:all 0.3s ease; }
+                .sp-grid img:hover { filter:grayscale(0%); opacity:1; }
+                .sp-cat { font-family:'Montserrat',sans-serif; font-size:0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.15em; color:#c0392b; padding-top:1.5rem; }
+                .sp-divider { border:none; border-top:1px solid #e8e8e8; margin:0; }
+            </style>
 
-    <!-- Sponsor -->
-    <section class="sponsor-section sponsor-section--gold" id="sponsor">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--gold">Sponsor</span>
-                <h2 class="sponsor-section__title">Sponsor</h2>
-                <p class="sponsor-section__subtitle">Le aziende che sostengono le principali iniziative del festival.</p>
+            <!-- Sponsor -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Sponsor</p>
+            <div class="sp-grid">
+                <img src="images/locman_italy.png" alt="Locman Italy" loading="lazy">
+                <img src="images/gruppo_autotorino_spa.png" alt="Gruppo Autotorino" loading="lazy">
+                <img src="images/revinord.png" alt="Revinord" loading="lazy">
+                <img src="images/lta_studio_tax_law_firm.png" alt="LTA Studio Tax &amp; Law Firm" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--gold">
-                <a href="#" class="sponsor-logo sponsor-logo--gold">
-                    <img src="images/locman_italy.png" alt="Locman Italy" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--gold">
-                    <img src="images/gruppo_autotorino_spa.png" alt="Gruppo Autotorino" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--gold">
-                    <img src="images/chimitex_spa.png" alt="Chimitex" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--gold">
-                    <img src="https://www.baff.it/wp-content/uploads/2024/10/BAFF-2024-22.jpg" alt="Dino Ceccuzzi" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--gold">
-                    <img src="images/revinord.png" alt="Revinord" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--gold">
-                    <img src="images/lta_studio_tax_law_firm.png" alt="LTA Studio Tax &amp; Law Firm" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Technical Partner -->
-    <section class="sponsor-section" id="technical-partner">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--silver">Technical</span>
-                <h2 class="sponsor-section__title">Technical Partner</h2>
-                <p class="sponsor-section__subtitle">I partner tecnici che supportano la logistica e la produzione del festival.</p>
+            <!-- Technical Partner -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Technical Partner</p>
+            <div class="sp-grid">
+                <img src="images/tower_hotel.png" alt="Tower Hotel" loading="lazy">
+                <img src="images/Progetto-senza-titolo-2022-03-08T182705.688.png" alt="Armonia Film" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--silver">
-                <a href="#" class="sponsor-logo sponsor-logo--silver">
-                    <img src="images/tower_hotel.png" alt="Tower Hotel" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--silver">
-                    <img src="images/Progetto-senza-titolo-2022-03-08T182705.688.png" alt="Armonia Film" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Institutional Partner -->
-    <section class="sponsor-section sponsor-section--alt" id="institutional-partner">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--institutional">Institutional</span>
-                <h2 class="sponsor-section__title">Institutional Partner</h2>
-                <p class="sponsor-section__subtitle">Enti e istituzioni che sostengono la cultura cinematografica sul territorio.</p>
+            <!-- Institutional Partner -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Institutional Partner</p>
+            <div class="sp-grid">
+                <img src="images/RIC25_ALIS___logo_68d5597ac33f7.png" alt="ALIS Italia in Movimento" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--institutional">
-                <a href="#" class="sponsor-logo sponsor-logo--institutional">
-                    <img src="images/RIC25_ALIS___logo_68d5597ac33f7.png" alt="ALIS Italia in Movimento" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Strategic Partner -->
-    <section class="sponsor-section" id="strategic-partner">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--strategic">Strategic</span>
-                <h2 class="sponsor-section__title">Strategic Partner</h2>
-                <p class="sponsor-section__subtitle">Partner strategici che affiancano il festival nella comunicazione e nell&rsquo;organizzazione.</p>
+            <!-- Strategic Partner -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Strategic Partner</p>
+            <div class="sp-grid">
+                <img src="images/IMG_5864.jpg" alt="Montesino" loading="lazy">
+                <img src="images/studio_tosi_e_associati.png" alt="Studio Tosi e Associati" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--strategic">
-                <a href="#" class="sponsor-logo sponsor-logo--strategic">
-                    <img src="images/IMG_5864.jpg" alt="Montesino" loading="lazy" style="max-height:90px;">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--strategic">
-                    <img src="images/studio_tosi_e_associati.png" alt="Studio Tosi e Associati" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Media Partner -->
-    <section class="sponsor-section sponsor-section--alt" id="media-partner">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--gold">Media</span>
-                <h2 class="sponsor-section__title">Media Partner</h2>
-                <p class="sponsor-section__subtitle">I media che raccontano e promuovono il festival.</p>
+            <!-- Media Partner -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Media Partner</p>
+            <div class="sp-grid">
+                <img src="images/prealpina-new.jpg" alt="La Prealpina" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--silver">
-                <a href="#" class="sponsor-logo sponsor-logo--silver">
-                    <img src="images/prealpina-new.jpg" alt="La Prealpina" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Partner Culturali -->
-    <section class="sponsor-section" id="partner-culturali">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--silver">Culturali</span>
-                <h2 class="sponsor-section__title">Partner Culturali</h2>
-                <p class="sponsor-section__subtitle">Le realt&agrave; culturali che collaborano con il BAFF per la promozione del cinema.</p>
+            <!-- Partner Culturali -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Partner Culturali</p>
+            <div class="sp-grid">
+                <img src="images/milano_film_network.png" alt="Milano Film Network" loading="lazy">
+                <img src="images/premio_chiara_festival_racconto.png" alt="Premio Chiara" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--silver">
-                <a href="#" class="sponsor-logo sponsor-logo--silver">
-                    <img src="images/milano_film_network.png" alt="Milano Film Network" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--silver">
-                    <img src="images/premio_chiara_festival_racconto.png" alt="Premio Chiara" loading="lazy">
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Con il Patrocinio di -->
-    <section class="sponsor-section sponsor-section--alt" id="patrocinio">
-        <div class="sponsor-section__container">
-            <div class="sponsor-section__header">
-                <span class="sponsor-section__tier-badge sponsor-section__tier-badge--institutional">Patrocinio</span>
-                <h2 class="sponsor-section__title">Con il Patrocinio di</h2>
-                <p class="sponsor-section__subtitle">Gli enti che concedono il patrocinio al B.A. Film Festival.</p>
+            <!-- Con il Patrocinio di -->
+            <hr class="sp-divider">
+            <p class="sp-cat">Con il Patrocinio di</p>
+            <div class="sp-grid">
+                <img src="images/a63a0f03-ec7c-4542-814f-40d296e8d331.png" alt="Citt&agrave; di Busto Arsizio" loading="lazy">
+                <img src="images/LCI_emblem_2color_web-1-1024x1024.png" alt="Lions International" loading="lazy">
             </div>
-            <div class="sponsor-grid sponsor-grid--institutional">
-                <a href="#" class="sponsor-logo sponsor-logo--institutional">
-                    <img src="images/a63a0f03-ec7c-4542-814f-40d296e8d331.png" alt="Citt&agrave; di Busto Arsizio" loading="lazy">
-                </a>
-                <a href="#" class="sponsor-logo sponsor-logo--institutional">
-                    <img src="images/LCI_emblem_2color_web-1-1024x1024.png" alt="Lions International" loading="lazy">
-                </a>
-            </div>
+
         </div>
     </section>
 
