@@ -210,15 +210,272 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Come raggiungerci -->
-    <section class="page-section">
+    <section class="page-section" id="come-raggiungerci" style="padding:4rem 0;">
         <div class="page-section__container">
-            <h2 class="page-section__title">Come raggiungerci</h2>
-            <div class="page-section__content">
-                <p>Busto Arsizio &egrave; facilmente raggiungibile da Milano in treno (linea S5/S6, 40 minuti) e in auto (A8, uscita Busto Arsizio).</p>
+
+        <style>
+        .tr-eyebrow{font-family:var(--font-display);font-size:0.58rem;font-weight:700;text-transform:uppercase;letter-spacing:0.22em;color:var(--color-accent);margin-bottom:0.35rem}
+        .tr-title{font-family:var(--font-display);font-size:1.9rem;font-weight:900;letter-spacing:-0.02em;margin-bottom:0.25rem;line-height:1;color:var(--color-text)}
+        .tr-sub{font-size:0.85rem;color:var(--color-text-muted);margin-bottom:2rem;line-height:1.5}
+        .tr-stepper{display:flex;border:1px solid var(--color-border);border-radius:6px;overflow:hidden;margin-bottom:1.75rem}
+        .tr-step{flex:1;padding:0.9rem 1.1rem;background:#fff;border-right:1px solid var(--color-border);cursor:pointer;transition:background .15s;position:relative}
+        .tr-step:last-child{border-right:none}
+        .tr-step.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--color-accent)}
+        .tr-step__n{font-family:var(--font-display);font-size:0.5rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#ddd;margin-bottom:.15rem}
+        .tr-step.active .tr-step__n{color:var(--color-accent)}
+        .tr-step.done .tr-step__n{color:#bbb}
+        .tr-step__label{font-family:var(--font-display);font-size:0.75rem;font-weight:800;color:#ddd}
+        .tr-step.active .tr-step__label,.tr-step.done .tr-step__label{color:var(--color-text)}
+        .tr-step__val{font-size:0.68rem;color:#ddd;margin-top:.1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .tr-step.active .tr-step__val{color:var(--color-text-secondary)}
+        .tr-step.done .tr-step__val{color:var(--color-accent);font-weight:600}
+        .tr-panel{display:none}.tr-panel.show{display:block}
+        .tr-grp{font-family:var(--font-display);font-size:.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#ccc;padding:.65rem 0 .4rem;border-bottom:1px solid #f0f0f0;margin-bottom:.4rem}
+        .tr-cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:.35rem;margin-bottom:.4rem}
+        .tr-cbtn{background:#fff;border:1px solid var(--color-border);border-radius:4px;padding:.65rem .85rem;cursor:pointer;text-align:left;transition:all .12s}
+        .tr-cbtn:hover{border-color:var(--color-accent);background:#fff8f8}
+        .tr-cbtn.sel{border-color:var(--color-accent);background:var(--color-accent)}
+        .tr-cbtn__n{font-family:var(--font-display);font-size:.73rem;font-weight:800;color:var(--color-text);display:block}
+        .tr-cbtn:hover .tr-cbtn__n{color:var(--color-accent)}
+        .tr-cbtn.sel .tr-cbtn__n{color:#fff}
+        .tr-cbtn__t{font-size:.62rem;color:var(--color-text-muted)}
+        .tr-cbtn.sel .tr-cbtn__t{color:rgba(255,255,255,.65)}
+        .tr-sgrid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:1.25rem}
+        .tr-scard{border:1.5px solid var(--color-border);border-radius:6px;padding:1.25rem;cursor:pointer;transition:all .12s;position:relative;overflow:hidden}
+        .tr-scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--trac);opacity:0;transition:opacity .15s}
+        .tr-scard.sel{border-color:var(--trac);background:#fafafa}
+        .tr-scard.sel::before{opacity:1}
+        .tr-scard__tag{font-family:var(--font-display);font-size:.53rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--trac);display:block;margin-bottom:.35rem}
+        .tr-scard__name{font-family:var(--font-display);font-size:.95rem;font-weight:900;margin-bottom:.3rem;color:var(--color-text)}
+        .tr-scard__desc{font-size:.76rem;color:var(--color-text-muted);line-height:1.55;margin-bottom:.75rem}
+        .tr-bdgs{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.75rem}
+        .tr-bdg{font-family:var(--font-display);font-size:.57rem;font-weight:700;padding:.18rem .42rem;border-radius:2px;color:#fff}
+        .tr-sta-note{font-size:.7rem;color:var(--trac);font-weight:600;background:var(--tracbg);border-left:2px solid var(--trac);padding:.4rem .65rem;border-radius:0 3px 3px 0;margin-bottom:.6rem;display:none}
+        .tr-scard.sel .tr-sta-note{display:block}
+        .tr-sta-steps{display:none;flex-direction:column;gap:0}
+        .tr-scard.sel .tr-sta-steps{display:flex}
+        .tr-ss{display:flex;gap:.65rem;padding-bottom:.55rem;position:relative}
+        .tr-ss:not(:last-child)::after{content:'';position:absolute;left:9px;top:20px;bottom:0;width:1px;background:#eee}
+        .tr-ss__d{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.58rem;flex-shrink:0;background:#fff;border:1.5px solid #e0e0e0;color:#bbb;margin-top:1px}
+        .tr-ss__d.r{background:var(--color-accent);border-color:var(--color-accent);color:#fff}
+        .tr-ss__d.g{background:#1a1a1a;border-color:#1a1a1a;color:#fff}
+        .tr-ss__t{font-size:.76rem;font-weight:600;color:var(--color-text);padding-top:1px;line-height:1.3}
+        .tr-ss__sub{font-size:.65rem;color:var(--color-text-muted);margin-top:.05rem}
+        .tr-ss__b{display:inline-block;margin-top:.18rem;font-family:var(--font-display);font-size:.55rem;font-weight:700;padding:.12rem .38rem;border-radius:2px;color:#fff}
+        .tr-sum{border:1px solid var(--color-border);border-radius:6px;padding:1rem 1.35rem;margin-bottom:1.1rem;display:flex;gap:0}
+        .tr-sb{flex:1;padding:0 1rem;border-right:1px solid #f0f0f0}
+        .tr-sb:first-child{padding-left:0}
+        .tr-sb:last-child{border-right:none}
+        .tr-sb__l{font-family:var(--font-display);font-size:.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.15em;color:#ccc;margin-bottom:.2rem}
+        .tr-sb__v{font-family:var(--font-display);font-size:.8rem;font-weight:800;color:var(--color-text)}
+        .tr-sb__s{font-size:.62rem;color:var(--color-text-muted);margin-top:.05rem}
+        .tr-rg{display:grid;grid-template-columns:1fr 265px;gap:1.1rem}
+        @media(max-width:768px){.tr-rg{grid-template-columns:1fr}.tr-sgrid{grid-template-columns:1fr}.tr-sum{flex-wrap:wrap}.tr-sb{flex:1 0 45%;padding:.5rem;border-right:none;border-bottom:1px solid #f0f0f0}}
+        .tr-map-box{border-radius:6px;overflow:hidden;border:1px solid var(--color-border)}
+        .tr-map-box svg{display:block;width:100%;height:auto}
+        .tr-vp__title{font-family:var(--font-display);font-size:.52rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:#bbb;margin-bottom:.6rem}
+        .tr-vi{border:1px solid var(--color-border);border-radius:5px;padding:.75rem .9rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:.35rem;cursor:pointer;transition:all .12s}
+        .tr-vi:hover{border-color:var(--color-accent);background:#fff8f8}
+        .tr-vi.hl{border-color:var(--color-accent);background:var(--color-accent)}
+        .tr-vi__name{font-family:var(--font-display);font-size:.7rem;font-weight:700;color:var(--color-text)}
+        .tr-vi.hl .tr-vi__name{color:#fff}
+        .tr-vi__addr{font-size:.6rem;color:var(--color-text-muted);margin-top:.06rem}
+        .tr-vi.hl .tr-vi__addr{color:rgba(255,255,255,.55)}
+        .tr-vi__t{font-family:var(--font-display);font-size:.85rem;font-weight:900;color:var(--color-accent);flex-shrink:0;margin-left:.6rem}
+        .tr-vi.hl .tr-vi__t{color:#fff}
+        .tr-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.1rem}
+        .tr-bp{background:var(--color-accent);color:#fff;border:none;font-family:var(--font-display);font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.65rem 1.4rem;border-radius:4px;cursor:pointer}
+        .tr-bp:hover{background:#aa0000}
+        .tr-bp:disabled{background:#f0f0f0;color:#ccc;cursor:not-allowed}
+        .tr-bs{background:#fff;border:1px solid var(--color-border);color:var(--color-text-muted);font-family:var(--font-display);font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.65rem 1rem;border-radius:4px;cursor:pointer}
+        .tr-bs:hover{border-color:#bbb;color:var(--color-text)}
+        </style>
+
+        <p class="tr-eyebrow">Logistica</p>
+        <h2 class="tr-title">Come raggiungerci</h2>
+        <p class="tr-sub">Busto Arsizio ha due stazioni. Scegli da dove parti e ti mostriamo il percorso a piedi fino alla venue.</p>
+
+        <div class="tr-stepper">
+          <div class="tr-step active" id="trs1"><div class="tr-step__n">01</div><div class="tr-step__label">Partenza</div><div class="tr-step__val" id="trsv1">Scegli città</div></div>
+          <div class="tr-step" id="trs2"><div class="tr-step__n">02</div><div class="tr-step__label">Stazione</div><div class="tr-step__val" id="trsv2">FS o Nord</div></div>
+          <div class="tr-step" id="trs3"><div class="tr-step__n">03</div><div class="tr-step__label">Destinazione</div><div class="tr-step__val" id="trsv3">Scegli venue</div></div>
+        </div>
+
+        <!-- P1 -->
+        <div class="tr-panel show" id="trp1">
+          <p class="tr-grp">Milano</p>
+          <div class="tr-cgrid">
+            <button class="tr-cbtn" data-k="cadorna" onclick="trPickCity(this,'Milano Cadorna','38 min')"><span class="tr-cbtn__n">Milano Cadorna</span><span class="tr-cbtn__t">S5 · 38 min</span></button>
+            <button class="tr-cbtn" data-k="centrale" onclick="trPickCity(this,'Milano Centrale','45 min')"><span class="tr-cbtn__n">Milano Centrale</span><span class="tr-cbtn__t">R · 45 min</span></button>
+            <button class="tr-cbtn" data-k="garibaldi" onclick="trPickCity(this,'Porta Garibaldi','42 min')"><span class="tr-cbtn__n">Porta Garibaldi</span><span class="tr-cbtn__t">S5/S6 · 42 min</span></button>
+            <button class="tr-cbtn" data-k="certosa" onclick="trPickCity(this,'Certosa','28 min')"><span class="tr-cbtn__n">Milano Certosa</span><span class="tr-cbtn__t">S5/S6 · 28 min</span></button>
+          </div>
+          <p class="tr-grp">Hinterland</p>
+          <div class="tr-cgrid">
+            <button class="tr-cbtn" data-k="rho" onclick="trPickCity(this,'Rho','18 min')"><span class="tr-cbtn__n">Rho</span><span class="tr-cbtn__t">S5/S6 · 18 min</span></button>
+            <button class="tr-cbtn" data-k="legnano" onclick="trPickCity(this,'Legnano','5 min')"><span class="tr-cbtn__n">Legnano</span><span class="tr-cbtn__t">S5 · 5 min</span></button>
+            <button class="tr-cbtn" data-k="saronno" onclick="trPickCity(this,'Saronno','18–22 min')"><span class="tr-cbtn__n">Saronno</span><span class="tr-cbtn__t">S6/FNM · 18–22 min</span></button>
+            <button class="tr-cbtn" data-k="gallarate" onclick="trPickCity(this,'Gallarate','8 min')"><span class="tr-cbtn__n">Gallarate</span><span class="tr-cbtn__t">R/FNM · 8–12 min</span></button>
+            <button class="tr-cbtn" data-k="castellanza" onclick="trPickCity(this,'Castellanza','4 min')"><span class="tr-cbtn__n">Castellanza</span><span class="tr-cbtn__t">S5/S6 · 4 min</span></button>
+          </div>
+          <p class="tr-grp">Altre città</p>
+          <div class="tr-cgrid">
+            <button class="tr-cbtn" data-k="varese" onclick="trPickCity(this,'Varese','22 min')"><span class="tr-cbtn__n">Varese</span><span class="tr-cbtn__t">S5/FNM · 22 min</span></button>
+            <button class="tr-cbtn" data-k="novara" onclick="trPickCity(this,'Novara','40 min')"><span class="tr-cbtn__n">Novara</span><span class="tr-cbtn__t">S6/FNM · 40 min</span></button>
+            <button class="tr-cbtn" data-k="bergamo" onclick="trPickCity(this,'Bergamo','~85 min')"><span class="tr-cbtn__n">Bergamo</span><span class="tr-cbtn__t">cambio · ~85 min</span></button>
+            <button class="tr-cbtn" data-k="torino" onclick="trPickCity(this,'Torino','~110 min')"><span class="tr-cbtn__n">Torino</span><span class="tr-cbtn__t">AV+cambio · ~110 min</span></button>
+          </div>
+          <div class="tr-nav"><span></span><button class="tr-bp" id="trb1" disabled onclick="trGo(2)">Scegli stazione →</button></div>
+        </div>
+
+        <!-- P2 -->
+        <div class="tr-panel" id="trp2">
+          <div class="tr-sgrid">
+            <div class="tr-scard" id="trcfs" style="--trac:#CC0000;--tracbg:#fff8f8" onclick="trPickSta('fs',this)">
+              <span class="tr-scard__tag">Stazione FS · Trenitalia / Trenord</span>
+              <div class="tr-scard__name">Busto Arsizio</div>
+              <p class="tr-scard__desc">Linee S5 e S6, più regionali. La più centrale — vicina a Teatro Sociale e Cinema Manzoni.</p>
+              <div class="tr-bdgs"><span class="tr-bdg" style="background:#0066cc">S5</span><span class="tr-bdg" style="background:#0066cc">S6</span><span class="tr-bdg" style="background:#cc6600">R</span></div>
+              <div class="tr-sta-note" id="trnfs"></div>
+              <div class="tr-sta-steps" id="trrfs"></div>
             </div>
-            <div style="margin-top: 1.5rem;">
-                <a href="https://maps.google.com/?q=Busto+Arsizio+VA" target="_blank" rel="noopener" class="press-materials__btn">Apri Google Maps</a>
+            <div class="tr-scard" id="trcnord" style="--trac:#0066cc;--tracbg:#f0f6ff" onclick="trPickSta('nord',this)">
+              <span class="tr-scard__tag">Busto Arsizio Nord · FerrovieNord</span>
+              <div class="tr-scard__name">Busto Arsizio Nord</div>
+              <p class="tr-scard__desc">FerrovieNord Saronno–Novara–Varese. Ottima da Saronno, Gallarate, Varese. Più vicina al Cinema San Giovanni Bosco.</p>
+              <div class="tr-bdgs"><span class="tr-bdg" style="background:#444">FNM</span><span class="tr-bdg" style="background:#444">SARONNO</span><span class="tr-bdg" style="background:#444">NOVARA</span></div>
+              <div class="tr-sta-note" id="trnnord"></div>
+              <div class="tr-sta-steps" id="trrnord"></div>
             </div>
+          </div>
+          <div class="tr-nav"><button class="tr-bs" onclick="trGo(1)">← Cambia partenza</button><button class="tr-bp" id="trb2" disabled onclick="trGo(3)">Scegli venue →</button></div>
+        </div>
+
+        <!-- P3 -->
+        <div class="tr-panel" id="trp3">
+          <div class="tr-sum">
+            <div class="tr-sb"><div class="tr-sb__l">Da</div><div class="tr-sb__v" id="trss1">—</div></div>
+            <div class="tr-sb"><div class="tr-sb__l">Stazione</div><div class="tr-sb__v" id="trss2">—</div><div class="tr-sb__s" id="trss2b">—</div></div>
+            <div class="tr-sb"><div class="tr-sb__l">Treno</div><div class="tr-sb__v" id="trss3">—</div></div>
+            <div class="tr-sb"><div class="tr-sb__l">A piedi</div><div class="tr-sb__v" id="trss4" style="color:#CC0000">—</div></div>
+          </div>
+          <div class="tr-rg">
+            <div class="tr-map-box">
+              <svg id="trsvgmap" viewBox="0 0 560 480" xmlns="http://www.w3.org/2000/svg">
+                <rect width="560" height="480" fill="#F4F0E8"/>
+                <rect x="30" y="30" width="80" height="60" rx="4" fill="#D5EAC8" opacity=".7"/>
+                <rect x="460" y="350" width="70" height="80" rx="4" fill="#D5EAC8" opacity=".7"/>
+                <rect x="80" y="360" width="60" height="50" rx="4" fill="#D5EAC8" opacity=".7"/>
+                <rect x="380" y="40" width="55" height="40" rx="4" fill="#D5EAC8" opacity=".6"/>
+                <rect x="155" y="150" width="55" height="35" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="230" y="145" width="45" height="30" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="300" y="155" width="50" height="28" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="160" y="240" width="50" height="40" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="230" y="255" width="45" height="35" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="300" y="260" width="55" height="35" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="370" y="235" width="50" height="40" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="380" y="310" width="45" height="38" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="130" y="300" width="40" height="42" rx="2" fill="#EAE6DC" opacity=".8"/>
+                <rect x="310" y="80" width="40" height="30" rx="2" fill="#EAE6DC" opacity=".7"/>
+                <rect x="400" y="130" width="50" height="35" rx="2" fill="#EAE6DC" opacity=".7"/>
+                <rect x="60" y="200" width="50" height="40" rx="2" fill="#EAE6DC" opacity=".7"/>
+                <line x1="0" y1="230" x2="560" y2="230" stroke="#fff" stroke-width="9"/>
+                <line x1="280" y1="0" x2="280" y2="480" stroke="#fff" stroke-width="9"/>
+                <line x1="150" y1="180" x2="450" y2="350" stroke="#fff" stroke-width="7"/>
+                <line x1="310" y1="160" x2="480" y2="80" stroke="#fff" stroke-width="6"/>
+                <line x1="200" y1="320" x2="430" y2="380" stroke="#fff" stroke-width="6"/>
+                <line x1="0" y1="175" x2="560" y2="175" stroke="#fff" stroke-width="5"/>
+                <line x1="0" y1="290" x2="560" y2="290" stroke="#fff" stroke-width="5"/>
+                <line x1="140" y1="0" x2="140" y2="480" stroke="#fff" stroke-width="5"/>
+                <line x1="420" y1="0" x2="420" y2="480" stroke="#fff" stroke-width="5"/>
+                <line x1="80" y1="0" x2="80" y2="480" stroke="#fff" stroke-width="4"/>
+                <line x1="0" y1="120" x2="560" y2="120" stroke="#fff" stroke-width="4"/>
+                <line x1="0" y1="380" x2="560" y2="380" stroke="#fff" stroke-width="4"/>
+                <line x1="200" y1="0" x2="200" y2="480" stroke="#FAFAF6" stroke-width="3.5"/>
+                <line x1="360" y1="0" x2="360" y2="480" stroke="#FAFAF6" stroke-width="3.5"/>
+                <line x1="0" y1="330" x2="560" y2="330" stroke="#FAFAF6" stroke-width="3"/>
+                <line x1="0" y1="60" x2="560" y2="60" stroke="#FAFAF6" stroke-width="3"/>
+                <line x1="490" y1="0" x2="490" y2="480" stroke="#FAFAF6" stroke-width="3"/>
+                <line x1="50" y1="140" x2="240" y2="200" stroke="#FAFAF6" stroke-width="3"/>
+                <line x1="320" y1="260" x2="480" y2="200" stroke="#FAFAF6" stroke-width="3"/>
+                <line x1="140" y1="290" x2="200" y2="380" stroke="#FAFAF6" stroke-width="3"/>
+                <circle cx="280" cy="230" r="18" fill="#EDE8DE" stroke="#fff" stroke-width="2"/>
+                <circle cx="280" cy="230" r="10" fill="#E0DAD0"/>
+                <rect x="215" y="258" width="38" height="28" rx="3" fill="#E8E2D8" stroke="#fff" stroke-width="1.5"/>
+                <g id="trrt-fs-0" display="none"><path d="M280,195 L280,230 L234,230 L234,258" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,230 L234,230 L234,258" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-fs-1" display="none"><path d="M280,195 L280,175 L255,175 L255,195" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,175 L255,175 L255,195" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-fs-2" display="none"><path d="M280,195 L280,230 L305,230 L305,215" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,230 L305,230 L305,215" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-fs-3" display="none"><path d="M280,195 L280,230 L280,248" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,230 L280,248" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-fs-4" display="none"><path d="M280,195 L280,230 L140,230 L140,255 L108,255" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,230 L140,230 L140,255 L108,255" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-fs-5" display="none"><path d="M280,195 L280,290 L360,290 L360,330 L378,350" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,290 L360,290 L360,330 L378,350" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-fs-6" display="none"><path d="M280,195 L280,120 L420,120 L432,140" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M280,195 L280,120 L420,120 L432,140" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-0" display="none"><path d="M340,52 L280,52 L280,230 L234,230 L234,258" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L280,52 L280,230 L234,230 L234,258" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-1" display="none"><path d="M340,52 L280,52 L280,175 L255,175 L255,195" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L280,52 L280,175 L255,175 L255,195" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-2" display="none"><path d="M340,52 L360,52 L360,175 L305,175 L305,215" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L360,52 L360,175 L305,175 L305,215" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-3" display="none"><path d="M340,52 L280,52 L280,248" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L280,52 L280,248" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-4" display="none"><path d="M340,52 L280,52 L280,230 L140,230 L140,255 L108,255" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L280,52 L280,230 L140,230 L140,255 L108,255" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-5" display="none"><path d="M340,52 L420,52 L420,290 L378,350" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L420,52 L420,290 L378,350" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trrt-nord-6" display="none"><path d="M340,52 L420,52 L420,120 L432,140" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M340,52 L420,52 L420,120 L432,140" stroke="#147EFB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g>
+                <g id="trdot-fs"><circle cx="280" cy="195" r="13" fill="#CC0000" stroke="white" stroke-width="3"/><text x="280" y="199" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9" font-weight="700" fill="white">FS</text></g>
+                <rect x="295" y="183" width="58" height="14" rx="3" fill="rgba(255,255,255,0.9)"/>
+                <text x="324" y="193" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="700" fill="#CC0000">Stazione FS</text>
+                <g id="trdot-nord"><circle cx="340" cy="52" r="12" fill="#aaa" stroke="white" stroke-width="3"/><text x="340" y="56" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" font-weight="700" fill="white">N</text></g>
+                <rect x="354" y="42" width="62" height="14" rx="3" fill="rgba(255,255,255,0.9)"/>
+                <text x="385" y="52" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="7.5" font-weight="700" fill="#999">Busto Nord</text>
+                <g id="trvdot0" onclick="trPickVenue(0)" style="cursor:pointer"><circle cx="234" cy="272" r="7" fill="#CC0000" stroke="white" stroke-width="2" id="trvc0"/></g>
+                <g id="trvdot1" onclick="trPickVenue(1)" style="cursor:pointer"><circle cx="255" cy="195" r="6" fill="#CC0000" stroke="white" stroke-width="1.5" id="trvc1"/></g>
+                <g id="trvdot2" onclick="trPickVenue(2)" style="cursor:pointer"><circle cx="305" cy="215" r="6" fill="#CC0000" stroke="white" stroke-width="1.5" id="trvc2"/></g>
+                <g id="trvdot3" onclick="trPickVenue(3)" style="cursor:pointer"><circle cx="280" cy="248" r="6" fill="#CC0000" stroke="white" stroke-width="1.5" id="trvc3"/></g>
+                <g id="trvdot4" onclick="trPickVenue(4)" style="cursor:pointer"><circle cx="108" cy="255" r="7" fill="#CC0000" stroke="white" stroke-width="2" id="trvc4"/></g>
+                <g id="trvdot5" onclick="trPickVenue(5)" style="cursor:pointer"><circle cx="378" cy="355" r="7" fill="#CC0000" stroke="white" stroke-width="2" id="trvc5"/></g>
+                <g id="trvdot6" onclick="trPickVenue(6)" style="cursor:pointer"><circle cx="432" cy="148" r="7" fill="#CC0000" stroke="white" stroke-width="2" id="trvc6"/></g>
+                <text x="218" y="290" text-anchor="end" font-family="DM Sans,sans-serif" font-size="8.5" font-weight="600" fill="#555">Teatro Sociale</text>
+                <text x="238" y="210" text-anchor="end" font-family="DM Sans,sans-serif" font-size="8" fill="#777">Manzoni</text>
+                <text x="322" y="212" font-family="DM Sans,sans-serif" font-size="8" fill="#777">Biblioteca</text>
+                <text x="292" y="262" font-family="DM Sans,sans-serif" font-size="8" fill="#777">Boragno</text>
+                <text x="88" y="272" text-anchor="end" font-family="DM Sans,sans-serif" font-size="8.5" font-weight="600" fill="#555">Antonioni</text>
+                <text x="390" y="368" font-family="DM Sans,sans-serif" font-size="8.5" font-weight="600" fill="#555">Fratello Sole</text>
+                <text x="444" y="163" font-family="DM Sans,sans-serif" font-size="8.5" font-weight="600" fill="#555">S. Giovanni</text>
+                <g id="trdest-pin" display="none"><path d="M0,0 C0,-10 -7,-18 -7,-23 C-7,-30 7,-30 7,-23 C7,-18 0,-10 0,0Z" fill="#CC0000" stroke="white" stroke-width="2"/><circle cx="0" cy="-23" r="4" fill="white"/></g>
+                <text x="530" y="465" font-family="Montserrat,sans-serif" font-size="10" fill="#C8C2B6" text-anchor="middle">N ↑</text>
+                <line x1="28" y1="462" x2="88" y2="462" stroke="#C8C2B6" stroke-width="1.5"/>
+                <text x="58" y="472" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="7.5" fill="#C8C2B6">~400m</text>
+              </svg>
+            </div>
+            <div>
+              <p class="tr-vp__title" id="trvptitle">Scegli dove vuoi andare</p>
+              <div id="trvlist"></div>
+            </div>
+          </div>
+          <div class="tr-nav">
+            <button class="tr-bs" onclick="trGo(2)">← Cambia stazione</button>
+            <span style="font-size:.7rem;color:var(--color-text-muted)">Clicca una venue per il percorso</span>
+          </div>
+        </div>
+
+        <script>
+        (function(){
+        var ST={dep:null,depLabel:null,depTime:null,sta:null};
+        var venues=[
+          {n:'Teatro Sociale Delia Cajelli',a:'P.zza Plebiscito, 1',wfs:8,wn:15,vi:0},
+          {n:'Cinema Teatro Manzoni',a:'Via Calatafimi, 5',wfs:6,wn:14,vi:1},
+          {n:'Biblioteca Sala Monaco',a:'Via Marliani, 7',wfs:7,wn:13,vi:2},
+          {n:'Galleria Boragno',a:'Via Milano, 4',wfs:7,wn:12,vi:3},
+          {n:'Istituto Antonioni',a:'Via Magenta, 70',wfs:14,wn:20,vi:4},
+          {n:'Cinema Fratello Sole',a:"Via M. D'Azeglio, 1",wfs:12,wn:18,vi:5},
+          {n:'Cinema San Giovanni Bosco',a:'Via Bergamo, 12',wfs:18,wn:8,vi:6}
+        ];
+        var vpos={0:[234,272],1:[255,195],2:[305,215],3:[280,248],4:[108,255],5:[378,355],6:[432,148]};
+        var R={fs:{cadorna:{note:'S5 diretta — nessun cambio',steps:[{c:'r',t:'Milano Cadorna'},{c:'',t:'S5 per Varese',d:'15–30 min · €3.40',b:'S5',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'38 min'}]},centrale:{note:'Regionale diretto',steps:[{c:'r',t:'Milano Centrale'},{c:'',t:'Regionale per Domodossola',d:'30 min · €3.80',b:'R',bc:'#cc6600'},{c:'g',t:'Busto Arsizio FS',d:'42 min'}]},garibaldi:{note:'S5/S6 alta frequenza',steps:[{c:'r',t:'Milano Garibaldi',d:'Metro M2'},{c:'',t:'S5 o S6',d:'15 min · €3.40',b:'S5/S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'42 min'}]},certosa:{note:'28 minuti — velocissimo',steps:[{c:'r',t:'Milano Certosa'},{c:'',t:'S5 o S6',d:'15 min · €2.80',b:'S5/S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'28 min'}]},rho:{note:'S5/S6 diretta',steps:[{c:'r',t:'Rho'},{c:'',t:'S5 o S6',d:'15 min · €2.10',b:'S5/S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'18 min'}]},legnano:{note:'Solo 5 minuti!',steps:[{c:'r',t:'Legnano'},{c:'',t:'S5',d:'€1.60',b:'S5',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'5 min'}]},saronno:{note:'Prendi S6 da Saronno FS',steps:[{c:'r',t:'Saronno FS'},{c:'',t:'S6 per Novara',d:'€2.10',b:'S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'22 min'}]},gallarate:{note:'Regionale diretto',steps:[{c:'r',t:'Gallarate'},{c:'',t:'Regionale',d:'€1.60',b:'R',bc:'#cc6600'},{c:'g',t:'Busto Arsizio FS',d:'8 min'}]},castellanza:{note:'Una sola fermata!',steps:[{c:'r',t:'Castellanza'},{c:'',t:'S5/S6',d:'€1.50',b:'S5/S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'4 min'}]},varese:{note:'S5 da Varese — diretto',steps:[{c:'r',t:'Varese'},{c:'',t:'S5 per Cadorna',d:'€2.50',b:'S5',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'22 min'}]},novara:{note:'S6 senza cambi',steps:[{c:'r',t:'Novara'},{c:'',t:'S6 per Saronno',d:'€3.20',b:'S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'45 min'}]},bergamo:{note:'Cambio a Milano',steps:[{c:'r',t:'Bergamo'},{c:'',t:'Per Milano',d:'55 min',b:'R',bc:'#cc6600'},{c:'',t:'S5/S6',b:'S5/S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'~85–95 min'}]},torino:{note:'AV + cambio',steps:[{c:'r',t:'Torino'},{c:'',t:'AV per Milano',d:'45–90 min',b:'AV',bc:'#8b0000'},{c:'',t:'S5/S6',b:'S5/S6',bc:'#0066cc'},{c:'g',t:'Busto Arsizio FS',d:'~110 min'}]}},nord:{cadorna:{note:'FNM da Cadorna — diretto',steps:[{c:'r',t:'Milano Cadorna',d:'FNM piano -1'},{c:'',t:'FNM per Novara/Varese',d:'€3.20',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'35 min'}]},centrale:{note:'Via Cadorna poi FNM',steps:[{c:'r',t:'Milano Centrale'},{c:'',t:'Metro/treno per Cadorna'},{c:'',t:'FNM',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'~55 min'}]},garibaldi:{note:'Metro M2 per Cadorna poi FNM',steps:[{c:'r',t:'Milano Garibaldi'},{c:'',t:'Metro M2 → Cadorna'},{c:'',t:'FNM',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'~50 min'}]},certosa:{note:'Meglio Stazione FS da Certosa',steps:[{c:'r',t:'Certosa'},{c:'g',t:'→ Usa Stazione FS',d:'S5/S6 in 28 min'}]},rho:{note:'Meglio Stazione FS da Rho',steps:[{c:'r',t:'Rho'},{c:'g',t:'→ Usa Stazione FS',d:'S5/S6 in 18 min'}]},legnano:{note:'Meglio Stazione FS',steps:[{c:'r',t:'Legnano'},{c:'g',t:'→ Usa Stazione FS',d:'S5 in 5 min!'}]},saronno:{note:'FNM da Saronno — ottima!',steps:[{c:'r',t:'Saronno FNM'},{c:'',t:'FNM per Novara',d:'€1.80',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'18 min'}]},gallarate:{note:'FNM da Gallarate — diretto',steps:[{c:'r',t:'Gallarate FNM'},{c:'',t:'FNM per Saronno',d:'€1.60',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'12 min'}]},castellanza:{note:'Meglio Stazione FS',steps:[{c:'r',t:'Castellanza'},{c:'g',t:'→ Usa Stazione FS',d:'S5/S6 in 4 min!'}]},varese:{note:'FNM da Varese — diretto!',steps:[{c:'r',t:'Varese FNM'},{c:'',t:'FNM per Cadorna',d:'€2.40',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'25 min'}]},novara:{note:'FNM da Novara — diretto!',steps:[{c:'r',t:'Novara FNM'},{c:'',t:'FNM per Cadorna',d:'€3.00',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'40 min'}]},bergamo:{note:'Via Milano poi FNM',steps:[{c:'r',t:'Bergamo'},{c:'',t:'Per Milano',b:'R',bc:'#cc6600'},{c:'',t:'FNM',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'~90 min'}]},torino:{note:'AV + FNM',steps:[{c:'r',t:'Torino'},{c:'',t:'AV per Milano',b:'AV',bc:'#8b0000'},{c:'',t:'FNM',b:'FNM',bc:'#444'},{c:'g',t:'Busto Arsizio Nord',d:'~120 min'}]}}};
+        window.trGo=function(n){if(n===2&&!ST.dep)return;if(n===3&&!ST.sta)return;[1,2,3].forEach(function(i){document.getElementById('trp'+i).classList.toggle('show',i===n);var s=document.getElementById('trs'+i);s.classList.toggle('active',i===n);s.classList.toggle('done',i<n)});if(n===3)trRenderP3()};
+        window.trPickCity=function(btn,label,time){document.querySelectorAll('.tr-cbtn').forEach(function(b){b.classList.remove('sel')});btn.classList.add('sel');ST.dep=btn.dataset.k;ST.depLabel=label;ST.depTime=time;document.getElementById('trsv1').textContent=label;document.getElementById('trb1').disabled=false;['fs','nord'].forEach(function(s){var r=R[s][ST.dep];if(!r)return;document.getElementById('trn'+s).textContent=r.note;document.getElementById('trr'+s).innerHTML=trMkSteps(r.steps)})};
+        function trMkSteps(ss){return ss.map(function(s){return'<div class="tr-ss"><div class="tr-ss__d'+(s.c==='r'?' r':s.c==='g'?' g':'')+'">'+( s.c==='r'?'●':s.c==='g'?'●':'→')+'</div><div><div class="tr-ss__t">'+s.t+'</div>'+(s.d?'<div class="tr-ss__sub">'+s.d+'</div>':'')+(s.b?'<span class="tr-ss__b" style="background:'+s.bc+'">'+s.b+'</span>':'')+'</div></div>'}).join('')}
+        window.trPickSta=function(s,card){document.querySelectorAll('.tr-scard').forEach(function(c){c.classList.remove('sel')});card.classList.add('sel');ST.sta=s;document.getElementById('trsv2').textContent=s==='fs'?'Stazione FS':'Busto Nord';document.getElementById('trb2').disabled=false};
+        function trRenderP3(){var wk=ST.sta==='fs'?'wfs':'wn';document.getElementById('trss1').textContent=ST.depLabel||'—';document.getElementById('trss2').textContent=ST.sta==='fs'?'Busto Arsizio FS':'Busto Nord';document.getElementById('trss2b').textContent=ST.sta==='fs'?'S5 · S6 · Regionale':'FerrovieNord';document.getElementById('trss3').textContent=ST.depTime||'—';document.getElementById('trss4').textContent='Scegli venue';document.getElementById('trsv3').textContent='Scegli venue';document.getElementById('trdot-fs').querySelector('circle').setAttribute('fill',ST.sta==='fs'?'#CC0000':'#ccc');document.getElementById('trdot-nord').querySelector('circle').setAttribute('fill',ST.sta==='nord'?'#0066cc':'#ccc');var sorted=venues.slice().sort(function(a,b){return a[wk]-b[wk]});document.getElementById('trvptitle').textContent='Clicca la venue di destinazione';document.getElementById('trvlist').innerHTML=sorted.map(function(v){return'<div class="tr-vi" id="trvi'+v.vi+'" onclick="trPickVenue('+v.vi+')">'+'<div><div class="tr-vi__name">'+v.n+'</div><div class="tr-vi__addr">'+v.a+'</div></div>'+'<div class="tr-vi__t">'+v[wk]+' min</div></div>'}).join('');document.querySelectorAll('[id^="trrt-"]').forEach(function(el){el.setAttribute('display','none')});document.getElementById('trdest-pin').setAttribute('display','none');venues.forEach(function(v){var c=document.getElementById('trvc'+v.vi);if(c){c.setAttribute('r',v.vi<4?6:7);c.setAttribute('opacity','1')}})}
+        window.trPickVenue=function(vi){if(!ST.sta)return;var wk=ST.sta==='fs'?'wfs':'wn';var v=venues.find(function(x){return x.vi===vi});document.querySelectorAll('.tr-vi').forEach(function(el){el.classList.remove('hl')});document.getElementById('trvi'+vi).classList.add('hl');document.getElementById('trss4').textContent=v[wk]+' min a piedi';document.getElementById('trsv3').textContent=v.n.split(' ').slice(0,2).join(' ');document.querySelectorAll('[id^="trrt-"]').forEach(function(el){el.setAttribute('display','none')});var rt=document.getElementById('trrt-'+ST.sta+'-'+vi);if(rt)rt.setAttribute('display','');var pos=vpos[vi];if(pos){var pin=document.getElementById('trdest-pin');pin.setAttribute('transform','translate('+pos[0]+','+pos[1]+')');pin.setAttribute('display','')}venues.forEach(function(vv){var c=document.getElementById('trvc'+vv.vi);if(c){c.setAttribute('r',vv.vi===vi?9:5);c.setAttribute('opacity',vv.vi===vi?'1':'0.25')}})};
+        })();
+        </script>
+
         </div>
     </section>
 
