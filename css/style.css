@@ -3007,6 +3007,12 @@ button.hero__scroll-arrow {
     color: var(--color-text-secondary);
 }
 
+.schedule__event-description {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    margin: 0.25rem 0 0;
+}
+
 .schedule__event-tag {
     display: inline-block;
     font-size: 0.65rem;
