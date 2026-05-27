@@ -1802,6 +1802,30 @@ button.hero__scroll-arrow {
     max-width: 700px;
 }
 
+.aiuti-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.aiuti-list li {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.aiuti-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.aiuti-list li p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* ============================================
    GALLERY PAGE — Filters, Grid, Lightbox
    ============================================ */
